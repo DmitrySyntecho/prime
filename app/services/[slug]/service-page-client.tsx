@@ -15,8 +15,12 @@ import { ServicesGridSection } from "@/components/services-grid-section"
 import { FAQSection } from "@/components/faq-section"
 import { FIFAPromoBanner } from "@/components/fifa-promo-banner"
 import { ContactSpecialistBanner } from "@/components/contact-specialist-banner"
+import { CategoryProductsShowcase } from "@/components/category-products-showcase"
+import { GeneralEquipmentShowcase } from "@/components/general-equipment-showcase"
+import { FrequentlyTogether } from "@/components/frequently-together"
 import { useCity } from "@/lib/city-context"
 import { applyCity } from "@/lib/service-pages"
+import { getCategoryForServiceSlug } from "@/lib/products-data"
 import type { ServicePage } from "@/lib/service-pages"
 
 interface ServicePageClientProps {
@@ -41,6 +45,8 @@ export function ServicePageClient({ service, slug }: ServicePageClientProps) {
     document.dispatchEvent(new CustomEvent("openQuoteForm", { detail: { serviceSlug: slug } }))
   }
 
+  const productCategory = getCategoryForServiceSlug(slug)
+
   return (
     <div className="min-h-screen">
       <ServiceHero
@@ -64,8 +70,17 @@ export function ServicePageClient({ service, slug }: ServicePageClientProps) {
         onStartQuote={handleStartQuote}
       />
 
+      {productCategory ? (
+        <CategoryProductsShowcase category={productCategory} />
+      ) : (
+        <GeneralEquipmentShowcase />
+      )}
+
       <TestimonialsCarousel />
       <WhyChooseUsSection />
+
+      {productCategory && <FrequentlyTogether category={productCategory} />}
+
       <CaseStudiesSection />
       <ServicesGridSection />
       <RentalCategoriesSection />

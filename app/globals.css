@@ -739,3 +739,12 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 input[type="time"]::-webkit-calendar-picker-indicator:hover {
   opacity: 0.55;
 }
+
+/* Shop filter sidebar — slim styled scrollbar */
+.shop-sidebar-scroll { scrollbar-width: thin; scrollbar-color: rgba(255,94,58,0.4) transparent; }
+.shop-sidebar-scroll::-webkit-scrollbar { width: 6px; }
+.shop-sidebar-scroll::-webkit-scrollbar-track { background: transparent; }
+.shop-sidebar-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #FF2D6F 0%, #FF5E3A 100%);
+  border-radius: 9999px;
+}

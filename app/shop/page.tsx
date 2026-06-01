@@ -1,9 +1,10 @@
 import type { Metadata } from "next"
-import { ShopProductsSection } from "@/components/shop-products-section"
+import { ShopCatalog } from "@/components/shop-catalog"
 
 export const metadata: Metadata = {
-  title: "LED Wall Rentals – Prime Line AV",
-  description: "Professional LED video wall rentals for events, watch parties, and festivals.",
+  title: "Pro AV Equipment Rentals – Prime Line AV",
+  description:
+    "Rent LED video walls, sound systems, DJ setups, lighting and stage packages for events across Los Angeles.",
   robots: {
     index: false,
     follow: false,
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 export default function ShopPage() {
   return (
     <div className="min-h-screen">
-      <ShopProductsSection />
+      <ShopCatalog />
     </div>
   )
 }

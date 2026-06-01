@@ -2,25 +2,37 @@
 
 import { createContext, useContext, useState, useCallback, type ReactNode } from "react"
 
+export type ProductCategory =
+  | "led-screens"
+  | "dj-setups"
+  | "sound-systems"
+  | "lighting"
+  | "stage"
+
+export type ProductTier = "basic" | "premium"
+
 export interface Product {
   id: string
   name: string
   slug: string
+  category: ProductCategory
+  /** pricing/scale tier within its category */
+  tier: ProductTier
+  /** facet tags for filtering (e.g. "indoor", "outdoor", "large-format") */
+  tags: string[]
+  /** category-specific filter values (e.g. { pitch: "P2.6mm", capacity: "1000" }) */
+  filters: Record<string, string>
   description: string
   dimensions: string
   price: number
   originalPrice: number
   discount: number
   image: string
+  /** All photos of this model — image is always images[0]. */
+  images: string[]
   features: string[]
-  specs: {
-    pixelPitch: string
-    resolution: string
-    brightness: string
-    refreshRate: string
-    viewingAngle: string
-    lifespan: string
-  }
+  /** Flexible spec sheet — keys vary by category. */
+  specs: Record<string, string>
   includes: string[]
   deliveryFee: number
   installationFee: number

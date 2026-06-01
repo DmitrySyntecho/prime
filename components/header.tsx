@@ -6,25 +6,40 @@ import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { PromoTopBanner } from "./promo-top-banner"
+import { DesktopNav } from "./mega-menu"
 import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/contact"
 
-const navLinks = [
-  { label: "Services", href: "/#services" },
-  { label: "Why Us", href: "/#why-us" },
-  { label: "Portfolio", href: "/#our-work" },
-  { label: "Industry", href: "/#events" },
-  { label: "About", href: "/#about" },
-]
+type MobileGroup = { heading: string; links: { label: string; href: string }[] }
 
-function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
-  const hash = href.split("#")[1]
-  if (!hash) return
-  const el = document.getElementById(hash)
-  if (el) {
-    e.preventDefault()
-    el.scrollIntoView({ behavior: "smooth" })
-  }
-}
+const mobileGroups: MobileGroup[] = [
+  {
+    heading: "Shop",
+    links: [
+      { label: "Full Rental Catalog", href: "/shop" },
+      { label: "LED Video Walls", href: "/services/led-screen-rental" },
+      { label: "Sound Systems", href: "/services/sound-system-rental" },
+      { label: "Lighting", href: "/services/lighting-rental" },
+      { label: "Stage & Production", href: "/services/stage-rental" },
+    ],
+  },
+  {
+    heading: "Services",
+    links: [
+      { label: "Full AV Production", href: "/services/full-av-production" },
+      { label: "TV Rental", href: "/services/tv-rental" },
+      { label: "Projector & Screen", href: "/services/projector-screen-rental" },
+      { label: "Pipe & Drape", href: "/services/pipe-drape-rental" },
+    ],
+  },
+  {
+    heading: "Company",
+    links: [
+      { label: "About Us", href: "/about" },
+      { label: "Portfolio", href: "/portfolio" },
+      { label: "Locations", href: "/locations" },
+    ],
+  },
+]
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -146,25 +161,14 @@ export function Header() {
                 />
               </Link>
 
-              {/* Desktop Navigation */}
-              <nav className="hidden lg:flex items-center gap-1">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={(e) => handleNavClick(e, link.href)}
-                    className="px-3.5 py-2.5 rounded-[10px] text-[13px] font-semibold tracking-[0.04em] uppercase text-white/65 hover:text-white hover:bg-white/[0.04] transition-all"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-                <Link
-                  href="/fifa-2026-packages"
-                  className={`px-3.5 py-2.5 rounded-[10px] text-[13px] font-bold tracking-[0.04em] uppercase ${accentText} hover:text-white ${accentHoverBg} transition-all`}
-                >
-                  FIFA 2026
-                </Link>
-              </nav>
+              {/* Desktop Navigation — premium hover mega-menu */}
+              <DesktopNav
+                accent={accent}
+                accentDeep={accentDeep}
+                accentText={accentText}
+                accentHoverBg={accentHoverBg}
+                onQuote={openQuote}
+              />
 
               {/* Right side: Phone + Quote CTA */}
               <div className="hidden md:flex items-center gap-2.5">
@@ -216,16 +220,23 @@ export function Header() {
               boxShadow: "0 12px 36px -12px rgba(0,0,0,0.6)",
             }}
           >
-            <div className="flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={(e) => { handleNavClick(e, link.href); setMobileMenuOpen(false) }}
-                  className="px-3 py-3 rounded-[10px] text-[14px] font-semibold tracking-[0.02em] uppercase text-white/75 hover:text-white hover:bg-white/[0.05] transition-all"
-                >
-                  {link.label}
-                </Link>
+            <div className="flex flex-col gap-1 max-h-[60vh] overflow-y-auto">
+              {mobileGroups.map((group) => (
+                <div key={group.heading} className="mb-1">
+                  <div className="px-3 pt-2 pb-1 text-[11px] font-bold uppercase tracking-wider text-white/40">
+                    {group.heading}
+                  </div>
+                  {group.links.map((link) => (
+                    <Link
+                      key={link.href + link.label}
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-3 py-2.5 rounded-[10px] text-[14px] font-semibold tracking-[0.01em] text-white/75 hover:text-white hover:bg-white/[0.05] transition-all"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
               ))}
               <Link
                 href="/fifa-2026-packages"

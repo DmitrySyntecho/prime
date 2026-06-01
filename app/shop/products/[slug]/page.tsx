@@ -4,7 +4,7 @@ import { useState, use } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { getProductBySlug, products } from "@/lib/products-data"
+import { getProductBySlug, products, CATEGORY_LABEL } from "@/lib/products-data"
 import {
   ArrowLeft,
   ArrowRight,
@@ -27,6 +27,7 @@ import {
   Timer,
 } from "lucide-react"
 import { QuoteForm } from "@/components/quote-form"
+import { FrequentlyTogether } from "@/components/frequently-together"
 import { PHONE_TEL, PHONE_DISPLAY } from "@/lib/contact"
 
 // Consistent number formatting to avoid hydration mismatch
@@ -45,6 +46,8 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
   const [quantity, setQuantity] = useState(1)
   const [rentalDays, setRentalDays] = useState(1)
   const [quoteOpen, setQuoteOpen] = useState(false)
+  const gallery = product.images && product.images.length > 0 ? product.images : [product.image]
+  const [activeImage, setActiveImage] = useState(gallery[0])
 
   const subtotal = product.price * quantity * rentalDays
   const savings = (product.originalPrice - product.price) * quantity * rentalDays
@@ -69,6 +72,13 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
     viewingAngle: "Viewing Angle",
     lifespan: "Lifespan",
   }
+  const labelFor = (key: string) =>
+    specLabels[key] || key.replace(/([A-Z])/g, " $1").replace(/^./, (c) => c.toUpperCase())
+  const hasSpecs = Object.keys(product.specs || {}).length > 0
+  const relatedProducts = products
+    .filter((p) => p.id !== product.id && p.category === product.category)
+    .slice(0, 3)
+  const related = relatedProducts.length > 0 ? relatedProducts : products.filter((p) => p.id !== product.id).slice(0, 3)
 
   return (
     <>
@@ -98,7 +108,7 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
           </Link>
           <span className="text-white/30">/</span>
           <Link href="/shop" className="text-white/50 hover:text-white transition-colors">
-            LED Screens
+            {CATEGORY_LABEL[product.category]}
           </Link>
           <span className="text-white/30">/</span>
           <span className="text-white">{product.name}</span>
@@ -146,7 +156,7 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
               )}
 
               <Image
-                src={product.image}
+                src={activeImage}
                 alt={product.name}
                 fill
                 className="object-cover"
@@ -154,6 +164,24 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
                 priority
               />
             </div>
+
+            {/* Gallery thumbnails */}
+            {gallery.length > 1 && (
+              <div className="flex flex-wrap gap-2">
+                {gallery.slice(0, 8).map((img, i) => (
+                  <button
+                    key={img}
+                    onClick={() => setActiveImage(img)}
+                    className="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 transition-all"
+                    style={{
+                      border: `2px solid ${activeImage === img ? "#FF2D6F" : "rgba(255,255,255,0.12)"}`,
+                    }}
+                  >
+                    <Image src={img} alt={`${product.name} view ${i + 1}`} fill className="object-cover" sizes="64px" />
+                  </button>
+                ))}
+              </div>
+            )}
 
             {/* Trust badges */}
             <div className="grid grid-cols-2 gap-3">
@@ -344,32 +372,34 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
             </div>
 
             {/* Technical Specs */}
-            <div className="mb-8">
-              <h3 className="text-lg font-bold text-white mb-4">Technical Specifications</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {Object.entries(product.specs).map(([key, value]) => {
-                  const Icon = specIcons[key] || Monitor
-                  return (
-                    <div
-                      key={key}
-                      className="p-3 rounded-xl"
-                      style={{
-                        background: "rgba(255,255,255,0.04)",
-                        border: "1px solid rgba(255,255,255,0.08)",
-                      }}
-                    >
-                      <div className="flex items-center gap-2 mb-1">
-                        <Icon className="w-4 h-4 text-[#FF5E3A]" />
-                        <span className="text-[11px] text-white/50 uppercase tracking-wider">
-                          {specLabels[key]}
-                        </span>
+            {hasSpecs && (
+              <div className="mb-8">
+                <h3 className="text-lg font-bold text-white mb-4">Technical Specifications</h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  {Object.entries(product.specs).map(([key, value]) => {
+                    const Icon = specIcons[key] || Monitor
+                    return (
+                      <div
+                        key={key}
+                        className="p-3 rounded-xl"
+                        style={{
+                          background: "rgba(255,255,255,0.04)",
+                          border: "1px solid rgba(255,255,255,0.08)",
+                        }}
+                      >
+                        <div className="flex items-center gap-2 mb-1">
+                          <Icon className="w-4 h-4 text-[#FF5E3A]" />
+                          <span className="text-[11px] text-white/50 uppercase tracking-wider">
+                            {labelFor(key)}
+                          </span>
+                        </div>
+                        <span className="text-[14px] font-bold text-white">{value}</span>
                       </div>
-                      <span className="text-[14px] font-bold text-white">{value}</span>
-                    </div>
-                  )
-                })}
+                    )
+                  })}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* What's Included */}
             <div>
@@ -390,9 +420,7 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
         <div className="mt-20">
           <h2 className="text-2xl font-bold text-white mb-8">You May Also Like</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {products
-              .filter((p) => p.id !== product.id)
-              .slice(0, 3)
+            {related
               .map((p) => (
                 <Link
                   key={p.id}
@@ -424,6 +452,9 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
               ))}
           </div>
         </div>
+
+        {/* Frequently ordered together (cross-category) */}
+        <FrequentlyTogether category={product.category} excludeId={product.id} />
 
         {/* Back button */}
         <div className="mt-12">
