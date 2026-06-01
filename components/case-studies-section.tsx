@@ -3,8 +3,11 @@
 import { useState, useEffect, useCallback, useRef } from "react"
 import Image from "next/image"
 import { Play, ChevronLeft, ChevronRight, ArrowRight, X } from "lucide-react"
-import MuxPlayer from "@mux/mux-player-react"
+import dynamic from "next/dynamic"
 import { PHONE_TEL } from "@/lib/contact"
+
+// Loaded only when the user hits play — keeps the heavy player out of the initial bundle.
+const MuxPlayer = dynamic(() => import("@mux/mux-player-react"), { ssr: false })
 
 const MUX_TIKTOK_ID = "KfJ00XD74CFG01AI5eclQ58q439V3U004sBcuSENC2A9IU"
 const MUX_MIAMI_ID = "a1VM513vYaAw3u8rBfLB8bG4MMma2FbIFN2YGepuxiA"
