@@ -70,8 +70,6 @@ export function BackgroundFX() {
   return (
     <>
       <div className="bg-stage" aria-hidden />
-      <div className="bg-rays" aria-hidden />
-      <div className="bg-bauhaus" aria-hidden />
       <div ref={orbAref} className="bg-orb a" aria-hidden />
       <div ref={orbBref} className="bg-orb b" aria-hidden />
       <div ref={orbCref} className="bg-orb c" aria-hidden />
