@@ -3,10 +3,16 @@
 // Run from project root:  node scripts/build-product-images.mjs
 import { promises as fs } from "fs"
 import path from "path"
+import sharp from "sharp"
 
 const ROOT = process.cwd()
 const SRC = path.join(ROOT, "Products")
 const OUT = path.join(ROOT, "public", "images", "products")
+
+// optimization settings — small files, fast load, minimal visible quality loss
+const MAX_SIDE = 1280 // longest edge in px
+const QUALITY = 80
+const MAX_GALLERY = 8 // main + up to 7 extra photos per product
 
 // raw top-level folder -> category slug used in the catalog
 const CATEGORY_BY_FOLDER = {
@@ -111,13 +117,16 @@ async function run() {
 async function emitGroup(manifest, category, rawName, slug, srcDir, files, mainFile) {
   const destDir = path.join(OUT, category, slug)
   await fs.mkdir(destDir, { recursive: true })
-  // main first, then the rest as gallery
-  const ordered = [mainFile, ...files.filter((f) => f !== mainFile)]
+  // main first, then the rest as gallery — capped to keep the catalog light
+  const ordered = [mainFile, ...files.filter((f) => f !== mainFile)].slice(0, MAX_GALLERY)
   const publicPaths = []
   for (let i = 0; i < ordered.length; i++) {
-    const ext = path.extname(ordered[i]).toLowerCase()
-    const destName = `${i === 0 ? "main" : i}${ext}`
-    await fs.copyFile(path.join(srcDir, ordered[i]), path.join(destDir, destName))
+    const destName = `${i === 0 ? "main" : i}.webp`
+    await sharp(path.join(srcDir, ordered[i]))
+      .rotate()
+      .resize({ width: MAX_SIDE, height: MAX_SIDE, fit: "inside", withoutEnlargement: true })
+      .webp({ quality: QUALITY, effort: 5 })
+      .toFile(path.join(destDir, destName))
     publicPaths.push(`/images/products/${category}/${slug}/${destName}`)
   }
   manifest.push({ category, rawName, slug, main: publicPaths[0], images: publicPaths })

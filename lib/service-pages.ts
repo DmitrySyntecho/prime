@@ -114,12 +114,12 @@ const BASE_PAGES: ServicePage[] = [
     ],
     ctaLabel: "Get a Quote",
     collage: [
-      "/images/services/lighting-col-1.jpg",
-      "/images/services/lighting-col-2.jpg",
-      "/images/services/lighting-col-3.jpg",
-      "/images/services/lighting-col-4.jpg",
-      "/images/services/lighting-col-5.jpg",
-      "/images/services/lighting-col-6.jpg",
+      "/images/services/lighting-col-1.webp",
+      "/images/services/lighting-col-2.webp",
+      "/images/services/lighting-col-3.webp",
+      "/images/services/lighting-col-4.webp",
+      "/images/services/lighting-col-5.webp",
+      "/images/services/lighting-col-6.webp",
     ],
     collageStats: [
       { value: "GrandMA3", label: "Programmed Live" },

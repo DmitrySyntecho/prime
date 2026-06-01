@@ -1,65 +1,87 @@
-// Convert every JPG/JPEG under public/ to WebP at high quality, then delete
-// the original. PNG favicons / app icons are intentionally left alone — they
-// need to stay PNG for cross-browser favicon and Apple touch icon support.
+// Optimize every raster image under public/images for minimal weight / fast
+// load with little visible quality loss:
+//   - jpg/jpeg/png  -> webp (original deleted, code refs rewritten)
+//   - webp          -> re-encoded & resized; kept only if the result is smaller
+// SVG/GIF are left untouched. /images/products is skipped (build-product-images.mjs
+// already emits optimized webp there).
 //
-// Run: node scripts/optimize-images.mjs
+// Run from project root:  node scripts/optimize-images.mjs
 import { promises as fs } from "node:fs"
 import path from "node:path"
 import sharp from "sharp"
 
-const PUBLIC_DIR = path.join(process.cwd(), "public")
-const QUALITY = 88 // high quality WebP
+const ROOT = process.cwd()
+const IMG_DIR = path.join(ROOT, "public", "images")
+const SRC_DIRS = ["app", "components", "lib"].map((d) => path.join(ROOT, d))
 
-async function walk(dir) {
-  const out = []
-  const entries = await fs.readdir(dir, { withFileTypes: true })
-  for (const entry of entries) {
-    const full = path.join(dir, entry.name)
-    if (entry.isDirectory()) {
-      out.push(...(await walk(full)))
-    } else {
-      out.push(full)
-    }
+const MAX_SIDE = 1600
+const QUALITY = 80
+
+async function walk(dir, hit) {
+  for (const e of await fs.readdir(dir, { withFileTypes: true })) {
+    const p = path.join(dir, e.name)
+    if (e.isDirectory()) await walk(p, hit)
+    else await hit(p)
   }
-  return out
 }
 
-function isJpeg(file) {
+const toPublic = (abs) => abs.slice(path.join(ROOT, "public").length).replace(/\\/g, "/")
+
+const renames = []
+let savedBytes = 0
+let processed = 0
+
+async function optimize(file) {
   const ext = path.extname(file).toLowerCase()
-  return ext === ".jpg" || ext === ".jpeg"
+  if (![".jpg", ".jpeg", ".png", ".webp"].includes(ext)) return
+  if (file.replace(/\\/g, "/").includes("/public/images/products/")) return
+
+  const input = await fs.readFile(file) // read fully first (avoids same-path R/W lock on Windows)
+  const before = input.length
+  const buf = await sharp(input)
+    .rotate()
+    .resize({ width: MAX_SIDE, height: MAX_SIDE, fit: "inside", withoutEnlargement: true })
+    .webp({ quality: QUALITY, effort: 5 })
+    .toBuffer()
+
+  if (ext === ".webp") {
+    if (buf.length < before) {
+      await fs.writeFile(file, buf)
+      savedBytes += before - buf.length
+      processed++
+    }
+    return
+  }
+
+  const webpFile = file.slice(0, -ext.length) + ".webp"
+  await fs.writeFile(webpFile, buf)
+  await fs.rm(file)
+  renames.push({ from: toPublic(file), to: toPublic(webpFile) })
+  savedBytes += before - buf.length
+  processed++
 }
 
-async function convertOne(file) {
-  const target = file.replace(/\.(jpe?g)$/i, ".webp")
-  const buf = await sharp(file).webp({ quality: QUALITY, effort: 6 }).toBuffer()
-  await fs.writeFile(target, buf)
-  const [origStat, newStat] = await Promise.all([fs.stat(file), fs.stat(target)])
-  await fs.unlink(file)
-  return {
-    from: path.relative(process.cwd(), file),
-    to: path.relative(process.cwd(), target),
-    origKb: (origStat.size / 1024).toFixed(1),
-    newKb: (newStat.size / 1024).toFixed(1),
-    savedKb: ((origStat.size - newStat.size) / 1024).toFixed(1),
+async function rewriteRefs() {
+  if (renames.length === 0) return
+  for (const dir of SRC_DIRS) {
+    await walk(dir, async (file) => {
+      if (!/\.(ts|tsx|js|jsx|mjs|json)$/.test(file)) return
+      let txt = await fs.readFile(file, "utf8")
+      let changed = false
+      for (const { from, to } of renames) {
+        if (txt.includes(from)) {
+          txt = txt.split(from).join(to)
+          changed = true
+        }
+      }
+      if (changed) await fs.writeFile(file, txt)
+    })
   }
 }
 
-const files = (await walk(PUBLIC_DIR)).filter(isJpeg)
-console.log(`Found ${files.length} JPEG files. Converting at q=${QUALITY}…\n`)
+await walk(IMG_DIR, optimize)
+await rewriteRefs()
 
-let totalOrig = 0
-let totalNew = 0
-const rows = []
-for (const f of files) {
-  try {
-    const r = await convertOne(f)
-    totalOrig += Number(r.origKb)
-    totalNew += Number(r.newKb)
-    rows.push(r)
-    console.log(`✓ ${r.from} → ${r.to}  (${r.origKb} → ${r.newKb} KB, saved ${r.savedKb} KB)`)
-  } catch (err) {
-    console.error(`✗ ${f}:`, err.message)
-  }
-}
-
-console.log(`\nTotal: ${totalOrig.toFixed(1)} KB → ${totalNew.toFixed(1)} KB (saved ${(totalOrig - totalNew).toFixed(1)} KB / ${(((totalOrig - totalNew) / totalOrig) * 100).toFixed(1)}%)`)
+console.log(`Optimized ${processed} images, saved ~${(savedBytes / 1024 / 1024).toFixed(1)}MB`)
+console.log(`Renamed (jpg/png -> webp): ${renames.length}`)
+for (const r of renames) console.log(`  ${r.from} -> ${r.to}`)

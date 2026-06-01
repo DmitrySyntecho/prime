@@ -209,9 +209,9 @@ export const products: Product[] = [
     "price": 21299,
     "originalPrice": 23149,
     "discount": 8,
-    "image": "/images/products/led-screens/main-stadium-scoreboard-screen-60-x-20/main.jpg",
+    "image": "/images/products/led-screens/main-stadium-scoreboard-screen-60-x-20/main.webp",
     "images": [
-      "/images/products/led-screens/main-stadium-scoreboard-screen-60-x-20/main.jpg"
+      "/images/products/led-screens/main-stadium-scoreboard-screen-60-x-20/main.webp"
     ],
     "features": [
       "P4.8mm Pixel Pitch",
@@ -261,9 +261,9 @@ export const products: Product[] = [
     "price": 14499,
     "originalPrice": 16289,
     "discount": 11,
-    "image": "/images/products/led-screens/main-event-stage-led-wall-40-x-20/main.jpg",
+    "image": "/images/products/led-screens/main-event-stage-led-wall-40-x-20/main.webp",
     "images": [
-      "/images/products/led-screens/main-event-stage-led-wall-40-x-20/main.jpg"
+      "/images/products/led-screens/main-event-stage-led-wall-40-x-20/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -313,9 +313,9 @@ export const products: Product[] = [
     "price": 12319,
     "originalPrice": 14159,
     "discount": 13,
-    "image": "/images/products/led-screens/large-scale-billboard-led-wall-48-x-14/main.jpg",
+    "image": "/images/products/led-screens/large-scale-billboard-led-wall-48-x-14/main.webp",
     "images": [
-      "/images/products/led-screens/large-scale-billboard-led-wall-48-x-14/main.jpg"
+      "/images/products/led-screens/large-scale-billboard-led-wall-48-x-14/main.webp"
     ],
     "features": [
       "P4.8mm Pixel Pitch",
@@ -365,9 +365,9 @@ export const products: Product[] = [
     "price": 9129,
     "originalPrice": 10369,
     "discount": 12,
-    "image": "/images/products/led-screens/grand-outdoor-screen-29-5-x-16-4/main.jpg",
+    "image": "/images/products/led-screens/grand-outdoor-screen-29-5-x-16-4/main.webp",
     "images": [
-      "/images/products/led-screens/grand-outdoor-screen-29-5-x-16-4/main.jpg"
+      "/images/products/led-screens/grand-outdoor-screen-29-5-x-16-4/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -417,9 +417,9 @@ export const products: Product[] = [
     "price": 9129,
     "originalPrice": 9919,
     "discount": 8,
-    "image": "/images/products/led-screens/ultra-large-outdoor-screen-29-5-x-16-4/main.jpg",
+    "image": "/images/products/led-screens/ultra-large-outdoor-screen-29-5-x-16-4/main.webp",
     "images": [
-      "/images/products/led-screens/ultra-large-outdoor-screen-29-5-x-16-4/main.jpg"
+      "/images/products/led-screens/ultra-large-outdoor-screen-29-5-x-16-4/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -469,9 +469,9 @@ export const products: Product[] = [
     "price": 9129,
     "originalPrice": 10259,
     "discount": 11,
-    "image": "/images/products/led-screens/ultra-wide-indoor-screen-29-5-x-16-4/main.jpg",
+    "image": "/images/products/led-screens/ultra-wide-indoor-screen-29-5-x-16-4/main.webp",
     "images": [
-      "/images/products/led-screens/ultra-wide-indoor-screen-29-5-x-16-4/main.jpg"
+      "/images/products/led-screens/ultra-wide-indoor-screen-29-5-x-16-4/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -521,9 +521,9 @@ export const products: Product[] = [
     "price": 8549,
     "originalPrice": 9609,
     "discount": 11,
-    "image": "/images/products/led-screens/auditorium-presentation-wall-30-x-15/main.jpg",
+    "image": "/images/products/led-screens/auditorium-presentation-wall-30-x-15/main.webp",
     "images": [
-      "/images/products/led-screens/auditorium-presentation-wall-30-x-15/main.jpg"
+      "/images/products/led-screens/auditorium-presentation-wall-30-x-15/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -574,9 +574,9 @@ export const products: Product[] = [
     "price": 8549,
     "originalPrice": 9499,
     "discount": 10,
-    "image": "/images/products/led-screens/entertainment-stage-led-screen-30-x-15/main.jpg",
+    "image": "/images/products/led-screens/entertainment-stage-led-screen-30-x-15/main.webp",
     "images": [
-      "/images/products/led-screens/entertainment-stage-led-screen-30-x-15/main.jpg"
+      "/images/products/led-screens/entertainment-stage-led-screen-30-x-15/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -627,9 +627,9 @@ export const products: Product[] = [
     "price": 8549,
     "originalPrice": 9289,
     "discount": 8,
-    "image": "/images/products/led-screens/highway-billboard-display-30-x-15/main.jpg",
+    "image": "/images/products/led-screens/highway-billboard-display-30-x-15/main.webp",
     "images": [
-      "/images/products/led-screens/highway-billboard-display-30-x-15/main.jpg"
+      "/images/products/led-screens/highway-billboard-display-30-x-15/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -679,10 +679,10 @@ export const products: Product[] = [
     "price": 8549,
     "originalPrice": 9289,
     "discount": 8,
-    "image": "/images/products/led-screens/large-retail-showcase-led-wall-30-x-15/main.jpg",
+    "image": "/images/products/led-screens/large-retail-showcase-led-wall-30-x-15/main.webp",
     "images": [
-      "/images/products/led-screens/large-retail-showcase-led-wall-30-x-15/main.jpg",
-      "/images/products/led-screens/large-retail-showcase-led-wall-30-x-15/1.jpg"
+      "/images/products/led-screens/large-retail-showcase-led-wall-30-x-15/main.webp",
+      "/images/products/led-screens/large-retail-showcase-led-wall-30-x-15/1.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -732,9 +732,9 @@ export const products: Product[] = [
     "price": 8549,
     "originalPrice": 9709,
     "discount": 12,
-    "image": "/images/products/led-screens/main-terminal-information-wall-30-x-15/main.jpg",
+    "image": "/images/products/led-screens/main-terminal-information-wall-30-x-15/main.webp",
     "images": [
-      "/images/products/led-screens/main-terminal-information-wall-30-x-15/main.jpg"
+      "/images/products/led-screens/main-terminal-information-wall-30-x-15/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -784,11 +784,11 @@ export const products: Product[] = [
     "price": 7479,
     "originalPrice": 8599,
     "discount": 13,
-    "image": "/images/products/led-screens/led-video-wall-39-36ft-x-9-84ft/main.jpg",
+    "image": "/images/products/led-screens/led-video-wall-39-36ft-x-9-84ft/main.webp",
     "images": [
-      "/images/products/led-screens/led-video-wall-39-36ft-x-9-84ft/main.jpg",
-      "/images/products/led-screens/led-video-wall-39-36ft-x-9-84ft/1.jpg",
-      "/images/products/led-screens/led-video-wall-39-36ft-x-9-84ft/2.jpg"
+      "/images/products/led-screens/led-video-wall-39-36ft-x-9-84ft/main.webp",
+      "/images/products/led-screens/led-video-wall-39-36ft-x-9-84ft/1.webp",
+      "/images/products/led-screens/led-video-wall-39-36ft-x-9-84ft/2.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -838,10 +838,10 @@ export const products: Product[] = [
     "price": 7279,
     "originalPrice": 8089,
     "discount": 10,
-    "image": "/images/products/led-screens/immersive-exhibition-screen-25-x-15/main.jpg",
+    "image": "/images/products/led-screens/immersive-exhibition-screen-25-x-15/main.webp",
     "images": [
-      "/images/products/led-screens/immersive-exhibition-screen-25-x-15/main.jpg",
-      "/images/products/led-screens/immersive-exhibition-screen-25-x-15/1.jpg"
+      "/images/products/led-screens/immersive-exhibition-screen-25-x-15/main.webp",
+      "/images/products/led-screens/immersive-exhibition-screen-25-x-15/1.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -891,11 +891,11 @@ export const products: Product[] = [
     "price": 6389,
     "originalPrice": 7099,
     "discount": 10,
-    "image": "/images/products/led-screens/led-video-wall-24-6ft-x-13-12ft/main.jpg",
+    "image": "/images/products/led-screens/led-video-wall-24-6ft-x-13-12ft/main.webp",
     "images": [
-      "/images/products/led-screens/led-video-wall-24-6ft-x-13-12ft/main.jpg",
-      "/images/products/led-screens/led-video-wall-24-6ft-x-13-12ft/1.jpg",
-      "/images/products/led-screens/led-video-wall-24-6ft-x-13-12ft/2.jpg"
+      "/images/products/led-screens/led-video-wall-24-6ft-x-13-12ft/main.webp",
+      "/images/products/led-screens/led-video-wall-24-6ft-x-13-12ft/1.webp",
+      "/images/products/led-screens/led-video-wall-24-6ft-x-13-12ft/2.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -945,9 +945,9 @@ export const products: Product[] = [
     "price": 5999,
     "originalPrice": 6519,
     "discount": 8,
-    "image": "/images/products/led-screens/banquet-hall-led-wall-25-x-12/main.jpg",
+    "image": "/images/products/led-screens/banquet-hall-led-wall-25-x-12/main.webp",
     "images": [
-      "/images/products/led-screens/banquet-hall-led-wall-25-x-12/main.jpg"
+      "/images/products/led-screens/banquet-hall-led-wall-25-x-12/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -997,9 +997,9 @@ export const products: Product[] = [
     "price": 5999,
     "originalPrice": 6819,
     "discount": 12,
-    "image": "/images/products/led-screens/corporate-atrium-led-display-25-x-12/main.jpg",
+    "image": "/images/products/led-screens/corporate-atrium-led-display-25-x-12/main.webp",
     "images": [
-      "/images/products/led-screens/corporate-atrium-led-display-25-x-12/main.jpg"
+      "/images/products/led-screens/corporate-atrium-led-display-25-x-12/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -1049,9 +1049,9 @@ export const products: Product[] = [
     "price": 5999,
     "originalPrice": 6819,
     "discount": 12,
-    "image": "/images/products/led-screens/event-broadcast-led-wall-30-x-10/main.jpg",
+    "image": "/images/products/led-screens/event-broadcast-led-wall-30-x-10/main.webp",
     "images": [
-      "/images/products/led-screens/event-broadcast-led-wall-30-x-10/main.jpg"
+      "/images/products/led-screens/event-broadcast-led-wall-30-x-10/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -1101,10 +1101,10 @@ export const products: Product[] = [
     "price": 5999,
     "originalPrice": 6519,
     "discount": 8,
-    "image": "/images/products/led-screens/main-entrance-led-wall-25-x-12/main.jpg",
+    "image": "/images/products/led-screens/main-entrance-led-wall-25-x-12/main.webp",
     "images": [
-      "/images/products/led-screens/main-entrance-led-wall-25-x-12/main.jpg",
-      "/images/products/led-screens/main-entrance-led-wall-25-x-12/1.jpg"
+      "/images/products/led-screens/main-entrance-led-wall-25-x-12/main.webp",
+      "/images/products/led-screens/main-entrance-led-wall-25-x-12/1.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -1154,9 +1154,9 @@ export const products: Product[] = [
     "price": 5999,
     "originalPrice": 6899,
     "discount": 13,
-    "image": "/images/products/led-screens/sanctuary-display-wall-25-x-12/main.jpg",
+    "image": "/images/products/led-screens/sanctuary-display-wall-25-x-12/main.webp",
     "images": [
-      "/images/products/led-screens/sanctuary-display-wall-25-x-12/main.jpg"
+      "/images/products/led-screens/sanctuary-display-wall-25-x-12/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -1206,9 +1206,9 @@ export const products: Product[] = [
     "price": 5979,
     "originalPrice": 6499,
     "discount": 8,
-    "image": "/images/products/led-screens/premium-indoor-display-23-x-13/main.jpg",
+    "image": "/images/products/led-screens/premium-indoor-display-23-x-13/main.webp",
     "images": [
-      "/images/products/led-screens/premium-indoor-display-23-x-13/main.jpg"
+      "/images/products/led-screens/premium-indoor-display-23-x-13/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -1258,9 +1258,9 @@ export const products: Product[] = [
     "price": 5979,
     "originalPrice": 6569,
     "discount": 9,
-    "image": "/images/products/led-screens/premium-outdoor-screen-23-x-13/main.jpg",
+    "image": "/images/products/led-screens/premium-outdoor-screen-23-x-13/main.webp",
     "images": [
-      "/images/products/led-screens/premium-outdoor-screen-23-x-13/main.jpg"
+      "/images/products/led-screens/premium-outdoor-screen-23-x-13/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -1310,11 +1310,11 @@ export const products: Product[] = [
     "price": 5829,
     "originalPrice": 6339,
     "discount": 8,
-    "image": "/images/products/led-screens/led-video-wall-29-52ft-x-9-84ft/main.jpg",
+    "image": "/images/products/led-screens/led-video-wall-29-52ft-x-9-84ft/main.webp",
     "images": [
-      "/images/products/led-screens/led-video-wall-29-52ft-x-9-84ft/main.jpg",
-      "/images/products/led-screens/led-video-wall-29-52ft-x-9-84ft/1.jpg",
-      "/images/products/led-screens/led-video-wall-29-52ft-x-9-84ft/2.jpg"
+      "/images/products/led-screens/led-video-wall-29-52ft-x-9-84ft/main.webp",
+      "/images/products/led-screens/led-video-wall-29-52ft-x-9-84ft/1.webp",
+      "/images/products/led-screens/led-video-wall-29-52ft-x-9-84ft/2.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -1364,9 +1364,9 @@ export const products: Product[] = [
     "price": 5809,
     "originalPrice": 6309,
     "discount": 8,
-    "image": "/images/products/led-screens/wide-indoor-screen-29-5-x-9-8/main.jpg",
+    "image": "/images/products/led-screens/wide-indoor-screen-29-5-x-9-8/main.webp",
     "images": [
-      "/images/products/led-screens/wide-indoor-screen-29-5-x-9-8/main.jpg"
+      "/images/products/led-screens/wide-indoor-screen-29-5-x-9-8/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -1416,9 +1416,9 @@ export const products: Product[] = [
     "price": 5809,
     "originalPrice": 6529,
     "discount": 11,
-    "image": "/images/products/led-screens/wide-outdoor-screen-29-5-x-9-8/main.jpg",
+    "image": "/images/products/led-screens/wide-outdoor-screen-29-5-x-9-8/main.webp",
     "images": [
-      "/images/products/led-screens/wide-outdoor-screen-29-5-x-9-8/main.jpg"
+      "/images/products/led-screens/wide-outdoor-screen-29-5-x-9-8/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -1468,9 +1468,9 @@ export const products: Product[] = [
     "price": 4299,
     "originalPrice": 4719,
     "discount": 9,
-    "image": "/images/products/led-screens/baggage-claim-led-sign-20-x-10/main.jpg",
+    "image": "/images/products/led-screens/baggage-claim-led-sign-20-x-10/main.webp",
     "images": [
-      "/images/products/led-screens/baggage-claim-led-sign-20-x-10/main.jpg"
+      "/images/products/led-screens/baggage-claim-led-sign-20-x-10/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -1520,9 +1520,9 @@ export const products: Product[] = [
     "price": 4299,
     "originalPrice": 4889,
     "discount": 12,
-    "image": "/images/products/led-screens/mall-atrium-led-screen-20-x-10/main.jpg",
+    "image": "/images/products/led-screens/mall-atrium-led-screen-20-x-10/main.webp",
     "images": [
-      "/images/products/led-screens/mall-atrium-led-screen-20-x-10/main.jpg"
+      "/images/products/led-screens/mall-atrium-led-screen-20-x-10/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -1572,9 +1572,9 @@ export const products: Product[] = [
     "price": 4299,
     "originalPrice": 4669,
     "discount": 8,
-    "image": "/images/products/led-screens/wayfinding-and-sponsor-display-20-x-10/main.jpg",
+    "image": "/images/products/led-screens/wayfinding-and-sponsor-display-20-x-10/main.webp",
     "images": [
-      "/images/products/led-screens/wayfinding-and-sponsor-display-20-x-10/main.jpg"
+      "/images/products/led-screens/wayfinding-and-sponsor-display-20-x-10/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -1624,11 +1624,11 @@ export const products: Product[] = [
     "price": 4199,
     "originalPrice": 4669,
     "discount": 10,
-    "image": "/images/products/led-screens/led-video-wall-19-68ft-x-9-84ft/main.jpg",
+    "image": "/images/products/led-screens/led-video-wall-19-68ft-x-9-84ft/main.webp",
     "images": [
-      "/images/products/led-screens/led-video-wall-19-68ft-x-9-84ft/main.jpg",
-      "/images/products/led-screens/led-video-wall-19-68ft-x-9-84ft/1.jpg",
-      "/images/products/led-screens/led-video-wall-19-68ft-x-9-84ft/2.jpg"
+      "/images/products/led-screens/led-video-wall-19-68ft-x-9-84ft/main.webp",
+      "/images/products/led-screens/led-video-wall-19-68ft-x-9-84ft/1.webp",
+      "/images/products/led-screens/led-video-wall-19-68ft-x-9-84ft/2.webp"
     ],
     "features": [
       "P2.6mm Pixel Pitch",
@@ -1678,9 +1678,9 @@ export const products: Product[] = [
     "price": 4179,
     "originalPrice": 4589,
     "discount": 9,
-    "image": "/images/products/led-screens/large-indoor-screen-19-7-x-9-8/main.jpg",
+    "image": "/images/products/led-screens/large-indoor-screen-19-7-x-9-8/main.webp",
     "images": [
-      "/images/products/led-screens/large-indoor-screen-19-7-x-9-8/main.jpg"
+      "/images/products/led-screens/large-indoor-screen-19-7-x-9-8/main.webp"
     ],
     "features": [
       "P2.6mm Pixel Pitch",
@@ -1730,9 +1730,9 @@ export const products: Product[] = [
     "price": 4179,
     "originalPrice": 4639,
     "discount": 10,
-    "image": "/images/products/led-screens/large-outdoor-screen-19-7-x-9-8/main.jpg",
+    "image": "/images/products/led-screens/large-outdoor-screen-19-7-x-9-8/main.webp",
     "images": [
-      "/images/products/led-screens/large-outdoor-screen-19-7-x-9-8/main.jpg"
+      "/images/products/led-screens/large-outdoor-screen-19-7-x-9-8/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -1782,9 +1782,9 @@ export const products: Product[] = [
     "price": 3959,
     "originalPrice": 4399,
     "discount": 10,
-    "image": "/images/products/led-screens/main-casino-display-wall-18-x-10/main.jpg",
+    "image": "/images/products/led-screens/main-casino-display-wall-18-x-10/main.webp",
     "images": [
-      "/images/products/led-screens/main-casino-display-wall-18-x-10/main.jpg"
+      "/images/products/led-screens/main-casino-display-wall-18-x-10/main.webp"
     ],
     "features": [
       "P2.6mm Pixel Pitch",
@@ -1834,9 +1834,9 @@ export const products: Product[] = [
     "price": 3959,
     "originalPrice": 4549,
     "discount": 13,
-    "image": "/images/products/led-screens/student-center-led-display-18-x-10/main.jpg",
+    "image": "/images/products/led-screens/student-center-led-display-18-x-10/main.webp",
     "images": [
-      "/images/products/led-screens/student-center-led-display-18-x-10/main.jpg"
+      "/images/products/led-screens/student-center-led-display-18-x-10/main.webp"
     ],
     "features": [
       "P2.6mm Pixel Pitch",
@@ -1886,10 +1886,10 @@ export const products: Product[] = [
     "price": 3639,
     "originalPrice": 4039,
     "discount": 10,
-    "image": "/images/products/led-screens/high-impact-outdoor-display-19-6-x-8-2/main.jpg",
+    "image": "/images/products/led-screens/high-impact-outdoor-display-19-6-x-8-2/main.webp",
     "images": [
-      "/images/products/led-screens/high-impact-outdoor-display-19-6-x-8-2/main.jpg",
-      "/images/products/led-screens/high-impact-outdoor-display-19-6-x-8-2/1.jpg"
+      "/images/products/led-screens/high-impact-outdoor-display-19-6-x-8-2/main.webp",
+      "/images/products/led-screens/high-impact-outdoor-display-19-6-x-8-2/1.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -1939,11 +1939,11 @@ export const products: Product[] = [
     "price": 3639,
     "originalPrice": 4089,
     "discount": 11,
-    "image": "/images/products/led-screens/led-video-wall-16-4ft-x-9-84ft/main.jpg",
+    "image": "/images/products/led-screens/led-video-wall-16-4ft-x-9-84ft/main.webp",
     "images": [
-      "/images/products/led-screens/led-video-wall-16-4ft-x-9-84ft/main.jpg",
-      "/images/products/led-screens/led-video-wall-16-4ft-x-9-84ft/1.jpg",
-      "/images/products/led-screens/led-video-wall-16-4ft-x-9-84ft/2.jpg"
+      "/images/products/led-screens/led-video-wall-16-4ft-x-9-84ft/main.webp",
+      "/images/products/led-screens/led-video-wall-16-4ft-x-9-84ft/1.webp",
+      "/images/products/led-screens/led-video-wall-16-4ft-x-9-84ft/2.webp"
     ],
     "features": [
       "P2.6mm Pixel Pitch",
@@ -1993,10 +1993,10 @@ export const products: Product[] = [
     "price": 3639,
     "originalPrice": 3959,
     "discount": 8,
-    "image": "/images/products/led-screens/large-scale-indoor-display-19-6-x-8-2/main.jpg",
+    "image": "/images/products/led-screens/large-scale-indoor-display-19-6-x-8-2/main.webp",
     "images": [
-      "/images/products/led-screens/large-scale-indoor-display-19-6-x-8-2/main.jpg",
-      "/images/products/led-screens/large-scale-indoor-display-19-6-x-8-2/1.jpg"
+      "/images/products/led-screens/large-scale-indoor-display-19-6-x-8-2/main.webp",
+      "/images/products/led-screens/large-scale-indoor-display-19-6-x-8-2/1.webp"
     ],
     "features": [
       "P2.6mm Pixel Pitch",
@@ -2046,9 +2046,9 @@ export const products: Product[] = [
     "price": 3639,
     "originalPrice": 4039,
     "discount": 10,
-    "image": "/images/products/led-screens/mid-size-indoor-screen-16-4-x-9-8/main.jpg",
+    "image": "/images/products/led-screens/mid-size-indoor-screen-16-4-x-9-8/main.webp",
     "images": [
-      "/images/products/led-screens/mid-size-indoor-screen-16-4-x-9-8/main.jpg"
+      "/images/products/led-screens/mid-size-indoor-screen-16-4-x-9-8/main.webp"
     ],
     "features": [
       "P2.6mm Pixel Pitch",
@@ -2098,9 +2098,9 @@ export const products: Product[] = [
     "price": 3639,
     "originalPrice": 4139,
     "discount": 12,
-    "image": "/images/products/led-screens/standard-outdoor-screen-16-4-x-9-8/main.jpg",
+    "image": "/images/products/led-screens/standard-outdoor-screen-16-4-x-9-8/main.webp",
     "images": [
-      "/images/products/led-screens/standard-outdoor-screen-16-4-x-9-8/main.jpg"
+      "/images/products/led-screens/standard-outdoor-screen-16-4-x-9-8/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -2150,10 +2150,10 @@ export const products: Product[] = [
     "price": 3449,
     "originalPrice": 3959,
     "discount": 13,
-    "image": "/images/products/led-screens/event-hall-led-display-15-x-10/main.jpg",
+    "image": "/images/products/led-screens/event-hall-led-display-15-x-10/main.webp",
     "images": [
-      "/images/products/led-screens/event-hall-led-display-15-x-10/main.jpg",
-      "/images/products/led-screens/event-hall-led-display-15-x-10/1.jpg"
+      "/images/products/led-screens/event-hall-led-display-15-x-10/main.webp",
+      "/images/products/led-screens/event-hall-led-display-15-x-10/1.webp"
     ],
     "features": [
       "P2.6mm Pixel Pitch",
@@ -2203,9 +2203,9 @@ export const products: Product[] = [
     "price": 3449,
     "originalPrice": 3829,
     "discount": 10,
-    "image": "/images/products/led-screens/gallery-wall-display-15-x-10/main.jpg",
+    "image": "/images/products/led-screens/gallery-wall-display-15-x-10/main.webp",
     "images": [
-      "/images/products/led-screens/gallery-wall-display-15-x-10/main.jpg"
+      "/images/products/led-screens/gallery-wall-display-15-x-10/main.webp"
     ],
     "features": [
       "P2.6mm Pixel Pitch",
@@ -2255,10 +2255,10 @@ export const products: Product[] = [
     "price": 2959,
     "originalPrice": 3399,
     "discount": 13,
-    "image": "/images/products/led-screens/dynamic-mid-sized-outdoor-display-14-7-x-8-2/main.jpg",
+    "image": "/images/products/led-screens/dynamic-mid-sized-outdoor-display-14-7-x-8-2/main.webp",
     "images": [
-      "/images/products/led-screens/dynamic-mid-sized-outdoor-display-14-7-x-8-2/main.jpg",
-      "/images/products/led-screens/dynamic-mid-sized-outdoor-display-14-7-x-8-2/1.jpg"
+      "/images/products/led-screens/dynamic-mid-sized-outdoor-display-14-7-x-8-2/main.webp",
+      "/images/products/led-screens/dynamic-mid-sized-outdoor-display-14-7-x-8-2/1.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -2308,11 +2308,11 @@ export const products: Product[] = [
     "price": 2959,
     "originalPrice": 3319,
     "discount": 11,
-    "image": "/images/products/led-screens/led-video-wall-14-76ft-x-8-2ft/main.jpg",
+    "image": "/images/products/led-screens/led-video-wall-14-76ft-x-8-2ft/main.webp",
     "images": [
-      "/images/products/led-screens/led-video-wall-14-76ft-x-8-2ft/main.jpg",
-      "/images/products/led-screens/led-video-wall-14-76ft-x-8-2ft/1.jpg",
-      "/images/products/led-screens/led-video-wall-14-76ft-x-8-2ft/2.jpg"
+      "/images/products/led-screens/led-video-wall-14-76ft-x-8-2ft/main.webp",
+      "/images/products/led-screens/led-video-wall-14-76ft-x-8-2ft/1.webp",
+      "/images/products/led-screens/led-video-wall-14-76ft-x-8-2ft/2.webp"
     ],
     "features": [
       "P2.6mm Pixel Pitch",
@@ -2362,9 +2362,9 @@ export const products: Product[] = [
     "price": 2959,
     "originalPrice": 3359,
     "discount": 12,
-    "image": "/images/products/led-screens/versatile-mid-sized-indoor-display-14-7-x-8-2/main.jpg",
+    "image": "/images/products/led-screens/versatile-mid-sized-indoor-display-14-7-x-8-2/main.webp",
     "images": [
-      "/images/products/led-screens/versatile-mid-sized-indoor-display-14-7-x-8-2/main.jpg"
+      "/images/products/led-screens/versatile-mid-sized-indoor-display-14-7-x-8-2/main.webp"
     ],
     "features": [
       "P2.6mm Pixel Pitch",
@@ -2414,9 +2414,9 @@ export const products: Product[] = [
     "price": 2939,
     "originalPrice": 3229,
     "discount": 9,
-    "image": "/images/products/led-screens/conference-room-presentation-screen-15-x-8/main.jpg",
+    "image": "/images/products/led-screens/conference-room-presentation-screen-15-x-8/main.webp",
     "images": [
-      "/images/products/led-screens/conference-room-presentation-screen-15-x-8/main.jpg"
+      "/images/products/led-screens/conference-room-presentation-screen-15-x-8/main.webp"
     ],
     "features": [
       "P2.6mm Pixel Pitch",
@@ -2466,10 +2466,10 @@ export const products: Product[] = [
     "price": 2939,
     "originalPrice": 3379,
     "discount": 13,
-    "image": "/images/products/led-screens/lobby-information-screen-15-x-8/main.jpg",
+    "image": "/images/products/led-screens/lobby-information-screen-15-x-8/main.webp",
     "images": [
-      "/images/products/led-screens/lobby-information-screen-15-x-8/main.jpg",
-      "/images/products/led-screens/lobby-information-screen-15-x-8/1.jpg"
+      "/images/products/led-screens/lobby-information-screen-15-x-8/main.webp",
+      "/images/products/led-screens/lobby-information-screen-15-x-8/1.webp"
     ],
     "features": [
       "P2.6mm Pixel Pitch",
@@ -2519,9 +2519,9 @@ export const products: Product[] = [
     "price": 2939,
     "originalPrice": 3299,
     "discount": 11,
-    "image": "/images/products/led-screens/local-billboard-led-panel-15-x-8/main.jpg",
+    "image": "/images/products/led-screens/local-billboard-led-panel-15-x-8/main.webp",
     "images": [
-      "/images/products/led-screens/local-billboard-led-panel-15-x-8/main.jpg"
+      "/images/products/led-screens/local-billboard-led-panel-15-x-8/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -2571,9 +2571,9 @@ export const products: Product[] = [
     "price": 2939,
     "originalPrice": 3229,
     "discount": 9,
-    "image": "/images/products/led-screens/pulpit-display-screen-15-x-8/main.jpg",
+    "image": "/images/products/led-screens/pulpit-display-screen-15-x-8/main.webp",
     "images": [
-      "/images/products/led-screens/pulpit-display-screen-15-x-8/main.jpg"
+      "/images/products/led-screens/pulpit-display-screen-15-x-8/main.webp"
     ],
     "features": [
       "P2.6mm Pixel Pitch",
@@ -2623,9 +2623,9 @@ export const products: Product[] = [
     "price": 2529,
     "originalPrice": 2839,
     "discount": 11,
-    "image": "/images/products/led-screens/compact-scoreboard-led-panel-12-x-8/main.jpg",
+    "image": "/images/products/led-screens/compact-scoreboard-led-panel-12-x-8/main.webp",
     "images": [
-      "/images/products/led-screens/compact-scoreboard-led-panel-12-x-8/main.jpg"
+      "/images/products/led-screens/compact-scoreboard-led-panel-12-x-8/main.webp"
     ],
     "features": [
       "P2.6mm Pixel Pitch",
@@ -2675,9 +2675,9 @@ export const products: Product[] = [
     "price": 2189,
     "originalPrice": 2489,
     "discount": 12,
-    "image": "/images/products/led-screens/compact-indoor-screen-11-5-x-6-6/main.jpg",
+    "image": "/images/products/led-screens/compact-indoor-screen-11-5-x-6-6/main.webp",
     "images": [
-      "/images/products/led-screens/compact-indoor-screen-11-5-x-6-6/main.jpg"
+      "/images/products/led-screens/compact-indoor-screen-11-5-x-6-6/main.webp"
     ],
     "features": [
       "P2.6mm Pixel Pitch",
@@ -2727,9 +2727,9 @@ export const products: Product[] = [
     "price": 2189,
     "originalPrice": 2409,
     "discount": 9,
-    "image": "/images/products/led-screens/portable-outdoor-screen-11-5-x-6-6/main.jpg",
+    "image": "/images/products/led-screens/portable-outdoor-screen-11-5-x-6-6/main.webp",
     "images": [
-      "/images/products/led-screens/portable-outdoor-screen-11-5-x-6-6/main.jpg"
+      "/images/products/led-screens/portable-outdoor-screen-11-5-x-6-6/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -2779,17 +2779,16 @@ export const products: Product[] = [
     "price": 2179,
     "originalPrice": 2419,
     "discount": 10,
-    "image": "/images/products/led-screens/led-video-wall-11-48ft-x-6-56ft/main.jpg",
+    "image": "/images/products/led-screens/led-video-wall-11-48ft-x-6-56ft/main.webp",
     "images": [
-      "/images/products/led-screens/led-video-wall-11-48ft-x-6-56ft/main.jpg",
-      "/images/products/led-screens/led-video-wall-11-48ft-x-6-56ft/1.jpg",
-      "/images/products/led-screens/led-video-wall-11-48ft-x-6-56ft/2.jpg",
-      "/images/products/led-screens/led-video-wall-11-48ft-x-6-56ft/3.jpg",
-      "/images/products/led-screens/led-video-wall-11-48ft-x-6-56ft/4.jpg",
-      "/images/products/led-screens/led-video-wall-11-48ft-x-6-56ft/5.jpg",
-      "/images/products/led-screens/led-video-wall-11-48ft-x-6-56ft/6.jpg",
-      "/images/products/led-screens/led-video-wall-11-48ft-x-6-56ft/7.jpg",
-      "/images/products/led-screens/led-video-wall-11-48ft-x-6-56ft/8.jpg"
+      "/images/products/led-screens/led-video-wall-11-48ft-x-6-56ft/main.webp",
+      "/images/products/led-screens/led-video-wall-11-48ft-x-6-56ft/1.webp",
+      "/images/products/led-screens/led-video-wall-11-48ft-x-6-56ft/2.webp",
+      "/images/products/led-screens/led-video-wall-11-48ft-x-6-56ft/3.webp",
+      "/images/products/led-screens/led-video-wall-11-48ft-x-6-56ft/4.webp",
+      "/images/products/led-screens/led-video-wall-11-48ft-x-6-56ft/5.webp",
+      "/images/products/led-screens/led-video-wall-11-48ft-x-6-56ft/6.webp",
+      "/images/products/led-screens/led-video-wall-11-48ft-x-6-56ft/7.webp"
     ],
     "features": [
       "P2.6mm Pixel Pitch",
@@ -2839,9 +2838,9 @@ export const products: Product[] = [
     "price": 1919,
     "originalPrice": 2179,
     "discount": 12,
-    "image": "/images/products/led-screens/exhibitor-booth-led-screen-10-x-6/main.jpg",
+    "image": "/images/products/led-screens/exhibitor-booth-led-screen-10-x-6/main.webp",
     "images": [
-      "/images/products/led-screens/exhibitor-booth-led-screen-10-x-6/main.jpg"
+      "/images/products/led-screens/exhibitor-booth-led-screen-10-x-6/main.webp"
     ],
     "features": [
       "P2.6mm Pixel Pitch",
@@ -2891,9 +2890,9 @@ export const products: Product[] = [
     "price": 1919,
     "originalPrice": 2209,
     "discount": 13,
-    "image": "/images/products/led-screens/gate-information-display-10-x-6/main.jpg",
+    "image": "/images/products/led-screens/gate-information-display-10-x-6/main.webp",
     "images": [
-      "/images/products/led-screens/gate-information-display-10-x-6/main.jpg"
+      "/images/products/led-screens/gate-information-display-10-x-6/main.webp"
     ],
     "features": [
       "P3.9mm Pixel Pitch",
@@ -2943,9 +2942,9 @@ export const products: Product[] = [
     "price": 1919,
     "originalPrice": 2089,
     "discount": 8,
-    "image": "/images/products/led-screens/lecture-hall-display-screen-10-x-6/main.jpg",
+    "image": "/images/products/led-screens/lecture-hall-display-screen-10-x-6/main.webp",
     "images": [
-      "/images/products/led-screens/lecture-hall-display-screen-10-x-6/main.jpg"
+      "/images/products/led-screens/lecture-hall-display-screen-10-x-6/main.webp"
     ],
     "features": [
       "P2.6mm Pixel Pitch",
@@ -2995,9 +2994,9 @@ export const products: Product[] = [
     "price": 1749,
     "originalPrice": 1989,
     "discount": 12,
-    "image": "/images/products/led-screens/compact-interactive-led-panel-10-x-5/main.jpg",
+    "image": "/images/products/led-screens/compact-interactive-led-panel-10-x-5/main.webp",
     "images": [
-      "/images/products/led-screens/compact-interactive-led-panel-10-x-5/main.jpg"
+      "/images/products/led-screens/compact-interactive-led-panel-10-x-5/main.webp"
     ],
     "features": [
       "P1.9mm Pixel Pitch",
@@ -3047,9 +3046,9 @@ export const products: Product[] = [
     "price": 1719,
     "originalPrice": 1949,
     "discount": 12,
-    "image": "/images/products/led-screens/exhibit-interactive-led-panel-8-x-6/main.jpg",
+    "image": "/images/products/led-screens/exhibit-interactive-led-panel-8-x-6/main.webp",
     "images": [
-      "/images/products/led-screens/exhibit-interactive-led-panel-8-x-6/main.jpg"
+      "/images/products/led-screens/exhibit-interactive-led-panel-8-x-6/main.webp"
     ],
     "features": [
       "P1.9mm Pixel Pitch",
@@ -3099,9 +3098,9 @@ export const products: Product[] = [
     "price": 1719,
     "originalPrice": 1869,
     "discount": 8,
-    "image": "/images/products/led-screens/slot-area-led-signage-8-x-6/main.jpg",
+    "image": "/images/products/led-screens/slot-area-led-signage-8-x-6/main.webp",
     "images": [
-      "/images/products/led-screens/slot-area-led-signage-8-x-6/main.jpg"
+      "/images/products/led-screens/slot-area-led-signage-8-x-6/main.webp"
     ],
     "features": [
       "P1.9mm Pixel Pitch",
@@ -3151,11 +3150,11 @@ export const products: Product[] = [
     "price": 1579,
     "originalPrice": 1789,
     "discount": 12,
-    "image": "/images/products/led-screens/led-video-wall-8-2ft-x-4-92ft/main.jpg",
+    "image": "/images/products/led-screens/led-video-wall-8-2ft-x-4-92ft/main.webp",
     "images": [
-      "/images/products/led-screens/led-video-wall-8-2ft-x-4-92ft/main.jpg",
-      "/images/products/led-screens/led-video-wall-8-2ft-x-4-92ft/1.jpg",
-      "/images/products/led-screens/led-video-wall-8-2ft-x-4-92ft/2.jpg"
+      "/images/products/led-screens/led-video-wall-8-2ft-x-4-92ft/main.webp",
+      "/images/products/led-screens/led-video-wall-8-2ft-x-4-92ft/1.webp",
+      "/images/products/led-screens/led-video-wall-8-2ft-x-4-92ft/2.webp"
     ],
     "features": [
       "P1.9mm Pixel Pitch",
@@ -3205,15 +3204,15 @@ export const products: Product[] = [
     "price": 1579,
     "originalPrice": 1719,
     "discount": 8,
-    "image": "/images/products/led-screens/lobby-information-led-screen-8-x-5/main.jpg",
+    "image": "/images/products/led-screens/lobby-information-led-screen-8-x-5/main.webp",
     "images": [
-      "/images/products/led-screens/lobby-information-led-screen-8-x-5/main.jpg",
-      "/images/products/led-screens/lobby-information-led-screen-8-x-5/1.jpg",
-      "/images/products/led-screens/lobby-information-led-screen-8-x-5/2.jpg",
-      "/images/products/led-screens/lobby-information-led-screen-8-x-5/3.jpg",
-      "/images/products/led-screens/lobby-information-led-screen-8-x-5/4.jpg",
-      "/images/products/led-screens/lobby-information-led-screen-8-x-5/5.jpg",
-      "/images/products/led-screens/lobby-information-led-screen-8-x-5/6.jpg"
+      "/images/products/led-screens/lobby-information-led-screen-8-x-5/main.webp",
+      "/images/products/led-screens/lobby-information-led-screen-8-x-5/1.webp",
+      "/images/products/led-screens/lobby-information-led-screen-8-x-5/2.webp",
+      "/images/products/led-screens/lobby-information-led-screen-8-x-5/3.webp",
+      "/images/products/led-screens/lobby-information-led-screen-8-x-5/4.webp",
+      "/images/products/led-screens/lobby-information-led-screen-8-x-5/5.webp",
+      "/images/products/led-screens/lobby-information-led-screen-8-x-5/6.webp"
     ],
     "features": [
       "P1.9mm Pixel Pitch",
@@ -3263,9 +3262,9 @@ export const products: Product[] = [
     "price": 1439,
     "originalPrice": 1599,
     "discount": 10,
-    "image": "/images/products/led-screens/lobby-branding-led-display-8-x-4/main.jpg",
+    "image": "/images/products/led-screens/lobby-branding-led-display-8-x-4/main.webp",
     "images": [
-      "/images/products/led-screens/lobby-branding-led-display-8-x-4/main.jpg"
+      "/images/products/led-screens/lobby-branding-led-display-8-x-4/main.webp"
     ],
     "features": [
       "P1.9mm Pixel Pitch",
@@ -3315,10 +3314,10 @@ export const products: Product[] = [
     "price": 1439,
     "originalPrice": 1649,
     "discount": 13,
-    "image": "/images/products/led-screens/patient-waiting-area-display-8-x-4/main.jpg",
+    "image": "/images/products/led-screens/patient-waiting-area-display-8-x-4/main.webp",
     "images": [
-      "/images/products/led-screens/patient-waiting-area-display-8-x-4/main.jpg",
-      "/images/products/led-screens/patient-waiting-area-display-8-x-4/1.jpg"
+      "/images/products/led-screens/patient-waiting-area-display-8-x-4/main.webp",
+      "/images/products/led-screens/patient-waiting-area-display-8-x-4/1.webp"
     ],
     "features": [
       "P1.9mm Pixel Pitch",
@@ -3368,9 +3367,9 @@ export const products: Product[] = [
     "price": 1439,
     "originalPrice": 1599,
     "discount": 10,
-    "image": "/images/products/led-screens/small-worship-screen-8-x-4/main.jpg",
+    "image": "/images/products/led-screens/small-worship-screen-8-x-4/main.webp",
     "images": [
-      "/images/products/led-screens/small-worship-screen-8-x-4/main.jpg"
+      "/images/products/led-screens/small-worship-screen-8-x-4/main.webp"
     ],
     "features": [
       "P1.9mm Pixel Pitch",
@@ -3415,26 +3414,16 @@ export const products: Product[] = [
     "price": 1449,
     "originalPrice": 1669,
     "discount": 13,
-    "image": "/images/products/dj-setups/dj-setup-04/main.jpg",
+    "image": "/images/products/dj-setups/dj-setup-04/main.webp",
     "images": [
-      "/images/products/dj-setups/dj-setup-04/main.jpg",
-      "/images/products/dj-setups/dj-setup-04/1.jpg",
-      "/images/products/dj-setups/dj-setup-04/2.jpg",
-      "/images/products/dj-setups/dj-setup-04/3.jpg",
-      "/images/products/dj-setups/dj-setup-04/4.jpg",
-      "/images/products/dj-setups/dj-setup-04/5.jpg",
-      "/images/products/dj-setups/dj-setup-04/6.jpg",
-      "/images/products/dj-setups/dj-setup-04/7.jpg",
-      "/images/products/dj-setups/dj-setup-04/8.jpg",
-      "/images/products/dj-setups/dj-setup-04/9.jpg",
-      "/images/products/dj-setups/dj-setup-04/10.jpg",
-      "/images/products/dj-setups/dj-setup-04/11.jpg",
-      "/images/products/dj-setups/dj-setup-04/12.jpg",
-      "/images/products/dj-setups/dj-setup-04/13.jpg",
-      "/images/products/dj-setups/dj-setup-04/14.jpg",
-      "/images/products/dj-setups/dj-setup-04/15.jpg",
-      "/images/products/dj-setups/dj-setup-04/16.jpg",
-      "/images/products/dj-setups/dj-setup-04/17.jpg"
+      "/images/products/dj-setups/dj-setup-04/main.webp",
+      "/images/products/dj-setups/dj-setup-04/1.webp",
+      "/images/products/dj-setups/dj-setup-04/2.webp",
+      "/images/products/dj-setups/dj-setup-04/3.webp",
+      "/images/products/dj-setups/dj-setup-04/4.webp",
+      "/images/products/dj-setups/dj-setup-04/5.webp",
+      "/images/products/dj-setups/dj-setup-04/6.webp",
+      "/images/products/dj-setups/dj-setup-04/7.webp"
     ],
     "features": [
       "Professional Grade",
@@ -3470,40 +3459,16 @@ export const products: Product[] = [
     "price": 1399,
     "originalPrice": 1589,
     "discount": 12,
-    "image": "/images/products/dj-setups/dj-setup-03/main.jpg",
+    "image": "/images/products/dj-setups/dj-setup-03/main.webp",
     "images": [
-      "/images/products/dj-setups/dj-setup-03/main.jpg",
-      "/images/products/dj-setups/dj-setup-03/1.jpg",
-      "/images/products/dj-setups/dj-setup-03/2.jpg",
-      "/images/products/dj-setups/dj-setup-03/3.jpg",
-      "/images/products/dj-setups/dj-setup-03/4.jpg",
-      "/images/products/dj-setups/dj-setup-03/5.jpg",
-      "/images/products/dj-setups/dj-setup-03/6.jpg",
-      "/images/products/dj-setups/dj-setup-03/7.jpg",
-      "/images/products/dj-setups/dj-setup-03/8.jpg",
-      "/images/products/dj-setups/dj-setup-03/9.jpg",
-      "/images/products/dj-setups/dj-setup-03/10.jpg",
-      "/images/products/dj-setups/dj-setup-03/11.jpg",
-      "/images/products/dj-setups/dj-setup-03/12.jpg",
-      "/images/products/dj-setups/dj-setup-03/13.jpg",
-      "/images/products/dj-setups/dj-setup-03/14.jpg",
-      "/images/products/dj-setups/dj-setup-03/15.jpg",
-      "/images/products/dj-setups/dj-setup-03/16.jpg",
-      "/images/products/dj-setups/dj-setup-03/17.jpg",
-      "/images/products/dj-setups/dj-setup-03/18.jpg",
-      "/images/products/dj-setups/dj-setup-03/19.jpg",
-      "/images/products/dj-setups/dj-setup-03/20.jpg",
-      "/images/products/dj-setups/dj-setup-03/21.jpg",
-      "/images/products/dj-setups/dj-setup-03/22.jpg",
-      "/images/products/dj-setups/dj-setup-03/23.jpg",
-      "/images/products/dj-setups/dj-setup-03/24.jpg",
-      "/images/products/dj-setups/dj-setup-03/25.jpg",
-      "/images/products/dj-setups/dj-setup-03/26.jpg",
-      "/images/products/dj-setups/dj-setup-03/27.jpg",
-      "/images/products/dj-setups/dj-setup-03/28.jpg",
-      "/images/products/dj-setups/dj-setup-03/29.jpg",
-      "/images/products/dj-setups/dj-setup-03/30.jpg",
-      "/images/products/dj-setups/dj-setup-03/31.jpg"
+      "/images/products/dj-setups/dj-setup-03/main.webp",
+      "/images/products/dj-setups/dj-setup-03/1.webp",
+      "/images/products/dj-setups/dj-setup-03/2.webp",
+      "/images/products/dj-setups/dj-setup-03/3.webp",
+      "/images/products/dj-setups/dj-setup-03/4.webp",
+      "/images/products/dj-setups/dj-setup-03/5.webp",
+      "/images/products/dj-setups/dj-setup-03/6.webp",
+      "/images/products/dj-setups/dj-setup-03/7.webp"
     ],
     "features": [
       "Professional Grade",
@@ -3539,40 +3504,16 @@ export const products: Product[] = [
     "price": 1349,
     "originalPrice": 1519,
     "discount": 11,
-    "image": "/images/products/dj-setups/dj-setup-02/main.jpg",
+    "image": "/images/products/dj-setups/dj-setup-02/main.webp",
     "images": [
-      "/images/products/dj-setups/dj-setup-02/main.jpg",
-      "/images/products/dj-setups/dj-setup-02/1.jpg",
-      "/images/products/dj-setups/dj-setup-02/2.jpg",
-      "/images/products/dj-setups/dj-setup-02/3.jpg",
-      "/images/products/dj-setups/dj-setup-02/4.jpg",
-      "/images/products/dj-setups/dj-setup-02/5.jpg",
-      "/images/products/dj-setups/dj-setup-02/6.jpg",
-      "/images/products/dj-setups/dj-setup-02/7.jpg",
-      "/images/products/dj-setups/dj-setup-02/8.jpg",
-      "/images/products/dj-setups/dj-setup-02/9.jpg",
-      "/images/products/dj-setups/dj-setup-02/10.jpg",
-      "/images/products/dj-setups/dj-setup-02/11.jpg",
-      "/images/products/dj-setups/dj-setup-02/12.jpg",
-      "/images/products/dj-setups/dj-setup-02/13.jpg",
-      "/images/products/dj-setups/dj-setup-02/14.jpg",
-      "/images/products/dj-setups/dj-setup-02/15.jpg",
-      "/images/products/dj-setups/dj-setup-02/16.jpg",
-      "/images/products/dj-setups/dj-setup-02/17.jpg",
-      "/images/products/dj-setups/dj-setup-02/18.jpg",
-      "/images/products/dj-setups/dj-setup-02/19.jpg",
-      "/images/products/dj-setups/dj-setup-02/20.jpg",
-      "/images/products/dj-setups/dj-setup-02/21.jpg",
-      "/images/products/dj-setups/dj-setup-02/22.jpg",
-      "/images/products/dj-setups/dj-setup-02/23.jpg",
-      "/images/products/dj-setups/dj-setup-02/24.jpg",
-      "/images/products/dj-setups/dj-setup-02/25.jpg",
-      "/images/products/dj-setups/dj-setup-02/26.jpg",
-      "/images/products/dj-setups/dj-setup-02/27.jpg",
-      "/images/products/dj-setups/dj-setup-02/28.jpg",
-      "/images/products/dj-setups/dj-setup-02/29.jpg",
-      "/images/products/dj-setups/dj-setup-02/30.jpg",
-      "/images/products/dj-setups/dj-setup-02/31.jpg"
+      "/images/products/dj-setups/dj-setup-02/main.webp",
+      "/images/products/dj-setups/dj-setup-02/1.webp",
+      "/images/products/dj-setups/dj-setup-02/2.webp",
+      "/images/products/dj-setups/dj-setup-02/3.webp",
+      "/images/products/dj-setups/dj-setup-02/4.webp",
+      "/images/products/dj-setups/dj-setup-02/5.webp",
+      "/images/products/dj-setups/dj-setup-02/6.webp",
+      "/images/products/dj-setups/dj-setup-02/7.webp"
     ],
     "features": [
       "Professional Grade",
@@ -3609,40 +3550,16 @@ export const products: Product[] = [
     "price": 1299,
     "originalPrice": 1439,
     "discount": 10,
-    "image": "/images/products/dj-setups/dj-setup-01/main.jpg",
+    "image": "/images/products/dj-setups/dj-setup-01/main.webp",
     "images": [
-      "/images/products/dj-setups/dj-setup-01/main.jpg",
-      "/images/products/dj-setups/dj-setup-01/1.jpg",
-      "/images/products/dj-setups/dj-setup-01/2.jpg",
-      "/images/products/dj-setups/dj-setup-01/3.jpg",
-      "/images/products/dj-setups/dj-setup-01/4.jpg",
-      "/images/products/dj-setups/dj-setup-01/5.jpg",
-      "/images/products/dj-setups/dj-setup-01/6.jpg",
-      "/images/products/dj-setups/dj-setup-01/7.jpg",
-      "/images/products/dj-setups/dj-setup-01/8.jpg",
-      "/images/products/dj-setups/dj-setup-01/9.jpg",
-      "/images/products/dj-setups/dj-setup-01/10.jpg",
-      "/images/products/dj-setups/dj-setup-01/11.jpg",
-      "/images/products/dj-setups/dj-setup-01/12.jpg",
-      "/images/products/dj-setups/dj-setup-01/13.jpg",
-      "/images/products/dj-setups/dj-setup-01/14.jpg",
-      "/images/products/dj-setups/dj-setup-01/15.jpg",
-      "/images/products/dj-setups/dj-setup-01/16.jpg",
-      "/images/products/dj-setups/dj-setup-01/17.jpg",
-      "/images/products/dj-setups/dj-setup-01/18.jpg",
-      "/images/products/dj-setups/dj-setup-01/19.jpg",
-      "/images/products/dj-setups/dj-setup-01/20.jpg",
-      "/images/products/dj-setups/dj-setup-01/21.jpg",
-      "/images/products/dj-setups/dj-setup-01/22.jpg",
-      "/images/products/dj-setups/dj-setup-01/23.jpg",
-      "/images/products/dj-setups/dj-setup-01/24.jpg",
-      "/images/products/dj-setups/dj-setup-01/25.jpg",
-      "/images/products/dj-setups/dj-setup-01/26.jpg",
-      "/images/products/dj-setups/dj-setup-01/27.jpg",
-      "/images/products/dj-setups/dj-setup-01/28.jpg",
-      "/images/products/dj-setups/dj-setup-01/29.jpg",
-      "/images/products/dj-setups/dj-setup-01/30.jpg",
-      "/images/products/dj-setups/dj-setup-01/31.jpg"
+      "/images/products/dj-setups/dj-setup-01/main.webp",
+      "/images/products/dj-setups/dj-setup-01/1.webp",
+      "/images/products/dj-setups/dj-setup-01/2.webp",
+      "/images/products/dj-setups/dj-setup-01/3.webp",
+      "/images/products/dj-setups/dj-setup-01/4.webp",
+      "/images/products/dj-setups/dj-setup-01/5.webp",
+      "/images/products/dj-setups/dj-setup-01/6.webp",
+      "/images/products/dj-setups/dj-setup-01/7.webp"
     ],
     "features": [
       "Professional Grade",
@@ -3679,11 +3596,11 @@ export const products: Product[] = [
     "price": 3049,
     "originalPrice": 3499,
     "discount": 13,
-    "image": "/images/products/sound-lighting/lacoustics-syva-500-package/main.jpg",
+    "image": "/images/products/sound-lighting/lacoustics-syva-500-package/main.webp",
     "images": [
-      "/images/products/sound-lighting/lacoustics-syva-500-package/main.jpg",
-      "/images/products/sound-lighting/lacoustics-syva-500-package/1.jpg",
-      "/images/products/sound-lighting/lacoustics-syva-500-package/2.jpg"
+      "/images/products/sound-lighting/lacoustics-syva-500-package/main.webp",
+      "/images/products/sound-lighting/lacoustics-syva-500-package/1.webp",
+      "/images/products/sound-lighting/lacoustics-syva-500-package/2.webp"
     ],
     "features": [
       "Professional Grade",
@@ -3719,9 +3636,9 @@ export const products: Product[] = [
     "price": 2899,
     "originalPrice": 3219,
     "discount": 10,
-    "image": "/images/products/sound-lighting/lacoustics-a15-fest-1000-package/main.jpg",
+    "image": "/images/products/sound-lighting/lacoustics-a15-fest-1000-package/main.webp",
     "images": [
-      "/images/products/sound-lighting/lacoustics-a15-fest-1000-package/main.jpg"
+      "/images/products/sound-lighting/lacoustics-a15-fest-1000-package/main.webp"
     ],
     "features": [
       "Professional Grade",
@@ -3757,9 +3674,9 @@ export const products: Product[] = [
     "price": 2899,
     "originalPrice": 3219,
     "discount": 10,
-    "image": "/images/products/sound-lighting/lacoustics-syva-350-package/main.jpg",
+    "image": "/images/products/sound-lighting/lacoustics-syva-350-package/main.webp",
     "images": [
-      "/images/products/sound-lighting/lacoustics-syva-350-package/main.jpg"
+      "/images/products/sound-lighting/lacoustics-syva-350-package/main.webp"
     ],
     "features": [
       "Professional Grade",
@@ -3795,9 +3712,9 @@ export const products: Product[] = [
     "price": 2799,
     "originalPrice": 3039,
     "discount": 8,
-    "image": "/images/products/sound-lighting/lacoustics-just-syva-package/main.jpg",
+    "image": "/images/products/sound-lighting/lacoustics-just-syva-package/main.webp",
     "images": [
-      "/images/products/sound-lighting/lacoustics-just-syva-package/main.jpg"
+      "/images/products/sound-lighting/lacoustics-just-syva-package/main.webp"
     ],
     "features": [
       "Professional Grade",
@@ -3833,9 +3750,9 @@ export const products: Product[] = [
     "price": 2649,
     "originalPrice": 2979,
     "discount": 11,
-    "image": "/images/products/sound-lighting/lacoustics-fest-2000-package/main.jpg",
+    "image": "/images/products/sound-lighting/lacoustics-fest-2000-package/main.webp",
     "images": [
-      "/images/products/sound-lighting/lacoustics-fest-2000-package/main.jpg"
+      "/images/products/sound-lighting/lacoustics-fest-2000-package/main.webp"
     ],
     "features": [
       "Professional Grade",
@@ -3871,9 +3788,9 @@ export const products: Product[] = [
     "price": 2599,
     "originalPrice": 2889,
     "discount": 10,
-    "image": "/images/products/sound-lighting/lacoustics-a15-350-package/main.jpg",
+    "image": "/images/products/sound-lighting/lacoustics-a15-350-package/main.webp",
     "images": [
-      "/images/products/sound-lighting/lacoustics-a15-350-package/main.jpg"
+      "/images/products/sound-lighting/lacoustics-a15-350-package/main.webp"
     ],
     "features": [
       "Professional Grade",
@@ -3910,9 +3827,9 @@ export const products: Product[] = [
     "price": 2549,
     "originalPrice": 2799,
     "discount": 9,
-    "image": "/images/products/sound-lighting/lacoustics-a15-1000-package/main.jpg",
+    "image": "/images/products/sound-lighting/lacoustics-a15-1000-package/main.webp",
     "images": [
-      "/images/products/sound-lighting/lacoustics-a15-1000-package/main.jpg"
+      "/images/products/sound-lighting/lacoustics-a15-1000-package/main.webp"
     ],
     "features": [
       "Professional Grade",
@@ -3949,9 +3866,9 @@ export const products: Product[] = [
     "price": 2549,
     "originalPrice": 2799,
     "discount": 9,
-    "image": "/images/products/sound-lighting/lacoustics-a15-500-package/main.jpg",
+    "image": "/images/products/sound-lighting/lacoustics-a15-500-package/main.webp",
     "images": [
-      "/images/products/sound-lighting/lacoustics-a15-500-package/main.jpg"
+      "/images/products/sound-lighting/lacoustics-a15-500-package/main.webp"
     ],
     "features": [
       "Professional Grade",
@@ -3986,10 +3903,10 @@ export const products: Product[] = [
     "price": 1849,
     "originalPrice": 2129,
     "discount": 13,
-    "image": "/images/products/sound-lighting/light-package/main.jpg",
+    "image": "/images/products/sound-lighting/light-package/main.webp",
     "images": [
-      "/images/products/sound-lighting/light-package/main.jpg",
-      "/images/products/sound-lighting/light-package/1.jpg"
+      "/images/products/sound-lighting/light-package/main.webp",
+      "/images/products/sound-lighting/light-package/1.webp"
     ],
     "features": [
       "Professional Grade",
@@ -4026,12 +3943,12 @@ export const products: Product[] = [
     "price": 2349,
     "originalPrice": 2699,
     "discount": 13,
-    "image": "/images/products/sound-lighting/confidence-monitor/main.jpg",
+    "image": "/images/products/sound-lighting/confidence-monitor/main.webp",
     "images": [
-      "/images/products/sound-lighting/confidence-monitor/main.jpg",
-      "/images/products/sound-lighting/confidence-monitor/1.jpg",
-      "/images/products/sound-lighting/confidence-monitor/2.jpg",
-      "/images/products/sound-lighting/confidence-monitor/3.jpg"
+      "/images/products/sound-lighting/confidence-monitor/main.webp",
+      "/images/products/sound-lighting/confidence-monitor/1.webp",
+      "/images/products/sound-lighting/confidence-monitor/2.webp",
+      "/images/products/sound-lighting/confidence-monitor/3.webp"
     ],
     "features": [
       "Professional Grade",
@@ -4068,9 +3985,9 @@ export const products: Product[] = [
     "price": 2349,
     "originalPrice": 2699,
     "discount": 13,
-    "image": "/images/products/stage/package-2/main.jpg",
+    "image": "/images/products/stage/package-2/main.webp",
     "images": [
-      "/images/products/stage/package-2/main.jpg"
+      "/images/products/stage/package-2/main.webp"
     ],
     "features": [
       "Professional Grade",
@@ -4106,9 +4023,9 @@ export const products: Product[] = [
     "price": 2299,
     "originalPrice": 2609,
     "discount": 12,
-    "image": "/images/products/stage/package-1/main.jpg",
+    "image": "/images/products/stage/package-1/main.webp",
     "images": [
-      "/images/products/stage/package-1/main.jpg"
+      "/images/products/stage/package-1/main.webp"
     ],
     "features": [
       "Professional Grade",
@@ -4145,9 +4062,9 @@ export const products: Product[] = [
     "price": 2049,
     "originalPrice": 2359,
     "discount": 13,
-    "image": "/images/products/stage/package-8/main.jpg",
+    "image": "/images/products/stage/package-8/main.webp",
     "images": [
-      "/images/products/stage/package-8/main.jpg"
+      "/images/products/stage/package-8/main.webp"
     ],
     "features": [
       "Professional Grade",
@@ -4183,9 +4100,9 @@ export const products: Product[] = [
     "price": 1999,
     "originalPrice": 2269,
     "discount": 12,
-    "image": "/images/products/stage/package-7/main.jpg",
+    "image": "/images/products/stage/package-7/main.webp",
     "images": [
-      "/images/products/stage/package-7/main.jpg"
+      "/images/products/stage/package-7/main.webp"
     ],
     "features": [
       "Professional Grade",
@@ -4221,9 +4138,9 @@ export const products: Product[] = [
     "price": 1949,
     "originalPrice": 2189,
     "discount": 11,
-    "image": "/images/products/stage/package-6/main.jpg",
+    "image": "/images/products/stage/package-6/main.webp",
     "images": [
-      "/images/products/stage/package-6/main.jpg"
+      "/images/products/stage/package-6/main.webp"
     ],
     "features": [
       "Professional Grade",
