@@ -4,7 +4,7 @@ import { useState, use } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { getProductBySlug, products, CATEGORY_LABEL } from "@/lib/products-data"
+import { getProductBySlug, CATEGORY_LABEL } from "@/lib/products-data"
 import {
   ArrowLeft,
   ArrowRight,
@@ -75,10 +75,6 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
   const labelFor = (key: string) =>
     specLabels[key] || key.replace(/([A-Z])/g, " $1").replace(/^./, (c) => c.toUpperCase())
   const hasSpecs = Object.keys(product.specs || {}).length > 0
-  const relatedProducts = products
-    .filter((p) => p.id !== product.id && p.category === product.category)
-    .slice(0, 3)
-  const related = relatedProducts.length > 0 ? relatedProducts : products.filter((p) => p.id !== product.id).slice(0, 3)
 
   return (
     <>
@@ -413,43 +409,6 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Related Products */}
-        <div className="mt-20">
-          <h2 className="text-2xl font-bold text-white mb-8">You May Also Like</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {related
-              .map((p) => (
-                <Link
-                  key={p.id}
-                  href={`/shop/products/${p.slug}`}
-                  className="group rounded-xl overflow-hidden transition-all hover:-translate-y-1"
-                  style={{
-                    background: "rgba(255,255,255,0.04)",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                  }}
-                >
-                  <div className="relative aspect-video">
-                    <Image
-                      src={p.image}
-                      alt={p.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h4 className="font-bold text-white mb-1 group-hover:text-[#FF2D6F] transition-colors">
-                      {p.name}
-                    </h4>
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-lg font-bold text-white">${formatPrice(p.price)}</span>
-                      <span className="text-[12px] text-white/40">/ 24h</span>
-                    </div>
-                  </div>
-                </Link>
-              ))}
           </div>
         </div>
 
