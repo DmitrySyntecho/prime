@@ -387,8 +387,12 @@ export function getCategoryForServiceSlug(slug: string): ProductCategory | undef
 }
 `
 
-await fs.writeFile(path.join(ROOT, "lib", "products-data.ts"), header + body + footer)
-console.log(`Wrote ${products.length} products to lib/products-data.ts`)
+// Source of truth is now data/products.json (edited via the /admin panel).
+// lib/products-data.ts is a stable typed wrapper around it and is NOT regenerated.
+void header; void body; void footer // (legacy TS-emit strings, kept for reference)
+await fs.mkdir(path.join(ROOT, "data"), { recursive: true })
+await fs.writeFile(path.join(ROOT, "data", "products.json"), JSON.stringify(products, null, 2) + "\n")
+console.log(`Wrote ${products.length} products to data/products.json`)
 const byCat = {}
 for (const p of products) byCat[p.category] = (byCat[p.category] || 0) + 1
 console.log(byCat)
