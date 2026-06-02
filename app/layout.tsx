@@ -12,6 +12,7 @@ import { Footer } from "@/components/footer"
 import { BackgroundFX } from "@/components/background-fx"
 import { GlobalCTA } from "@/components/global-cta"
 import { CTMScanner } from "@/components/ctm-scanner"
+import { AnimationObserver } from "@/components/animation-observer"
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500"],
   variable: "--font-jetbrains-mono",
   display: "swap",
+  preload: false, // mono is used sparingly / below the fold — don't preload it
 })
 
 export const viewport: Viewport = {
@@ -110,6 +112,7 @@ export default function RootLayout({
               <Footer />
               <GlobalCTA />
               <CTMScanner />
+              <AnimationObserver />
             </CartProvider>
           </LanguageProvider>
         </div>

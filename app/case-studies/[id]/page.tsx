@@ -116,7 +116,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ id: 
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px]">
-        <img src={study.heroImage || "/placeholder.svg"} alt={study.title} className="w-full h-full object-cover" />
+        <img loading="lazy" decoding="async" src={study.heroImage || "/placeholder.svg"} alt={study.title} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
 
         {/* Back Button */}
