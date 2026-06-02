@@ -123,7 +123,7 @@ export function CharitySection() {
             className="absolute -top-20 -right-20 w-[320px] h-[320px] rounded-full pointer-events-none"
             style={{
               background: "radial-gradient(circle, rgba(255,45,111,0.55), transparent 70%)",
-              filter: "blur(44px)",
+              filter: "blur(80px)",
               animation: "charityGlowA 14s ease-in-out infinite",
             }}
             aria-hidden
@@ -132,7 +132,7 @@ export function CharitySection() {
             className="absolute -bottom-24 -left-24 w-[300px] h-[300px] rounded-full pointer-events-none"
             style={{
               background: "radial-gradient(circle, rgba(255,210,74,0.40), transparent 70%)",
-              filter: "blur(44px)",
+              filter: "blur(80px)",
               animation: "charityGlowB 16s ease-in-out infinite",
             }}
             aria-hidden

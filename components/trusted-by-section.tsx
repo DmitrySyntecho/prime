@@ -49,14 +49,12 @@ export function TrustedBySection() {
           {repeated.map((logo, i) => (
             <div
               key={`${direction}-${i}`}
-              className="flex-shrink-0 grid place-items-center h-[56px] min-w-[140px] px-5 mr-4 rounded-[14px] border border-white/[0.06] bg-white/[0.04]"
+              className="flex-shrink-0 grid place-items-center h-[56px] min-w-[140px] px-5 mr-4 rounded-[14px] border border-white/[0.06] bg-white/[0.03] backdrop-blur-md"
               aria-hidden={i >= items.length}
             >
               <img
                 src={logo.src}
                 alt={logo.name}
-                loading="lazy"
-                decoding="async"
                 className="h-6 md:h-7 w-auto max-w-[110px] object-contain"
                 style={{ filter: "brightness(0) invert(1) opacity(0.65)" }}
               />

@@ -78,8 +78,8 @@ export function PromoBannersSection() {
                   src={banner.image || "/placeholder.svg"}
                   alt={banner.headline}
                   fill
-                  loading="lazy"
                   className="object-cover"
+                  priority={index === 0}
                 />
 
                 {/* Gradient overlay - darker on left for text readability, lighter on right */}

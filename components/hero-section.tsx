@@ -4,10 +4,7 @@ import { useEffect, useState, useRef } from "react"
 import { ArrowRight, Play, Star, Clock, CheckCircle2 } from "lucide-react"
 import { useLanguage } from "@/lib/i18n/language-context"
 import { useCity } from "@/lib/city-context"
-import dynamic from "next/dynamic"
-
-// Loaded only when the user hits play — keeps the heavy player out of the initial bundle.
-const MuxPlayer = dynamic(() => import("@mux/mux-player-react"), { ssr: false })
+import MuxPlayer from "@mux/mux-player-react"
 
 interface HeroSectionProps {
   onStartQuote: () => void

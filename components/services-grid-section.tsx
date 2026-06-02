@@ -110,7 +110,7 @@ export function ServicesGridSection() {
                 src={service.image}
                 alt={service.title}
                 fill
-                loading="lazy"
+                priority={index < 4}
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="absolute inset-0 object-cover"
               />

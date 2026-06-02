@@ -39,7 +39,7 @@ export function FIFAPromoBanner() {
             className="absolute -top-24 -right-16 w-[400px] h-[400px] rounded-full pointer-events-none"
             style={{
               background: "radial-gradient(circle, rgba(60,172,59,0.55), transparent 70%)",
-              filter: "blur(44px)",
+              filter: "blur(80px)",
               animation: "fifaPromoOrbA 18s ease-in-out infinite",
             }}
             aria-hidden
@@ -48,7 +48,7 @@ export function FIFAPromoBanner() {
             className="absolute -bottom-24 -left-16 w-[380px] h-[380px] rounded-full pointer-events-none"
             style={{
               background: "radial-gradient(circle, rgba(42,57,141,0.50), transparent 70%)",
-              filter: "blur(44px)",
+              filter: "blur(80px)",
               animation: "fifaPromoOrbB 22s ease-in-out infinite",
             }}
             aria-hidden
@@ -57,7 +57,7 @@ export function FIFAPromoBanner() {
             className="absolute top-1/2 left-1/2 w-[260px] h-[260px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2"
             style={{
               background: "radial-gradient(circle, rgba(230,29,37,0.30), transparent 70%)",
-              filter: "blur(44px)",
+              filter: "blur(80px)",
               animation: "fifaPromoOrbC 26s ease-in-out infinite",
             }}
             aria-hidden

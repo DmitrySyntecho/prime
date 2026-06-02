@@ -3,10 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import { Sparkles, Play } from "lucide-react"
-import dynamic from "next/dynamic"
-
-// Loaded only when the user hits play — keeps the heavy player out of the initial bundle.
-const MuxPlayer = dynamic(() => import("@mux/mux-player-react"), { ssr: false })
+import MuxPlayer from "@mux/mux-player-react"
 
 // Images with Next.js Image optimization
 const images = {

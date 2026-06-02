@@ -42,7 +42,7 @@ export default function ThankYouPage() {
       {/* Hero Section with Video */}
       <section className="relative bg-[#0B1217] text-white py-12 md:py-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img loading="lazy" decoding="async" src="/images/dji-0996.jpeg" alt="" className="w-full h-full object-cover" />
+          <img src="/images/dji-0996.jpeg" alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0B1217]/90 via-[#0B1217]/80 to-[#14532D]/85" />
         </div>
 

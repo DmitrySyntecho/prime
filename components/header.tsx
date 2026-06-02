@@ -144,7 +144,7 @@ export function Header() {
         <header className="py-3">
           <div className="max-w-7xl mx-auto px-4">
             <div
-              className="flex items-center justify-between gap-4 px-5 py-3 rounded-2xl border border-white/10 backdrop-blur-md backdrop-saturate-150"
+              className="flex items-center justify-between gap-4 px-5 py-3 rounded-2xl border border-white/10 backdrop-blur-2xl backdrop-saturate-150"
               style={{
                 background: headerBg,
                 boxShadow:
@@ -214,7 +214,7 @@ export function Header() {
           style={{ top: menuTop }}
         >
           <div
-            className="rounded-2xl border border-white/10 backdrop-blur-md p-4"
+            className="rounded-2xl border border-white/10 backdrop-blur-2xl p-4"
             style={{
               background: "rgba(6, 16, 24, 0.92)",
               boxShadow: "0 12px 36px -12px rgba(0,0,0,0.6)",
