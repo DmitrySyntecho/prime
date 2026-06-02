@@ -3,7 +3,10 @@
 import { useState, useRef } from "react"
 import { ChevronLeft, ChevronRight, Play } from "lucide-react"
 import Image from "next/image"
-import MuxPlayer from "@mux/mux-player-react"
+import dynamic from "next/dynamic"
+
+// Loaded only when the user hits play — keeps the heavy player out of the initial bundle.
+const MuxPlayer = dynamic(() => import("@mux/mux-player-react"), { ssr: false })
 
 interface Testimonial {
   name: string

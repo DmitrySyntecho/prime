@@ -90,8 +90,8 @@ export function ContactSpecialistBanner({ onStartQuote, variant = "default" }: C
                       src="/egor.webp"
                       alt="Egor — AV Production Specialist"
                       fill
+                      loading="lazy"
                       className="object-cover"
-                      priority
                     />
                   </div>
                 </div>
