@@ -351,12 +351,17 @@ html, body {
   }
 }
 
-/* ============ ANIMATED BACKGROUND ============ */
+/* ============ AMBIENT BACKGROUND ============ */
+/* Keep the fixed background on its own GPU layer (translateZ) even though it's
+   static now. Previously the rotating animation forced this promotion; without
+   it, every backdrop-filter element had to re-read the root layer each frame
+   (severe scroll/idle jank). translateZ(0) restores the cheap composited path. */
 .bg-stage {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
+  transform: translateZ(0);
   background:
     radial-gradient(ellipse 70% 50% at 80% 0%, rgba(255, 45, 111, 0.18) 0%, transparent 60%),
     radial-gradient(ellipse 60% 50% at 0% 30%, rgba(124, 58, 237, 0.18) 0%, transparent 60%),
@@ -392,6 +397,7 @@ html, body {
   border-radius: 50%;
   filter: blur(64px);
   pointer-events: none;
+  transform: translateZ(0);
 }
 .bg-orb.a {
   width: 540px;
@@ -439,6 +445,7 @@ body.modal-open .bg-orb {
   background-image: url("/images/noise.png");
   background-size: 128px 128px;
   background-repeat: repeat;
+  transform: translateZ(0);
 }
 
 /* Wrapper that lifts content above background layers */
