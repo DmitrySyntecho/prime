@@ -5,6 +5,7 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    qualities: [70, 75, 80, 90],
   },
  
 }
