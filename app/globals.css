@@ -387,7 +387,7 @@ html, body {
   position: fixed;
   z-index: 1;
   border-radius: 50%;
-  filter: blur(110px);
+  filter: blur(64px);
   pointer-events: none;
   will-change: transform;
 }
@@ -419,7 +419,7 @@ html, body {
   animation: orbC 30s ease-in-out infinite;
 }
 @media (max-width: 768px) {
-  .bg-orb { filter: blur(140px); }
+  .bg-orb { filter: blur(80px); }
   .bg-orb.a { opacity: 0.30 !important; }
   .bg-orb.b { opacity: 0.26 !important; }
   .bg-orb.c { display: none; }
@@ -436,7 +436,10 @@ body.modal-open .bg-orb {
   z-index: 1;
   pointer-events: none;
   opacity: 0.04;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  /* static pre-rendered tile instead of a full-screen SVG feTurbulence filter */
+  background-image: url("/images/noise.png");
+  background-size: 128px 128px;
+  background-repeat: repeat;
 }
 
 /* Wrapper that lifts content above background layers */
