@@ -383,13 +383,15 @@ html, body {
   pointer-events: none;
 }
 
+/* Static ambient glows. Kept still on purpose: animating these under the many
+   backdrop-filter cards forced the browser to recompute every glass blur each
+   frame (jank even while idle). A fixed, non-animated layer just composites. */
 .bg-orb {
   position: fixed;
   z-index: 1;
   border-radius: 50%;
   filter: blur(64px);
   pointer-events: none;
-  will-change: transform;
 }
 .bg-orb.a {
   width: 540px;
@@ -398,7 +400,6 @@ html, body {
   top: -8%;
   right: -10%;
   opacity: 0.55;
-  animation: orbA 22s ease-in-out infinite;
 }
 .bg-orb.b {
   width: 480px;
@@ -407,7 +408,6 @@ html, body {
   bottom: 10%;
   left: -10%;
   opacity: 0.45;
-  animation: orbB 26s ease-in-out infinite;
 }
 .bg-orb.c {
   width: 400px;
@@ -416,7 +416,6 @@ html, body {
   top: 50%;
   left: 45%;
   opacity: 0.30;
-  animation: orbC 30s ease-in-out infinite;
 }
 @media (max-width: 768px) {
   .bg-orb { filter: blur(80px); }
