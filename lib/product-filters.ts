@@ -45,8 +45,8 @@ export const FILTER_META: Record<
   scale: { label: "Scale", labels: { small: "Small", medium: "Medium", large: "Large" }, order: ["small", "medium", "large"] },
   stageType: {
     label: "Stage Type",
-    labels: { outdoor: "Outdoor", portable: "Portable", round: "Round", "platform-kit": "Platform Kit" },
-    order: ["outdoor", "portable", "round", "platform-kit"],
+    labels: { led: "Stage + LED Screen", outdoor: "Outdoor", portable: "Portable", round: "Round", "platform-kit": "Platform Kit" },
+    order: ["led", "outdoor", "portable", "round", "platform-kit"],
   },
   backdrop: { label: "Backdrop", labels: { yes: "With Backdrop", no: "No Backdrop" }, order: ["yes", "no"] },
 }

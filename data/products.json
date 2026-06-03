@@ -3786,10 +3786,13 @@
     "slug": "package-2",
     "category": "stage",
     "tier": "premium",
-    "tags": [],
+    "tags": [
+      "led"
+    ],
     "filters": {
       "type": "stage",
-      "scale": "large"
+      "scale": "large",
+      "stageType": "led"
     },
     "description": "Professional stage package available for rental in Los Angeles. Delivered, installed, and supported by our technical team. Contact us for the full equipment list and availability.",
     "dimensions": "Stage Package",
@@ -3824,10 +3827,13 @@
     "slug": "package-1",
     "category": "stage",
     "tier": "basic",
-    "tags": [],
+    "tags": [
+      "led"
+    ],
     "filters": {
       "type": "stage",
-      "scale": "large"
+      "scale": "large",
+      "stageType": "led"
     },
     "description": "Professional stage package available for rental in Los Angeles. Delivered, installed, and supported by our technical team. Contact us for the full equipment list and availability.",
     "dimensions": "Stage Package",
@@ -3863,10 +3869,13 @@
     "slug": "package-8",
     "category": "stage",
     "tier": "basic",
-    "tags": [],
+    "tags": [
+      "led"
+    ],
     "filters": {
       "type": "stage",
-      "scale": "medium"
+      "scale": "medium",
+      "stageType": "led"
     },
     "description": "Professional stage package available for rental in Los Angeles. Delivered, installed, and supported by our technical team. Contact us for the full equipment list and availability.",
     "dimensions": "Stage Package",
@@ -3901,10 +3910,13 @@
     "slug": "package-7",
     "category": "stage",
     "tier": "basic",
-    "tags": [],
+    "tags": [
+      "led"
+    ],
     "filters": {
       "type": "stage",
-      "scale": "medium"
+      "scale": "medium",
+      "stageType": "led"
     },
     "description": "Professional stage package available for rental in Los Angeles. Delivered, installed, and supported by our technical team. Contact us for the full equipment list and availability.",
     "dimensions": "Stage Package",
@@ -3939,10 +3951,13 @@
     "slug": "package-6",
     "category": "stage",
     "tier": "basic",
-    "tags": [],
+    "tags": [
+      "led"
+    ],
     "filters": {
       "type": "stage",
-      "scale": "medium"
+      "scale": "medium",
+      "stageType": "led"
     },
     "description": "Professional stage package available for rental in Los Angeles. Delivered, installed, and supported by our technical team. Contact us for the full equipment list and availability.",
     "dimensions": "Stage Package",
