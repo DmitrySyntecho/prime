@@ -27,3 +27,6 @@ yarn-error.log*
 next-env.d.ts
 # raw product source images (regenerated into public/ via scripts)
 /Products
+
+# raw stage source images (optimized into public/ via scripts/import-stages.mjs)
+/stages

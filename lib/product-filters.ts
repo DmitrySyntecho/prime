@@ -43,6 +43,12 @@ export const FILTER_META: Record<
   console: { label: "Console", labels: { controller: "Controller (DDJ)", club: "Club (CDJ + Mixer)" }, order: ["controller", "club"] },
   type: { label: "Type", labels: { stage: "Stage / Deck", monitor: "Confidence Monitor", package: "Package" }, order: ["stage", "monitor", "package"] },
   scale: { label: "Scale", labels: { small: "Small", medium: "Medium", large: "Large" }, order: ["small", "medium", "large"] },
+  stageType: {
+    label: "Stage Type",
+    labels: { outdoor: "Outdoor", portable: "Portable", round: "Round", "platform-kit": "Platform Kit" },
+    order: ["outdoor", "portable", "round", "platform-kit"],
+  },
+  backdrop: { label: "Backdrop", labels: { yes: "With Backdrop", no: "No Backdrop" }, order: ["yes", "no"] },
 }
 
 /** Which filter facets apply to each category (in display order). */
@@ -50,7 +56,7 @@ export const CATEGORY_FACET_KEYS: Partial<Record<ProductCategory, string[]>> = {
   "led-screens": ["environment", "pitch", "size", "ip"],
   "sound-systems": ["capacity", "series"],
   "dj-setups": ["console", "size"],
-  stage: ["type", "scale"],
+  stage: ["stageType", "scale", "backdrop", "type"],
 }
 
 const labelFor = (key: string, value: string) => FILTER_META[key]?.labels[value] || value

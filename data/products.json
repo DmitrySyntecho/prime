@@ -3970,5 +3970,1640 @@
     "installationFee": 400,
     "rentalPeriod": "24h",
     "inStock": true
+  },
+  {
+    "id": "outdoor-stage-16ft-8ft",
+    "name": "Outdoor Stage 16′ × 8′",
+    "slug": "outdoor-stage-16ft-8ft",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "outdoor"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "outdoor",
+      "scale": "medium",
+      "backdrop": "no"
+    },
+    "description": "Professional outdoor stage (16' × 8') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "16' x 8'",
+    "price": 1109,
+    "originalPrice": 1259,
+    "discount": 12,
+    "image": "/images/products/stage/outdoor-stage-16ft-8ft/main.webp",
+    "images": [
+      "/images/products/stage/outdoor-stage-16ft-8ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 150,
+    "installationFee": 250,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "outdoor-stage-24ft-16ft",
+    "name": "Outdoor Stage 24′ × 16′",
+    "slug": "outdoor-stage-24ft-16ft",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "outdoor"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "outdoor",
+      "scale": "large",
+      "backdrop": "no"
+    },
+    "description": "Professional outdoor stage (24' × 16') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "24' x 16'",
+    "price": 2139,
+    "originalPrice": 2329,
+    "discount": 8,
+    "image": "/images/products/stage/outdoor-stage-24ft-16ft/main.webp",
+    "images": [
+      "/images/products/stage/outdoor-stage-24ft-16ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 250,
+    "installationFee": 425,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "outdoor-stage-32ft-24ft",
+    "name": "Outdoor Stage 32′ × 24′",
+    "slug": "outdoor-stage-32ft-24ft",
+    "category": "stage",
+    "tier": "premium",
+    "tags": [
+      "stage",
+      "outdoor"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "outdoor",
+      "scale": "large",
+      "backdrop": "no"
+    },
+    "description": "Professional outdoor stage (32' × 24') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "32' x 24'",
+    "price": 3669,
+    "originalPrice": 4169,
+    "discount": 12,
+    "image": "/images/products/stage/outdoor-stage-32ft-24ft/main.webp",
+    "images": [
+      "/images/products/stage/outdoor-stage-32ft-24ft/main.webp",
+      "/images/products/stage/outdoor-stage-32ft-24ft/1.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 450,
+    "installationFee": 725,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "outdoor-stage-33ft-20ft",
+    "name": "Outdoor Stage 33′ × 20′",
+    "slug": "outdoor-stage-33ft-20ft",
+    "category": "stage",
+    "tier": "premium",
+    "tags": [
+      "stage",
+      "outdoor"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "outdoor",
+      "scale": "large",
+      "backdrop": "no"
+    },
+    "description": "Professional outdoor stage (33' × 20') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "33' x 20'",
+    "price": 3239,
+    "originalPrice": 3559,
+    "discount": 9,
+    "image": "/images/products/stage/outdoor-stage-33ft-20ft/main.webp",
+    "images": [
+      "/images/products/stage/outdoor-stage-33ft-20ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 400,
+    "installationFee": 650,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "outdoor-stage-42ft-40ft",
+    "name": "Outdoor Stage 42′ × 40′",
+    "slug": "outdoor-stage-42ft-40ft",
+    "category": "stage",
+    "tier": "premium",
+    "tags": [
+      "stage",
+      "outdoor"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "outdoor",
+      "scale": "large",
+      "backdrop": "no"
+    },
+    "description": "Professional outdoor stage (42' × 40') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "42' x 40'",
+    "price": 7319,
+    "originalPrice": 8219,
+    "discount": 11,
+    "image": "/images/products/stage/outdoor-stage-42ft-40ft/main.webp",
+    "images": [
+      "/images/products/stage/outdoor-stage-42ft-40ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 875,
+    "installationFee": 1475,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "custom-size-stage",
+    "name": "Custom Size Stage",
+    "slug": "custom-size-stage",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "outdoor"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "outdoor",
+      "scale": "medium",
+      "backdrop": "no"
+    },
+    "description": "Professional outdoor stage available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "Custom",
+    "price": 1499,
+    "originalPrice": 1699,
+    "discount": 12,
+    "image": "/images/products/stage/custom-size-stage/main.webp",
+    "images": [
+      "/images/products/stage/custom-size-stage/main.webp",
+      "/images/products/stage/custom-size-stage/1.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 175,
+    "installationFee": 300,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "custom-stage",
+    "name": "Custom Stage",
+    "slug": "custom-stage",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "outdoor"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "outdoor",
+      "scale": "medium",
+      "backdrop": "no"
+    },
+    "description": "Professional outdoor stage available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "Custom",
+    "price": 1499,
+    "originalPrice": 1629,
+    "discount": 8,
+    "image": "/images/products/stage/custom-stage/main.webp",
+    "images": [
+      "/images/products/stage/custom-stage/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 175,
+    "installationFee": 300,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "outdoor-stage-package-3",
+    "name": "Outdoor Stage Package 3",
+    "slug": "outdoor-stage-package-3",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "outdoor"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "outdoor",
+      "scale": "medium",
+      "backdrop": "no"
+    },
+    "description": "Professional outdoor stage available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "Custom",
+    "price": 1499,
+    "originalPrice": 1629,
+    "discount": 8,
+    "image": "/images/products/stage/outdoor-stage-package-3/main.webp",
+    "images": [
+      "/images/products/stage/outdoor-stage-package-3/main.webp",
+      "/images/products/stage/outdoor-stage-package-3/1.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 175,
+    "installationFee": 300,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "outdoor-stage-package-9",
+    "name": "Outdoor Stage Package 9",
+    "slug": "outdoor-stage-package-9",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "outdoor"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "outdoor",
+      "scale": "medium",
+      "backdrop": "no"
+    },
+    "description": "Professional outdoor stage available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "Custom",
+    "price": 1499,
+    "originalPrice": 1629,
+    "discount": 8,
+    "image": "/images/products/stage/outdoor-stage-package-9/main.webp",
+    "images": [
+      "/images/products/stage/outdoor-stage-package-9/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 175,
+    "installationFee": 300,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "outdoor-stage-with-add-ons-16ft-32ft-15ft-2-banner-add-ons",
+    "name": "Outdoor Stage with Add-ons 16′ × 32′ × 15′ + 2 Banner Add-ons",
+    "slug": "outdoor-stage-with-add-ons-16ft-32ft-15ft-2-banner-add-ons",
+    "category": "stage",
+    "tier": "premium",
+    "tags": [
+      "stage",
+      "outdoor"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "outdoor",
+      "scale": "large",
+      "backdrop": "no"
+    },
+    "description": "Professional outdoor stage (16' × 32') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "16' x 32'",
+    "price": 2649,
+    "originalPrice": 2909,
+    "discount": 9,
+    "image": "/images/products/stage/outdoor-stage-with-add-ons-16ft-32ft-15ft-2-banner-add-ons/main.webp",
+    "images": [
+      "/images/products/stage/outdoor-stage-with-add-ons-16ft-32ft-15ft-2-banner-add-ons/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 325,
+    "installationFee": 525,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "outdoor-stage-with-add-ons-16ft-32ft-15ft-3-banner-add-ons",
+    "name": "Outdoor Stage with Add-ons 16′ × 32′ × 15′ + 3 Banner Add-ons",
+    "slug": "outdoor-stage-with-add-ons-16ft-32ft-15ft-3-banner-add-ons",
+    "category": "stage",
+    "tier": "premium",
+    "tags": [
+      "stage",
+      "outdoor"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "outdoor",
+      "scale": "large",
+      "backdrop": "no"
+    },
+    "description": "Professional outdoor stage (16' × 32') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "16' x 32'",
+    "price": 2649,
+    "originalPrice": 3009,
+    "discount": 12,
+    "image": "/images/products/stage/outdoor-stage-with-add-ons-16ft-32ft-15ft-3-banner-add-ons/main.webp",
+    "images": [
+      "/images/products/stage/outdoor-stage-with-add-ons-16ft-32ft-15ft-3-banner-add-ons/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 325,
+    "installationFee": 525,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "outdoor-stage-with-add-ons-16ft-32ft-15ft",
+    "name": "Outdoor Stage with Add-ons 16′ × 32′ × 15′",
+    "slug": "outdoor-stage-with-add-ons-16ft-32ft-15ft",
+    "category": "stage",
+    "tier": "premium",
+    "tags": [
+      "stage",
+      "outdoor"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "outdoor",
+      "scale": "large",
+      "backdrop": "no"
+    },
+    "description": "Professional outdoor stage (16' × 32') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "16' x 32'",
+    "price": 2649,
+    "originalPrice": 2879,
+    "discount": 8,
+    "image": "/images/products/stage/outdoor-stage-with-add-ons-16ft-32ft-15ft/main.webp",
+    "images": [
+      "/images/products/stage/outdoor-stage-with-add-ons-16ft-32ft-15ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 325,
+    "installationFee": 525,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "outdoor-stage-with-banners-16ft-8ft",
+    "name": "Outdoor Stage with Banners 16′ × 8′",
+    "slug": "outdoor-stage-with-banners-16ft-8ft",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "outdoor"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "outdoor",
+      "scale": "medium",
+      "backdrop": "no"
+    },
+    "description": "Professional outdoor stage (16' × 8') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "16' x 8'",
+    "price": 1109,
+    "originalPrice": 1219,
+    "discount": 9,
+    "image": "/images/products/stage/outdoor-stage-with-banners-16ft-8ft/main.webp",
+    "images": [
+      "/images/products/stage/outdoor-stage-with-banners-16ft-8ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 150,
+    "installationFee": 250,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "outdoor-stage-with-banners-24ft-16ft",
+    "name": "Outdoor Stage with Banners 24′ × 16′",
+    "slug": "outdoor-stage-with-banners-24ft-16ft",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "outdoor"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "outdoor",
+      "scale": "large",
+      "backdrop": "no"
+    },
+    "description": "Professional outdoor stage (24' × 16') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "24' x 16'",
+    "price": 2139,
+    "originalPrice": 2349,
+    "discount": 9,
+    "image": "/images/products/stage/outdoor-stage-with-banners-24ft-16ft/main.webp",
+    "images": [
+      "/images/products/stage/outdoor-stage-with-banners-24ft-16ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 250,
+    "installationFee": 425,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "outdoor-stage-with-banners-32ft-24ft",
+    "name": "Outdoor Stage with Banners 32′ × 24′",
+    "slug": "outdoor-stage-with-banners-32ft-24ft",
+    "category": "stage",
+    "tier": "premium",
+    "tags": [
+      "stage",
+      "outdoor"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "outdoor",
+      "scale": "large",
+      "backdrop": "no"
+    },
+    "description": "Professional outdoor stage (32' × 24') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "32' x 24'",
+    "price": 3669,
+    "originalPrice": 4219,
+    "discount": 13,
+    "image": "/images/products/stage/outdoor-stage-with-banners-32ft-24ft/main.webp",
+    "images": [
+      "/images/products/stage/outdoor-stage-with-banners-32ft-24ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 450,
+    "installationFee": 725,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "outdoor-stage-with-banners-41ft-40ft",
+    "name": "Outdoor Stage with Banners 41′ × 40′",
+    "slug": "outdoor-stage-with-banners-41ft-40ft",
+    "category": "stage",
+    "tier": "premium",
+    "tags": [
+      "stage",
+      "outdoor"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "outdoor",
+      "scale": "large",
+      "backdrop": "no"
+    },
+    "description": "Professional outdoor stage (41' × 40') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "41' x 40'",
+    "price": 7159,
+    "originalPrice": 8039,
+    "discount": 11,
+    "image": "/images/products/stage/outdoor-stage-with-banners-41ft-40ft/main.webp",
+    "images": [
+      "/images/products/stage/outdoor-stage-with-banners-41ft-40ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 850,
+    "installationFee": 1425,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "outdoor-stage-with-banners",
+    "name": "Outdoor Stage with Banners",
+    "slug": "outdoor-stage-with-banners",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "outdoor"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "outdoor",
+      "scale": "medium",
+      "backdrop": "no"
+    },
+    "description": "Professional outdoor stage available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "Custom",
+    "price": 1499,
+    "originalPrice": 1699,
+    "discount": 12,
+    "image": "/images/products/stage/outdoor-stage-with-banners/main.webp",
+    "images": [
+      "/images/products/stage/outdoor-stage-with-banners/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 175,
+    "installationFee": 300,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "outdoor-stage",
+    "name": "Outdoor Stage",
+    "slug": "outdoor-stage",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "outdoor"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "outdoor",
+      "scale": "medium",
+      "backdrop": "no"
+    },
+    "description": "Professional outdoor stage available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "Custom",
+    "price": 1499,
+    "originalPrice": 1719,
+    "discount": 13,
+    "image": "/images/products/stage/outdoor-stage/main.webp",
+    "images": [
+      "/images/products/stage/outdoor-stage/main.webp",
+      "/images/products/stage/outdoor-stage/1.webp",
+      "/images/products/stage/outdoor-stage/2.webp",
+      "/images/products/stage/outdoor-stage/3.webp",
+      "/images/products/stage/outdoor-stage/4.webp",
+      "/images/products/stage/outdoor-stage/5.webp",
+      "/images/products/stage/outdoor-stage/6.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 175,
+    "installationFee": 300,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "portable-stage-2-44",
+    "name": "Portable Stage 2 44",
+    "slug": "portable-stage-2-44",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "portable"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "portable",
+      "scale": "small",
+      "backdrop": "no"
+    },
+    "description": "Professional portable stage (2' × 44') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "2' x 44'",
+    "price": 949,
+    "originalPrice": 1079,
+    "discount": 12,
+    "image": "/images/products/stage/portable-stage-2-44/main.webp",
+    "images": [
+      "/images/products/stage/portable-stage-2-44/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 150,
+    "installationFee": 250,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "portable-stage-2-45",
+    "name": "Portable Stage 2 45",
+    "slug": "portable-stage-2-45",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "portable"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "portable",
+      "scale": "small",
+      "backdrop": "no"
+    },
+    "description": "Professional portable stage (2' × 45') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "2' x 45'",
+    "price": 959,
+    "originalPrice": 1099,
+    "discount": 13,
+    "image": "/images/products/stage/portable-stage-2-45/main.webp",
+    "images": [
+      "/images/products/stage/portable-stage-2-45/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 150,
+    "installationFee": 250,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "portable-stage-20ft-8ft",
+    "name": "Portable Stage 20′ × 8′",
+    "slug": "portable-stage-20ft-8ft",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "portable"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "portable",
+      "scale": "medium",
+      "backdrop": "no"
+    },
+    "description": "Professional portable stage (20' × 8') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "20' x 8'",
+    "price": 1239,
+    "originalPrice": 1409,
+    "discount": 12,
+    "image": "/images/products/stage/portable-stage-20ft-8ft/main.webp",
+    "images": [
+      "/images/products/stage/portable-stage-20ft-8ft/main.webp",
+      "/images/products/stage/portable-stage-20ft-8ft/1.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 150,
+    "installationFee": 250,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "portable-stage-24ft-8ft",
+    "name": "Portable Stage 24′ × 8′",
+    "slug": "portable-stage-24ft-8ft",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "portable"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "portable",
+      "scale": "medium",
+      "backdrop": "no"
+    },
+    "description": "Professional portable stage (24' × 8') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "24' x 8'",
+    "price": 1369,
+    "originalPrice": 1519,
+    "discount": 10,
+    "image": "/images/products/stage/portable-stage-24ft-8ft/main.webp",
+    "images": [
+      "/images/products/stage/portable-stage-24ft-8ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 175,
+    "installationFee": 275,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "portable-stage-8ft-4ft",
+    "name": "Portable Stage 8′ × 4′",
+    "slug": "portable-stage-8ft-4ft",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "portable"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "portable",
+      "scale": "small",
+      "backdrop": "no"
+    },
+    "description": "Professional portable stage (8' × 4') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "8' x 4'",
+    "price": 729,
+    "originalPrice": 809,
+    "discount": 10,
+    "image": "/images/products/stage/portable-stage-8ft-4ft/main.webp",
+    "images": [
+      "/images/products/stage/portable-stage-8ft-4ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 150,
+    "installationFee": 250,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "portable-stage-8ft-8ft",
+    "name": "Portable Stage 8′ × 8′",
+    "slug": "portable-stage-8ft-8ft",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "portable"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "portable",
+      "scale": "small",
+      "backdrop": "no"
+    },
+    "description": "Professional portable stage (8' × 8') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "8' x 8'",
+    "price": 859,
+    "originalPrice": 929,
+    "discount": 8,
+    "image": "/images/products/stage/portable-stage-8ft-8ft/main.webp",
+    "images": [
+      "/images/products/stage/portable-stage-8ft-8ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 150,
+    "installationFee": 250,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "large-stage-24ft-16ft-with-backdrop",
+    "name": "Large Stage 24′ × 16′ — with Backdrop",
+    "slug": "large-stage-24ft-16ft-with-backdrop",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "portable",
+      "backdrop"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "portable",
+      "scale": "large",
+      "backdrop": "yes"
+    },
+    "description": "Professional portable stage (24' × 16') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "24' x 16'",
+    "price": 2139,
+    "originalPrice": 2349,
+    "discount": 9,
+    "image": "/images/products/stage/large-stage-24ft-16ft-with-backdrop/main.webp",
+    "images": [
+      "/images/products/stage/large-stage-24ft-16ft-with-backdrop/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 250,
+    "installationFee": 425,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "large-stage-24ft-16ft",
+    "name": "Large Stage 24′ × 16′",
+    "slug": "large-stage-24ft-16ft",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "portable"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "portable",
+      "scale": "large",
+      "backdrop": "no"
+    },
+    "description": "Professional portable stage (24' × 16') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "24' x 16'",
+    "price": 2139,
+    "originalPrice": 2399,
+    "discount": 11,
+    "image": "/images/products/stage/large-stage-24ft-16ft/main.webp",
+    "images": [
+      "/images/products/stage/large-stage-24ft-16ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 250,
+    "installationFee": 425,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "medium-stage-20ft-16ft-with-backdrop",
+    "name": "Medium Stage 20′ × 16′ — with Backdrop",
+    "slug": "medium-stage-20ft-16ft-with-backdrop",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "portable",
+      "backdrop"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "portable",
+      "scale": "large",
+      "backdrop": "yes"
+    },
+    "description": "Professional portable stage (20' × 16') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "20' x 16'",
+    "price": 1879,
+    "originalPrice": 2109,
+    "discount": 11,
+    "image": "/images/products/stage/medium-stage-20ft-16ft-with-backdrop/main.webp",
+    "images": [
+      "/images/products/stage/medium-stage-20ft-16ft-with-backdrop/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 225,
+    "installationFee": 375,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "medium-stage-20ft-16ft",
+    "name": "Medium Stage 20′ × 16′",
+    "slug": "medium-stage-20ft-16ft",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "portable"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "portable",
+      "scale": "large",
+      "backdrop": "no"
+    },
+    "description": "Professional portable stage (20' × 16') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "20' x 16'",
+    "price": 1879,
+    "originalPrice": 2059,
+    "discount": 9,
+    "image": "/images/products/stage/medium-stage-20ft-16ft/main.webp",
+    "images": [
+      "/images/products/stage/medium-stage-20ft-16ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 225,
+    "installationFee": 375,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "portable-stage-16ft-8ft-with-backdrop",
+    "name": "Portable Stage 16′ × 8′ — with Backdrop",
+    "slug": "portable-stage-16ft-8ft-with-backdrop",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "portable",
+      "backdrop"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "portable",
+      "scale": "medium",
+      "backdrop": "yes"
+    },
+    "description": "Professional portable stage (16' × 8') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "16' x 8'",
+    "price": 1109,
+    "originalPrice": 1219,
+    "discount": 9,
+    "image": "/images/products/stage/portable-stage-16ft-8ft-with-backdrop/main.webp",
+    "images": [
+      "/images/products/stage/portable-stage-16ft-8ft-with-backdrop/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 150,
+    "installationFee": 250,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "portable-stage-16ft-8ft",
+    "name": "Portable Stage 16′ × 8′",
+    "slug": "portable-stage-16ft-8ft",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "portable"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "portable",
+      "scale": "medium",
+      "backdrop": "no"
+    },
+    "description": "Professional portable stage (16' × 8') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "16' x 8'",
+    "price": 1109,
+    "originalPrice": 1249,
+    "discount": 11,
+    "image": "/images/products/stage/portable-stage-16ft-8ft/main.webp",
+    "images": [
+      "/images/products/stage/portable-stage-16ft-8ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 150,
+    "installationFee": 250,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "round-stage-16-ft",
+    "name": "Round Stage — 16 FT",
+    "slug": "round-stage-16-ft",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "round"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "round",
+      "scale": "medium",
+      "backdrop": "no"
+    },
+    "description": "Professional round stage available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "Round",
+    "price": 699,
+    "originalPrice": 759,
+    "discount": 8,
+    "image": "/images/products/stage/round-stage-16-ft/main.webp",
+    "images": [
+      "/images/products/stage/round-stage-16-ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 150,
+    "installationFee": 250,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "round-stage-8-ft",
+    "name": "Round Stage — 8 FT",
+    "slug": "round-stage-8-ft",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "round"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "round",
+      "scale": "medium",
+      "backdrop": "no"
+    },
+    "description": "Professional round stage available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "Round",
+    "price": 699,
+    "originalPrice": 789,
+    "discount": 11,
+    "image": "/images/products/stage/round-stage-8-ft/main.webp",
+    "images": [
+      "/images/products/stage/round-stage-8-ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 150,
+    "installationFee": 250,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "stage-platform-kit-1-16ft-8ft",
+    "name": "Stage Platform Kit #1 16′ × 8′",
+    "slug": "stage-platform-kit-1-16ft-8ft",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "platform-kit"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "platform-kit",
+      "scale": "small",
+      "backdrop": "no"
+    },
+    "description": "Professional platform-kit stage (1' × 16') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "1' x 16'",
+    "price": 549,
+    "originalPrice": 609,
+    "discount": 10,
+    "image": "/images/products/stage/stage-platform-kit-1-16ft-8ft/main.webp",
+    "images": [
+      "/images/products/stage/stage-platform-kit-1-16ft-8ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 150,
+    "installationFee": 250,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "stage-platform-kit-2-16ft-8ft",
+    "name": "Stage Platform Kit #2 16′ × 8′",
+    "slug": "stage-platform-kit-2-16ft-8ft",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "platform-kit"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "platform-kit",
+      "scale": "small",
+      "backdrop": "no"
+    },
+    "description": "Professional platform-kit stage (2' × 16') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "2' x 16'",
+    "price": 599,
+    "originalPrice": 669,
+    "discount": 11,
+    "image": "/images/products/stage/stage-platform-kit-2-16ft-8ft/main.webp",
+    "images": [
+      "/images/products/stage/stage-platform-kit-2-16ft-8ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 150,
+    "installationFee": 250,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "stage-platform-kit-3-16ft-12ft",
+    "name": "Stage Platform Kit #3 16′ × 12′",
+    "slug": "stage-platform-kit-3-16ft-12ft",
+    "category": "stage",
+    "tier": "basic",
+    "tags": [
+      "stage",
+      "platform-kit"
+    ],
+    "filters": {
+      "type": "stage",
+      "stageType": "platform-kit",
+      "scale": "small",
+      "backdrop": "no"
+    },
+    "description": "Professional platform-kit stage (3' × 16') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "3' x 16'",
+    "price": 639,
+    "originalPrice": 699,
+    "discount": 9,
+    "image": "/images/products/stage/stage-platform-kit-3-16ft-12ft/main.webp",
+    "images": [
+      "/images/products/stage/stage-platform-kit-3-16ft-12ft/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Stage Decking",
+      "Adjustable Legs",
+      "Safety Railings",
+      "Stairs & Skirting",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 150,
+    "installationFee": 250,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "55in-tv-display",
+    "name": "55″ TV Display",
+    "slug": "55in-tv-display",
+    "category": "led-screens",
+    "tier": "basic",
+    "tags": [
+      "tv",
+      "indoor"
+    ],
+    "filters": {
+      "environment": "indoor",
+      "size": "compact"
+    },
+    "description": "Professional professional display available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "TV",
+    "price": 419,
+    "originalPrice": 469,
+    "discount": 11,
+    "image": "/images/products/led-screens/55in-tv-display/main.webp",
+    "images": [
+      "/images/products/led-screens/55in-tv-display/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Display",
+      "Floor / Wall Mount",
+      "Cabling",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 150,
+    "installationFee": 250,
+    "rentalPeriod": "24h",
+    "inStock": true
+  },
+  {
+    "id": "65in-tv-display",
+    "name": "65″ TV Display",
+    "slug": "65in-tv-display",
+    "category": "led-screens",
+    "tier": "basic",
+    "tags": [
+      "tv",
+      "indoor"
+    ],
+    "filters": {
+      "environment": "indoor",
+      "size": "compact"
+    },
+    "description": "Professional professional display available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "TV",
+    "price": 419,
+    "originalPrice": 469,
+    "discount": 10,
+    "image": "/images/products/led-screens/65in-tv-display/main.webp",
+    "images": [
+      "/images/products/led-screens/65in-tv-display/main.webp"
+    ],
+    "features": [
+      "Professional Grade",
+      "Delivery & Setup Included",
+      "On-Site Crew",
+      "Event-Ready"
+    ],
+    "specs": {},
+    "includes": [
+      "Display",
+      "Floor / Wall Mount",
+      "Cabling",
+      "Delivery & Setup"
+    ],
+    "deliveryFee": 150,
+    "installationFee": 250,
+    "rentalPeriod": "24h",
+    "inStock": true
   }
 ]
