@@ -23,6 +23,7 @@ export const CATEGORIES: CategoryMeta[] = [
   { slug: "sound-systems", label: "Sound Systems", shortLabel: "Sound", serviceSlug: "sound-system-rental" },
   { slug: "lighting", label: "Lighting", shortLabel: "Lighting", serviceSlug: "lighting-rental" },
   { slug: "stage", label: "Stage & Production", shortLabel: "Stage", serviceSlug: "stage-rental" },
+  { slug: "tv", label: "TVs & Displays", shortLabel: "TVs", serviceSlug: "tv-rental" },
 ]
 
 export const CATEGORY_LABEL: Record<ProductCategory, string> = Object.fromEntries(
@@ -65,6 +66,7 @@ export function getComplementaryProducts(category: ProductCategory, limit = 8): 
     "sound-systems": ["dj-setups", "stage", "lighting"],
     lighting: ["stage", "led-screens", "sound-systems"],
     stage: ["led-screens", "sound-systems", "lighting"],
+    tv: ["led-screens", "stage", "sound-systems"],
   }
   const wanted = pairings[category] || []
   const picked: Product[] = []

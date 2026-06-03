@@ -4788,29 +4788,26 @@
     "inStock": true
   },
   {
-    "id": "portable-stage-2-44",
-    "name": "Portable Stage 2 44",
-    "slug": "portable-stage-2-44",
-    "category": "stage",
+    "id": "multi-screen-tv-setup",
+    "name": "Multi-Screen TV Setup",
+    "slug": "multi-screen-tv-setup",
+    "category": "tv",
     "tier": "basic",
     "tags": [
-      "stage",
-      "portable"
+      "tv",
+      "display"
     ],
     "filters": {
-      "type": "stage",
-      "stageType": "portable",
-      "scale": "small",
-      "backdrop": "no"
+      "size": "large"
     },
-    "description": "Professional portable stage (2' × 44') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
-    "dimensions": "2' x 44'",
+    "description": "Professional rental TV display available in Los Angeles. Delivered, mounted and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "Multi-screen",
     "price": 949,
     "originalPrice": 1079,
     "discount": 12,
-    "image": "/images/products/stage/portable-stage-2-44/main.webp",
+    "image": "/images/products/tv/multi-screen-tv-setup/main.webp",
     "images": [
-      "/images/products/stage/portable-stage-2-44/main.webp"
+      "/images/products/tv/multi-screen-tv-setup/main.webp"
     ],
     "features": [
       "Professional Grade",
@@ -4820,10 +4817,10 @@
     ],
     "specs": {},
     "includes": [
-      "Stage Decking",
-      "Adjustable Legs",
-      "Safety Railings",
-      "Stairs & Skirting",
+      "Display",
+      "Floor / Wall Mount",
+      "Media Player",
+      "Cabling",
       "Delivery & Setup"
     ],
     "deliveryFee": 150,
@@ -4832,29 +4829,26 @@
     "inStock": true
   },
   {
-    "id": "portable-stage-2-45",
-    "name": "Portable Stage 2 45",
-    "slug": "portable-stage-2-45",
-    "category": "stage",
+    "id": "tv-display-wall",
+    "name": "TV Display Wall",
+    "slug": "tv-display-wall",
+    "category": "tv",
     "tier": "basic",
     "tags": [
-      "stage",
-      "portable"
+      "tv",
+      "display"
     ],
     "filters": {
-      "type": "stage",
-      "stageType": "portable",
-      "scale": "small",
-      "backdrop": "no"
+      "size": "large"
     },
-    "description": "Professional portable stage (2' × 45') available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
-    "dimensions": "2' x 45'",
+    "description": "Professional rental TV display available in Los Angeles. Delivered, mounted and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "Multi-screen",
     "price": 959,
     "originalPrice": 1099,
     "discount": 13,
-    "image": "/images/products/stage/portable-stage-2-45/main.webp",
+    "image": "/images/products/tv/tv-display-wall/main.webp",
     "images": [
-      "/images/products/stage/portable-stage-2-45/main.webp"
+      "/images/products/tv/tv-display-wall/main.webp"
     ],
     "features": [
       "Professional Grade",
@@ -4864,10 +4858,10 @@
     ],
     "specs": {},
     "includes": [
-      "Stage Decking",
-      "Adjustable Legs",
-      "Safety Railings",
-      "Stairs & Skirting",
+      "Display",
+      "Floor / Wall Mount",
+      "Media Player",
+      "Cabling",
       "Delivery & Setup"
     ],
     "deliveryFee": 150,
@@ -5541,26 +5535,25 @@
   },
   {
     "id": "55in-tv-display",
-    "name": "55″ TV Display",
+    "name": "55\" TV Display",
     "slug": "55in-tv-display",
-    "category": "led-screens",
+    "category": "tv",
     "tier": "basic",
     "tags": [
       "tv",
-      "indoor"
+      "display"
     ],
     "filters": {
-      "environment": "indoor",
       "size": "compact"
     },
-    "description": "Professional professional display available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
-    "dimensions": "TV",
+    "description": "Professional rental TV display available in Los Angeles. Delivered, mounted and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "55\"",
     "price": 419,
     "originalPrice": 469,
     "discount": 11,
-    "image": "/images/products/led-screens/55in-tv-display/main.webp",
+    "image": "/images/products/tv/55in-tv-display/main.webp",
     "images": [
-      "/images/products/led-screens/55in-tv-display/main.webp"
+      "/images/products/tv/55in-tv-display/main.webp"
     ],
     "features": [
       "Professional Grade",
@@ -5572,6 +5565,7 @@
     "includes": [
       "Display",
       "Floor / Wall Mount",
+      "Media Player",
       "Cabling",
       "Delivery & Setup"
     ],
@@ -5582,26 +5576,25 @@
   },
   {
     "id": "65in-tv-display",
-    "name": "65″ TV Display",
+    "name": "65\" TV Display",
     "slug": "65in-tv-display",
-    "category": "led-screens",
+    "category": "tv",
     "tier": "basic",
     "tags": [
       "tv",
-      "indoor"
+      "display"
     ],
     "filters": {
-      "environment": "indoor",
       "size": "compact"
     },
-    "description": "Professional professional display available for rental in Los Angeles. Delivered, set up and supported by our crew. Contact us for the full spec sheet and availability.",
-    "dimensions": "TV",
+    "description": "Professional rental TV display available in Los Angeles. Delivered, mounted and supported by our crew. Contact us for the full spec sheet and availability.",
+    "dimensions": "65\"",
     "price": 419,
     "originalPrice": 469,
     "discount": 10,
-    "image": "/images/products/led-screens/65in-tv-display/main.webp",
+    "image": "/images/products/tv/65in-tv-display/main.webp",
     "images": [
-      "/images/products/led-screens/65in-tv-display/main.webp"
+      "/images/products/tv/65in-tv-display/main.webp"
     ],
     "features": [
       "Professional Grade",
@@ -5613,6 +5606,7 @@
     "includes": [
       "Display",
       "Floor / Wall Mount",
+      "Media Player",
       "Cabling",
       "Delivery & Setup"
     ],

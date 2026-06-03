@@ -57,6 +57,7 @@ export const CATEGORY_FACET_KEYS: Partial<Record<ProductCategory, string[]>> = {
   "sound-systems": ["capacity", "series"],
   "dj-setups": ["console", "size"],
   stage: ["stageType", "scale", "backdrop", "type"],
+  tv: ["size"],
 }
 
 const labelFor = (key: string, value: string) => FILTER_META[key]?.labels[value] || value

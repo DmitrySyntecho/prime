@@ -24,6 +24,7 @@ import {
   Layers,
   Crown,
   DollarSign,
+  Tv,
   type LucideIcon,
 } from "lucide-react"
 
@@ -35,6 +36,7 @@ const CATEGORY_ICONS: Record<ProductCategory, LucideIcon> = {
   "sound-systems": Volume2,
   lighting: Lightbulb,
   stage: Layers,
+  tv: Tv,
 }
 
 const TIER_ICONS: Record<string, LucideIcon> = {
