@@ -16,6 +16,12 @@ import { FAQSection } from "@/components/faq-section"
 import { FIFAPromoBanner } from "@/components/fifa-promo-banner"
 import { ContactSpecialistBanner } from "@/components/contact-specialist-banner"
 import { HomeProductsSection } from "@/components/home-products-section"
+import { RatingsBar } from "@/components/ratings-bar"
+import { IndustriesAccordion } from "@/components/industries-accordion"
+import { WrittenReviewsSection } from "@/components/written-reviews-section"
+import { TeamSection } from "@/components/team-section"
+import { MediaMentionsSection } from "@/components/media-mentions-section"
+import { BlogSection } from "@/components/blog-section"
 
 export function HomeClient() {
   const handleStartQuote = () => {
@@ -36,19 +42,27 @@ export function HomeClient() {
 
   return (
     <div className="min-h-screen">
+      {/* Block order per Blocks-On-Pages spec (Home/Locale, 15 blocks). Extra
+          existing sections kept and slotted in sensibly. */}
       <HeroSection onStartQuote={handleStartQuote} />
-      <TrustedBySection />
-      <TestimonialsCarousel />
-      <WhyChooseUsSection />
-      <CaseStudiesSection />
-      <HomeProductsSection />
+      <RatingsBar />
       <ServicesGridSection />
+      <HomeProductsSection />
+      <CaseStudiesSection />
+      <IndustriesAccordion />
+      <WhyChooseUsSection />
+      <TestimonialsCarousel />
+      <TrustedBySection />
+      <WrittenReviewsSection />
+      <EventTypesSection />
       <RentalCategoriesSection />
-      <FIFAPromoBanner />
+      <TeamSection />
+      <MediaMentionsSection />
+      <BlogSection />
       <AboutUsSection />
       <PromoBannersSection />
-      <EventTypesSection />
       <CharitySection />
+      <FIFAPromoBanner />
       <FAQSection />
       <ContactSpecialistBanner onStartQuote={handleStartQuote} />
     </div>

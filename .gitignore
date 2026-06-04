@@ -30,3 +30,8 @@ next-env.d.ts
 
 # raw stage source images (optimized into public/ via scripts/import-stages.mjs)
 /stages
+
+# extracted spec working files
+/_spec
+*.docx
+*.xlsx

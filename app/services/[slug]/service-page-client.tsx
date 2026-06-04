@@ -18,6 +18,10 @@ import { ContactSpecialistBanner } from "@/components/contact-specialist-banner"
 import { CategoryProductsShowcase } from "@/components/category-products-showcase"
 import { GeneralEquipmentShowcase } from "@/components/general-equipment-showcase"
 import { FrequentlyTogether } from "@/components/frequently-together"
+import { RatingsBar } from "@/components/ratings-bar"
+import { TeamSection } from "@/components/team-section"
+import { WrittenReviewsSection } from "@/components/written-reviews-section"
+import { BlogSection } from "@/components/blog-section"
 import { useCity } from "@/lib/city-context"
 import { applyCity } from "@/lib/service-pages"
 import { getCategoryForServiceSlug } from "@/lib/products-data"
@@ -58,7 +62,8 @@ export function ServicePageClient({ service, slug }: ServicePageClientProps) {
         onStartQuote={handleStartQuote}
       />
 
-      <TrustedBySection />
+      {/* Block order per Blocks-On-Pages spec (Services, 13 blocks). */}
+      <RatingsBar />
 
       <ServiceDescriptionSection
         heading={s.descriptionHeading}
@@ -76,19 +81,23 @@ export function ServicePageClient({ service, slug }: ServicePageClientProps) {
         <GeneralEquipmentShowcase />
       )}
 
-      <TestimonialsCarousel />
+      <EventTypesSection />
       <WhyChooseUsSection />
+      <CaseStudiesSection />
 
       {productCategory && <FrequentlyTogether category={productCategory} />}
 
-      <CaseStudiesSection />
       <ServicesGridSection />
+      <TrustedBySection />
+      <TeamSection />
+      <WrittenReviewsSection />
+      <TestimonialsCarousel />
+      <BlogSection />
       <RentalCategoriesSection />
-      <FIFAPromoBanner />
       <AboutUsSection />
       <PromoBannersSection />
-      <EventTypesSection />
       <CharitySection />
+      <FIFAPromoBanner />
       <FAQSection />
       <ContactSpecialistBanner onStartQuote={handleStartQuote} />
     </div>
