@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { ArrowRight, Phone } from "lucide-react"
+import { useFitHeading } from "@/lib/use-fit-heading"
 
 interface ServiceHeroProps {
   eyebrow: string
@@ -22,6 +23,7 @@ const BOTTOM_FADE_MASK =
   "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 35%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,0.45) 75%, rgba(0,0,0,0) 100%)"
 
 export function ServiceHero({ eyebrow, h1, subheadline, heroCta, image, onStartQuote }: ServiceHeroProps) {
+  const h1Ref = useFitHeading<HTMLHeadingElement>(h1, { maxDesktopPx: 80, maxMobilePx: 40 })
   return (
     <section
       className="relative isolate overflow-hidden flex items-center
@@ -76,8 +78,9 @@ export function ServiceHero({ eyebrow, h1, subheadline, heroCta, image, onStartQ
           </span>
 
           <h1
-            className="font-extrabold tracking-[-0.03em] leading-[1.02] text-white mb-5 md:mb-7"
-            style={{ fontSize: "clamp(36px, 5.5vw, 80px)" }}
+            ref={h1Ref}
+            className="font-extrabold tracking-[-0.03em] text-white mb-5 md:mb-7"
+            style={{ fontSize: "clamp(32px, 5.5vw, 80px)", lineHeight: 1.05 }}
           >
             {h1}
           </h1>
