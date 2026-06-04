@@ -64,6 +64,7 @@ export function ServicePageClient({ service, slug }: ServicePageClientProps) {
 
       {/* Block order per Blocks-On-Pages spec (Services, 13 blocks). */}
       <RatingsBar />
+      <TrustedBySection />
 
       <ServiceDescriptionSection
         heading={s.descriptionHeading}
@@ -88,7 +89,6 @@ export function ServicePageClient({ service, slug }: ServicePageClientProps) {
       {productCategory && <FrequentlyTogether category={productCategory} />}
 
       <ServicesGridSection />
-      <TrustedBySection />
       <TeamSection />
       <WrittenReviewsSection />
       <TestimonialsCarousel />

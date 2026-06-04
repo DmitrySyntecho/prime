@@ -45,13 +45,13 @@ export function HomeClient() {
           existing sections kept and slotted in sensibly. */}
       <HeroSection onStartQuote={handleStartQuote} />
       <RatingsBar />
+      <TrustedBySection />
       <ServicesGridSection />
       <HomeProductsSection />
       <CaseStudiesSection />
       <EventTypesSection />
       <WhyChooseUsSection />
       <TestimonialsCarousel />
-      <TrustedBySection />
       <WrittenReviewsSection />
       <RentalCategoriesSection />
       <TeamSection />

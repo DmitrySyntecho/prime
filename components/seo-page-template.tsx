@@ -43,12 +43,12 @@ export function SeoPageTemplate({ page, siblings }: { page: SeoPage; siblings: S
         />
 
         <RatingsBar />
+        <TrustedBySection />
         <ServicesGridSection />
         <EventTypesSection />
         <WhyChooseUsSection />
         <CaseStudiesSection />
         <TestimonialsCarousel />
-        <TrustedBySection />
         <WrittenReviewsSection />
         <TeamSection />
         <MediaMentionsSection />
