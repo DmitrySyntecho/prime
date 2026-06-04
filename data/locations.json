@@ -1,0 +1,488 @@
+[
+  {
+    "name": "Anaheim",
+    "slug": "anaheim",
+    "national": false,
+    "landing": "/anaheim"
+  },
+  {
+    "name": "Atlanta",
+    "slug": "atlanta",
+    "national": false,
+    "landing": "/atlanta"
+  },
+  {
+    "name": "Aventura",
+    "slug": "aventura",
+    "national": false,
+    "landing": "/aventura"
+  },
+  {
+    "name": "Bal Harbour",
+    "slug": "bal-harbour",
+    "national": false,
+    "landing": "/bal-harbour"
+  },
+  {
+    "name": "Beverly Hills",
+    "slug": "beverly-hills",
+    "national": false,
+    "landing": "/beverly-hills"
+  },
+  {
+    "name": "Boca Raton",
+    "slug": "boca-raton",
+    "national": false,
+    "landing": "/boca-raton"
+  },
+  {
+    "name": "Boynton Beach",
+    "slug": "boynton-beach",
+    "national": false,
+    "landing": "/boynton-beach"
+  },
+  {
+    "name": "Brentwood",
+    "slug": "brentwood",
+    "national": false,
+    "landing": "/brentwood"
+  },
+  {
+    "name": "Brickell",
+    "slug": "brickell",
+    "national": false,
+    "landing": "/brickell"
+  },
+  {
+    "name": "Burbank",
+    "slug": "burbank",
+    "national": false,
+    "landing": "/burbank"
+  },
+  {
+    "name": "Cape Coral",
+    "slug": "cape-coral",
+    "national": false,
+    "landing": "/cape-coral"
+  },
+  {
+    "name": "Century City",
+    "slug": "century-city",
+    "national": false,
+    "landing": "/century-city"
+  },
+  {
+    "name": "Chicago",
+    "slug": "chicago",
+    "national": false,
+    "landing": "/chicago"
+  },
+  {
+    "name": "Clearwater",
+    "slug": "clearwater",
+    "national": false,
+    "landing": "/clearwater"
+  },
+  {
+    "name": "Coconut Grove",
+    "slug": "coconut-grove",
+    "national": false,
+    "landing": "/coconut-grove"
+  },
+  {
+    "name": "Coral Gables",
+    "slug": "coral-gables",
+    "national": false,
+    "landing": "/coral-gables"
+  },
+  {
+    "name": "Costa Mesa",
+    "slug": "costa-mesa",
+    "national": false,
+    "landing": "/costa-mesa"
+  },
+  {
+    "name": "Culver City",
+    "slug": "culver-city",
+    "national": false,
+    "landing": "/culver-city"
+  },
+  {
+    "name": "Dallas",
+    "slug": "dallas",
+    "national": false,
+    "landing": "/dallas"
+  },
+  {
+    "name": "Daytona Beach",
+    "slug": "daytona-beach",
+    "national": false,
+    "landing": "/daytona-beach"
+  },
+  {
+    "name": "Delray Beach",
+    "slug": "delray-beach",
+    "national": false,
+    "landing": "/delray-beach"
+  },
+  {
+    "name": "Doral",
+    "slug": "doral",
+    "national": false,
+    "landing": "/doral"
+  },
+  {
+    "name": "Downtown LA",
+    "slug": "downtown-la",
+    "national": false,
+    "landing": "/downtown-la"
+  },
+  {
+    "name": "Downtown Miami",
+    "slug": "downtown-miami",
+    "national": false,
+    "landing": "/downtown-miami"
+  },
+  {
+    "name": "Edgewater Miami",
+    "slug": "edgewater-miami",
+    "national": false,
+    "landing": "/edgewater-miami"
+  },
+  {
+    "name": "El Segundo",
+    "slug": "el-segundo",
+    "national": false,
+    "landing": "/el-segundo"
+  },
+  {
+    "name": "Fort Lauderdale",
+    "slug": "fort-lauderdale",
+    "national": false,
+    "landing": "/fort-lauderdale"
+  },
+  {
+    "name": "Fort Myers",
+    "slug": "fort-myers",
+    "national": false,
+    "landing": "/fort-myers"
+  },
+  {
+    "name": "Gainesville",
+    "slug": "gainesville",
+    "national": false,
+    "landing": "/gainesville"
+  },
+  {
+    "name": "Glendale",
+    "slug": "glendale",
+    "national": false,
+    "landing": "/glendale"
+  },
+  {
+    "name": "Hermosa Beach",
+    "slug": "hermosa-beach",
+    "national": false,
+    "landing": "/hermosa-beach"
+  },
+  {
+    "name": "Hialeah",
+    "slug": "hialeah",
+    "national": false,
+    "landing": "/hialeah"
+  },
+  {
+    "name": "Hollywood",
+    "slug": "hollywood",
+    "national": false,
+    "landing": "/hollywood"
+  },
+  {
+    "name": "Hollywood FL",
+    "slug": "hollywood-fl",
+    "national": false,
+    "landing": "/hollywood-fl"
+  },
+  {
+    "name": "Houston",
+    "slug": "houston",
+    "national": false,
+    "landing": "/houston"
+  },
+  {
+    "name": "Irvine",
+    "slug": "irvine",
+    "national": false,
+    "landing": "/irvine"
+  },
+  {
+    "name": "Jacksonville",
+    "slug": "jacksonville",
+    "national": false,
+    "landing": "/jacksonville"
+  },
+  {
+    "name": "Kendall",
+    "slug": "kendall",
+    "national": false,
+    "landing": "/kendall"
+  },
+  {
+    "name": "Key Biscayne",
+    "slug": "key-biscayne",
+    "national": false,
+    "landing": "/key-biscayne"
+  },
+  {
+    "name": "Key West",
+    "slug": "key-west",
+    "national": false,
+    "landing": "/key-west"
+  },
+  {
+    "name": "Lakeland",
+    "slug": "lakeland",
+    "national": false,
+    "landing": "/lakeland"
+  },
+  {
+    "name": "Las Vegas",
+    "slug": "las-vegas",
+    "national": false,
+    "landing": "/las-vegas"
+  },
+  {
+    "name": "Little Havana",
+    "slug": "little-havana",
+    "national": false,
+    "landing": "/little-havana"
+  },
+  {
+    "name": "Long Beach",
+    "slug": "long-beach",
+    "national": false,
+    "landing": "/long-beach"
+  },
+  {
+    "name": "Los Angeles",
+    "slug": "los-angeles",
+    "national": false,
+    "landing": "/los-angeles"
+  },
+  {
+    "name": "Malibu",
+    "slug": "malibu",
+    "national": false,
+    "landing": "/malibu"
+  },
+  {
+    "name": "Manhattan Beach",
+    "slug": "manhattan-beach",
+    "national": false,
+    "landing": "/manhattan-beach"
+  },
+  {
+    "name": "Marco Island",
+    "slug": "marco-island",
+    "national": false,
+    "landing": "/marco-island"
+  },
+  {
+    "name": "Marina del Rey",
+    "slug": "marina-del-rey",
+    "national": false,
+    "landing": "/marina-del-rey"
+  },
+  {
+    "name": "Miami",
+    "slug": "miami",
+    "national": false,
+    "landing": "/miami"
+  },
+  {
+    "name": "Miami Beach",
+    "slug": "miami-beach",
+    "national": false,
+    "landing": "/miami-beach"
+  },
+  {
+    "name": "Miami Lakes",
+    "slug": "miami-lakes",
+    "national": false,
+    "landing": "/miami-lakes"
+  },
+  {
+    "name": "Midtown Miami",
+    "slug": "midtown-miami",
+    "national": false,
+    "landing": "/midtown-miami"
+  },
+  {
+    "name": "Naples",
+    "slug": "naples",
+    "national": false,
+    "landing": "/naples"
+  },
+  {
+    "name": "New York",
+    "slug": "new-york",
+    "national": false,
+    "landing": "/new-york"
+  },
+  {
+    "name": "Newport Beach",
+    "slug": "newport-beach",
+    "national": false,
+    "landing": "/newport-beach"
+  },
+  {
+    "name": "North Miami Beach",
+    "slug": "north-miami-beach",
+    "national": false,
+    "landing": "/north-miami-beach"
+  },
+  {
+    "name": "Orlando",
+    "slug": "orlando",
+    "national": false,
+    "landing": "/orlando"
+  },
+  {
+    "name": "Palm Beach",
+    "slug": "palm-beach",
+    "national": false,
+    "landing": "/palm-beach"
+  },
+  {
+    "name": "Pasadena",
+    "slug": "pasadena",
+    "national": false,
+    "landing": "/pasadena"
+  },
+  {
+    "name": "Pensacola",
+    "slug": "pensacola",
+    "national": false,
+    "landing": "/pensacola"
+  },
+  {
+    "name": "Pinecrest",
+    "slug": "pinecrest",
+    "national": false,
+    "landing": "/pinecrest"
+  },
+  {
+    "name": "Pompano Beach",
+    "slug": "pompano-beach",
+    "national": false,
+    "landing": "/pompano-beach"
+  },
+  {
+    "name": "Redondo Beach",
+    "slug": "redondo-beach",
+    "national": false,
+    "landing": "/redondo-beach"
+  },
+  {
+    "name": "San Francisco",
+    "slug": "san-francisco",
+    "national": false,
+    "landing": "/san-francisco"
+  },
+  {
+    "name": "Santa Monica",
+    "slug": "santa-monica",
+    "national": false,
+    "landing": "/santa-monica"
+  },
+  {
+    "name": "Sarasota",
+    "slug": "sarasota",
+    "national": false,
+    "landing": "/sarasota"
+  },
+  {
+    "name": "Sherman Oaks",
+    "slug": "sherman-oaks",
+    "national": false,
+    "landing": "/sherman-oaks"
+  },
+  {
+    "name": "South Beach",
+    "slug": "south-beach",
+    "national": false,
+    "landing": "/south-beach"
+  },
+  {
+    "name": "St. Petersburg",
+    "slug": "st.-petersburg",
+    "national": false,
+    "landing": "/st.-petersburg"
+  },
+  {
+    "name": "Stuart FL",
+    "slug": "stuart-fl",
+    "national": false,
+    "landing": "/stuart-fl"
+  },
+  {
+    "name": "Studio City",
+    "slug": "studio-city",
+    "national": false,
+    "landing": "/studio-city"
+  },
+  {
+    "name": "Sunny Isles Beach",
+    "slug": "sunny-isles-beach",
+    "national": false,
+    "landing": "/sunny-isles-beach"
+  },
+  {
+    "name": "Tallahassee",
+    "slug": "tallahassee",
+    "national": false,
+    "landing": "/tallahassee"
+  },
+  {
+    "name": "Tampa",
+    "slug": "tampa",
+    "national": false,
+    "landing": "/tampa"
+  },
+  {
+    "name": "United States",
+    "slug": "",
+    "national": true,
+    "landing": "/"
+  },
+  {
+    "name": "Vero Beach",
+    "slug": "vero-beach",
+    "national": false,
+    "landing": "/vero-beach"
+  },
+  {
+    "name": "West Hollywood",
+    "slug": "west-hollywood",
+    "national": false,
+    "landing": "/west-hollywood"
+  },
+  {
+    "name": "West Palm Beach",
+    "slug": "west-palm-beach",
+    "national": false,
+    "landing": "/west-palm-beach"
+  },
+  {
+    "name": "Westwood",
+    "slug": "westwood",
+    "national": false,
+    "landing": "/westwood"
+  },
+  {
+    "name": "Wynwood",
+    "slug": "wynwood",
+    "national": false,
+    "landing": "/wynwood"
+  }
+]

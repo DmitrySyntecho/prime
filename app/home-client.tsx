@@ -17,7 +17,6 @@ import { FIFAPromoBanner } from "@/components/fifa-promo-banner"
 import { ContactSpecialistBanner } from "@/components/contact-specialist-banner"
 import { HomeProductsSection } from "@/components/home-products-section"
 import { RatingsBar } from "@/components/ratings-bar"
-import { IndustriesAccordion } from "@/components/industries-accordion"
 import { WrittenReviewsSection } from "@/components/written-reviews-section"
 import { TeamSection } from "@/components/team-section"
 import { MediaMentionsSection } from "@/components/media-mentions-section"
@@ -49,12 +48,11 @@ export function HomeClient() {
       <ServicesGridSection />
       <HomeProductsSection />
       <CaseStudiesSection />
-      <IndustriesAccordion />
+      <EventTypesSection />
       <WhyChooseUsSection />
       <TestimonialsCarousel />
       <TrustedBySection />
       <WrittenReviewsSection />
-      <EventTypesSection />
       <RentalCategoriesSection />
       <TeamSection />
       <MediaMentionsSection />

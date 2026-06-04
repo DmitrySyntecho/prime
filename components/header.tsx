@@ -36,7 +36,17 @@ const mobileGroups: MobileGroup[] = [
     links: [
       { label: "About Us", href: "/about" },
       { label: "Portfolio", href: "/portfolio" },
-      { label: "Locations", href: "/locations" },
+    ],
+  },
+  {
+    heading: "Locations",
+    links: [
+      { label: "Los Angeles", href: "/los-angeles" },
+      { label: "New York", href: "/new-york" },
+      { label: "Miami", href: "/miami" },
+      { label: "Las Vegas", href: "/las-vegas" },
+      { label: "Chicago", href: "/chicago" },
+      { label: "All Locations", href: "/locations" },
     ],
   },
 ]

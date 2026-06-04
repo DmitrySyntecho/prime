@@ -31,6 +31,13 @@ const LEGAL = [
   { label: "Terms of Service", href: "/legal/terms" },
 ]
 
+// Popular service-area locations (full city list lives across the site).
+const LOCATIONS = [
+  "Los Angeles", "New York", "Miami", "Las Vegas", "Chicago", "Houston",
+  "Dallas", "San Francisco", "Atlanta", "Orlando", "Hollywood", "Beverly Hills",
+  "Santa Monica", "Miami Beach", "Fort Lauderdale", "Tampa",
+].map((name) => ({ name, href: "/" + name.toLowerCase().replace(/\s+/g, "-") }))
+
 export function Footer() {
   const pathname = usePathname()
   const isFifa = pathname?.startsWith("/fifa-2026-packages")
@@ -187,6 +194,24 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+
+        {/* Locations band */}
+        <div className="py-8 border-b border-white/[0.06]">
+          <p className={`text-[10px] font-extrabold tracking-[0.16em] uppercase mb-4 ${accentText}`}>
+            Locations We Serve
+          </p>
+          <div className="flex flex-wrap gap-x-5 gap-y-2.5">
+            {LOCATIONS.map((loc) => (
+              <Link
+                key={loc.href}
+                href={loc.href}
+                className={`text-[13px] font-medium text-white/55 ${accentHover} transition-colors`}
+              >
+                {loc.name}
+              </Link>
+            ))}
           </div>
         </div>
 

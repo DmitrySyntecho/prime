@@ -217,6 +217,48 @@ function MegaPanel({ menu, accent, accentDeep, onQuote }: { menu: MenuDef; accen
   )
 }
 
+const toSlug = (s: string) => "/" + s.toLowerCase().replace(/\s+/g, "-")
+const LOCATION_GROUPS: { title: string; cities: string[] }[] = [
+  { title: "Top Metros", cities: ["Los Angeles", "New York", "Miami", "Las Vegas", "Chicago", "Houston", "Dallas", "San Francisco", "Atlanta", "Orlando"] },
+  { title: "LA Area", cities: ["Hollywood", "Beverly Hills", "Santa Monica", "West Hollywood", "Pasadena", "Long Beach", "Burbank", "Glendale"] },
+  { title: "Florida", cities: ["Miami Beach", "Fort Lauderdale", "Tampa", "Brickell", "Coral Gables", "Boca Raton", "West Palm Beach", "Naples"] },
+]
+
+function LocationsPanel({ accent, accentDeep }: { accent: string; accentDeep: string }) {
+  return (
+    <div
+      className="rounded-2xl border border-white/10 overflow-hidden backdrop-blur-2xl p-5"
+      style={{ background: "rgba(8, 10, 24, 0.92)", boxShadow: "0 24px 64px -16px rgba(0,0,0,0.7)" }}
+    >
+      <div className="grid grid-cols-3 gap-6">
+        {LOCATION_GROUPS.map((g) => (
+          <div key={g.title}>
+            <div className="flex items-center gap-1.5 mb-3 text-[11px] font-bold uppercase tracking-wider text-[#FFB366]">
+              <MapPin className="w-3.5 h-3.5" /> {g.title}
+            </div>
+            <ul className="space-y-1.5">
+              {g.cities.map((c) => (
+                <li key={c}>
+                  <Link href={toSlug(c)} className="text-[13px] text-white/70 hover:text-white transition-colors">
+                    {c}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <Link
+        href="/locations"
+        className="mt-5 inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-[12px] font-bold text-white"
+        style={{ background: `linear-gradient(135deg, ${accent} 0%, ${accentDeep} 100%)` }}
+      >
+        View all locations <ArrowRight className="w-3.5 h-3.5" />
+      </Link>
+    </div>
+  )
+}
+
 export function DesktopNav({
   accent,
   accentDeep,
@@ -260,6 +302,16 @@ export function DesktopNav({
             <ChevronDown className={`w-3.5 h-3.5 transition-transform ${active === menu.id ? "rotate-180" : ""}`} />
           </button>
         ))}
+        <button
+          onMouseEnter={() => open("locations")}
+          onClick={() => open("locations")}
+          className={`inline-flex items-center gap-1 px-3.5 py-2.5 rounded-[10px] text-[13px] font-semibold tracking-[0.04em] uppercase transition-all ${
+            active === "locations" ? "text-white bg-white/[0.06]" : "text-white/65 hover:text-white hover:bg-white/[0.04]"
+          }`}
+        >
+          Locations
+          <ChevronDown className={`w-3.5 h-3.5 transition-transform ${active === "locations" ? "rotate-180" : ""}`} />
+        </button>
         <Link
           href="/fifa-2026-packages"
           onMouseEnter={() => open("")}
@@ -277,6 +329,15 @@ export function DesktopNav({
           onMouseEnter={() => open(activeMenu.id)}
         >
           <MegaPanel menu={activeMenu} accent={accent} accentDeep={accentDeep} onQuote={onQuote} />
+        </div>
+      )}
+      {active === "locations" && (
+        <div
+          className="absolute left-1/2 -translate-x-1/2 top-full pt-3 z-50"
+          style={{ width: "min(680px, 92vw)" }}
+          onMouseEnter={() => open("locations")}
+        >
+          <LocationsPanel accent={accent} accentDeep={accentDeep} />
         </div>
       )}
     </div>
