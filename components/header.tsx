@@ -1,12 +1,13 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Phone, Menu, X, ArrowRight } from "lucide-react"
+import { Phone, Menu, X, ArrowRight, ShoppingCart } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { PromoTopBanner } from "./promo-top-banner"
 import { DesktopNav } from "./mega-menu"
+import { useCart } from "@/lib/cart-context"
 import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/contact"
 
 type MobileGroup = { heading: string; links: { label: string; href: string }[] }
@@ -59,6 +60,7 @@ export function Header() {
   const headerRef = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
   const isFifa = pathname?.startsWith("/fifa-2026-packages")
+  const { itemCount, openCart } = useCart()
 
   // Close menu when header hides
   useEffect(() => {
@@ -203,6 +205,23 @@ export function Header() {
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
+
+              {/* Cart (opens the quote drawer) */}
+              <button
+                onClick={openCart}
+                aria-label="Open quote cart"
+                className="relative inline-flex items-center justify-center w-10 h-10 rounded-[10px] bg-white/[0.04] border border-white/[0.10] text-white/85 hover:text-white hover:bg-white/[0.08] hover:border-white/[0.20] transition-all"
+              >
+                <ShoppingCart className="w-[18px] h-[18px]" />
+                {itemCount > 0 && (
+                  <span
+                    className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 rounded-full text-[10px] font-extrabold text-white grid place-items-center"
+                    style={{ background: `linear-gradient(135deg, ${accent} 0%, ${accentDeep} 100%)` }}
+                  >
+                    {itemCount}
+                  </span>
+                )}
+              </button>
 
               {/* Mobile menu button */}
               <button

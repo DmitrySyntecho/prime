@@ -1,10 +1,8 @@
 "use client"
 
-import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import type { Product } from "@/lib/cart-context"
-import { QuoteForm } from "@/components/quote-form"
+import { type Product, useCart } from "@/lib/cart-context"
 import { CheckCircle2, ShoppingCart, ArrowRight, Star, Eye } from "lucide-react"
 import { Truck, Wrench } from "lucide-react"
 
@@ -38,10 +36,15 @@ function DiscountRibbon({ discount }: { discount: number }) {
 }
 
 export function ProductCard({ product }: { product: Product }) {
-  const [quoteOpen, setQuoteOpen] = useState(false)
+  const { addItem, openCart } = useCart()
 
   const savings = product.originalPrice - product.price
   const badge = product.dimensions.split("(")[0].trim()
+
+  const addToQuote = () => {
+    addItem(product)
+    openCart()
+  }
 
   return (
     <>
@@ -186,7 +189,7 @@ export function ProductCard({ product }: { product: Product }) {
 
             <div className="flex gap-2">
               <button
-                onClick={() => setQuoteOpen(true)}
+                onClick={addToQuote}
                 className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-[13px] font-bold transition-all hover:opacity-90"
                 style={{
                   background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
@@ -211,7 +214,6 @@ export function ProductCard({ product }: { product: Product }) {
           </div>
         </div>
       </div>
-      <QuoteForm isOpen={quoteOpen} onClose={() => setQuoteOpen(false)} serviceName={product.name} />
     </>
   )
 }

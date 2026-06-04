@@ -13,6 +13,7 @@ import { BackgroundFX } from "@/components/background-fx"
 import { GlobalCTA } from "@/components/global-cta"
 import { CTMScanner } from "@/components/ctm-scanner"
 import { AnimationObserver } from "@/components/animation-observer"
+import { CartPanel } from "@/components/cart-panel"
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -110,6 +111,7 @@ export default function RootLayout({
               <Header />
               <main>{children}</main>
               <Footer />
+              <CartPanel />
               <GlobalCTA />
               <CTMScanner />
               <AnimationObserver />

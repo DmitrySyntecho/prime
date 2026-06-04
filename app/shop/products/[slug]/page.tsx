@@ -26,8 +26,8 @@ import {
   Activity,
   Timer,
 } from "lucide-react"
-import { QuoteForm } from "@/components/quote-form"
 import { FrequentlyTogether } from "@/components/frequently-together"
+import { useCart } from "@/lib/cart-context"
 import { PHONE_TEL, PHONE_DISPLAY } from "@/lib/contact"
 
 // Consistent number formatting to avoid hydration mismatch
@@ -45,7 +45,12 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
 
   const [quantity, setQuantity] = useState(1)
   const [rentalDays, setRentalDays] = useState(1)
-  const [quoteOpen, setQuoteOpen] = useState(false)
+  const { addItem, openCart } = useCart()
+
+  const addToQuote = () => {
+    addItem(product, quantity, rentalDays)
+    openCart()
+  }
   const gallery = product.images && product.images.length > 0 ? product.images : [product.image]
   const [activeImage, setActiveImage] = useState(gallery[0])
 
@@ -337,7 +342,7 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
             {/* Action buttons */}
             <div className="flex gap-3 mb-8">
               <button
-                onClick={() => setQuoteOpen(true)}
+                onClick={addToQuote}
                 className="flex-1 flex items-center justify-center gap-3 py-4 rounded-xl text-[15px] font-bold transition-all hover:-translate-y-0.5"
                 style={{
                   background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
@@ -427,7 +432,6 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
         </div>
       </div>
       </div>
-      <QuoteForm isOpen={quoteOpen} onClose={() => setQuoteOpen(false)} serviceName={product.name} />
     </>
   )
 }
