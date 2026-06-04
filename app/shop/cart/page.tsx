@@ -91,9 +91,6 @@ export default function ShopCartPage() {
   if (items.length === 0 && step !== "confirmation") {
     return (
       <div className="relative min-h-screen">
-        <div className="fixed inset-0 -z-10 pointer-events-none" aria-hidden>
-          <div className="absolute inset-0" style={{ background: bgGradient }} />
-        </div>
         {tricolorBar}
         <div className="max-w-2xl mx-auto px-4 py-20 text-center">
           <div
@@ -123,15 +120,6 @@ export default function ShopCartPage() {
   if (step === "confirmation") {
     return (
       <div className="relative min-h-screen">
-        <div className="fixed inset-0 -z-10 pointer-events-none" aria-hidden>
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "radial-gradient(ellipse 70% 50% at 85% 0%, rgba(60,172,59,0.30) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 0% 25%, rgba(42,57,141,0.20) 0%, transparent 60%), linear-gradient(180deg, #060A18 0%, #0A0F1F 50%, #060A18 100%)",
-            }}
-          />
-        </div>
         {tricolorBar}
         <div className="max-w-2xl mx-auto px-4 py-20 text-center">
           <div
@@ -199,9 +187,6 @@ export default function ShopCartPage() {
 
   return (
     <div className="relative min-h-screen">
-      <div className="fixed inset-0 -z-10 pointer-events-none" aria-hidden>
-        <div className="absolute inset-0" style={{ background: bgGradient }} />
-      </div>
       {tricolorBar}
 
       <div className="max-w-6xl mx-auto px-4 py-8">

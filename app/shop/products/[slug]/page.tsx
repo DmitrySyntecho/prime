@@ -84,16 +84,6 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
   return (
     <>
       <div className="relative min-h-screen">
-        <div className="fixed inset-0 -z-10 pointer-events-none" aria-hidden>
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "radial-gradient(ellipse 70% 50% at 85% 0%, rgba(255,45,111,0.15) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 0% 25%, rgba(255,94,58,0.12) 0%, transparent 60%), radial-gradient(ellipse 80% 60% at 50% 110%, rgba(255,45,111,0.08) 0%, transparent 60%), linear-gradient(180deg, #060A18 0%, #0A0F1F 50%, #060A18 100%)",
-            }}
-          />
-        </div>
-
       <div
         className="h-1 w-full"
         style={{
