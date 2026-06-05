@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useCart } from '@/lib/cart-context'
 import {
   X,
@@ -287,8 +288,9 @@ export function CartPanel() {
                   <span className="text-[22px] font-black text-white">${formatPrice(total)}</span>
                 </div>
 
-                <button
-                  onClick={() => setStep('details')}
+                <Link
+                  href="/shop/checkout"
+                  onClick={closeCart}
                   className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-[14px] font-bold text-white transition-all hover:opacity-90 active:scale-[0.99]"
                   style={{
                     background: 'linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)',
@@ -297,6 +299,14 @@ export function CartPanel() {
                 >
                   Proceed to Checkout
                   <ChevronRight className="w-4 h-4" />
+                </Link>
+
+                <button
+                  onClick={closeCart}
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-[13px] font-semibold text-white/70 hover:text-white transition-all"
+                  style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)' }}
+                >
+                  Continue Shopping
                 </button>
               </div>
             )}

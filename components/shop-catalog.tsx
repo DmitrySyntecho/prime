@@ -431,7 +431,7 @@ export function ShopCatalog() {
             {/* Checkout CTA */}
             <div className="mt-12 text-center">
               <Link
-                href="/shop/cart"
+                href="/shop/checkout"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-xl text-white font-bold text-[14px] uppercase tracking-wide transition-all hover:-translate-y-0.5"
                 style={{
                   background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",

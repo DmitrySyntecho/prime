@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { useCart } from "@/lib/cart-context"
 import {
   Home,
   Layers,
@@ -54,6 +55,7 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
   const [chooserOpen, setChooserOpen] = useState(false)
   const [navVisible, setNavVisible] = useState(false)
   const [headerMenuOpen, setHeaderMenuOpen] = useState(false)
+  const { isCartOpen } = useCart()
 
   // Show nav only after scrolling past the first block
   useEffect(() => {
@@ -141,7 +143,7 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
       <div
         ref={panelRef}
         className={`md:hidden fixed bottom-[72px] left-3 right-3 z-50 transition-all duration-300 ease-out ${
-          servicesOpen && navVisible && !headerMenuOpen
+          servicesOpen && navVisible && !headerMenuOpen && !isCartOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 translate-y-4 pointer-events-none"
         }`}
@@ -182,10 +184,10 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
       <nav
         className="md:hidden fixed bottom-3 left-3 right-3 z-50 pointer-events-none transition-all duration-500 ease-out"
         style={{
-          opacity: navVisible && !headerMenuOpen ? 1 : 0,
-          transform: navVisible && !headerMenuOpen ? "translateY(0)" : "translateY(48px)",
+          opacity: navVisible && !headerMenuOpen && !isCartOpen ? 1 : 0,
+          transform: navVisible && !headerMenuOpen && !isCartOpen ? "translateY(0)" : "translateY(48px)",
         }}
-        aria-hidden={!navVisible || headerMenuOpen}
+        aria-hidden={!navVisible || headerMenuOpen || isCartOpen}
       >
         <div className="relative max-w-md mx-auto pointer-events-auto">
           <div
