@@ -49,7 +49,7 @@ const SHOP_MENU: MenuDef = {
       label: "LED Video Walls",
       desc: "Indoor & outdoor screens, any size",
       href: "/services/led-screen-rental",
-      image: "/images/products/led-screens/main-stadium-scoreboard-screen-60-x-20/main.webp",
+      image: "/images/products/led-screens/led-wall-1-9mm-39-3x13-1/main.webp",
       Icon: Monitor,
       badge: `${getProductsByCategory("led-screens").length}`,
     },

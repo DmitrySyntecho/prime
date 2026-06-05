@@ -35,3 +35,6 @@ next-env.d.ts
 /_spec
 *.docx
 *.xlsx
+
+# raw LED source images (optimized into public/ via scripts/import-led.mjs)
+/LED
