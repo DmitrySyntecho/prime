@@ -14,6 +14,8 @@ import { GlobalCTA } from "@/components/global-cta"
 import { CTMScanner } from "@/components/ctm-scanner"
 import { AnimationObserver } from "@/components/animation-observer"
 import { CartPanel } from "@/components/cart-panel"
+import { CallNowPopup } from "@/components/call-now-popup"
+import { ScrollToTop } from "@/components/scroll-to-top"
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -115,6 +117,8 @@ export default function RootLayout({
               <GlobalCTA />
               <CTMScanner />
               <AnimationObserver />
+              <ScrollToTop />
+              <CallNowPopup />
             </CartProvider>
           </LanguageProvider>
         </div>

@@ -1,7 +1,9 @@
 "use client"
 
 import { useEffect } from "react"
-import { HeroSection } from "@/components/hero-section"
+import { LandingHero } from "@/components/landing/landing-hero"
+import { AV_PRODUCTION_COLLAGE } from "@/components/landing/landing-page"
+import { LandingWhyUs } from "@/components/landing/landing-why-us"
 import { TrustedBySection } from "@/components/trusted-by-section"
 import { TestimonialsCarousel } from "@/components/testimonials-carousel"
 import { AboutUsSection } from "@/components/about-us-section"
@@ -21,8 +23,11 @@ import { WrittenReviewsSection } from "@/components/written-reviews-section"
 import { TeamSection } from "@/components/team-section"
 import { MediaMentionsSection } from "@/components/media-mentions-section"
 import { BlogSection } from "@/components/blog-section"
+import { useCity } from "@/lib/city-context"
 
 export function HomeClient() {
+  const city = useCity()
+
   const handleStartQuote = () => {
     document.dispatchEvent(new CustomEvent("openQuoteForm"))
   }
@@ -41,11 +46,25 @@ export function HomeClient() {
 
   return (
     <div className="min-h-screen">
-      {/* Block order per Blocks-On-Pages spec (Home/Locale, 15 blocks). Extra
-          existing sections kept and slotted in sensibly. */}
-      <HeroSection onStartQuote={handleStartQuote} />
+      {/* New hero (with "Watch How We Work" video) fills the first screen,
+          brand logos pinned to its bottom. */}
+      <div className="flex flex-col min-h-[calc(100svh-92px)]">
+        <div className="flex-1 flex flex-col justify-center">
+          <LandingHero
+            hero={{
+              title: `Full-Service AV Production in ${city}`,
+              accentPhrase: "AV Production",
+              pillLabel: "Lights · Sound · LED · Staging",
+              collage: AV_PRODUCTION_COLLAGE,
+            }}
+            onQuote={handleStartQuote}
+          />
+        </div>
+        <TrustedBySection />
+      </div>
+
       <RatingsBar />
-      <TrustedBySection />
+      <LandingWhyUs />
       <ServicesGridSection />
       <HomeProductsSection />
       <CaseStudiesSection />
