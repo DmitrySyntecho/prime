@@ -2,7 +2,9 @@
 
 import Link from "next/link"
 import { CityProvider } from "@/lib/city-context"
-import { ServiceHero } from "@/components/service-hero"
+import { LandingHero } from "@/components/landing/landing-hero"
+import { LandingWhyUs } from "@/components/landing/landing-why-us"
+import { AV_PRODUCTION_COLLAGE } from "@/components/landing/landing-page"
 import { RatingsBar } from "@/components/ratings-bar"
 import { ServicesGridSection } from "@/components/services-grid-section"
 import { EventTypesSection } from "@/components/event-types-section"
@@ -33,17 +35,24 @@ export function SeoPageTemplate({ page, siblings }: { page: SeoPage; siblings: S
   return (
     <CityProvider city={page.location}>
       <div className="min-h-screen">
-        <ServiceHero
-          eyebrow={page.national ? "United States" : page.location}
-          h1={page.h1}
-          subheadline={page.description}
-          heroCta="Get a Quote"
-          image={HERO_IMAGE}
-          onStartQuote={startQuote}
-        />
+        {/* Homepage-style hero: image collage + "Watch How We Work" video */}
+        <div className="flex flex-col min-h-[calc(100svh-92px)]">
+          <div className="flex-1 flex flex-col justify-center">
+            <LandingHero
+              hero={{
+                title: page.h1,
+                accentPhrase: page.national ? undefined : page.location,
+                pillLabel: page.national ? "United States" : page.location,
+                collage: AV_PRODUCTION_COLLAGE,
+              }}
+              onQuote={startQuote}
+            />
+          </div>
+          <TrustedBySection />
+        </div>
 
         <RatingsBar />
-        <TrustedBySection />
+        <LandingWhyUs />
         <ServicesGridSection />
         <EventTypesSection />
         <WhyChooseUsSection />

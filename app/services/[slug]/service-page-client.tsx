@@ -1,7 +1,8 @@
 "use client"
 
-import { ServiceHero } from "@/components/service-hero"
-import { ServiceDescriptionSection } from "@/components/service-description-section"
+import { LandingHero } from "@/components/landing/landing-hero"
+import { LandingWhyUs } from "@/components/landing/landing-why-us"
+import { AV_PRODUCTION_COLLAGE } from "@/components/landing/landing-page"
 import { TrustedBySection } from "@/components/trusted-by-section"
 import { TestimonialsCarousel } from "@/components/testimonials-carousel"
 import { AboutUsSection } from "@/components/about-us-section"
@@ -51,30 +52,24 @@ export function ServicePageClient({ service, slug }: ServicePageClientProps) {
 
   const productCategory = getCategoryForServiceSlug(slug)
 
+  const heroCollage = [...(s.collage || []), ...AV_PRODUCTION_COLLAGE].slice(0, 6)
+
   return (
     <div className="min-h-screen">
-      <ServiceHero
-        eyebrow={s.eyebrow}
-        h1={s.h1}
-        subheadline={s.subheadline}
-        heroCta={s.heroCta}
-        image={s.image}
-        onStartQuote={handleStartQuote}
-      />
+      {/* Homepage-style hero: image collage + "Watch How We Work" video */}
+      <div className="flex flex-col min-h-[calc(100svh-92px)]">
+        <div className="flex-1 flex flex-col justify-center">
+          <LandingHero
+            hero={{ title: s.h1, accentPhrase: city, pillLabel: s.eyebrow, collage: heroCollage }}
+            onQuote={handleStartQuote}
+          />
+        </div>
+        <TrustedBySection />
+      </div>
 
-      {/* Block order per Blocks-On-Pages spec (Services, 13 blocks). */}
       <RatingsBar />
-      <TrustedBySection />
-
-      <ServiceDescriptionSection
-        heading={s.descriptionHeading}
-        description={s.description}
-        highlights={s.highlights}
-        ctaLabel={s.ctaLabel}
-        collage={s.collage}
-        collageStats={s.collageStats}
-        onStartQuote={handleStartQuote}
-      />
+      {/* Second block is now the showreel video (replaces the description collage) */}
+      <LandingWhyUs />
 
       {productCategory ? (
         <CategoryProductsShowcase category={productCategory} />
