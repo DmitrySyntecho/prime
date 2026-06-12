@@ -127,6 +127,48 @@ html, body {
 .animate-float-y { animation: floatY 5s ease-in-out infinite; }
 .animate-eq { animation: eq-bar 1.2s ease-in-out infinite; }
 
+/* ============ SHIMMERING BORDER ON BRAND (ORANGE) BUTTONS ============ */
+/* A 2px iridescent stroke that slowly rotates around every solid brand-gradient
+   button/link, to pull the eye toward the primary CTAs. Drawn inside the box
+   with a mask so it survives overflow:hidden and needs no outside space. */
+@property --shimmer-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes shimmer-spin {
+  to { --shimmer-angle: 360deg; }
+}
+/* match only filled CTAs: <button>/<a> whose inline style paints the brand gradient */
+button[style*="#FF2D6F"][style*="#FF5E3A"],
+a[style*="#FF2D6F"][style*="#FF5E3A"] {
+  position: relative;
+  isolation: isolate;
+}
+button[style*="#FF2D6F"][style*="#FF5E3A"]::after,
+a[style*="#FF2D6F"][style*="#FF5E3A"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(
+    from var(--shimmer-angle),
+    #FFE3B0, #FF2D6F, #FF5E3A, #FFD24A, #FF2D6F, #FFE3B0
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  animation: shimmer-spin 3s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  button[style*="#FF2D6F"][style*="#FF5E3A"]::after,
+  a[style*="#FF2D6F"][style*="#FF5E3A"]::after { animation: none; }
+}
+
 /* ============ DESIGN TOKENS ============ */
 :root {
   /* New PRIME LINE design system palette */
