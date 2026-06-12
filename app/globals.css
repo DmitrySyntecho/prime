@@ -177,7 +177,10 @@ a[style*="#FF2D6F"][style*="#FF5E3A"]::after {
    recognizable on a near-white background. Media is counter-inverted so photos,
    logos and video render true-to-life. */
 html.theme-light {
-  filter: invert(1) hue-rotate(180deg);
+  /* pure invert (no hue-rotate): the only saturated color on the site is the
+     pink-orange accent, and inverting #FF2D6F lands on emerald (0,210,144).
+     Grayscale UI just flips light/dark; photos are counter-inverted below. */
+  filter: invert(1);
   background: #f5f6f8;
 }
 /* Counter-invert anything that must keep its real colors */
@@ -187,12 +190,12 @@ html.theme-light iframe,
 html.theme-light canvas,
 html.theme-light [data-keep-color],
 html.theme-light .keep-color {
-  filter: invert(1) hue-rotate(180deg);
+  filter: invert(1);
 }
 /* Cards & banners marked .keep-original stay in their original dark design (photo
    + white text) instead of flipping — they read as intentional dark islands. */
 html.theme-light .keep-original {
-  filter: invert(1) hue-rotate(180deg);
+  filter: invert(1);
 }
 /* media inside a keep-original block is already restored by the block's own
    counter-invert, so it must NOT be counter-inverted again (would go negative). */
@@ -213,6 +216,19 @@ html.theme-light .invert-with-page img {
 .theme-logo-light { display: none; }
 html.theme-light .theme-logo-dark { display: none; }
 html.theme-light .theme-logo-light { display: inline-block; }
+
+/* Cohesive emerald light theme: the ambient background is painted in the
+   pink/magenta family on purpose — after the root invert it renders as soft
+   emerald/green washes (the dark theme keeps its violet-blue, untouched). */
+html.theme-light .bg-stage {
+  background:
+    radial-gradient(ellipse 70% 50% at 80% 0%, rgba(255, 45, 111, 0.16) 0%, transparent 60%),
+    radial-gradient(ellipse 62% 55% at 0% 25%, rgba(224, 48, 156, 0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 50% 110%, rgba(255, 45, 111, 0.10) 0%, transparent 60%);
+}
+html.theme-light .bg-orb.a { background: #FF2D6F; opacity: 0.34; }
+html.theme-light .bg-orb.b { background: #E0309C; opacity: 0.30; }
+html.theme-light .bg-orb.c { background: #FF2D6F; opacity: 0.16; }
 /* Smooth the flip */
 html.theme-light,
 html.theme-light .bg-stage,

@@ -83,12 +83,6 @@ export function ProductCard({ product }: { product: Product }) {
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
-            <div
-              className="absolute inset-0"
-              style={{
-                background: "linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.8) 100%)",
-              }}
-            />
             {badge && (
               <div className="absolute bottom-3 left-3">
                 <span
