@@ -23,7 +23,7 @@ export function ContactSpecialistBanner({ onStartQuote, variant = "default" }: C
   const pillDot = isFifa ? "#E61D25" : "#FF2D6F"
 
   return (
-    <section className="py-10 md:py-14 relative overflow-hidden">
+    <section className="keep-original py-10 md:py-14 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <div
           className="relative rounded-[24px] overflow-hidden"

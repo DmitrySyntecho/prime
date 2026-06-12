@@ -189,10 +189,17 @@ html.theme-light [data-keep-color],
 html.theme-light .keep-color {
   filter: invert(1) hue-rotate(180deg);
 }
-/* Photo-backed banners stay as their original (dark) island so the imagery and
-   white text read correctly instead of as a negative. */
+/* Cards & banners marked .keep-original stay in their original dark design (photo
+   + white text) instead of flipping — they read as intentional dark islands. */
 html.theme-light .keep-original {
   filter: invert(1) hue-rotate(180deg);
+}
+/* media inside a keep-original block is already restored by the block's own
+   counter-invert, so it must NOT be counter-inverted again (would go negative). */
+html.theme-light .keep-original img,
+html.theme-light .keep-original video,
+html.theme-light .keep-original canvas {
+  filter: none;
 }
 /* Opt-out: let these invert WITH the page (e.g. a white logo flips to dark so it
    stays visible on the now-light header) instead of being counter-inverted. */
@@ -200,6 +207,12 @@ html.theme-light img.invert-with-page,
 html.theme-light .invert-with-page img {
   filter: none;
 }
+/* Logo swap: show the light-bg (dark) logo in light theme, the dark-bg (white)
+   logo otherwise. The light-bg logo keeps the default media counter-invert so it
+   renders in its true colors on the now-light header. */
+.theme-logo-light { display: none; }
+html.theme-light .theme-logo-dark { display: none; }
+html.theme-light .theme-logo-light { display: inline-block; }
 /* Smooth the flip */
 html.theme-light,
 html.theme-light .bg-stage,
@@ -443,16 +456,17 @@ html.theme-light .bg-orb {
   pointer-events: none;
   transform: translateZ(0);
   background:
-    radial-gradient(ellipse 70% 50% at 80% 0%, rgba(255, 45, 111, 0.18) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 0% 30%, rgba(124, 58, 237, 0.18) 0%, transparent 60%),
-    radial-gradient(ellipse 80% 60% at 50% 110%, rgba(255, 94, 58, 0.14) 0%, transparent 60%);
+    radial-gradient(ellipse 70% 50% at 80% 0%, rgba(124, 58, 237, 0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 62% 55% at 0% 25%, rgba(59, 92, 246, 0.20) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 50% 110%, rgba(99, 70, 220, 0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 96% 92%, rgba(255, 45, 111, 0.08) 0%, transparent 60%);
 }
 
 @media (max-width: 768px) {
   .bg-stage {
     background:
-      radial-gradient(ellipse 110% 50% at 100% 0%, rgba(255, 45, 111, 0.14) 0%, transparent 55%),
-      radial-gradient(ellipse 110% 50% at 0% 100%, rgba(124, 58, 237, 0.14) 0%, transparent 55%);
+      radial-gradient(ellipse 110% 50% at 100% 0%, rgba(124, 58, 237, 0.16) 0%, transparent 55%),
+      radial-gradient(ellipse 110% 50% at 0% 100%, rgba(59, 92, 246, 0.15) 0%, transparent 55%);
   }
 }
 
@@ -482,26 +496,26 @@ html.theme-light .bg-orb {
 .bg-orb.a {
   width: 540px;
   height: 540px;
-  background: #FF2D6F;
+  background: #7C3AED;
   top: -8%;
   right: -10%;
-  opacity: 0.55;
+  opacity: 0.50;
 }
 .bg-orb.b {
   width: 480px;
   height: 480px;
-  background: #7C3AED;
+  background: #3B5CF6;
   bottom: 10%;
   left: -10%;
-  opacity: 0.45;
+  opacity: 0.42;
 }
 .bg-orb.c {
   width: 400px;
   height: 400px;
-  background: #FF5E3A;
+  background: #FF2D6F;
   top: 50%;
   left: 45%;
-  opacity: 0.30;
+  opacity: 0.18;
 }
 @media (max-width: 768px) {
   .bg-orb { filter: blur(80px); }

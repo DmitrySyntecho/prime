@@ -328,13 +328,6 @@ export function DesktopNav({
           Locations
           <ChevronDown className={`w-3.5 h-3.5 transition-transform ${active === "locations" ? "rotate-180" : ""}`} />
         </button>
-        <Link
-          href="/fifa-2026-packages"
-          onMouseEnter={() => open("")}
-          className={`px-3.5 py-2.5 rounded-[10px] text-[13px] font-bold tracking-[0.04em] uppercase ${accentText} hover:text-white ${accentHoverBg} transition-all`}
-        >
-          FIFA 2026
-        </Link>
       </nav>
 
       {/* Panel */}

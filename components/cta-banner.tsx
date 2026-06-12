@@ -11,7 +11,7 @@ export function CTABanner({ onStartQuote }: CTABannerProps) {
   const { t } = useLanguage()
 
   return (
-    <section className="py-24 md:py-28 relative overflow-hidden">
+    <section className="keep-original py-24 md:py-28 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div
           className="relative px-6 md:px-14 py-14 md:py-20 rounded-[28px] border border-[#FF2D6F]/20 backdrop-blur-2xl text-center overflow-hidden"

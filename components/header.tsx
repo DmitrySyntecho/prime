@@ -170,7 +170,14 @@ export function Header() {
                   alt="Prime Line AV"
                   width={210}
                   height={38}
-                  className="h-9 w-auto invert-with-page"
+                  className="h-9 w-auto theme-logo-dark"
+                />
+                <Image
+                  src="/images/prime-line-av-logo-light-bg.svg"
+                  alt="Prime Line AV"
+                  width={210}
+                  height={38}
+                  className="h-9 w-auto theme-logo-light"
                 />
               </Link>
 
@@ -271,14 +278,6 @@ export function Header() {
                   ))}
                 </div>
               ))}
-              <Link
-                href="/fifa-2026-packages"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`px-3 py-3 rounded-[10px] text-[14px] font-bold tracking-[0.02em] uppercase ${accentText} ${accentHoverBg} transition-all`}
-              >
-                FIFA 2026
-              </Link>
-
               <div className="h-px bg-white/[0.08] my-2" />
 
               <div className="flex items-center justify-between px-3 py-2 rounded-[10px] bg-white/[0.04] border border-white/[0.10] mb-1">

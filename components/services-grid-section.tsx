@@ -99,7 +99,7 @@ export function ServicesGridSection() {
             <Link
               key={index}
               href={service.href}
-              className="group relative min-h-[280px] rounded-[22px] border border-[#FF2D6F]/20 overflow-hidden block transition-transform hover:-translate-y-0.5 hover:border-[#FF2D6F]/45 bg-[#0a0a0a]"
+              className="keep-original group relative min-h-[280px] rounded-[22px] border border-[#FF2D6F]/20 overflow-hidden block transition-transform hover:-translate-y-0.5 hover:border-[#FF2D6F]/45 bg-[#0a0a0a]"
               style={{
                 boxShadow:
                   "inset 0 1px 0 rgba(255,255,255,0.06), 0 16px 36px -12px rgba(0,0,0,0.4)",
