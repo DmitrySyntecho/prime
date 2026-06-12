@@ -49,6 +49,16 @@ export const FILTER_META: Record<
     order: ["led", "outdoor", "portable", "round", "platform-kit"],
   },
   backdrop: { label: "Backdrop", labels: { yes: "With Backdrop", no: "No Backdrop" }, order: ["yes", "no"] },
+  pdType: {
+    label: "Type",
+    labels: { drape: "Pipe & Drape", booth: "Booth Kit", backdrop: "Backdrop / Hardware", specialty: "Specialty (Canopy)" },
+    order: ["drape", "booth", "backdrop", "specialty"],
+  },
+  tvSize: {
+    label: "Display Size",
+    labels: { monitor: 'Monitor (under 30")', standard: 'Standard (43–55")', large: 'Large (60–70")', giant: 'Giant (75"+)' },
+    order: ["monitor", "standard", "large", "giant"],
+  },
 }
 
 /** Which filter facets apply to each category (in display order). */
@@ -57,7 +67,8 @@ export const CATEGORY_FACET_KEYS: Partial<Record<ProductCategory, string[]>> = {
   "sound-systems": ["capacity", "series"],
   "dj-setups": ["console", "size"],
   stage: ["stageType", "scale", "backdrop", "type"],
-  tv: ["size"],
+  "pipe-drape": ["pdType"],
+  tv: ["tvSize"],
 }
 
 const labelFor = (key: string, value: string) => FILTER_META[key]?.labels[value] || value

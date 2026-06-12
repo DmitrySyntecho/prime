@@ -8,6 +8,7 @@ export type ProductCategory =
   | "sound-systems"
   | "lighting"
   | "stage"
+  | "pipe-drape"
   | "tv"
 
 export type ProductTier = "basic" | "premium"

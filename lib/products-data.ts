@@ -23,6 +23,7 @@ export const CATEGORIES: CategoryMeta[] = [
   { slug: "sound-systems", label: "Sound Systems", shortLabel: "Sound", serviceSlug: "sound-system-rental" },
   { slug: "lighting", label: "Lighting", shortLabel: "Lighting", serviceSlug: "lighting-rental" },
   { slug: "stage", label: "Stage & Production", shortLabel: "Stage", serviceSlug: "stage-rental" },
+  { slug: "pipe-drape", label: "Pipe & Drape", shortLabel: "Pipe & Drape", serviceSlug: "pipe-drape-rental" },
   { slug: "tv", label: "TVs & Displays", shortLabel: "TVs", serviceSlug: "tv-rental" },
 ]
 
@@ -66,6 +67,7 @@ export function getComplementaryProducts(category: ProductCategory, limit = 8): 
     "sound-systems": ["dj-setups", "stage", "lighting"],
     lighting: ["stage", "led-screens", "sound-systems"],
     stage: ["led-screens", "sound-systems", "lighting"],
+    "pipe-drape": ["stage", "lighting", "led-screens"],
     tv: ["led-screens", "stage", "sound-systems"],
   }
   const wanted = pairings[category] || []

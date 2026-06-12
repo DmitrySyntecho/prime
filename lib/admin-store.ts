@@ -22,7 +22,7 @@ export function slugify(s: string): string {
     .replace(/(^-|-$)+/g, "")
 }
 
-const CATEGORIES: ProductCategory[] = ["led-screens", "dj-setups", "sound-systems", "lighting", "stage"]
+const CATEGORIES: ProductCategory[] = ["led-screens", "dj-setups", "sound-systems", "lighting", "stage", "pipe-drape", "tv"]
 
 /** Coerce arbitrary input into a valid, fully-formed Product. */
 export function normalizeProduct(input: any, existingIds: string[] = []): Product {

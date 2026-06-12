@@ -25,6 +25,7 @@ import {
   Crown,
   DollarSign,
   Tv,
+  Blinds,
   type LucideIcon,
 } from "lucide-react"
 
@@ -36,6 +37,7 @@ const CATEGORY_ICONS: Record<ProductCategory, LucideIcon> = {
   "sound-systems": Volume2,
   lighting: Lightbulb,
   stage: Layers,
+  "pipe-drape": Blinds,
   tv: Tv,
 }
 
