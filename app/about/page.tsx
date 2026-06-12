@@ -16,17 +16,17 @@ const team = [
   {
     name: "Production Team",
     role: "Technical Directors, Audio Engineers, Lighting Designers",
-    image: "/professional-production-team.jpg",
+    image: "/images/services/full-av-production.webp",
   },
   {
     name: "Creative Team",
     role: "Event Designers, 3D Artists, Content Creators",
-    image: "/creative-design-team.jpg",
+    image: "/images/services/event-production.webp",
   },
   {
     name: "Operations Team",
     role: "Project Managers, Logistics Coordinators",
-    image: "/operations-logistics-team.jpg",
+    image: "/images/services/staging-rigging.webp",
   },
 ]
 
@@ -79,7 +79,7 @@ export default function AboutPage() {
               </button>
             </div>
             <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/10">
-              <Image src="/av-production-team-working-on-event.jpg" alt="Prime Line AV Team" fill className="object-cover" />
+              <Image src="/images/about/brands-trust-1.webp" alt="Prime Line AV Team" fill className="object-cover" />
             </div>
           </div>
         </div>

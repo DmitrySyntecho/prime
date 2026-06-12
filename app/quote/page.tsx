@@ -19,17 +19,17 @@ const STEPS = [
 ]
 
 const EVENT_TYPES = [
-  { name: "Corporate Event", image: "/corporate-event-conference-stage-lighting.webp" },
-  { name: "Experiential Marketing", image: "/experiential-marketing-brand-activation-booth.jpg" },
-  { name: "Fashion Show", image: "/fashion-show-runway-lighting-models.jpg" },
-  { name: "Trade Show", image: "/trade-show-exhibition-booth-display.jpg" },
-  { name: "Brand Activation", image: "/brand-activation-event-interactive-display.jpg" },
-  { name: "Conference", image: "/conference-presentation-stage-speakers.jpg" },
-  { name: "Festival", image: "/music-festival-outdoor-stage-concert.jpg" },
-  { name: "Wedding", image: "/wedding-reception-elegant-lighting-decor.jpg" },
-  { name: "Award Show / Gala", image: "/award-show-gala-ceremony-stage-elegant.jpg" },
-  { name: "Private Film Production", image: "/film-production-studio-camera-equipment.jpg" },
-  { name: "Other", image: "/event-production-av-equipment-stage.jpg" },
+  { name: "Corporate Event", image: "/images/events/corporate.webp" },
+  { name: "Experiential Marketing", image: "/images/events/experiential-marketing.webp" },
+  { name: "Fashion Show", image: "/images/events/fashion-shows.webp" },
+  { name: "Trade Show", image: "/images/events/trade-shows.webp" },
+  { name: "Brand Activation", image: "/images/events/grand-opening.webp" },
+  { name: "Conference", image: "/images/events/hybrid-events.webp" },
+  { name: "Festival", image: "/images/events/festivals.webp" },
+  { name: "Wedding", image: "/images/events/weddings.webp" },
+  { name: "Award Show / Gala", image: "/images/events/private.webp" },
+  { name: "Private Film Production", image: "/images/events/film-production.webp" },
+  { name: "Other", image: "/images/services/full-av-production.webp" },
 ]
 
 const BUDGET_RANGES = [

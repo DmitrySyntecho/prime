@@ -9,37 +9,37 @@ const projects = [
     title: "USA Teqball Tour",
     category: "Sports Event",
     location: "Long Beach Arena & Anaheim",
-    image: "/teqball-sports-event-arena.jpg",
+    image: "/images/case-studies/ramp-1.webp",
   },
   {
     title: "Family Style Food Festival",
     category: "Festival",
     location: "CBS Television City, LA",
-    image: "/food-festival-outdoor-event.jpg",
+    image: "/images/events/festivals.webp",
   },
   {
     title: "Netflix Brand Activation",
     category: "Brand Activation",
     location: "Los Angeles",
-    image: "/netflix-brand-activation-event.jpg",
+    image: "/images/case-studies/asian-flame-1.webp",
   },
   {
     title: "TikTok Creator Summit",
     category: "Corporate Event",
     location: "Miami Beach",
-    image: "/tiktok-corporate-summit.jpg",
+    image: "/images/case-studies/tiktok-1.webp",
   },
   {
     title: "Marriott Annual Conference",
     category: "Conference",
     location: "Fort Lauderdale",
-    image: "/marriott-hotel-conference.jpg",
+    image: "/images/events/corporate.webp",
   },
   {
     title: "ESPN Live Broadcast",
     category: "Live Production",
     location: "Multiple Locations",
-    image: "/espn-live-sports-broadcast.jpg",
+    image: "/images/case-studies/miami-1.webp",
   },
 ]
 
