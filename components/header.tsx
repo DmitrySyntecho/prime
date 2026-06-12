@@ -7,6 +7,7 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { PromoTopBanner } from "./promo-top-banner"
 import { DesktopNav } from "./mega-menu"
+import { ThemeToggle } from "./theme-toggle"
 import { useCart } from "@/lib/cart-context"
 import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/contact"
 
@@ -169,7 +170,7 @@ export function Header() {
                   alt="Prime Line AV"
                   width={210}
                   height={38}
-                  className="h-9 w-auto"
+                  className="h-9 w-auto invert-with-page"
                 />
               </Link>
 
@@ -205,6 +206,9 @@ export function Header() {
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
+
+              {/* Light / dark theme toggle */}
+              <ThemeToggle />
 
               {/* Cart (opens the quote drawer) */}
               <button
@@ -276,6 +280,11 @@ export function Header() {
               </Link>
 
               <div className="h-px bg-white/[0.08] my-2" />
+
+              <div className="flex items-center justify-between px-3 py-2 rounded-[10px] bg-white/[0.04] border border-white/[0.10] mb-1">
+                <span className="text-white/75 font-semibold text-[14px]">Light mode</span>
+                <ThemeToggle />
+              </div>
 
               <a
                 href={PHONE_TEL}

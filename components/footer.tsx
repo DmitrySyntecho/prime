@@ -87,7 +87,7 @@ export function Footer() {
                 alt="Prime Line AV"
                 width={200}
                 height={75}
-                className="h-9 w-auto"
+                className="h-9 w-auto invert-with-page"
               />
             </Link>
             <p className="text-white/50 text-[14px] leading-relaxed max-w-xs">

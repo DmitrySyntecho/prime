@@ -96,6 +96,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${manrope.variable} ${jetbrainsMono.variable}`}>
       <head>
+        <script
+          id="theme-init"
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.getItem('theme')==='light')document.documentElement.classList.add('theme-light')}catch(e){}`,
+          }}
+        />
         <link rel="preconnect" href="https://image.mux.com" crossOrigin="" />
         <link rel="preconnect" href="https://stream.mux.com" crossOrigin="" />
         {process.env.NEXT_PUBLIC_GTM_ID && (
