@@ -1,10 +1,8 @@
 "use client"
 
-import { useState } from "react"
-import { StickyCTA } from "@/components/sticky-cta"
-import { QuoteForm } from "@/components/quote-form"
-import { ArrowRight, Play } from "lucide-react"
+import { Play } from "lucide-react"
 import Image from "next/image"
+import { ContactSpecialistBanner } from "@/components/contact-specialist-banner"
 
 const projects = [
   {
@@ -46,29 +44,43 @@ const projects = [
 ]
 
 export default function PortfolioPage() {
-  const [quoteFormOpen, setQuoteFormOpen] = useState(false)
-  const [showStickyCTA, setShowStickyCTA] = useState(true)
+  const startQuote = () => document.dispatchEvent(new CustomEvent("openQuoteForm"))
 
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-[#0B1217] py-20 md:py-32">
+      <section className="py-20 md:py-28 relative">
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Our Portfolio</h1>
-          <p className="text-xl text-gray-300 max-w-2xl">
+          <span
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-5 text-[11px] font-bold tracking-[0.16em] uppercase"
+            style={{
+              background: "linear-gradient(90deg, rgba(255,45,111,0.15) 0%, rgba(255,94,58,0.12) 100%)",
+              border: "1px solid rgba(255,94,58,0.25)",
+              color: "#FFB366",
+            }}
+          >
+            Our Work
+          </span>
+          <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+            Our{" "}
+            <span style={{ background: "linear-gradient(90deg, #FF2D6F 0%, #FF5E3A 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+              Portfolio
+            </span>
+          </h1>
+          <p className="text-lg text-white/60 max-w-2xl leading-relaxed">
             Explore our work with Fortune 500 companies, global brands, and world-class events.
           </p>
         </div>
       </section>
 
       {/* Projects Grid */}
-      <section id="our-recent-work" className="py-20 bg-white">
+      <section id="our-recent-work" className="py-12 md:py-16 relative">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
               <div
                 key={project.title}
-                className="group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer"
+                className="group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer border border-white/10"
               >
                 <Image
                   src={project.image || "/placeholder.svg"}
@@ -78,7 +90,7 @@ export default function PortfolioPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-[#4ADE80] text-sm font-medium mb-2">{project.category}</p>
+                  <p className="text-[#FF5E3A] text-sm font-bold mb-2">{project.category}</p>
                   <h3 className="text-white text-xl font-bold mb-1">{project.title}</h3>
                   <p className="text-gray-300 text-sm">{project.location}</p>
                 </div>
@@ -93,22 +105,7 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-[#0B1217]">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Create Something Amazing?</h2>
-          <p className="text-gray-400 mb-8">Let's discuss your next event and make it unforgettable.</p>
-          <button 
-            onClick={() => setQuoteFormOpen(true)}
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#16A34A] to-[#4ADE80] text-white font-bold px-8 py-4 rounded-lg hover:opacity-90 transition-opacity"
-          >
-            Start Your Quote <ArrowRight className="w-5 h-5" />
-          </button>
-        </div>
-      </section>
-
-      <StickyCTA visible={showStickyCTA} onStartQuote={() => setQuoteFormOpen(true)} />
-      <QuoteForm isOpen={quoteFormOpen} onClose={() => setQuoteFormOpen(false)} />
+      <ContactSpecialistBanner onStartQuote={startQuote} />
     </div>
   )
 }

@@ -1,10 +1,15 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Image from "next/image"
-import Link from "next/link"
-import { X } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
+
+const GRADIENT = "linear-gradient(90deg, #FF2D6F 0%, #FF5E3A 100%)"
+const BTN = "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)"
+const INPUT =
+  "w-full py-4 px-6 rounded-xl text-lg text-white placeholder:text-white/35 outline-none focus:ring-2 focus:ring-[#FF2D6F]/40 transition-all"
+const INPUT_STYLE = { background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)" }
 
 const STEPS = [
   { id: "event-type", label: "Event Type" },
@@ -53,16 +58,6 @@ export default function QuotePage() {
     message: "",
   })
 
-  useEffect(() => {
-    document.documentElement.style.backgroundColor = "#0a1628"
-    document.body.style.backgroundColor = "#0a1628"
-
-    return () => {
-      document.documentElement.style.backgroundColor = ""
-      document.body.style.backgroundColor = ""
-    }
-  }, [])
-
   const handleEventTypeSelect = (type: string) => {
     setFormData({ ...formData, eventType: type })
     setCurrentStep(1)
@@ -92,53 +87,28 @@ export default function QuotePage() {
   }
 
   return (
-    <>
-      <style jsx global>{`
-        html, body {
-          background-color: #0a1628 !important;
-        }
-      `}</style>
-
-      <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#0a1628", minHeight: "100vh" }}>
-        {/* Header */}
-        <header
-          className="flex items-center justify-between px-6 py-4 border-b border-white/10"
-          style={{ backgroundColor: "#0a1628" }}
-        >
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/images/prime-line-av-logo-dark-bg.svg"
-              alt="Prime Line AV"
-              width={200}
-              height={75}
-              className="h-12 w-auto"
-            />
-          </Link>
-          <Link href="/" className="p-2 hover:bg-white/10 rounded-lg transition-colors">
-            <X className="w-6 h-6 text-white" />
-          </Link>
-        </header>
-
-        {/* Main Content */}
-        <main className="flex-1 px-6 py-8" style={{ backgroundColor: "#0a1628" }}>
-          {/* Progress Bar */}
-          <div className="max-w-2xl mx-auto mb-8">
-            <div className="flex gap-2">
-              {STEPS.map((step, index) => (
-                <div
-                  key={step.id}
-                  className="h-1.5 flex-1 rounded-md transition-colors duration-300"
-                  style={{
-                    backgroundColor: index <= currentStep ? "#D4A853" : "#3B5998",
-                  }}
-                />
-              ))}
-            </div>
-            <p className="text-center text-sm mt-3 text-gray-400">{STEPS[currentStep].label}</p>
+    <div className="min-h-screen">
+      <main className="px-6 py-12 md:py-16">
+        {/* Progress Bar */}
+        <div className="max-w-2xl mx-auto mb-10">
+          <div className="flex gap-2">
+            {STEPS.map((step, index) => (
+              <div
+                key={step.id}
+                className="h-1.5 flex-1 rounded-full transition-all duration-300"
+                style={{
+                  background: index <= currentStep ? GRADIENT : "rgba(255,255,255,0.12)",
+                }}
+              />
+            ))}
           </div>
+          <p className="text-center text-sm mt-3 text-[#FFB366] font-semibold uppercase tracking-wider">
+            {STEPS[currentStep].label}
+          </p>
+        </div>
 
-          {/* Form Content */}
-          <div className="max-w-3xl mx-auto">
+        {/* Form Content */}
+        <div className="max-w-3xl mx-auto">
             {/* Step 1: Event Type */}
             {currentStep === 0 && (
               <div className="animate-fadeIn">
@@ -151,7 +121,7 @@ export default function QuotePage() {
                     <button
                       key={type.name}
                       onClick={() => handleEventTypeSelect(type.name)}
-                      className="group relative overflow-hidden rounded-xl transition-all hover:scale-[1.02] hover:ring-2 hover:ring-[#4ADE80] bg-white/10 aspect-[4/3]"
+                      className="group relative overflow-hidden rounded-xl transition-all hover:scale-[1.02] hover:ring-2 hover:ring-[#FF5E3A] bg-white/5 border border-white/10 aspect-[4/3]"
                     >
                       <Image
                         src={type.image || "/placeholder.svg"}
@@ -169,8 +139,8 @@ export default function QuotePage() {
 
                 {/* Social Proof */}
                 <div className="mt-12 flex justify-center">
-                  <div className="rounded-md px-6 py-3 text-sm bg-[#1a2d4a] text-white">
-                    <span className="text-[#4ADE80] font-bold">127 Brands</span> requested a quote in the past 24 hours.
+                  <div className="rounded-full px-6 py-3 text-sm text-white/80" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.10)" }}>
+                    <span className="text-[#FF5E3A] font-bold">127 Brands</span> requested a quote in the past 24 hours.
                   </div>
                 </div>
               </div>
@@ -188,7 +158,8 @@ export default function QuotePage() {
                     <button
                       key={budget}
                       onClick={() => handleBudgetSelect(budget)}
-                      className="py-4 px-6 rounded-md text-lg font-semibold transition-all hover:scale-[1.02] bg-white text-[#0a1628]"
+                      className="py-4 px-6 rounded-xl text-lg font-semibold text-white transition-all hover:scale-[1.02] hover:border-[#FF5E3A]/40"
+                      style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)" }}
                     >
                       {budget}
                     </button>
@@ -197,9 +168,9 @@ export default function QuotePage() {
 
                 <button
                   onClick={handleBack}
-                  className="flex items-center justify-center gap-2 mx-auto mt-8 font-semibold transition-colors hover:opacity-80 text-white"
+                  className="flex items-center justify-center gap-2 mx-auto mt-8 text-sm font-bold uppercase tracking-wider text-white/60 transition-colors hover:text-white"
                 >
-                  BACK
+                  <ArrowLeft className="w-4 h-4" /> Back
                 </button>
               </div>
             )}
@@ -218,12 +189,14 @@ export default function QuotePage() {
                     value={formData.location}
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                     placeholder="Enter city or zip code"
-                    className="w-full py-4 px-6 rounded-2xl text-lg focus:outline-none bg-white text-[#0a1628] border-2 border-dashed border-gray-400"
+                    className={INPUT}
+                    style={INPUT_STYLE}
                   />
 
                   <button
                     type="submit"
-                    className="w-full mt-6 py-4 px-6 rounded-md text-lg font-semibold transition-all hover:opacity-90 bg-[#3B5998] text-white"
+                    className="w-full mt-6 py-4 px-6 rounded-xl text-lg font-bold text-white transition-all hover:opacity-90"
+                    style={{ background: BTN }}
                   >
                     Continue
                   </button>
@@ -231,9 +204,9 @@ export default function QuotePage() {
 
                 <button
                   onClick={handleBack}
-                  className="flex items-center justify-center gap-2 mx-auto mt-6 font-semibold transition-colors hover:opacity-80 text-white"
+                  className="flex items-center justify-center gap-2 mx-auto mt-6 text-sm font-bold uppercase tracking-wider text-white/60 transition-colors hover:text-white"
                 >
-                  BACK
+                  <ArrowLeft className="w-4 h-4" /> Back
                 </button>
               </div>
             )}
@@ -253,7 +226,8 @@ export default function QuotePage() {
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Your Name"
                     required
-                    className="w-full py-4 px-6 rounded-2xl text-lg focus:outline-none bg-white text-[#0a1628]"
+                    className={INPUT}
+                    style={INPUT_STYLE}
                   />
 
                   <input
@@ -262,7 +236,8 @@ export default function QuotePage() {
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="Email Address"
                     required
-                    className="w-full py-4 px-6 rounded-2xl text-lg focus:outline-none bg-white text-[#0a1628]"
+                    className={INPUT}
+                    style={INPUT_STYLE}
                   />
 
                   <input
@@ -271,14 +246,16 @@ export default function QuotePage() {
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="Phone Number"
                     required
-                    className="w-full py-4 px-6 rounded-2xl text-lg focus:outline-none bg-white text-[#0a1628]"
+                    className={INPUT}
+                    style={INPUT_STYLE}
                   />
 
                   <input
                     type="date"
                     value={formData.eventDate}
                     onChange={(e) => setFormData({ ...formData, eventDate: e.target.value })}
-                    className="w-full py-4 px-6 rounded-2xl text-lg focus:outline-none bg-white text-[#0a1628]"
+                    className={INPUT}
+                    style={INPUT_STYLE}
                   />
 
                   <textarea
@@ -286,12 +263,14 @@ export default function QuotePage() {
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Tell us more about your event (optional)"
                     rows={3}
-                    className="w-full py-4 px-6 rounded-2xl text-lg focus:outline-none resize-none bg-white text-[#0a1628]"
+                    className={`${INPUT} resize-none`}
+                    style={INPUT_STYLE}
                   />
 
                   <button
                     type="submit"
-                    className="w-full py-4 px-6 rounded-md text-lg font-semibold transition-all hover:opacity-90 bg-[#3B5998] text-white"
+                    className="w-full py-4 px-6 rounded-xl text-lg font-bold text-white transition-all hover:opacity-90"
+                    style={{ background: BTN }}
                   >
                     Get My Quote
                   </button>
@@ -299,22 +278,21 @@ export default function QuotePage() {
 
                 <button
                   onClick={handleBack}
-                  className="flex items-center justify-center gap-2 mx-auto mt-6 font-semibold transition-colors hover:opacity-80 text-white"
+                  className="flex items-center justify-center gap-2 mx-auto mt-6 text-sm font-bold uppercase tracking-wider text-white/60 transition-colors hover:text-white"
                 >
-                  BACK
+                  <ArrowLeft className="w-4 h-4" /> Back
                 </button>
 
                 {/* Social Proof */}
                 <div className="mt-10 flex justify-center">
-                  <div className="rounded-md px-6 py-3 text-sm bg-[#1a2d4a] text-white">
-                    <span className="text-[#D4A853] font-bold">1,986 Events</span> produced successfully this year.
+                  <div className="rounded-full px-6 py-3 text-sm text-white/80" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.10)" }}>
+                    <span className="text-[#FF5E3A] font-bold">1,986 Events</span> produced successfully this year.
                   </div>
                 </div>
               </div>
             )}
-          </div>
-        </main>
-      </div>
-    </>
+        </div>
+      </main>
+    </div>
   )
 }
