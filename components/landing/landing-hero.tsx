@@ -193,7 +193,7 @@ function CtaButtons({ onQuote, onWatch, centered }: { onQuote: () => void; onWat
 
       <button
         onClick={onWatch}
-        className={`inline-flex items-center justify-center gap-2.5 px-6 py-3.5 md:py-4 rounded-xl bg-white/[0.05] border border-white/[0.12] text-white font-bold text-[14px] backdrop-blur-md hover:bg-white/[0.10] hover:border-white/[0.22] transition-all ${fullWidth}`}
+        className={`shimmer-stroke inline-flex items-center justify-center gap-2.5 px-6 py-3.5 md:py-4 rounded-xl bg-white/[0.05] border border-white/[0.12] text-white font-bold text-[14px] backdrop-blur-md hover:bg-white/[0.10] hover:border-white/[0.22] transition-all ${fullWidth}`}
       >
         <Play className="w-4 h-4 fill-white" />
         Watch How We Work

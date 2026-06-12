@@ -190,12 +190,15 @@ export function Header() {
                 onQuote={openQuote}
               />
 
-              {/* Right side: Phone + Quote CTA */}
-              <div className="hidden md:flex items-center gap-2.5">
+              {/* Right side: one tight cluster — toggle next to phone, then CTA, cart, menu */}
+              <div className="flex items-center gap-2.5">
+                {/* Light / dark theme toggle (left, beside the phone) */}
+                <ThemeToggle />
+
                 <a
                   href={PHONE_TEL}
                   suppressHydrationWarning
-                  className="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-[10px] bg-white/[0.04] border border-white/[0.10] text-white/85 hover:text-white hover:bg-white/[0.08] hover:border-white/[0.20] transition-all text-[13px] font-semibold"
+                  className="shimmer-stroke hidden md:inline-flex items-center gap-2 px-3.5 py-2.5 rounded-[10px] bg-white/[0.04] border border-white/[0.10] text-white/85 hover:text-white hover:bg-white/[0.08] hover:border-white/[0.20] transition-all text-[13px] font-semibold"
                 >
                   <Phone className="w-3.5 h-3.5" />
                   <span suppressHydrationWarning className="hidden xl:inline">{PHONE_DISPLAY}</span>
@@ -203,7 +206,7 @@ export function Header() {
 
                 <button
                   onClick={openQuote}
-                  className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] ${ctaTextColor} font-extrabold text-[13px] tracking-[0.02em] transition-all hover:-translate-y-0.5`}
+                  className={`hidden md:inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] ${ctaTextColor} font-extrabold text-[13px] tracking-[0.02em] transition-all hover:-translate-y-0.5`}
                   style={{
                     background: `linear-gradient(135deg, ${accent} 0%, ${accentDeep} 100%)`,
                     boxShadow: ctaShadow,
@@ -212,36 +215,33 @@ export function Header() {
                   Get a Quote
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
+
+                {/* Cart (opens the quote drawer) */}
+                <button
+                  onClick={openCart}
+                  aria-label="Open quote cart"
+                  className="relative inline-flex items-center justify-center w-10 h-10 rounded-[10px] bg-white/[0.04] border border-white/[0.10] text-white/85 hover:text-white hover:bg-white/[0.08] hover:border-white/[0.20] transition-all"
+                >
+                  <ShoppingCart className="w-[18px] h-[18px]" />
+                  {itemCount > 0 && (
+                    <span
+                      className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 rounded-full text-[10px] font-extrabold text-white grid place-items-center"
+                      style={{ background: `linear-gradient(135deg, ${accent} 0%, ${accentDeep} 100%)` }}
+                    >
+                      {itemCount}
+                    </span>
+                  )}
+                </button>
+
+                {/* Mobile menu button */}
+                <button
+                  className="lg:hidden text-white p-2 rounded-lg bg-white/[0.04] border border-white/[0.08]"
+                  onClick={toggleMenu}
+                  aria-label="Menu"
+                >
+                  {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                </button>
               </div>
-
-              {/* Light / dark theme toggle */}
-              <ThemeToggle />
-
-              {/* Cart (opens the quote drawer) */}
-              <button
-                onClick={openCart}
-                aria-label="Open quote cart"
-                className="relative inline-flex items-center justify-center w-10 h-10 rounded-[10px] bg-white/[0.04] border border-white/[0.10] text-white/85 hover:text-white hover:bg-white/[0.08] hover:border-white/[0.20] transition-all"
-              >
-                <ShoppingCart className="w-[18px] h-[18px]" />
-                {itemCount > 0 && (
-                  <span
-                    className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 rounded-full text-[10px] font-extrabold text-white grid place-items-center"
-                    style={{ background: `linear-gradient(135deg, ${accent} 0%, ${accentDeep} 100%)` }}
-                  >
-                    {itemCount}
-                  </span>
-                )}
-              </button>
-
-              {/* Mobile menu button */}
-              <button
-                className="lg:hidden text-white p-2 rounded-lg bg-white/[0.04] border border-white/[0.08]"
-                onClick={toggleMenu}
-                aria-label="Menu"
-              >
-                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-              </button>
             </div>
           </div>
         </header>
@@ -288,7 +288,7 @@ export function Header() {
               <a
                 href={PHONE_TEL}
                 suppressHydrationWarning
-                className="flex items-center justify-center gap-2 w-full px-3 py-3 rounded-[10px] bg-white/[0.04] border border-white/[0.10] text-white/85 font-semibold text-[14px]"
+                className="shimmer-stroke flex items-center justify-center gap-2 w-full px-3 py-3 rounded-[10px] bg-white/[0.04] border border-white/[0.10] text-white/85 font-semibold text-[14px]"
               >
                 <Phone className="w-4 h-4" />
                 {PHONE_DISPLAY}

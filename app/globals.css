@@ -139,14 +139,22 @@ html, body {
 @keyframes shimmer-spin {
   to { --shimmer-angle: 360deg; }
 }
-/* match only filled CTAs: <button>/<a> whose inline style paints the brand gradient */
+/* Targets every CTA: filled brand-gradient buttons (whether the gradient is set
+   via inline style OR a Tailwind `from-[#FF2D6F]` class) plus any element opted
+   in with the .shimmer-stroke class (glass / phone / secondary buttons). */
 button[style*="#FF2D6F"][style*="#FF5E3A"],
-a[style*="#FF2D6F"][style*="#FF5E3A"] {
+a[style*="#FF2D6F"][style*="#FF5E3A"],
+button[class*="from-[#FF2D6F]"],
+a[class*="from-[#FF2D6F]"],
+.shimmer-stroke {
   position: relative;
   isolation: isolate;
 }
 button[style*="#FF2D6F"][style*="#FF5E3A"]::after,
-a[style*="#FF2D6F"][style*="#FF5E3A"]::after {
+a[style*="#FF2D6F"][style*="#FF5E3A"]::after,
+button[class*="from-[#FF2D6F]"]::after,
+a[class*="from-[#FF2D6F]"]::after,
+.shimmer-stroke::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -166,7 +174,10 @@ a[style*="#FF2D6F"][style*="#FF5E3A"]::after {
 }
 @media (prefers-reduced-motion: reduce) {
   button[style*="#FF2D6F"][style*="#FF5E3A"]::after,
-  a[style*="#FF2D6F"][style*="#FF5E3A"]::after { animation: none; }
+  a[style*="#FF2D6F"][style*="#FF5E3A"]::after,
+  button[class*="from-[#FF2D6F]"]::after,
+  a[class*="from-[#FF2D6F]"]::after,
+  .shimmer-stroke::after { animation: none; }
 }
 
 /* ============ LIGHT THEME (full-site inversion) ============ */
