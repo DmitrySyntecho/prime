@@ -181,7 +181,16 @@ html.theme-light {
      pink-orange accent, and inverting #FF2D6F lands on emerald (0,210,144).
      Grayscale UI just flips light/dark; photos are counter-inverted below. */
   filter: invert(1);
-  background: #f5f6f8;
+  /* fully white canvas: black pre-invert → white, no ambient gradients */
+  background-color: #000 !important;
+  background-image: none !important;
+}
+/* hide all ambient background layers so the light theme is pure white */
+html.theme-light .bg-stage,
+html.theme-light .bg-orb,
+html.theme-light .bg-noise,
+html.theme-light .bg-grid {
+  display: none !important;
 }
 /* Counter-invert anything that must keep its real colors */
 html.theme-light img,
@@ -217,18 +226,19 @@ html.theme-light .invert-with-page img {
 html.theme-light .theme-logo-dark { display: none; }
 html.theme-light .theme-logo-light { display: inline-block; }
 
-/* Cohesive emerald light theme: the ambient background is painted in the
-   pink/magenta family on purpose — after the root invert it renders as soft
-   emerald/green washes (the dark theme keeps its violet-blue, untouched). */
-html.theme-light .bg-stage {
-  background:
-    radial-gradient(ellipse 70% 50% at 80% 0%, rgba(255, 45, 111, 0.16) 0%, transparent 60%),
-    radial-gradient(ellipse 62% 55% at 0% 25%, rgba(224, 48, 156, 0.14) 0%, transparent 60%),
-    radial-gradient(ellipse 80% 60% at 50% 110%, rgba(255, 45, 111, 0.10) 0%, transparent 60%);
+/* All icons emerald in the light theme. Icons are inline <svg> using
+   currentColor; pre-invert #FF2D6F renders as emerald (0,210,144) after the
+   root invert. Logos are <img> so they're untouched. */
+html.theme-light svg {
+  color: #FF2D6F !important;
 }
-html.theme-light .bg-orb.a { background: #FF2D6F; opacity: 0.34; }
-html.theme-light .bg-orb.b { background: #E0309C; opacity: 0.30; }
-html.theme-light .bg-orb.c { background: #FF2D6F; opacity: 0.16; }
+/* …except icons inside filled brand buttons / dark "keep-original" islands,
+   which keep their own contrast (inherit the local text color). */
+html.theme-light button[style*="#FF2D6F"][style*="#FF5E3A"] svg,
+html.theme-light a[style*="#FF2D6F"][style*="#FF5E3A"] svg,
+html.theme-light .keep-original svg {
+  color: inherit !important;
+}
 /* Smooth the flip */
 html.theme-light,
 html.theme-light .bg-stage,
