@@ -177,10 +177,10 @@ a[style*="#FF2D6F"][style*="#FF5E3A"]::after {
    recognizable on a near-white background. Media is counter-inverted so photos,
    logos and video render true-to-life. */
 html.theme-light {
-  /* pure invert (no hue-rotate): the only saturated color on the site is the
-     pink-orange accent, and inverting #FF2D6F lands on emerald (0,210,144).
-     Grayscale UI just flips light/dark; photos are counter-inverted below. */
-  filter: invert(1);
+  /* invert + hue-rotate(180): flips lightness (dark UI → white) while keeping the
+     warm pink-orange accent recognizable (NOT emerald). Grayscale (the white
+     canvas) is unaffected by hue-rotate, so the background stays pure white. */
+  filter: invert(1) hue-rotate(180deg);
   /* fully white canvas: black pre-invert → white, no ambient gradients */
   background-color: #000 !important;
   background-image: none !important;
@@ -199,12 +199,12 @@ html.theme-light iframe,
 html.theme-light canvas,
 html.theme-light [data-keep-color],
 html.theme-light .keep-color {
-  filter: invert(1);
+  filter: invert(1) hue-rotate(180deg);
 }
 /* Cards & banners marked .keep-original stay in their original dark design (photo
    + white text) instead of flipping — they read as intentional dark islands. */
 html.theme-light .keep-original {
-  filter: invert(1);
+  filter: invert(1) hue-rotate(180deg);
 }
 /* media inside a keep-original block is already restored by the block's own
    counter-invert, so it must NOT be counter-inverted again (would go negative). */
@@ -226,16 +226,12 @@ html.theme-light .invert-with-page img {
 html.theme-light .theme-logo-dark { display: none; }
 html.theme-light .theme-logo-light { display: inline-block; }
 
-/* All icons emerald in the light theme. Icons are inline <svg> using
-   currentColor; pre-invert #FF2D6F renders as emerald (0,210,144) after the
-   root invert. Logos are <img> so they're untouched. */
+/* Unify all icons to the brand accent in the light theme. Icons are inline <svg>
+   using currentColor; under invert+hue-rotate(180) a #FF2D6F source displays as
+   the pink-orange accent — and inside double-inverted .keep-original islands the
+   same value cancels to plain #FF2D6F, so one rule covers both. */
 html.theme-light svg {
   color: #FF2D6F !important;
-}
-/* Inside dark "keep-original" islands the content is double-inverted, so use a
-   real emerald green there — it displays emerald after the local invert. */
-html.theme-light .keep-original svg {
-  color: #00D290 !important;
 }
 /* …except icons inside filled brand buttons, which keep their own contrast
    (inherit the local text color) so they don't vanish on the accent fill. */
