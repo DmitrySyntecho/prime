@@ -86,37 +86,61 @@ export default function PortfolioPage() {
           {caseStudies.map((study, i) => {
             const videoFirst = i % 2 === 0
             return (
-              <div key={study.id} className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-                {/* Video */}
-                <div className={videoFirst ? "md:order-1" : "md:order-2"}>
-                  <VideoPlayer muxId={study.muxId} thumbnail={study.thumbnail} title={study.title} />
+              <div key={study.id}>
+                <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                  {/* Video */}
+                  <div className={videoFirst ? "md:order-1" : "md:order-2"}>
+                    <VideoPlayer muxId={study.muxId} thumbnail={study.thumbnail} title={study.title} />
+                  </div>
+
+                  {/* Text */}
+                  <div className={videoFirst ? "md:order-2" : "md:order-1"}>
+                    <div className="flex items-center gap-2 text-[#FFB366] text-[12px] font-bold uppercase tracking-wider mb-3">
+                      <MapPin className="w-3.5 h-3.5" /> {study.location}
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-black text-white mb-4 leading-tight">{study.title}</h2>
+                    <p className="text-white/60 leading-relaxed mb-6">{study.description}</p>
+                    <div className="flex flex-wrap gap-3">
+                      <button
+                        onClick={startQuote}
+                        className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-white font-bold text-[13px] tracking-[0.02em] transition-all hover:-translate-y-0.5"
+                        style={{ background: BTN, boxShadow: "0 12px 36px -8px rgba(255,45,111,0.55), inset 0 1px 0 rgba(255,255,255,0.30)" }}
+                      >
+                        Get a Similar Quote
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                      <a
+                        href={PHONE_TEL}
+                        suppressHydrationWarning
+                        className="shimmer-stroke inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/[0.05] border border-white/[0.12] text-white font-semibold text-[13px] backdrop-blur-md hover:bg-white/[0.10] transition-all"
+                      >
+                        Talk to an Expert
+                      </a>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Text */}
-                <div className={videoFirst ? "md:order-2" : "md:order-1"}>
-                  <div className="flex items-center gap-2 text-[#FFB366] text-[12px] font-bold uppercase tracking-wider mb-3">
-                    <MapPin className="w-3.5 h-3.5" /> {study.location}
+                {/* Photo gallery under the block */}
+                {study.gallery?.length > 0 && (
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3 mt-6 md:mt-8">
+                    {study.gallery.map((photo) => (
+                      <div
+                        key={photo.src}
+                        className="relative aspect-[4/3] rounded-xl overflow-hidden border border-white/[0.07] bg-white/[0.04]"
+                        style={{ boxShadow: "0 8px 24px -6px rgba(0,0,0,0.4)" }}
+                      >
+                        <Image
+                          src={photo.src}
+                          alt={photo.alt}
+                          fill
+                          className="object-cover transition-transform duration-500 hover:scale-105"
+                          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                          quality={70}
+                        />
+                      </div>
+                    ))}
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-black text-white mb-4 leading-tight">{study.title}</h2>
-                  <p className="text-white/60 leading-relaxed mb-6">{study.description}</p>
-                  <div className="flex flex-wrap gap-3">
-                    <button
-                      onClick={startQuote}
-                      className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-white font-bold text-[13px] tracking-[0.02em] transition-all hover:-translate-y-0.5"
-                      style={{ background: BTN, boxShadow: "0 12px 36px -8px rgba(255,45,111,0.55), inset 0 1px 0 rgba(255,255,255,0.30)" }}
-                    >
-                      Get a Similar Quote
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                    <a
-                      href={PHONE_TEL}
-                      suppressHydrationWarning
-                      className="shimmer-stroke inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/[0.05] border border-white/[0.12] text-white font-semibold text-[13px] backdrop-blur-md hover:bg-white/[0.10] transition-all"
-                    >
-                      Talk to an Expert
-                    </a>
-                  </div>
-                </div>
+                )}
               </div>
             )
           })}
