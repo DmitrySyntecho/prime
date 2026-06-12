@@ -232,11 +232,15 @@ html.theme-light .theme-logo-light { display: inline-block; }
 html.theme-light svg {
   color: #FF2D6F !important;
 }
-/* …except icons inside filled brand buttons / dark "keep-original" islands,
-   which keep their own contrast (inherit the local text color). */
-html.theme-light button[style*="#FF2D6F"][style*="#FF5E3A"] svg,
-html.theme-light a[style*="#FF2D6F"][style*="#FF5E3A"] svg,
+/* Inside dark "keep-original" islands the content is double-inverted, so use a
+   real emerald green there — it displays emerald after the local invert. */
 html.theme-light .keep-original svg {
+  color: #00D290 !important;
+}
+/* …except icons inside filled brand buttons, which keep their own contrast
+   (inherit the local text color) so they don't vanish on the accent fill. */
+html.theme-light button[style*="#FF2D6F"][style*="#FF5E3A"] svg,
+html.theme-light a[style*="#FF2D6F"][style*="#FF5E3A"] svg {
   color: inherit !important;
 }
 /* Smooth the flip */
@@ -424,6 +428,14 @@ html.theme-light .bg-orb {
         linear-gradient(180deg, #050310 0%, #0a0820 50%, #050310 100%) !important;
       background-attachment: scroll !important;
     }
+  }
+  /* Light theme: kill the dark gradient canvas (this lives in @layer base too,
+     so a same-layer !important override is required to beat it). Black pre-invert
+     → pure white after the root invert. */
+  html.theme-light {
+    background-color: #000 !important;
+    background-image: none !important;
+    color-scheme: light;
   }
   body {
     background: transparent !important;
