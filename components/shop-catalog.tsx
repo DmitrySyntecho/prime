@@ -1,6 +1,6 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useMemo, useRef, useState } from "react"
 import Link from "next/link"
 import { products as ALL_PRODUCTS, CATEGORIES, CATEGORY_FILTERS } from "@/lib/products-data"
 import type { ProductCategory } from "@/lib/cart-context"
@@ -111,10 +111,22 @@ export function ShopCatalog() {
     return list
   }, [search, selectedCat, selectedTiers, subFilters, priceIdx, sort])
 
+  // top of the catalog area — we scroll here when the category changes so the
+  // user always lands at the start of the (re-filtered) list.
+  const topRef = useRef<HTMLDivElement>(null)
+  const scrollToTop = () => {
+    const el = topRef.current
+    if (!el) return
+    const y = el.getBoundingClientRect().top + window.scrollY - 96 // sticky header offset
+    window.scrollTo({ top: y, behavior: "smooth" })
+  }
+
   // single-select category; switching resets contextual sub-filters
   const selectCat = (c: ProductCategory) => {
     setSelectedCat((prev) => (prev === c ? null : c))
     setSubFilters({})
+    setMobileFiltersOpen(false)
+    scrollToTop()
   }
 
   const toggleTier = (value: string) => {
@@ -350,7 +362,7 @@ export function ShopCatalog() {
           ))}
         </div>
 
-        <div className="flex gap-8">
+        <div ref={topRef} className="flex gap-8 scroll-mt-24">
           {/* Sidebar — desktop */}
           <aside className="hidden lg:block w-60 flex-shrink-0">
             <div
