@@ -16,7 +16,7 @@ const MUX_AMAGI_ID = "BrD9vKSat02duCjNodPZ00a02ZRc5QfKAno007TIKGF5vOU"
 const MUX_RAMP_ID = "xIFaCY1GdKzQxjtm01L87JqoPAKob3YBscDUzSiSF1300"
 const MUX_ASIAN_FLAME_ID = "Io8Bi00jo3qftxjB01L1qWs7TPQuOhKBxfi02ecvwEl2X00"
 
-const caseStudies = [
+export const caseStudies = [
   {
     id: "tiktok-shop-summit-2026",
     title: "TikTok Shop Summit 2026",

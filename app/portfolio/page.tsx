@@ -1,47 +1,53 @@
 "use client"
 
-import { Play } from "lucide-react"
+import { useState } from "react"
 import Image from "next/image"
+import dynamic from "next/dynamic"
+import { Play, ArrowRight, MapPin } from "lucide-react"
+import { caseStudies } from "@/components/case-studies-section"
 import { ContactSpecialistBanner } from "@/components/contact-specialist-banner"
+import { PHONE_TEL } from "@/lib/contact"
 
-const projects = [
-  {
-    title: "USA Teqball Tour",
-    category: "Sports Event",
-    location: "Long Beach Arena & Anaheim",
-    image: "/images/case-studies/ramp-1.webp",
-  },
-  {
-    title: "Family Style Food Festival",
-    category: "Festival",
-    location: "CBS Television City, LA",
-    image: "/images/events/festivals.webp",
-  },
-  {
-    title: "Netflix Brand Activation",
-    category: "Brand Activation",
-    location: "Los Angeles",
-    image: "/images/case-studies/asian-flame-1.webp",
-  },
-  {
-    title: "TikTok Creator Summit",
-    category: "Corporate Event",
-    location: "Miami Beach",
-    image: "/images/case-studies/tiktok-1.webp",
-  },
-  {
-    title: "Marriott Annual Conference",
-    category: "Conference",
-    location: "Fort Lauderdale",
-    image: "/images/events/corporate.webp",
-  },
-  {
-    title: "ESPN Live Broadcast",
-    category: "Live Production",
-    location: "Multiple Locations",
-    image: "/images/case-studies/miami-1.webp",
-  },
-]
+// Heavy player loaded only when the visitor hits play.
+const MuxPlayer = dynamic(() => import("@mux/mux-player-react"), { ssr: false })
+
+const BTN = "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)"
+
+function VideoPlayer({ muxId, thumbnail, title }: { muxId: string; thumbnail: string; title: string }) {
+  const [playing, setPlaying] = useState(false)
+  return (
+    <div className="relative aspect-video rounded-2xl overflow-hidden bg-black border border-white/10 keep-original">
+      {playing ? (
+        <MuxPlayer
+          playbackId={muxId}
+          autoPlay="any"
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
+        />
+      ) : (
+        <>
+          <img src={thumbnail} alt={title} className="absolute inset-0 w-full h-full object-cover" />
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 50%, transparent 100%)" }}
+          />
+          <button
+            onClick={() => setPlaying(true)}
+            className="absolute inset-0 flex items-center justify-center group"
+            aria-label={`Play ${title} video`}
+          >
+            <span
+              className="relative flex items-center justify-center w-20 h-20 rounded-full transition-all duration-300 group-hover:scale-110"
+              style={{ background: BTN, boxShadow: "0 16px 48px -8px rgba(255,45,111,0.6)" }}
+            >
+              <span className="absolute inset-0 rounded-full animate-ping" style={{ background: "rgba(255,45,111,0.25)" }} />
+              <Play className="w-8 h-8 fill-white text-white ml-0.5" />
+            </span>
+          </button>
+        </>
+      )}
+    </div>
+  )
+}
 
 export default function PortfolioPage() {
   const startQuote = () => document.dispatchEvent(new CustomEvent("openQuoteForm"))
@@ -49,7 +55,7 @@ export default function PortfolioPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="py-20 md:py-28 relative">
+      <section className="py-20 md:py-24 relative">
         <div className="max-w-7xl mx-auto px-4">
           <span
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-5 text-[11px] font-bold tracking-[0.16em] uppercase"
@@ -59,49 +65,61 @@ export default function PortfolioPage() {
               color: "#FFB366",
             }}
           >
-            Our Work
+            See Us At Work
           </span>
-          <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
-            Our{" "}
+          <h1 className="text-4xl md:text-6xl font-black text-white mb-5 leading-tight">
+            Our Recent{" "}
             <span style={{ background: "linear-gradient(90deg, #FF2D6F 0%, #FF5E3A 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              Portfolio
+              Work
             </span>
           </h1>
           <p className="text-lg text-white/60 max-w-2xl leading-relaxed">
-            Explore our work with Fortune 500 companies, global brands, and world-class events.
+            Behind-the-scenes videos showing how our team sets up, builds, and produces events — from
+            concept through strike.
           </p>
         </div>
       </section>
 
-      {/* Projects Grid */}
-      <section id="our-recent-work" className="py-12 md:py-16 relative">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <div
-                key={project.title}
-                className="group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer border border-white/10"
-              >
-                <Image
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-[#FF5E3A] text-sm font-bold mb-2">{project.category}</p>
-                  <h3 className="text-white text-xl font-bold mb-1">{project.title}</h3>
-                  <p className="text-gray-300 text-sm">{project.location}</p>
+      {/* Case studies — all open, video alternating left / right of the text */}
+      <section className="pb-8 relative">
+        <div className="max-w-7xl mx-auto px-4 space-y-16 md:space-y-24">
+          {caseStudies.map((study, i) => {
+            const videoFirst = i % 2 === 0
+            return (
+              <div key={study.id} className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                {/* Video */}
+                <div className={videoFirst ? "md:order-1" : "md:order-2"}>
+                  <VideoPlayer muxId={study.muxId} thumbnail={study.thumbnail} title={study.title} />
                 </div>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="w-16 h-16 rounded-md bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                    <Play className="w-8 h-8 text-white fill-white" />
+
+                {/* Text */}
+                <div className={videoFirst ? "md:order-2" : "md:order-1"}>
+                  <div className="flex items-center gap-2 text-[#FFB366] text-[12px] font-bold uppercase tracking-wider mb-3">
+                    <MapPin className="w-3.5 h-3.5" /> {study.location}
+                  </div>
+                  <h2 className="text-2xl md:text-3xl font-black text-white mb-4 leading-tight">{study.title}</h2>
+                  <p className="text-white/60 leading-relaxed mb-6">{study.description}</p>
+                  <div className="flex flex-wrap gap-3">
+                    <button
+                      onClick={startQuote}
+                      className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-white font-bold text-[13px] tracking-[0.02em] transition-all hover:-translate-y-0.5"
+                      style={{ background: BTN, boxShadow: "0 12px 36px -8px rgba(255,45,111,0.55), inset 0 1px 0 rgba(255,255,255,0.30)" }}
+                    >
+                      Get a Similar Quote
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
+                    <a
+                      href={PHONE_TEL}
+                      suppressHydrationWarning
+                      className="shimmer-stroke inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/[0.05] border border-white/[0.12] text-white font-semibold text-[13px] backdrop-blur-md hover:bg-white/[0.10] transition-all"
+                    >
+                      Talk to an Expert
+                    </a>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            )
+          })}
         </div>
       </section>
 
