@@ -165,20 +165,31 @@ export function Header() {
               }}
             >
               <Link href="/" className="flex items-center shrink-0">
+                {/* Mobile: compact favicon mark so the header fits */}
                 <Image
-                  src="/images/prime-line-av-logo-dark-bg.svg"
+                  src="/favicon.svg"
                   alt="Prime Line AV"
-                  width={210}
-                  height={38}
-                  className="h-9 w-auto theme-logo-dark"
+                  width={36}
+                  height={36}
+                  className="h-9 w-9 sm:hidden"
                 />
-                <Image
-                  src="/images/prime-line-av-logo-light-bg.svg"
-                  alt="Prime Line AV"
-                  width={210}
-                  height={38}
-                  className="h-9 w-auto theme-logo-light"
-                />
+                {/* Desktop: full wordmark (theme-aware) */}
+                <span className="hidden sm:flex items-center">
+                  <Image
+                    src="/images/prime-line-av-logo-dark-bg.svg"
+                    alt="Prime Line AV"
+                    width={210}
+                    height={38}
+                    className="h-9 w-auto theme-logo-dark"
+                  />
+                  <Image
+                    src="/images/prime-line-av-logo-light-bg.svg"
+                    alt="Prime Line AV"
+                    width={210}
+                    height={38}
+                    className="h-9 w-auto theme-logo-light"
+                  />
+                </span>
               </Link>
 
               {/* Desktop Navigation — premium hover mega-menu */}

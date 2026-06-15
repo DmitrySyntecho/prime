@@ -432,25 +432,7 @@ export function ShopCatalog() {
 
             {/* Toolbar */}
             <div className="flex items-center justify-between gap-3 mb-6">
-              {/* Filter square — opens the contextual filters for the chosen category */}
-              <button
-                onClick={() => setMobileFiltersOpen(true)}
-                className="lg:hidden relative inline-flex items-center justify-center w-11 h-11 rounded-xl text-white flex-shrink-0"
-                style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)" }}
-                aria-label="Filters"
-              >
-                <SlidersHorizontal className="w-[18px] h-[18px]" />
-                {activeFilters > 0 && (
-                  <span
-                    className="absolute -top-1.5 -right-1.5 inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 rounded-full text-[10px] font-bold text-white"
-                    style={{ background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)" }}
-                  >
-                    {activeFilters}
-                  </span>
-                )}
-              </button>
-
-              <p className="hidden lg:block text-[14px] text-white/50">
+              <p className="text-[13px] sm:text-[14px] text-white/50">
                 <span className="text-white font-bold">{filtered.length}</span> products
               </p>
 
@@ -512,6 +494,32 @@ export function ShopCatalog() {
           </div>
         </div>
       </div>
+
+      {/* Mobile side filter tab — slides out the filters for the selected category */}
+      {!mobileFiltersOpen && (
+        <button
+          onClick={() => setMobileFiltersOpen(true)}
+          className="lg:hidden fixed right-0 top-1/2 -translate-y-1/2 z-40 flex flex-col items-center gap-1 pl-3 pr-2.5 py-4 rounded-l-2xl text-white"
+          style={{
+            background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
+            boxShadow: "0 10px 30px -6px rgba(255,45,111,0.6)",
+          }}
+          aria-label="Filters"
+        >
+          <SlidersHorizontal className="w-5 h-5" />
+          <span className="text-[9px] font-extrabold tracking-[0.08em] uppercase [writing-mode:vertical-rl] rotate-180">
+            Filters
+          </span>
+          {activeFilters > 0 && (
+            <span
+              className="absolute -top-1.5 -left-1.5 inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 rounded-full text-[10px] font-bold"
+              style={{ background: "#fff", color: "#FF2D6F" }}
+            >
+              {activeFilters}
+            </span>
+          )}
+        </button>
+      )}
 
       {/* Mobile filters drawer */}
       {mobileFiltersOpen && (
