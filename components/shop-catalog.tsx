@@ -1,6 +1,7 @@
 "use client"
 
-import { useMemo, useRef, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
+import { createPortal } from "react-dom"
 import Link from "next/link"
 import { products as ALL_PRODUCTS, CATEGORIES, CATEGORY_FILTERS } from "@/lib/products-data"
 import type { ProductCategory } from "@/lib/cart-context"
@@ -137,6 +138,29 @@ export function ShopCatalog() {
     }
     return list
   }, [search, selectedCat, selectedTiers, subFilters, priceIdx, sort])
+
+  // Mobile side filter tab: visible (fixed, centered) only while the product
+  // grid overlaps the viewport — disappears once you scroll past the products.
+  const gridRef = useRef<HTMLDivElement>(null)
+  const [mounted, setMounted] = useState(false)
+  const [tabVisible, setTabVisible] = useState(false)
+  useEffect(() => setMounted(true), [])
+  useEffect(() => {
+    const onScroll = () => {
+      const el = gridRef.current
+      if (!el) { setTabVisible(false); return }
+      const r = el.getBoundingClientRect()
+      const vh = window.innerHeight
+      setTabVisible(r.top < vh - 80 && r.bottom > 140)
+    }
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    window.addEventListener("resize", onScroll)
+    return () => {
+      window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("resize", onScroll)
+    }
+  }, [filtered.length])
 
   // top of the catalog area — we scroll here when the category changes so the
   // user always lands at the start of the (re-filtered) list.
@@ -454,7 +478,7 @@ export function ShopCatalog() {
 
             {/* Grid */}
             {filtered.length > 0 ? (
-              <div className="grid grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-6">
+              <div ref={gridRef} className="grid grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-6">
                 {filtered.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
@@ -495,31 +519,35 @@ export function ShopCatalog() {
         </div>
       </div>
 
-      {/* Mobile side filter tab — slides out the filters for the selected category */}
-      {!mobileFiltersOpen && (
-        <button
-          onClick={() => setMobileFiltersOpen(true)}
-          className="lg:hidden fixed right-0 top-1/2 -translate-y-1/2 z-40 flex flex-col items-center gap-1 pl-3 pr-2.5 py-4 rounded-l-2xl text-white"
-          style={{
-            background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
-            boxShadow: "0 10px 30px -6px rgba(255,45,111,0.6)",
-          }}
-          aria-label="Filters"
-        >
-          <SlidersHorizontal className="w-5 h-5" />
-          <span className="text-[9px] font-extrabold tracking-[0.08em] uppercase [writing-mode:vertical-rl] rotate-180">
-            Filters
-          </span>
-          {activeFilters > 0 && (
-            <span
-              className="absolute -top-1.5 -left-1.5 inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 rounded-full text-[10px] font-bold"
-              style={{ background: "#fff", color: "#FF2D6F" }}
-            >
-              {activeFilters}
+      {/* Mobile side filter tab — fixed to the RIGHT edge, follows the scroll while
+          the product grid is in view; rendered via a portal so no ancestor
+          transform/filter can shift it off the viewport. */}
+      {mounted && tabVisible && !mobileFiltersOpen &&
+        createPortal(
+          <button
+            onClick={() => setMobileFiltersOpen(true)}
+            className="lg:hidden fixed right-0 top-1/2 -translate-y-1/2 z-40 flex flex-col items-center gap-1 pl-3 pr-2.5 py-4 rounded-l-2xl text-white"
+            style={{
+              background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
+              boxShadow: "0 10px 30px -6px rgba(255,45,111,0.6)",
+            }}
+            aria-label="Filters"
+          >
+            <SlidersHorizontal className="w-5 h-5" />
+            <span className="text-[9px] font-extrabold tracking-[0.08em] uppercase [writing-mode:vertical-rl] rotate-180">
+              Filters
             </span>
-          )}
-        </button>
-      )}
+            {activeFilters > 0 && (
+              <span
+                className="absolute -top-1.5 -left-1.5 inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 rounded-full text-[10px] font-bold"
+                style={{ background: "#fff", color: "#FF2D6F" }}
+              >
+                {activeFilters}
+              </span>
+            )}
+          </button>,
+          document.body
+        )}
 
       {/* Mobile filters drawer */}
       {mobileFiltersOpen && (

@@ -1,7 +1,11 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Phone, Menu, X, ArrowRight, ShoppingCart } from "lucide-react"
+import {
+  Phone, Menu, X, ArrowRight, ShoppingCart,
+  Store, Monitor, Volume2, Lightbulb, Layers, Sparkles, Tv, Projector, Columns, Images, MapPin, Building2,
+  type LucideIcon,
+} from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
@@ -11,44 +15,44 @@ import { ThemeToggle } from "./theme-toggle"
 import { useCart } from "@/lib/cart-context"
 import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/contact"
 
-type MobileGroup = { heading: string; links: { label: string; href: string }[] }
+type MobileGroup = { heading: string; links: { label: string; href: string; icon: LucideIcon }[] }
 
 const mobileGroups: MobileGroup[] = [
   {
     heading: "Shop",
     links: [
-      { label: "Full Rental Catalog", href: "/shop" },
-      { label: "LED Video Walls", href: "/services/led-screen-rental" },
-      { label: "Sound Systems", href: "/services/sound-system-rental" },
-      { label: "Lighting", href: "/services/lighting-rental" },
-      { label: "Stage & Production", href: "/services/stage-rental" },
+      { label: "Full Rental Catalog", href: "/shop", icon: Store },
+      { label: "LED Video Walls", href: "/services/led-screen-rental", icon: Monitor },
+      { label: "Sound Systems", href: "/services/sound-system-rental", icon: Volume2 },
+      { label: "Lighting", href: "/services/lighting-rental", icon: Lightbulb },
+      { label: "Stage & Production", href: "/services/stage-rental", icon: Layers },
     ],
   },
   {
     heading: "Services",
     links: [
-      { label: "Full AV Production", href: "/services/full-av-production" },
-      { label: "TV Rental", href: "/services/tv-rental" },
-      { label: "Projector & Screen", href: "/services/projector-screen-rental" },
-      { label: "Pipe & Drape", href: "/services/pipe-drape-rental" },
+      { label: "Full AV Production", href: "/services/full-av-production", icon: Sparkles },
+      { label: "TV Rental", href: "/services/tv-rental", icon: Tv },
+      { label: "Projector & Screen", href: "/services/projector-screen-rental", icon: Projector },
+      { label: "Pipe & Drape", href: "/services/pipe-drape-rental", icon: Columns },
     ],
   },
   {
     heading: "Company",
     links: [
-      { label: "About Us", href: "/about" },
-      { label: "Portfolio", href: "/portfolio" },
+      { label: "About Us", href: "/about", icon: Building2 },
+      { label: "Portfolio", href: "/portfolio", icon: Images },
     ],
   },
   {
     heading: "Locations",
     links: [
-      { label: "Los Angeles", href: "/los-angeles" },
-      { label: "New York", href: "/new-york" },
-      { label: "Miami", href: "/miami" },
-      { label: "Las Vegas", href: "/las-vegas" },
-      { label: "Chicago", href: "/chicago" },
-      { label: "All Locations", href: "/locations" },
+      { label: "Los Angeles", href: "/los-angeles", icon: MapPin },
+      { label: "New York", href: "/new-york", icon: MapPin },
+      { label: "Miami", href: "/miami", icon: MapPin },
+      { label: "Las Vegas", href: "/las-vegas", icon: MapPin },
+      { label: "Chicago", href: "/chicago", icon: MapPin },
+      { label: "All Locations", href: "/locations", icon: MapPin },
     ],
   },
 ]
@@ -282,8 +286,14 @@ export function Header() {
                       key={link.href + link.label}
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-2.5 rounded-[10px] text-[14px] font-semibold tracking-[0.01em] text-white/75 hover:text-white hover:bg-white/[0.05] transition-all"
+                      className="flex items-center gap-3 px-3 py-2.5 rounded-[10px] text-[14px] font-semibold tracking-[0.01em] text-white/75 hover:text-white hover:bg-white/[0.05] transition-all"
                     >
+                      <span
+                        className="flex items-center justify-center w-8 h-8 rounded-lg flex-shrink-0 text-[#FF5E3A]"
+                        style={{ background: "rgba(255,45,111,0.10)", border: "1px solid rgba(255,45,111,0.20)" }}
+                      >
+                        <link.icon className="w-4 h-4" />
+                      </span>
                       {link.label}
                     </Link>
                   ))}
