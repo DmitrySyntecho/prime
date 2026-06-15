@@ -4,37 +4,49 @@ import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useCart } from "@/lib/cart-context"
+import { CATEGORIES, getProductsByCategory } from "@/lib/products-data"
+import type { ProductCategory } from "@/lib/cart-context"
 import {
   Home,
   Layers,
-  Trophy,
   Sparkles,
-  PartyPopper,
+  ShoppingCart,
+  ShoppingBag,
+  Store,
   Box,
   Volume2,
   Lightbulb,
   Monitor,
   Tv,
-  Projector,
+  Disc3,
   Columns,
   ChevronUp,
   X,
   Phone,
+  ArrowRight,
 } from "lucide-react"
 import type React from "react"
 
 import { WHATSAPP_HREF, PHONE_TEL as PHONE_HREF, PHONE_DISPLAY as PHONE_LABEL } from "@/lib/contact"
 
-const SERVICES = [
-  { label: "Stage Rental", href: "/services/stage-rental", icon: Box },
-  { label: "Sound System Rental", href: "/services/sound-system-rental", icon: Volume2 },
-  { label: "Lighting Equipment Rental", href: "/services/lighting-rental", icon: Lightbulb },
-  { label: "Full AV Production", href: "/services/full-av-production", icon: Layers },
-  { label: "TV Rental", href: "/services/tv-rental", icon: Tv },
-  { label: "Projector & Screen Rental", href: "/services/projector-screen-rental", icon: Projector },
-  { label: "Pipe & Drape Rental", href: "/services/pipe-drape-rental", icon: Columns },
-  { label: "LED Screen Rental", href: "/services/led-screen-rental", icon: Monitor },
-]
+const CATEGORY_ICONS: Record<ProductCategory, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
+  "led-screens": Monitor,
+  "dj-setups": Disc3,
+  "sound-systems": Volume2,
+  lighting: Lightbulb,
+  stage: Box,
+  "pipe-drape": Columns,
+  tv: Tv,
+}
+
+// Product categories for the Shop panel — link to the category page (which shows
+// its products) or to the full catalog when there's no dedicated page.
+const SHOP_CATEGORIES = CATEGORIES.map((c) => ({
+  label: c.shortLabel,
+  href: c.serviceSlug ? `/services/${c.serviceSlug}` : "/shop",
+  icon: CATEGORY_ICONS[c.slug],
+  count: getProductsByCategory(c.slug).length,
+}))
 
 function WhatsAppGlyph({ className }: { className?: string }) {
   return (
@@ -51,11 +63,11 @@ interface MobileBottomNavProps {
 export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
   const pathname = usePathname()
   const isFifa = pathname?.startsWith("/fifa-2026-packages")
-  const [servicesOpen, setServicesOpen] = useState(false)
+  const [shopOpen, setShopOpen] = useState(false)
   const [chooserOpen, setChooserOpen] = useState(false)
   const [navVisible, setNavVisible] = useState(false)
   const [headerMenuOpen, setHeaderMenuOpen] = useState(false)
-  const { isCartOpen } = useCart()
+  const { isCartOpen, openCart, itemCount } = useCart()
 
   // Show nav only after scrolling past the first block
   useEffect(() => {
@@ -75,7 +87,7 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
     return () => { window.removeEventListener("scroll", onScroll); if (raf) cancelAnimationFrame(raf) }
   }, [])
 
-  // Lock body scroll when chooser is open
+  // Lock body scroll when a sheet/panel is open
   useEffect(() => {
     if (!chooserOpen) return
     const prev = document.body.style.overflow
@@ -83,7 +95,6 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
     return () => { document.body.style.overflow = prev }
   }, [chooserOpen])
 
-  // Escape key closes chooser
   useEffect(() => {
     if (!chooserOpen) return
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setChooserOpen(false) }
@@ -93,7 +104,7 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
 
   // Close panels when navigating
   useEffect(() => {
-    setServicesOpen(false)
+    setShopOpen(false)
     setChooserOpen(false)
   }, [pathname])
 
@@ -104,12 +115,12 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
     return () => document.removeEventListener("headerMenuToggle", handler)
   }, [])
 
-  // Close services panel on outside tap
+  // Close shop panel on outside tap
   const panelRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
-    if (!servicesOpen) return
+    if (!shopOpen) return
     const handler = (e: TouchEvent | MouseEvent) => {
-      if (panelRef.current && !panelRef.current.contains(e.target as Node)) setServicesOpen(false)
+      if (panelRef.current && !panelRef.current.contains(e.target as Node)) setShopOpen(false)
     }
     document.addEventListener("mousedown", handler)
     document.addEventListener("touchstart", handler)
@@ -117,7 +128,7 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
       document.removeEventListener("mousedown", handler)
       document.removeEventListener("touchstart", handler)
     }
-  }, [servicesOpen])
+  }, [shopOpen])
 
   const accent = isFifa ? "#E61D25" : "#FF2D6F"
   const accentDeep = isFifa ? "#BF1119" : "#FF5E3A"
@@ -127,25 +138,16 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
     : "0 14px 36px -8px rgba(255,45,111,0.65), 0 0 0 4px rgba(10,8,24,0.95), inset 0 1px 0 rgba(255,255,255,0.30)"
   const railBg = isFifa ? "rgba(10,15,31,0.92)" : "rgba(10,8,24,0.92)"
 
-  const isServicesActive = pathname?.startsWith("/services/") || servicesOpen
-
-  const leftItems = [
-    { href: "/", icon: Home, label: "Home", match: pathname === "/" },
-  ]
-  const rightItems = [
-    { href: "/#events", icon: PartyPopper, label: "Industry", match: false },
-    { href: "/fifa-2026-packages", icon: Trophy, label: "FIFA", match: isFifa ?? false },
-  ]
+  const isShopActive = pathname === "/shop" || pathname?.startsWith("/services/") || shopOpen
+  const panelsHidden = !navVisible || headerMenuOpen || isCartOpen
 
   return (
     <>
-      {/* Services panel */}
+      {/* Shop categories panel */}
       <div
         ref={panelRef}
         className={`md:hidden fixed bottom-[72px] left-3 right-3 z-50 transition-all duration-300 ease-out ${
-          servicesOpen && navVisible && !headerMenuOpen && !isCartOpen
-            ? "opacity-100 translate-y-0 pointer-events-auto"
-            : "opacity-0 translate-y-4 pointer-events-none"
+          shopOpen && !panelsHidden ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-4 pointer-events-none"
         }`}
       >
         <div
@@ -153,29 +155,44 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
           style={{ background: railBg, boxShadow: "0 24px 48px -12px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.06)" }}
         >
           <div className="flex items-center justify-between px-4 pt-3.5 pb-2">
-            <span className="text-[10px] font-extrabold tracking-[0.16em] uppercase" style={{ color: accent }}>Services</span>
-            <button onClick={() => setServicesOpen(false)} className="text-white/40 hover:text-white/80 transition-colors p-1" aria-label="Close services">
+            <span className="text-[10px] font-extrabold tracking-[0.16em] uppercase" style={{ color: accent }}>Shop by Category</span>
+            <button onClick={() => setShopOpen(false)} className="text-white/40 hover:text-white/80 transition-colors p-1" aria-label="Close">
               <X className="w-3.5 h-3.5" />
             </button>
           </div>
-          <div className="px-2 pb-3 flex flex-col gap-0.5">
-            {SERVICES.map(({ label, href, icon: Icon }) => {
+          <div className="px-2 pb-2 grid grid-cols-2 gap-1">
+            {SHOP_CATEGORIES.map(({ label, href, icon: Icon, count }) => {
               const active = pathname === href
               return (
                 <Link
-                  key={href}
+                  key={label}
                   href={href}
-                  onClick={() => setServicesOpen(false)}
-                  className="flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all"
-                  style={{ background: active ? `${accent}18` : "transparent", color: active ? accent : "rgba(255,255,255,0.75)" }}
+                  onClick={() => setShopOpen(false)}
+                  className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl transition-all"
+                  style={{ background: active ? `${accent}18` : "rgba(255,255,255,0.04)", color: active ? accent : "rgba(255,255,255,0.82)" }}
                 >
-                  <span className="flex items-center justify-center w-7 h-7 rounded-lg shrink-0" style={{ background: active ? `${accent}22` : "rgba(255,255,255,0.05)" }}>
-                    <Icon className="w-3.5 h-3.5" strokeWidth={2.2} />
+                  <span className="flex items-center justify-center w-8 h-8 rounded-lg shrink-0" style={{ background: active ? `${accent}22` : "rgba(255,255,255,0.05)" }}>
+                    {Icon ? <Icon className="w-4 h-4" strokeWidth={2.2} /> : <Box className="w-4 h-4" strokeWidth={2.2} />}
                   </span>
-                  <span className="text-[13px] font-semibold leading-tight">{label}</span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-[12.5px] font-semibold leading-tight truncate">{label}</span>
+                    <span className="block text-[10px] text-white/40">{count} items</span>
+                  </span>
                 </Link>
               )
             })}
+          </div>
+          {/* View full catalog */}
+          <div className="px-2 pb-3">
+            <Link
+              href="/shop"
+              onClick={() => setShopOpen(false)}
+              className="flex items-center justify-center gap-2 px-3 py-3 rounded-xl text-white font-extrabold text-[13px]"
+              style={{ background: `linear-gradient(135deg, ${accent} 0%, ${accentDeep} 100%)` }}
+            >
+              <Store className="w-4 h-4" /> View Full Catalog
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </div>
@@ -184,10 +201,10 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
       <nav
         className="md:hidden fixed bottom-3 left-3 right-3 z-50 pointer-events-none transition-all duration-500 ease-out"
         style={{
-          opacity: navVisible && !headerMenuOpen && !isCartOpen ? 1 : 0,
-          transform: navVisible && !headerMenuOpen && !isCartOpen ? "translateY(0)" : "translateY(48px)",
+          opacity: panelsHidden ? 0 : 1,
+          transform: panelsHidden ? "translateY(48px)" : "translateY(0)",
         }}
-        aria-hidden={!navVisible || headerMenuOpen || isCartOpen}
+        aria-hidden={panelsHidden}
       >
         <div className="relative max-w-md mx-auto pointer-events-auto">
           <div
@@ -198,47 +215,70 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
               boxShadow: "0 24px 48px -12px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.06)",
             }}
           >
-            {leftItems.map((it) => (
-              <NavItem key={it.label} {...it} accent={accent} />
-            ))}
+            {/* Home */}
+            <NavLink href="/" icon={Home} label="Home" active={pathname === "/"} accent={accent} />
 
-            {/* Services button */}
+            {/* Shop categories */}
             <button
-              onClick={() => setServicesOpen((v) => !v)}
+              onClick={() => setShopOpen((v) => !v)}
               className="group flex flex-col items-center justify-center gap-0.5 py-1.5 rounded-full transition-colors"
-              style={{ color: isServicesActive ? accent : "rgba(255,255,255,0.55)" }}
-              aria-label="Services"
+              style={{ color: isShopActive ? accent : "rgba(255,255,255,0.55)" }}
+              aria-label="Shop by category"
+              aria-expanded={shopOpen}
             >
-              {servicesOpen ? (
-                <ChevronUp className="w-[18px] h-[18px]" strokeWidth={2.2} />
-              ) : (
-                <Layers className="w-[18px] h-[18px]" strokeWidth={2.2} />
-              )}
-              <span className="text-[9px] font-bold tracking-[0.06em] uppercase">Services</span>
+              {shopOpen ? <ChevronUp className="w-[18px] h-[18px]" strokeWidth={2.2} /> : <ShoppingBag className="w-[18px] h-[18px]" strokeWidth={2.2} />}
+              <span className="text-[9px] font-bold tracking-[0.06em] uppercase">Shop</span>
             </button>
 
-            {/* Centered raised quote button */}
+            {/* Centered raised Cart button */}
             <div className="flex justify-center">
               <button
-                onClick={() => setChooserOpen(true)}
+                onClick={openCart}
                 className="relative -translate-y-4 w-[58px] h-[58px] rounded-full flex flex-col items-center justify-center text-white transition-transform active:scale-95"
                 style={{ background: `linear-gradient(135deg, ${accent} 0%, ${accentDeep} 100%)`, boxShadow: ringShadow }}
-                aria-label="Contact options"
-                aria-expanded={chooserOpen}
+                aria-label="Open cart"
               >
-                <Sparkles className="w-[22px] h-[22px]" strokeWidth={2.2} />
+                <ShoppingCart className="w-[22px] h-[22px]" strokeWidth={2.2} />
+                {itemCount > 0 && (
+                  <span
+                    className="absolute top-1 right-1 min-w-[18px] h-[18px] px-1 rounded-full text-[10px] font-extrabold grid place-items-center"
+                    style={{ background: "#fff", color: accentDeep }}
+                  >
+                    {itemCount}
+                  </span>
+                )}
                 <span
                   className="absolute -bottom-5 text-[9px] font-extrabold tracking-[0.14em] uppercase whitespace-nowrap"
                   style={{ color: accentSoft }}
                 >
-                  Quote
+                  Cart
                 </span>
               </button>
             </div>
 
-            {rightItems.map((it) => (
-              <NavItem key={it.label} {...it} accent={accent} />
-            ))}
+            {/* Quote / contact */}
+            <button
+              onClick={() => setChooserOpen(true)}
+              className="group flex flex-col items-center justify-center gap-0.5 py-1.5 rounded-full transition-colors"
+              style={{ color: chooserOpen ? accent : "rgba(255,255,255,0.55)" }}
+              aria-label="Get a quote"
+              aria-expanded={chooserOpen}
+            >
+              <Sparkles className="w-[18px] h-[18px]" strokeWidth={2.2} />
+              <span className="text-[9px] font-bold tracking-[0.06em] uppercase">Quote</span>
+            </button>
+
+            {/* Call */}
+            <a
+              href={PHONE_HREF}
+              suppressHydrationWarning
+              className="group flex flex-col items-center justify-center gap-0.5 py-1.5 rounded-full transition-colors"
+              style={{ color: "rgba(255,255,255,0.55)" }}
+              aria-label="Call us"
+            >
+              <Phone className="w-[18px] h-[18px]" strokeWidth={2.2} />
+              <span className="text-[9px] font-bold tracking-[0.06em] uppercase">Call</span>
+            </a>
           </div>
         </div>
       </nav>
@@ -274,15 +314,12 @@ function ContactSheet({
       }`}
       aria-hidden={!open}
     >
-      {/* Backdrop */}
       <button
         type="button"
         aria-label="Close"
         onClick={onClose}
         className="absolute inset-0 w-full h-full bg-black/65 backdrop-blur-[2px]"
       />
-
-      {/* Sheet */}
       <div
         role="dialog"
         aria-modal="true"
@@ -300,12 +337,9 @@ function ContactSheet({
             paddingBottom: "max(env(safe-area-inset-bottom), 12px)",
           }}
         >
-          {/* Grabber */}
           <div className="flex justify-center pt-3">
             <div className="w-10 h-1 rounded-full bg-white/15" />
           </div>
-
-          {/* Header */}
           <div className="px-5 pt-3 pb-4 flex items-start justify-between gap-3">
             <div>
               <h3 className="text-white text-[18px] font-extrabold tracking-[-0.01em]">How can we help?</h3>
@@ -324,10 +358,7 @@ function ContactSheet({
               <X className="w-4 h-4" />
             </button>
           </div>
-
-          {/* Options */}
           <div className="px-3 pb-3 flex flex-col gap-2">
-            {/* Request a Quote */}
             <button
               type="button"
               onClick={onStartQuote}
@@ -345,8 +376,6 @@ function ContactSheet({
                 <span className="text-[12px] font-medium text-white/80">Get a tailored proposal</span>
               </span>
             </button>
-
-            {/* WhatsApp */}
             <a
               href={WHATSAPP_HREF}
               target="_blank"
@@ -363,8 +392,6 @@ function ContactSheet({
                 <span className="text-[12px] font-medium text-[#25D366]/80">Worldwide — chat anywhere</span>
               </span>
             </a>
-
-            {/* Call */}
             <a
               href={PHONE_HREF}
               onClick={onClose}
@@ -386,24 +413,24 @@ function ContactSheet({
   )
 }
 
-function NavItem({
+function NavLink({
   href,
   icon: Icon,
   label,
-  match,
+  active,
   accent,
 }: {
   href: string
   icon: React.ComponentType<{ className?: string; strokeWidth?: number }>
   label: string
-  match: boolean
+  active: boolean
   accent: string
 }) {
   return (
     <Link
       href={href}
       className="group flex flex-col items-center justify-center gap-0.5 py-1.5 rounded-full transition-colors"
-      style={{ color: match ? accent : "rgba(255,255,255,0.55)" }}
+      style={{ color: active ? accent : "rgba(255,255,255,0.55)" }}
     >
       <Icon className="w-[18px] h-[18px]" strokeWidth={2.2} />
       <span className="text-[9px] font-bold tracking-[0.06em] uppercase">{label}</span>
