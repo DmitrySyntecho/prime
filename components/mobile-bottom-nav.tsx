@@ -67,7 +67,7 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
   const [chooserOpen, setChooserOpen] = useState(false)
   const [navVisible, setNavVisible] = useState(false)
   const [headerMenuOpen, setHeaderMenuOpen] = useState(false)
-  const { isCartOpen, openCart, itemCount } = useCart()
+  const { isCartOpen } = useCart()
 
   // Show nav only after scrolling past the first block
   useEffect(() => {
@@ -218,7 +218,7 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
             {/* Home */}
             <NavLink href="/" icon={Home} label="Home" active={pathname === "/"} accent={accent} />
 
-            {/* Shop categories */}
+            {/* Categories panel */}
             <button
               onClick={() => setShopOpen((v) => !v)}
               className="group flex flex-col items-center justify-center gap-0.5 py-1.5 rounded-full transition-colors"
@@ -226,34 +226,26 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
               aria-label="Shop by category"
               aria-expanded={shopOpen}
             >
-              {shopOpen ? <ChevronUp className="w-[18px] h-[18px]" strokeWidth={2.2} /> : <ShoppingBag className="w-[18px] h-[18px]" strokeWidth={2.2} />}
-              <span className="text-[9px] font-bold tracking-[0.06em] uppercase">Shop</span>
+              {shopOpen ? <ChevronUp className="w-[18px] h-[18px]" strokeWidth={2.2} /> : <Layers className="w-[18px] h-[18px]" strokeWidth={2.2} />}
+              <span className="text-[9px] font-bold tracking-[0.06em] uppercase">Categories</span>
             </button>
 
-            {/* Centered raised Cart button */}
+            {/* Centered raised Shop button → full catalog */}
             <div className="flex justify-center">
-              <button
-                onClick={openCart}
+              <Link
+                href="/shop"
                 className="relative -translate-y-4 w-[58px] h-[58px] rounded-full flex flex-col items-center justify-center text-white transition-transform active:scale-95"
                 style={{ background: `linear-gradient(135deg, ${accent} 0%, ${accentDeep} 100%)`, boxShadow: ringShadow }}
-                aria-label="Open cart"
+                aria-label="Shop all products"
               >
-                <ShoppingCart className="w-[22px] h-[22px]" strokeWidth={2.2} />
-                {itemCount > 0 && (
-                  <span
-                    className="absolute top-1 right-1 min-w-[18px] h-[18px] px-1 rounded-full text-[10px] font-extrabold grid place-items-center"
-                    style={{ background: "#fff", color: accentDeep }}
-                  >
-                    {itemCount}
-                  </span>
-                )}
+                <Store className="w-[22px] h-[22px]" strokeWidth={2.2} />
                 <span
                   className="absolute -bottom-5 text-[9px] font-extrabold tracking-[0.14em] uppercase whitespace-nowrap"
                   style={{ color: accentSoft }}
                 >
-                  Cart
+                  Shop
                 </span>
-              </button>
+              </Link>
             </div>
 
             {/* Quote / contact */}
