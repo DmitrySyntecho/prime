@@ -293,17 +293,18 @@ export function Header() {
                 <Phone className="w-4 h-4" />
                 {PHONE_DISPLAY}
               </a>
-              <button
-                onClick={openQuote}
+              <Link
+                href="/shop"
+                onClick={() => setMobileMenuOpen(false)}
                 className={`flex items-center justify-center gap-2 w-full px-3 py-3 rounded-[10px] ${ctaTextColor} font-extrabold text-[14px] tracking-[0.02em] transition-all`}
                 style={{
                   background: `linear-gradient(135deg, ${accent} 0%, ${accentDeep} 100%)`,
                   boxShadow: ctaShadow,
                 }}
               >
-                Get a Quote
-                <ArrowRight className="w-4 h-4" />
-              </button>
+                <ShoppingCart className="w-4 h-4" />
+                Shop All Products
+              </Link>
             </div>
           </div>
         </nav>
