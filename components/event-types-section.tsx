@@ -4,16 +4,16 @@ import { ArrowUpRight, Sparkles } from "lucide-react"
 import { usePathname } from "next/navigation"
 
 const eventTypes = [
-  { title: "Experiential Marketing", tag: "Experiential", id: "experiential", image: "/images/events/experiential-marketing.webp" },
-  { title: "Corporate", tag: "Corporate", id: "corporate", image: "/images/events/corporate.webp" },
-  { title: "Fashion Shows", tag: "Fashion", id: "fashion-show", image: "/images/events/fashion-shows.webp" },
-  { title: "Trade Shows", tag: "Trade Show", id: "trade-show", image: "/images/events/trade-shows.webp" },
-  { title: "Weddings", tag: "Wedding", id: "private", image: "/images/events/weddings.webp" },
-  { title: "Festivals", tag: "Festival", id: "festival", image: "/images/events/festivals.webp" },
-  { title: "Virtual/Hybrid Events", tag: "Hybrid", id: "other", image: "/images/events/hybrid-events.webp" },
-  { title: "Private", tag: "Private", id: "private", image: "/images/events/private.webp" },
-  { title: "Film Production", tag: "Production", id: "studio", image: "/images/events/film-production.webp" },
-  { title: "Grand Opening", tag: "Grand Opening", id: "brand-activation", image: "/images/events/grand-opening.webp" },
+  { title: "Experiential Marketing", tag: "Brand Activations", id: "experiential", image: "/images/events/experiential-marketing.webp" },
+  { title: "Corporate", tag: "Conferences & Summits", id: "corporate", image: "/images/events/corporate.webp" },
+  { title: "Fashion Shows", tag: "Runway & Showrooms", id: "fashion-show", image: "/images/events/fashion-shows.webp" },
+  { title: "Trade Shows", tag: "Expos & Booths", id: "trade-show", image: "/images/events/trade-shows.webp" },
+  { title: "Weddings", tag: "Celebrations", id: "private", image: "/images/events/weddings.webp" },
+  { title: "Festivals", tag: "Live Music & Stages", id: "festival", image: "/images/events/festivals.webp" },
+  { title: "Virtual/Hybrid Events", tag: "Streaming & Broadcast", id: "other", image: "/images/events/hybrid-events.webp" },
+  { title: "Private", tag: "VIP & Galas", id: "private", image: "/images/events/private.webp" },
+  { title: "Film Production", tag: "Studio & Sets", id: "studio", image: "/images/events/film-production.webp" },
+  { title: "Grand Opening", tag: "Launches & Ribbon-Cuttings", id: "brand-activation", image: "/images/events/grand-opening.webp" },
 ]
 
 export function EventTypesSection() {
