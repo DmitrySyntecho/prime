@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { notFound } from "next/navigation"
+import { notFound, useParams } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Phone, MapPin } from "lucide-react"
@@ -12,14 +12,15 @@ import { StickyCTA } from "@/components/sticky-cta"
 import { STATES, NAV_SERVICES, NAV_INDUSTRIES, NAV_RESOURCES } from "@/lib/sitemap-data"
 import { PHONE_TEL, PHONE_DISPLAY } from "@/lib/contact"
 
-export default function CityPage({ params }: { params: { state: string; "city-av-production": string } }) {
+export default function CityPage() {
+  const params = useParams<{ state: string; city: string }>()
+  const state = params.state || ""
+  // City segment carries the full slug (e.g. "miami-av-production")
+  const citySlugWithSuffix = params.city || ""
   const [showQuoteForm, setShowQuoteForm] = useState(false)
 
-  // URL param includes -av-production suffix (e.g., "miami-av-production")
-  const citySlugWithSuffix = params["city-av-production"]
-  
   // State slug format: "florida" (from URL) matches "florida-av-production" (in data)
-  const stateSlugWithSuffix = `${params.state}-av-production`
+  const stateSlugWithSuffix = `${state}-av-production`
   const stateData = STATES.find((s) => s.slug === stateSlugWithSuffix)
   
   // City slug in data already includes -av-production (e.g., "miami-av-production")
@@ -41,7 +42,7 @@ export default function CityPage({ params }: { params: { state: string; "city-av
           <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
-            <Link href={`/locations/${params.state}`} className="hover:text-white transition-colors">
+            <Link href={`/locations/${state}`} className="hover:text-white transition-colors">
               {stateData.state}
             </Link>
             <span>/</span>
@@ -169,7 +170,7 @@ export default function CityPage({ params }: { params: { state: string; "city-av
               {nearbyCities.map((city) => (
                 <Link
                   key={city.slug}
-                  href={`/locations/${params.state}/${city.slug}`}
+                  href={`/locations/${state}/${city.slug}`}
                   className="bg-white p-5 rounded-xl border border-gray-200 hover:border-[#16A34A] hover:shadow-md transition-all group flex items-center gap-3"
                 >
                   <MapPin className="w-4 h-4 text-[#16A34A] flex-shrink-0" />

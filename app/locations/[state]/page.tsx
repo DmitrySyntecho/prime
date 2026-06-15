@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { use, useState } from "react"
 import { notFound } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
@@ -12,10 +12,11 @@ import { StickyCTA } from "@/components/sticky-cta"
 import { STATES, NAV_SERVICES, NAV_INDUSTRIES, NAV_RESOURCES } from "@/lib/sitemap-data"
 import { PHONE_TEL, PHONE_DISPLAY } from "@/lib/contact"
 
-export default function StatePage({ params }: { params: { state: string } }) {
+export default function StatePage({ params }: { params: Promise<{ state: string }> }) {
+  const { state } = use(params)
   const [showQuoteForm, setShowQuoteForm] = useState(false)
   // State slug in data includes -av-production suffix (e.g., "florida-av-production")
-  const stateSlugWithSuffix = `${params.state}-av-production`
+  const stateSlugWithSuffix = `${state}-av-production`
   const stateData = STATES.find((s) => s.slug === stateSlugWithSuffix)
 
   if (!stateData) notFound()
@@ -86,7 +87,7 @@ export default function StatePage({ params }: { params: { state: string } }) {
             {stateData.cities.map((city) => (
               <Link
                 key={city.slug}
-                href={`/locations/${params.state}/${city.slug}`}
+                href={`/locations/${state}/${city.slug}`}
                 className="bg-gray-50 p-5 rounded-xl border border-gray-200 hover:border-[#16A34A] hover:shadow-md transition-all group flex items-center gap-3"
               >
                 <MapPin className="w-4 h-4 text-[#16A34A] flex-shrink-0" />
