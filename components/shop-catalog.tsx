@@ -59,6 +59,33 @@ const TIER_OPTIONS: { value: "basic" | "premium"; label: string }[] = [
   { value: "premium", label: "Premium Packages" },
 ]
 
+function CatChip({
+  label,
+  icon: Icon,
+  active,
+  onClick,
+}: {
+  label: string
+  icon?: LucideIcon
+  active: boolean
+  onClick: () => void
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-[12.5px] font-semibold whitespace-nowrap transition-all"
+      style={{
+        background: active ? "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)" : "rgba(255,255,255,0.05)",
+        border: `1px solid ${active ? "transparent" : "rgba(255,255,255,0.12)"}`,
+        color: active ? "#fff" : "rgba(255,255,255,0.75)",
+      }}
+    >
+      {Icon && <Icon className="w-3.5 h-3.5" />}
+      {label}
+    </button>
+  )
+}
+
 export function ShopCatalog() {
   const [search, setSearch] = useState("")
   const [selectedCat, setSelectedCat] = useState<ProductCategory | null>(null)
@@ -379,18 +406,43 @@ export function ShopCatalog() {
 
           {/* Main */}
           <div className="flex-1 min-w-0">
+            {/* Mobile category selector — tap to pick a category */}
+            <div className="lg:hidden -mx-4 px-4 mb-4 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              <div className="flex gap-2 w-max">
+                <CatChip
+                  label="All"
+                  active={!selectedCat}
+                  onClick={() => {
+                    setSelectedCat(null)
+                    setSubFilters({})
+                    scrollToTop()
+                  }}
+                />
+                {CATEGORIES.map((c) => (
+                  <CatChip
+                    key={c.slug}
+                    label={c.shortLabel}
+                    icon={CATEGORY_ICONS[c.slug]}
+                    active={selectedCat === c.slug}
+                    onClick={() => selectCat(c.slug)}
+                  />
+                ))}
+              </div>
+            </div>
+
             {/* Toolbar */}
-            <div className="flex items-center justify-between gap-4 mb-6">
+            <div className="flex items-center justify-between gap-3 mb-6">
+              {/* Filter square — opens the contextual filters for the chosen category */}
               <button
                 onClick={() => setMobileFiltersOpen(true)}
-                className="lg:hidden inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-[13px] font-bold text-white"
+                className="lg:hidden relative inline-flex items-center justify-center w-11 h-11 rounded-xl text-white flex-shrink-0"
                 style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)" }}
+                aria-label="Filters"
               >
-                <SlidersHorizontal className="w-4 h-4" />
-                Filters
+                <SlidersHorizontal className="w-[18px] h-[18px]" />
                 {activeFilters > 0 && (
                   <span
-                    className="inline-flex items-center justify-center w-5 h-5 rounded-full text-[11px]"
+                    className="absolute -top-1.5 -right-1.5 inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 rounded-full text-[10px] font-bold text-white"
                     style={{ background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)" }}
                   >
                     {activeFilters}
@@ -420,7 +472,7 @@ export function ShopCatalog() {
 
             {/* Grid */}
             {filtered.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+              <div className="grid grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-6">
                 {filtered.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}

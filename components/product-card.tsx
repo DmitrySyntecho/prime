@@ -111,18 +111,18 @@ export function ProductCard({ product }: { product: Product }) {
           </div>
         </Link>
 
-        <div className="p-5 flex flex-col flex-1">
+        <div className="p-3 sm:p-5 flex flex-col flex-1">
           <Link href={`/shop/products/${product.slug}`}>
-            <h3 className="text-lg font-bold text-white mb-1 line-clamp-1 group-hover:text-[#FF2D6F] transition-colors">
+            <h3 className="text-[14px] sm:text-lg font-bold text-white mb-1 line-clamp-2 sm:line-clamp-1 group-hover:text-[#FF2D6F] transition-colors">
               {product.name}
             </h3>
           </Link>
 
-          <p className="text-[13px] text-white/50 mb-4 line-clamp-2">
+          <p className="hidden sm:block text-[13px] text-white/50 mb-4 line-clamp-2">
             {product.description.substring(0, 80)}...
           </p>
 
-          <div className="flex flex-wrap gap-1.5 mb-4 min-h-[28px]">
+          <div className="hidden sm:flex flex-wrap gap-1.5 mb-4 min-h-[28px]">
             {product.features.slice(0, 3).map((feature) => (
               <span
                 key={feature}
@@ -137,10 +137,10 @@ export function ProductCard({ product }: { product: Product }) {
 
           {/* Price + actions pinned to bottom */}
           <div className="mt-auto">
-            <div className="mb-4">
-              <div className="flex items-baseline gap-2">
-                <span className="text-2xl font-black text-white">${formatPrice(product.price)}</span>
-                <span className="text-[13px] text-white/40">/ 24h</span>
+            <div className="mb-3 sm:mb-4">
+              <div className="flex items-baseline gap-1.5 sm:gap-2">
+                <span className="text-xl sm:text-2xl font-black text-white">${formatPrice(product.price)}</span>
+                <span className="text-[12px] sm:text-[13px] text-white/40">/ 24h</span>
               </div>
               {/* Reserve space so cards without discount stay the same height */}
               <div className="h-5 mt-0.5">
@@ -158,7 +158,7 @@ export function ProductCard({ product }: { product: Product }) {
             </div>
 
             <div
-              className="flex items-center gap-3 p-3 rounded-xl mb-4"
+              className="hidden sm:flex items-center gap-3 p-3 rounded-xl mb-4"
               style={{
                 background: "rgba(255,94,58,0.08)",
                 border: "1px solid rgba(255,94,58,0.18)",
@@ -184,7 +184,7 @@ export function ProductCard({ product }: { product: Product }) {
             <div className="flex gap-2">
               <button
                 onClick={addToQuote}
-                className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-[13px] font-bold transition-all hover:opacity-90"
+                className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 sm:py-3 rounded-xl text-[12px] sm:text-[13px] font-bold transition-all hover:opacity-90"
                 style={{
                   background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
                   color: "#fff",
@@ -192,11 +192,12 @@ export function ProductCard({ product }: { product: Product }) {
                 }}
               >
                 <ShoppingCart className="w-4 h-4" />
-                Add to Quote
+                <span className="sm:hidden">Add</span>
+                <span className="hidden sm:inline">Add to Quote</span>
               </button>
               <Link
                 href={`/shop/products/${product.slug}`}
-                className="flex items-center justify-center w-12 rounded-xl transition-all hover:bg-white/10"
+                className="hidden sm:flex items-center justify-center w-12 rounded-xl transition-all hover:bg-white/10"
                 style={{
                   background: "rgba(255,255,255,0.05)",
                   border: "1px solid rgba(255,255,255,0.10)",
