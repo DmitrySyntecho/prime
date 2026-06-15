@@ -1,7 +1,19 @@
 import { Metadata } from "next"
 import Link from "next/link"
-import { MapPin, ChevronRight } from "lucide-react"
+import { MapPin, ChevronRight, ArrowRight, Monitor, Disc3, Volume2, Lightbulb, Layers, Blinds, Tv, ShoppingCart, type LucideIcon } from "lucide-react"
 import { STATES } from "@/lib/sitemap-data"
+import { CATEGORIES, getProductsByCategory } from "@/lib/products-data"
+import type { ProductCategory } from "@/lib/cart-context"
+
+const CATEGORY_ICONS: Record<ProductCategory, LucideIcon> = {
+  "led-screens": Monitor,
+  "dj-setups": Disc3,
+  "sound-systems": Volume2,
+  lighting: Lightbulb,
+  stage: Layers,
+  "pipe-drape": Blinds,
+  tv: Tv,
+}
 
 export const metadata: Metadata = {
   title: "AV Production Locations | Nationwide Event AV Services | Prime Line AV",
@@ -71,31 +83,47 @@ export default function LocationsPage() {
         </div>
       </section>
 
-      {/* Services Available */}
+      {/* Equipment & rentals — product interlinking */}
       <section className="py-12 md:py-16 relative">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-black text-white mb-8">Services Available in Every Market</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { name: "AV Production", href: "/services/av-production", desc: "Full-service event production" },
-              { name: "LED Wall Rental", href: "/services/led-wall-rental", desc: "Indoor & outdoor LED screens" },
-              { name: "Sound System Rental", href: "/services/sound-system-rental", desc: "Professional event audio" },
-              { name: "Event Lighting", href: "/services/event-lighting", desc: "Lighting design & programming" },
-              { name: "Staging & Truss", href: "/services/staging-and-truss", desc: "Custom stages & rigging" },
-              { name: "Pipe & Drape", href: "/services/pipe-and-drape-rental", desc: "Backdrops & room dividers" },
-              { name: "Live Streaming", href: "/services/live-streaming", desc: "Hybrid event production" },
-              { name: "Video Production", href: "/services/video-production", desc: "Event video & content" },
-            ].map((service) => (
-              <Link
-                key={service.href}
-                href={service.href}
-                className="group rounded-xl p-5 transition-all hover:border-[#FF5E3A]/40"
-                style={GLASS}
-              >
-                <h3 className="text-white font-semibold group-hover:text-[#FF5E3A] transition-colors">{service.name}</h3>
-                <p className="text-sm text-white/40 mt-1">{service.desc}</p>
-              </Link>
-            ))}
+          <div className="flex items-end justify-between gap-4 flex-wrap mb-8">
+            <h2 className="text-2xl md:text-3xl font-black text-white">Rent Equipment in Every Market</h2>
+            <Link
+              href="/shop"
+              className="inline-flex items-center gap-2 text-[13px] font-bold text-[#FF5E3A] hover:text-white transition-colors"
+            >
+              <ShoppingCart className="w-4 h-4" /> Browse full catalog
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {CATEGORIES.map((c) => {
+              const count = getProductsByCategory(c.slug).length
+              const href = c.serviceSlug ? `/services/${c.serviceSlug}` : "/shop"
+              const Icon = CATEGORY_ICONS[c.slug]
+              return (
+                <Link
+                  key={c.slug}
+                  href={href}
+                  className="group flex items-center gap-4 rounded-xl p-5 transition-all hover:border-[#FF5E3A]/40"
+                  style={GLASS}
+                >
+                  <span
+                    className="flex items-center justify-center w-12 h-12 rounded-xl flex-shrink-0 text-[#FF5E3A]"
+                    style={{ background: "rgba(255,45,111,0.12)", border: "1px solid rgba(255,45,111,0.22)" }}
+                  >
+                    <Icon className="w-5 h-5" />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-white font-semibold group-hover:text-[#FF5E3A] transition-colors truncate">
+                      {c.label}
+                    </h3>
+                    <p className="text-sm text-white/40 mt-0.5">{count} products available</p>
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-white/30 group-hover:text-[#FF5E3A] group-hover:translate-x-1 transition-all flex-shrink-0" />
+                </Link>
+              )
+            })}
           </div>
         </div>
       </section>
