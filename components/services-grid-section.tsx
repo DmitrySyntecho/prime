@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Layers, Volume2, Monitor, Lightbulb, Box, Tv, Projector, Columns } from "lucide-react"
+import { Layers, Volume2, Monitor, Lightbulb, Box, Tv, Projector, Columns, ArrowRight } from "lucide-react"
 import { useCity } from "@/lib/city-context"
 
 export function ServicesGridSection() {
@@ -94,59 +94,46 @@ export function ServicesGridSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
           {services.map((service, index) => (
             <Link
               key={index}
               href={service.href}
-              className="keep-original group relative min-h-[280px] rounded-[22px] border border-[#FF2D6F]/20 overflow-hidden block transition-transform hover:-translate-y-0.5 hover:border-[#FF2D6F]/45 bg-[#0a0a0a]"
-              style={{
-                boxShadow:
-                  "inset 0 1px 0 rgba(255,255,255,0.06), 0 16px 36px -12px rgba(0,0,0,0.4)",
-              }}
+              className="keep-original group flex flex-col rounded-[22px] border border-[#FF2D6F]/20 overflow-hidden transition-transform hover:-translate-y-0.5 hover:border-[#FF2D6F]/45 bg-[#0a0a0a]"
+              style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06), 0 16px 36px -12px rgba(0,0,0,0.4)" }}
             >
-              {/* Background image — always visible, fills entire card */}
-              <Image
-                src={service.image}
-                alt={service.title}
-                fill
-                loading="lazy"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                className="absolute inset-0 object-cover"
-              />
+              {/* Image — fully visible, never covered by text */}
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
 
-              {/* Dark gradient overlay — opacity varies by card */}
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    service.darkening === "heavy"
-                      ? "linear-gradient(180deg, rgba(3,7,10,0.50) 0%, rgba(3,7,10,0.70) 60%, rgba(3,7,10,0.85) 100%)"
-                      : service.darkening === "extra"
-                        ? "linear-gradient(180deg, rgba(3,7,10,0.50) 0%, rgba(3,7,10,0.75) 60%, rgba(3,7,10,0.90) 100%)"
-                        : "linear-gradient(180deg, rgba(3,7,10,0.40) 0%, rgba(3,7,10,0.60) 60%, rgba(3,7,10,0.80) 100%)",
-                }}
-                aria-hidden
-              />
-
-              {/* Top emerald glow */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background:
-                    "radial-gradient(ellipse 80% 70% at 50% 0%, rgba(255, 45, 111,0.18) 0%, transparent 70%)",
-                }}
-                aria-hidden
-              />
-
-              <div className="relative z-10 p-7 md:p-8">
-                <div className="w-14 h-14 rounded-[14px] bg-[#FF2D6F]/22 border border-[#FF2D6F]/35 flex items-center justify-center text-[#FF2D6F] mb-5 backdrop-blur-md">
-                  <service.icon className="w-6 h-6" strokeWidth={1.7} />
+              {/* Content plate below the image */}
+              <div className="relative flex flex-col flex-1 p-4 sm:p-6">
+                <div
+                  className="w-11 h-11 sm:w-14 sm:h-14 rounded-[14px] flex items-center justify-center text-[#FF2D6F] -mt-11 sm:-mt-14 mb-3 sm:mb-4 backdrop-blur-md"
+                  style={{ background: "rgba(255,45,111,0.22)", border: "1px solid rgba(255,45,111,0.35)" }}
+                >
+                  <service.icon className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.7} />
                 </div>
 
-                <h3 className="text-[21px] font-bold text-white tracking-[-0.01em] mb-2.5">{service.title}</h3>
+                <h3 className="text-[15px] sm:text-[20px] font-bold text-white tracking-[-0.01em] mb-2 leading-tight">
+                  {service.title}
+                </h3>
 
-                <p className="text-white/70 text-[14px] leading-[1.6]">{service.description}</p>
+                <p className="hidden sm:block text-white/65 text-[14px] leading-[1.6] mb-5 flex-1">
+                  {service.description}
+                </p>
+
+                <span className="mt-auto inline-flex items-center gap-2 text-[#FF2D6F] font-bold text-[13px] sm:text-[14px] group-hover:gap-3 transition-all">
+                  Get a Quote <ArrowRight className="w-4 h-4" />
+                </span>
               </div>
             </Link>
           ))}

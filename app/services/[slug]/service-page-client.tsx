@@ -18,7 +18,6 @@ import { FIFAPromoBanner } from "@/components/fifa-promo-banner"
 import { ContactSpecialistBanner } from "@/components/contact-specialist-banner"
 import { CategoryProductsShowcase } from "@/components/category-products-showcase"
 import { GeneralEquipmentShowcase } from "@/components/general-equipment-showcase"
-import { FrequentlyTogether } from "@/components/frequently-together"
 import { RatingsBar } from "@/components/ratings-bar"
 import { TeamSection } from "@/components/team-section"
 import { WrittenReviewsSection } from "@/components/written-reviews-section"
@@ -80,8 +79,6 @@ export function ServicePageClient({ service, slug }: ServicePageClientProps) {
       <EventTypesSection />
       <WhyChooseUsSection />
       <CaseStudiesSection />
-
-      {productCategory && <FrequentlyTogether category={productCategory} />}
 
       <ServicesGridSection />
       <TeamSection />

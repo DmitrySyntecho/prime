@@ -16,8 +16,8 @@ interface Lane {
 }
 
 const TIERS = [
-  { key: "basic" as const, title: "Basic Packages", blurb: "Reliable, budget-friendly setups for everyday events.", Icon: Layers },
-  { key: "premium" as const, title: "Premium Packages", blurb: "Top-tier, large-format gear for flagship productions.", Icon: Crown },
+  { key: "basic" as const, title: "Essentials", blurb: "Polished, budget-friendly setups that make everyday events look and sound professional.", Icon: Layers },
+  { key: "premium" as const, title: "Premium & Large-Format", blurb: "Broadcast-grade production that turns flagship events into headline moments.", Icon: Crown },
 ]
 
 // Stage is grouped by stage TYPE instead of tier, so customers can quickly find
@@ -61,8 +61,8 @@ export function CategoryProductsShowcase({ category }: { category: ProductCatego
   const lanes = buildLanes(category)
   const subtitle =
     category === "stage"
-      ? "Browse by stage type — with LED screen, outdoor, portable, round and platform kits."
-      : "Browse our full range by tier — from essential setups to flagship production-grade systems."
+      ? "Pick the stage that fits your show — with LED screen, outdoor, portable, round or platform kits — delivered and built by our crew."
+      : "From essential setups to flagship, production-grade systems — rented, delivered and dialed in by our team so your event just works."
 
   return (
     <section className="py-16 md:py-20 relative">

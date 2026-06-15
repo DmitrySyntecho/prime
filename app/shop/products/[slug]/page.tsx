@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, use } from "react"
+import { useState, use, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -27,6 +27,7 @@ import {
   Timer,
 } from "lucide-react"
 import { FrequentlyTogether } from "@/components/frequently-together"
+import { RecentlyViewed, recordRecentlyViewed } from "@/components/recently-viewed"
 import { useCart } from "@/lib/cart-context"
 import { PHONE_TEL, PHONE_DISPLAY } from "@/lib/contact"
 
@@ -46,6 +47,11 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
   const [quantity, setQuantity] = useState(1)
   const [rentalDays, setRentalDays] = useState(1)
   const { addItem, openCart } = useCart()
+
+  // remember this product for the "Recently Viewed" rail
+  useEffect(() => {
+    if (product) recordRecentlyViewed(product.slug)
+  }, [product?.slug])
 
   const addToQuote = () => {
     addItem(product, quantity, rentalDays)
@@ -409,6 +415,9 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
 
         {/* Frequently ordered together (cross-category) */}
         <FrequentlyTogether category={product.category} excludeId={product.id} />
+
+        {/* Recently viewed */}
+        <RecentlyViewed excludeSlug={product.slug} />
 
         {/* Back button */}
         <div className="mt-12">
