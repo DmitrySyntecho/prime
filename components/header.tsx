@@ -9,7 +9,6 @@ import {
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { PromoTopBanner } from "./promo-top-banner"
 import { DesktopNav } from "./mega-menu"
 import { ThemeToggle } from "./theme-toggle"
 import { useCart } from "@/lib/cart-context"
@@ -156,8 +155,6 @@ export function Header() {
         className="sticky top-0 z-50 transition-transform duration-500 ease-out will-change-transform"
         style={{ transform: hidden ? "translateY(-110%)" : "translateY(0)" }}
       >
-        <PromoTopBanner />
-
         <header className="py-3">
           <div className="max-w-7xl mx-auto px-4">
             <div

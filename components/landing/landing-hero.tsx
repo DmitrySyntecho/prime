@@ -142,10 +142,6 @@ function renderTitle(title: string, accentPhrase?: string) {
 function Heading({ hero, centered }: { hero: HeroConfig; centered?: boolean }) {
   return (
     <div className={centered ? "text-center" : ""}>
-      <span className="ds-pill mb-4 md:mb-5 text-[10px] md:text-[12px]">
-        <span className="dot" />
-        {hero.pillLabel}
-      </span>
       {/* H1 — wraps to max 2 lines on desktop (mobile exempt) */}
       <h1 className="text-[30px] sm:text-[38px] lg:text-[42px] font-extrabold tracking-[-0.02em] leading-[1.08] text-white mb-4">
         {renderTitle(hero.title, hero.accentPhrase)}
