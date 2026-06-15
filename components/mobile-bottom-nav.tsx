@@ -67,6 +67,7 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
   const [chooserOpen, setChooserOpen] = useState(false)
   const [navVisible, setNavVisible] = useState(false)
   const [headerMenuOpen, setHeaderMenuOpen] = useState(false)
+  const [filtersOpen, setFiltersOpen] = useState(false)
   const { isCartOpen } = useCart()
 
   // Show nav only after scrolling past the first block
@@ -115,6 +116,13 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
     return () => document.removeEventListener("headerMenuToggle", handler)
   }, [])
 
+  // Hide when the shop filters drawer is open
+  useEffect(() => {
+    const handler = (e: Event) => setFiltersOpen((e as CustomEvent).detail.open)
+    document.addEventListener("shopFiltersToggle", handler)
+    return () => document.removeEventListener("shopFiltersToggle", handler)
+  }, [])
+
   // Close shop panel on outside tap
   const panelRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
@@ -139,7 +147,7 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
   const railBg = isFifa ? "rgba(10,15,31,0.92)" : "rgba(10,8,24,0.92)"
 
   const isShopActive = pathname === "/shop" || pathname?.startsWith("/services/") || shopOpen
-  const panelsHidden = !navVisible || headerMenuOpen || isCartOpen
+  const panelsHidden = !navVisible || headerMenuOpen || isCartOpen || filtersOpen
 
   return (
     <>

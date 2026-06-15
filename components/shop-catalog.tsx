@@ -145,6 +145,10 @@ export function ShopCatalog() {
   const [mounted, setMounted] = useState(false)
   const [tabVisible, setTabVisible] = useState(false)
   useEffect(() => setMounted(true), [])
+  // Tell the mobile bottom nav to hide while the filters drawer is open
+  useEffect(() => {
+    document.dispatchEvent(new CustomEvent("shopFiltersToggle", { detail: { open: mobileFiltersOpen } }))
+  }, [mobileFiltersOpen])
   useEffect(() => {
     const onScroll = () => {
       const el = gridRef.current
