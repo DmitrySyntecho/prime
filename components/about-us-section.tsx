@@ -45,7 +45,7 @@ export function AboutUsSection() {
               ))}
             </ul>
 
-            <div className="flex flex-wrap gap-3 mt-2">
+            <div className="flex flex-wrap justify-center gap-3 mt-2">
               <button
                 onClick={openQuote}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-br from-[#FF2D6F] to-[#FF5E3A] text-white font-bold transition-all hover:-translate-y-0.5"
@@ -57,14 +57,13 @@ export function AboutUsSection() {
                 Get a Quote
                 <ArrowRight className="w-4 h-4" />
               </button>
-              <a
-                href={PHONE_TEL}
-                suppressHydrationWarning
+              <button
+                onClick={openQuote}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/[0.05] border border-white/[0.12] text-white font-semibold backdrop-blur-md transition-all hover:bg-white/[0.10]"
               >
                 <Phone className="w-4 h-4" />
                 Talk to an Expert
-              </a>
+              </button>
             </div>
           </div>
 

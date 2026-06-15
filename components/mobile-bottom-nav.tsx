@@ -256,13 +256,12 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
               </Link>
             </div>
 
-            {/* Quote / contact */}
+            {/* Quote / contact — opens the global channel chooser */}
             <button
-              onClick={() => setChooserOpen(true)}
+              onClick={onStartQuote}
               className="group flex flex-col items-center justify-center gap-0.5 py-1.5 rounded-full transition-colors"
-              style={{ color: chooserOpen ? accent : "rgba(255,255,255,0.55)" }}
+              style={{ color: "rgba(255,255,255,0.55)" }}
               aria-label="Get a quote"
-              aria-expanded={chooserOpen}
             >
               <Sparkles className="w-[18px] h-[18px]" strokeWidth={2.2} />
               <span className="text-[9px] font-bold tracking-[0.06em] uppercase">Quote</span>
@@ -283,13 +282,6 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
         </div>
       </nav>
 
-      <ContactSheet
-        open={chooserOpen}
-        onClose={() => setChooserOpen(false)}
-        onStartQuote={() => { setChooserOpen(false); onStartQuote() }}
-        accent={accent}
-        accentDeep={accentDeep}
-      />
     </>
   )
 }

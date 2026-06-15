@@ -1,41 +1,60 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { Sparkles } from "lucide-react"
 import { QuoteForm } from "./quote-form"
-import { StickyCTA } from "./sticky-cta"
 import { MobileBottomNav } from "./mobile-bottom-nav"
+import { QuoteChooser } from "./quote-chooser"
 
 export function GlobalCTA() {
-  const [open, setOpen] = useState(false)
+  const [chooserOpen, setChooserOpen] = useState(false)
+  const [formOpen, setFormOpen] = useState(false)
   const [serviceSlug, setServiceSlug] = useState<string | undefined>()
   const [eventTypeId, setEventTypeId] = useState<string | undefined>()
 
+  // Every CTA on the site dispatches "openQuoteForm" — that now opens the
+  // channel chooser first ("How would you like your quote?").
   useEffect(() => {
     const handler = (e: Event) => {
       const detail = (e as CustomEvent).detail
       setServiceSlug(detail?.serviceSlug || undefined)
       setEventTypeId(detail?.eventTypeId || undefined)
-      setOpen(true)
+      setChooserOpen(true)
     }
     document.addEventListener("openQuoteForm", handler)
     return () => document.removeEventListener("openQuoteForm", handler)
   }, [])
 
-  const openClean = () => {
+  const openChooser = () => {
     setServiceSlug(undefined)
     setEventTypeId(undefined)
-    setOpen(true)
+    setChooserOpen(true)
+  }
+  const openForm = () => {
+    setChooserOpen(false)
+    setFormOpen(true)
   }
 
   return (
     <>
-      {/* Desktop+tablet sticky CTA bar (≥md) */}
-      <div className="hidden md:block">
-        <StickyCTA onStartQuote={openClean} />
-      </div>
+      {/* Desktop floating quote bubble — bottom right */}
+      <button
+        onClick={openChooser}
+        aria-label="Get a quote"
+        className="hidden md:flex fixed bottom-6 right-6 z-[90] items-center justify-center w-14 h-14 rounded-full text-white transition-transform hover:-translate-y-0.5 active:scale-95"
+        style={{
+          background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
+          boxShadow: "0 16px 40px -8px rgba(255,45,111,0.6), inset 0 1px 0 rgba(255,255,255,0.3)",
+        }}
+      >
+        <Sparkles className="w-6 h-6" />
+      </button>
+
       {/* Mobile bottom navigation (<md) */}
-      <MobileBottomNav onStartQuote={openClean} />
-      <QuoteForm isOpen={open} onClose={() => setOpen(false)} serviceSlug={serviceSlug} eventTypeId={eventTypeId} />
+      <MobileBottomNav onStartQuote={openChooser} />
+
+      <QuoteChooser open={chooserOpen} onClose={() => setChooserOpen(false)} onForm={openForm} />
+      <QuoteForm isOpen={formOpen} onClose={() => setFormOpen(false)} serviceSlug={serviceSlug} eventTypeId={eventTypeId} />
     </>
   )
 }
