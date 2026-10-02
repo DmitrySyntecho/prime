@@ -1,0 +1,1675 @@
+{
+  "meta": {
+    "brand": "Prime Line AV",
+    "tagline": "When everything is just perfect.",
+    "positioning": "The AV partner brands trust",
+    "generatedFrom": [
+      "app/globals.css",
+      "app/layout.tsx",
+      "public/images/prime-line-av-logo-*.svg",
+      "public/brand/source/prime-line-monogram.svg",
+      "app/**/*.tsx",
+      "components/**/*.tsx"
+    ],
+    "generator": "scripts/generate-design-tokens.mjs",
+    "note": "Generated file — do not edit by hand. Change globals.css and re-run the generator.",
+    "theme": "dark-only"
+  },
+  "palette": [
+    {
+      "id": "primary",
+      "name": "Primary — Prime Pink & Coral",
+      "blurb": "The two colours every CTA, accent word, active state and focus ring is built from. Always used as a 135° pair, pink leading.",
+      "colors": [
+        {
+          "token": "--emerald",
+          "name": "Prime Pink",
+          "role": "Primary accent · CTAs · links · focus ring (legacy var name)",
+          "css": "var(--emerald)",
+          "isVar": true,
+          "raw": "#FF2D6F",
+          "hex": "#FF2D6F",
+          "hexOnInk": "#FF2D6F",
+          "rgb": "rgb(255, 45, 111)",
+          "hsl": "hsl(341, 100%, 59%)",
+          "alpha": 1,
+          "contrastOnInk": 5.7,
+          "contrastWithWhite": 3.59
+        },
+        {
+          "token": "--emerald-deep",
+          "name": "Stage Coral",
+          "role": "Gradient partner of Prime Pink · --brand-primary",
+          "css": "var(--emerald-deep)",
+          "isVar": true,
+          "raw": "#FF5E3A",
+          "hex": "#FF5E3A",
+          "hexOnInk": "#FF5E3A",
+          "rgb": "rgb(255, 94, 58)",
+          "hsl": "hsl(11, 100%, 61%)",
+          "alpha": 1,
+          "contrastOnInk": 6.73,
+          "contrastWithWhite": 3.04
+        },
+        {
+          "token": "--emerald-dark",
+          "name": "Plum",
+          "role": "Hover scrim on image cards · --brand-secondary",
+          "css": "var(--emerald-dark)",
+          "isVar": true,
+          "raw": "#7C2D5A",
+          "hex": "#7C2D5A",
+          "hexOnInk": "#7C2D5A",
+          "rgb": "rgb(124, 45, 90)",
+          "hsl": "hsl(326, 47%, 33%)",
+          "alpha": 1,
+          "contrastOnInk": 2.32,
+          "contrastWithWhite": 8.82
+        },
+        {
+          "token": "#C41F55",
+          "name": "Ribbon Shade",
+          "role": "Folded tail of the discount ribbon (product-card.tsx)",
+          "css": "#C41F55",
+          "isVar": false,
+          "uses": 2,
+          "raw": "#C41F55",
+          "hex": "#C41F55",
+          "hexOnInk": "#C41F55",
+          "rgb": "rgb(196, 31, 85)",
+          "hsl": "hsl(340, 73%, 45%)",
+          "alpha": 1,
+          "contrastOnInk": 3.58,
+          "contrastWithWhite": 5.72
+        }
+      ]
+    },
+    {
+      "id": "accent",
+      "name": "Accent — Spotlight Gold & Atmosphere",
+      "blurb": "Gold is the spotlight: eyebrow pills, star ratings, the Best-Seller badge; peach labels the shop. Violet only ever lives in the background atmosphere.",
+      "colors": [
+        {
+          "token": "--teal",
+          "name": "Spotlight Gold",
+          "role": "Eyebrow pills · .ds-accent-text midpoint",
+          "css": "var(--teal)",
+          "isVar": true,
+          "raw": "#FFD24A",
+          "hex": "#FFD24A",
+          "hexOnInk": "#FFD24A",
+          "rgb": "rgb(255, 210, 74)",
+          "hsl": "hsl(45, 100%, 65%)",
+          "alpha": 1,
+          "contrastOnInk": 14.19,
+          "contrastWithWhite": 1.44
+        },
+        {
+          "token": "#FFB366",
+          "name": "Peach",
+          "role": "Shop pills (“Rent the Gear”), mega-menu labels",
+          "css": "#FFB366",
+          "isVar": false,
+          "uses": 21,
+          "raw": "#FFB366",
+          "hex": "#FFB366",
+          "hexOnInk": "#FFB366",
+          "rgb": "rgb(255, 179, 102)",
+          "hsl": "hsl(30, 100%, 70%)",
+          "alpha": 1,
+          "contrastOnInk": 11.58,
+          "contrastWithWhite": 1.77
+        },
+        {
+          "token": "#FF9500",
+          "name": "Best-Seller Orange",
+          "role": "Gold → orange “Best Seller” badge",
+          "css": "#FF9500",
+          "isVar": false,
+          "uses": 3,
+          "raw": "#FF9500",
+          "hex": "#FF9500",
+          "hexOnInk": "#FF9500",
+          "rgb": "rgb(255, 149, 0)",
+          "hsl": "hsl(35, 100%, 50%)",
+          "alpha": 1,
+          "contrastOnInk": 9.3,
+          "contrastWithWhite": 2.2
+        },
+        {
+          "token": "#FF8A5E",
+          "name": "Delivery Coral",
+          "role": "Delivery / setup fee row on product cards",
+          "css": "#FF8A5E",
+          "isVar": false,
+          "uses": 4,
+          "raw": "#FF8A5E",
+          "hex": "#FF8A5E",
+          "hexOnInk": "#FF8A5E",
+          "rgb": "rgb(255, 138, 94)",
+          "hsl": "hsl(16, 100%, 68%)",
+          "alpha": 1,
+          "contrastOnInk": 8.81,
+          "contrastWithWhite": 2.32
+        },
+        {
+          "token": "--orb-violet",
+          "name": "Haze Violet",
+          "role": "Background orb A + page radials — atmosphere only",
+          "css": "#7C3AED",
+          "isVar": false,
+          "raw": "#7C3AED",
+          "hex": "#7C3AED",
+          "hexOnInk": "#7C3AED",
+          "rgb": "rgb(124, 58, 237)",
+          "hsl": "hsl(262, 83%, 58%)",
+          "alpha": 1,
+          "contrastOnInk": 3.59,
+          "contrastWithWhite": 5.7
+        },
+        {
+          "token": "--orb-blue",
+          "name": "Haze Blue",
+          "role": "Background orb B — atmosphere only",
+          "css": "#3B5CF6",
+          "isVar": false,
+          "raw": "#3B5CF6",
+          "hex": "#3B5CF6",
+          "hexOnInk": "#3B5CF6",
+          "rgb": "rgb(59, 92, 246)",
+          "hsl": "hsl(229, 91%, 60%)",
+          "alpha": 1,
+          "contrastOnInk": 3.94,
+          "contrastWithWhite": 5.19
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "name": "Dark surfaces",
+      "blurb": "Prime Line is a dark-only brand: color-scheme is locked to dark and .dark mirrors :root. Surfaces step up from near-black ink with a cool blue cast.",
+      "colors": [
+        {
+          "token": "--page-ink",
+          "name": "Stage Black",
+          "role": "html background — the page itself",
+          "css": "#050310",
+          "isVar": false,
+          "raw": "#050310",
+          "hex": "#050310",
+          "hexOnInk": "#050310",
+          "rgb": "rgb(5, 3, 16)",
+          "hsl": "hsl(249, 68%, 4%)",
+          "alpha": 1,
+          "contrastOnInk": 1,
+          "contrastWithWhite": 20.45
+        },
+        {
+          "token": "--page-ink-2",
+          "name": "Midnight",
+          "role": "Middle stop of the page gradient",
+          "css": "#0a0820",
+          "isVar": false,
+          "raw": "#0a0820",
+          "hex": "#0A0820",
+          "hexOnInk": "#0A0820",
+          "rgb": "rgb(10, 8, 32)",
+          "hsl": "hsl(245, 60%, 8%)",
+          "alpha": 1,
+          "contrastOnInk": 1.04,
+          "contrastWithWhite": 19.65
+        },
+        {
+          "token": "--bg-0",
+          "name": "Ink 0",
+          "role": "--background · theme-color · scrollbar track",
+          "css": "var(--bg-0)",
+          "isVar": true,
+          "raw": "#03070a",
+          "hex": "#03070A",
+          "hexOnInk": "#03070A",
+          "rgb": "rgb(3, 7, 10)",
+          "hsl": "hsl(206, 54%, 3%)",
+          "alpha": 1,
+          "contrastOnInk": 1.01,
+          "contrastWithWhite": 20.22
+        },
+        {
+          "token": "--bg-1",
+          "name": "Ink 1",
+          "role": "--card · --sidebar",
+          "css": "var(--bg-1)",
+          "isVar": true,
+          "raw": "#061018",
+          "hex": "#061018",
+          "hexOnInk": "#061018",
+          "rgb": "rgb(6, 16, 24)",
+          "hsl": "hsl(207, 60%, 6%)",
+          "alpha": 1,
+          "contrastOnInk": 1.07,
+          "contrastWithWhite": 19.18
+        },
+        {
+          "token": "--bg-2",
+          "name": "Ink 2",
+          "role": "--popover",
+          "css": "var(--bg-2)",
+          "isVar": true,
+          "raw": "#0a1a22",
+          "hex": "#0A1A22",
+          "hexOnInk": "#0A1A22",
+          "rgb": "rgb(10, 26, 34)",
+          "hsl": "hsl(200, 55%, 9%)",
+          "alpha": 1,
+          "contrastOnInk": 1.15,
+          "contrastWithWhite": 17.74
+        },
+        {
+          "token": "#0A0A0A",
+          "name": "Card Black",
+          "role": "Service card ground (services-grid-section)",
+          "css": "#0A0A0A",
+          "isVar": false,
+          "uses": 1,
+          "raw": "#0A0A0A",
+          "hex": "#0A0A0A",
+          "hexOnInk": "#0A0A0A",
+          "rgb": "rgb(10, 10, 10)",
+          "hsl": "hsl(0, 0%, 4%)",
+          "alpha": 1,
+          "contrastOnInk": 1.03,
+          "contrastWithWhite": 19.8
+        }
+      ]
+    },
+    {
+      "id": "text",
+      "name": "Text & lines",
+      "blurb": "A mint-tinted white for type, stepped down with alpha rather than with new greys.",
+      "colors": [
+        {
+          "token": "--ink",
+          "name": "Ink White",
+          "role": "Body text · --foreground",
+          "css": "var(--ink)",
+          "isVar": true,
+          "raw": "#e6f4ee",
+          "hex": "#E6F4EE",
+          "hexOnInk": "#E6F4EE",
+          "rgb": "rgb(230, 244, 238)",
+          "hsl": "hsl(154, 39%, 93%)",
+          "alpha": 1,
+          "contrastOnInk": 18.05,
+          "contrastWithWhite": 1.13
+        },
+        {
+          "token": "--muted-ds",
+          "name": "Muted 62",
+          "role": "Secondary copy · --muted-foreground",
+          "css": "var(--muted-ds)",
+          "isVar": true,
+          "raw": "rgba(230, 244, 238, 0.62)",
+          "hex": "#E6F4EE",
+          "hexOnInk": "#91989A",
+          "rgb": "rgba(230, 244, 238, 0.62)",
+          "hsl": "hsla(154, 39%, 93%, 0.62)",
+          "alpha": 0.62,
+          "contrastOnInk": 6.97,
+          "contrastWithWhite": 2.93
+        },
+        {
+          "token": "--muted-ds-2",
+          "name": "Muted 42",
+          "role": "Captions, meta",
+          "css": "var(--muted-ds-2)",
+          "isVar": true,
+          "raw": "rgba(230, 244, 238, 0.42)",
+          "hex": "#E6F4EE",
+          "hexOnInk": "#64686D",
+          "rgb": "rgba(230, 244, 238, 0.42)",
+          "hsl": "hsla(154, 39%, 93%, 0.42)",
+          "alpha": 0.42,
+          "contrastOnInk": 3.64,
+          "contrastWithWhite": 5.61
+        },
+        {
+          "token": "--line",
+          "name": "Pink Line",
+          "role": "Accent hairlines",
+          "css": "var(--line)",
+          "isVar": true,
+          "raw": "rgba(255, 45, 111, 0.16)",
+          "hex": "#FF2D6F",
+          "hexOnInk": "#2D0A1F",
+          "rgb": "rgba(255, 45, 111, 0.16)",
+          "hsl": "hsla(341, 100%, 59%, 0.16)",
+          "alpha": 0.16,
+          "contrastOnInk": 1.14,
+          "contrastWithWhite": 17.88
+        },
+        {
+          "token": "--line-2",
+          "name": "Hairline",
+          "role": "Default borders · --border",
+          "css": "var(--line-2)",
+          "isVar": true,
+          "raw": "rgba(255, 255, 255, 0.08)",
+          "hex": "#FFFFFF",
+          "hexOnInk": "#191723",
+          "rgb": "rgba(255, 255, 255, 0.08)",
+          "hsl": "hsla(0, 0%, 100%, 0.08)",
+          "alpha": 0.08,
+          "contrastOnInk": 1.16,
+          "contrastWithWhite": 17.67
+        },
+        {
+          "token": "--input",
+          "name": "Input Line",
+          "role": "Form field borders",
+          "css": "var(--input)",
+          "isVar": true,
+          "raw": "rgba(255, 255, 255, 0.10)",
+          "hex": "#FFFFFF",
+          "hexOnInk": "#1E1C28",
+          "rgb": "rgba(255, 255, 255, 0.1)",
+          "hsl": "hsla(0, 0%, 100%, 0.1)",
+          "alpha": 0.1,
+          "contrastOnInk": 1.22,
+          "contrastWithWhite": 16.77
+        }
+      ]
+    },
+    {
+      "id": "status",
+      "name": "Status",
+      "blurb": "Errors use the destructive token; form messages use Tailwind red-400 on top of it. The brand has no green.",
+      "colors": [
+        {
+          "token": "--destructive",
+          "name": "Error Red",
+          "role": "Destructive / invalid state",
+          "css": "var(--destructive)",
+          "isVar": true,
+          "raw": "#ef4444",
+          "hex": "#EF4444",
+          "hexOnInk": "#EF4444",
+          "rgb": "rgb(239, 68, 68)",
+          "hsl": "hsl(0, 84%, 60%)",
+          "alpha": 1,
+          "contrastOnInk": 5.43,
+          "contrastWithWhite": 3.76
+        }
+      ]
+    }
+  ],
+  "logoPalette": [
+    {
+      "hex": "#FF3467",
+      "role": "“AV” + underline swoosh — gradient top",
+      "rgb": "rgb(255, 52, 103)",
+      "hsl": "hsl(345, 100%, 60%)"
+    },
+    {
+      "hex": "#FF593F",
+      "role": "“AV” + underline swoosh — gradient bottom",
+      "rgb": "rgb(255, 89, 63)",
+      "hsl": "hsl(8, 100%, 62%)"
+    },
+    {
+      "hex": "#3B2075",
+      "role": "Monogram disc — gradient bottom (indigo)",
+      "rgb": "rgb(59, 32, 117)",
+      "hsl": "hsl(259, 57%, 29%)"
+    },
+    {
+      "hex": "#2F2F2F",
+      "role": "PRIMELINE wordmark on light grounds",
+      "rgb": "rgb(47, 47, 47)",
+      "hsl": "hsl(0, 0%, 18%)"
+    },
+    {
+      "hex": "#FFFFFF",
+      "role": "PRIMELINE wordmark on dark grounds",
+      "rgb": "rgb(255, 255, 255)",
+      "hsl": "hsl(0, 0%, 100%)"
+    }
+  ],
+  "logoGeometry": {
+    "viewBox": {
+      "width": 753,
+      "height": 112
+    },
+    "inkBox": {
+      "x": 11.476,
+      "y": 21.241,
+      "width": 721.059,
+      "height": 74.28
+    },
+    "capHeight": 50.473,
+    "aspect": 6.723,
+    "headerHeightPx": {
+      "desktop": 36,
+      "mobile": 36
+    },
+    "footerHeightPx": 36,
+    "minSize": {
+      "lockupScreenPx": 140,
+      "lockupPrintMm": 35,
+      "monogramScreenPx": 16
+    }
+  },
+  "gradients": [
+    {
+      "id": "brand",
+      "name": "Brand gradient",
+      "usage": ".ds-btn-primary, every CTA, the play button, the footer quote button.",
+      "css": "linear-gradient(135deg, var(--emerald) 0%, var(--emerald-deep) 100%)",
+      "resolved": "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)"
+    },
+    {
+      "id": "accent-text",
+      "name": "Accent type",
+      "usage": ".ds-accent-text — the italic highlighted word in every headline. Animates with gradientShift 6s.",
+      "css": "linear-gradient(135deg, var(--emerald) 0%, var(--teal) 60%, var(--emerald) 100%)",
+      "resolved": "linear-gradient(135deg, #FF2D6F 0%, #FFD24A 60%, #FF2D6F 100%)"
+    },
+    {
+      "id": "logo",
+      "name": "Logo gradient",
+      "usage": "“AV” and the underline swoosh in the lockup (vertical, top → bottom).",
+      "css": "linear-gradient(180deg, #FF3467 0%, #FF593F 100%)",
+      "resolved": "linear-gradient(180deg, #FF3467 0%, #FF593F 100%)"
+    },
+    {
+      "id": "monogram",
+      "name": "Monogram gradient",
+      "usage": "The PL favicon disc — pink into indigo.",
+      "css": "linear-gradient(180deg, #FF3467 0%, #3B2075 100%)",
+      "resolved": "linear-gradient(180deg, #FF3467 0%, #3B2075 100%)"
+    },
+    {
+      "id": "atmosphere",
+      "name": "Stage atmosphere",
+      "usage": "The fixed page background on html — three coloured radials over a midnight ramp.",
+      "css": "radial-gradient(ellipse 70% 50% at 80% 0%, rgba(255, 45, 111, 0.42) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 0% 30%, rgba(124, 58, 237, 0.40) 0%, transparent 60%), radial-gradient(ellipse 80% 60% at 50% 110%, rgba(255, 94, 58, 0.30) 0%, transparent 60%), linear-gradient(180deg, #050310 0%, #0a0820 50%, #050310 100%)",
+      "resolved": "radial-gradient(ellipse 70% 50% at 80% 0%, rgba(255, 45, 111, 0.42) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 0% 30%, rgba(124, 58, 237, 0.40) 0%, transparent 60%), radial-gradient(ellipse 80% 60% at 50% 110%, rgba(255, 94, 58, 0.30) 0%, transparent 60%), linear-gradient(180deg, #050310 0%, #0a0820 50%, #050310 100%)"
+    },
+    {
+      "id": "glass-frame",
+      "name": "Hero glass frame",
+      "usage": "Hero video frame (hero-section.tsx) — a barely-there pink→gold tint.",
+      "css": "linear-gradient(135deg, rgba(255, 45, 111,0.10), rgba(255, 210, 74,0.05))",
+      "resolved": "linear-gradient(135deg, rgba(255, 45, 111,0.10), rgba(255, 210, 74,0.05))"
+    }
+  ],
+  "effects": [
+    {
+      "selector": ".ds-glass",
+      "name": "Glass",
+      "usage": "Neutral frosted panel — 24px blur, 180% saturate, inner top highlight.",
+      "css": "background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);\nborder: 1px solid rgba(255, 255, 255, 0.1);\nbackdrop-filter: blur(24px) saturate(180%);\n-webkit-backdrop-filter: blur(24px) saturate(180%);\nbox-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 24px 48px -16px rgba(0, 0, 0, 0.5);\nborder-radius: 20px;"
+    },
+    {
+      "selector": ".ds-glass-emerald",
+      "name": "Glass · pink",
+      "usage": "The same panel tinted with Prime Pink and a plum drop shadow.",
+      "css": "background: linear-gradient(135deg, rgba(255, 45, 111, 0.1) 0%, rgba(255, 45, 111, 0.02) 100%);\nborder: 1px solid rgba(255, 45, 111, 0.18);\nbackdrop-filter: blur(28px) saturate(180%);\n-webkit-backdrop-filter: blur(28px) saturate(180%);\nbox-shadow: inset 0 1px 0 rgba(255, 45, 111, 0.2), 0 24px 48px -16px rgba(124, 45, 90, 0.5);\nborder-radius: 20px;"
+    },
+    {
+      "selector": ".ds-card",
+      "name": "Card",
+      "usage": "Service / event cards. 22px radius, lifts 4px on hover.",
+      "css": "position: relative;\nborder-radius: 22px;\nbackground: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);\nborder: 1px solid rgba(255, 255, 255, 0.08);\nbackdrop-filter: blur(24px) saturate(180%);\nbox-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 16px 36px -12px rgba(0, 0, 0, 0.4);\ntransition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);\noverflow: hidden;"
+    },
+    {
+      "selector": ".ds-card:hover",
+      "name": "Card · hover",
+      "usage": "Border warms to pink 30%, a pink radial blooms from the top edge.",
+      "css": "transform: translateY(-4px);\nborder-color: rgba(255, 45, 111, 0.3);"
+    },
+    {
+      "selector": ".ds-card::before",
+      "name": "Card · glow layer",
+      "usage": "The radial that fades in on hover.",
+      "css": "content: '';\nposition: absolute;\ninset: 0;\npointer-events: none;\nopacity: 0;\nbackground: radial-gradient(ellipse 80% 70% at 50% 0%, rgba(255, 45, 111, 0.18) 0%, transparent 70%);\ntransition: opacity 0.5s;"
+    },
+    {
+      "selector": ".shimmer-stroke",
+      "name": "Shimmer stroke",
+      "usage": "Applied automatically to every pink→coral button/link, and by class to glass buttons (Watch, phone).",
+      "css": "position: relative;\nisolation: isolate;"
+    },
+    {
+      "selector": ".shimmer-stroke::after",
+      "name": "Shimmer stroke · ring",
+      "usage": "2px masked conic ring cream → pink → coral → gold on @property --shimmer-angle, 3s linear.",
+      "css": "content: \"\";\nposition: absolute;\ninset: 0;\nz-index: 2;\nborder-radius: inherit;\npadding: 2px;\nbackground: conic-gradient( from var(--shimmer-angle), #FFE3B0, #FF2D6F, #FF5E3A, #FFD24A, #FF2D6F, #FFE3B0 );\n-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);\nmask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);\n-webkit-mask-composite: xor;\nmask-composite: exclude;\npointer-events: none;\nanimation: shimmer-spin 3s linear infinite;"
+    },
+    {
+      "selector": ".ds-pill",
+      "name": "Eyebrow pill",
+      "usage": "Gold uppercase kicker above every section heading.",
+      "css": "display: inline-flex;\nalign-items: center;\ngap: 8px;\npadding: 8px 14px;\nborder-radius: 999px;\nbackground: rgba(255, 184, 55, 0.10);\nborder: 1px solid rgba(255, 184, 55, 0.30);\nbackdrop-filter: blur(12px);\nfont-size: 12px;\nfont-weight: 700;\nletter-spacing: 0.14em;\ntext-transform: uppercase;\ncolor: #FFD24A;"
+    },
+    {
+      "selector": ".ds-pill .dot",
+      "name": "Pill dot",
+      "usage": "Glowing gold dot, pulses on pulse-ds 2s.",
+      "css": "width: 6px;\nheight: 6px;\nborder-radius: 50%;\nbackground: #FFD24A;\nbox-shadow: 0 0 8px #FFD24A;\nanimation: pulse-ds 2s ease-in-out infinite;"
+    },
+    {
+      "selector": ".ds-btn-primary",
+      "name": "Primary button",
+      "usage": "Brand gradient, pink glow shadow, white inner highlight.",
+      "css": "display: inline-flex;\nalign-items: center;\ngap: 10px;\npadding: 16px 28px;\nborder-radius: 12px;\nbackground: linear-gradient(135deg, var(--emerald) 0%, var(--emerald-deep) 100%);\ncolor: var(--bg-0);\nfont-weight: 800;\nfont-size: 15px;\nletter-spacing: 0.01em;\ntext-decoration: none;\nborder: none;\ncursor: pointer;\nbox-shadow: 0 12px 36px -8px rgba(255, 45, 111, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.3);\ntransition: all 0.3s;\nfont-family: inherit;"
+    },
+    {
+      "selector": ".ds-btn-primary:hover",
+      "name": "Primary · hover",
+      "usage": "Lifts 2px, glow intensifies to 0.7.",
+      "css": "transform: translateY(-2px);\nbox-shadow: 0 16px 44px -8px rgba(255, 45, 111, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.3);"
+    },
+    {
+      "selector": ".ds-btn-secondary",
+      "name": "Secondary button",
+      "usage": "Glass outline button.",
+      "css": "display: inline-flex;\nalign-items: center;\ngap: 10px;\npadding: 15px 26px;\nborder-radius: 12px;\nbackground: rgba(255, 255, 255, 0.05);\nborder: 1px solid rgba(255, 255, 255, 0.12);\nbackdrop-filter: blur(20px);\ncolor: var(--ink);\nfont-weight: 700;\nfont-size: 14px;\ntext-decoration: none;\ncursor: pointer;\ntransition: all 0.3s;\nfont-family: inherit;"
+    },
+    {
+      "selector": ".ds-btn-secondary:hover",
+      "name": "Secondary · hover",
+      "usage": "Fill and border step up.",
+      "css": "background: rgba(255, 255, 255, 0.1);\nborder-color: rgba(255, 255, 255, 0.22);"
+    },
+    {
+      "selector": ".ds-accent-text",
+      "name": "Accent text",
+      "usage": "Gradient-clipped italic word, animated.",
+      "css": "display: inline-block;\nbackground: linear-gradient(135deg, var(--emerald) 0%, var(--teal) 60%, var(--emerald) 100%);\nbackground-size: 200% 200%;\n-webkit-background-clip: text;\nbackground-clip: text;\n-webkit-text-fill-color: transparent;\nanimation: gradientShift 6s ease-in-out infinite;\nfont-style: italic;\npadding: 0.12em 0.18em 0.18em 0;\nmargin: -0.12em -0.04em -0.18em 0;\nline-height: 1.18;\nvertical-align: baseline;"
+    },
+    {
+      "selector": ".bg-grid",
+      "name": "Stage grid",
+      "usage": "56px pink grid, masked to a soft ellipse.",
+      "css": "position: fixed;\ninset: 0;\nz-index: 1;\nbackground-image: linear-gradient(to right, rgba(255, 45, 111, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 45, 111, 0.05) 1px, transparent 1px);\nbackground-size: 56px 56px;\nmask-image: radial-gradient(ellipse 100% 70% at 50% 50%, black 30%, transparent 80%);\npointer-events: none;"
+    },
+    {
+      "selector": ".bg-orb",
+      "name": "Orb",
+      "usage": "110px-blurred colour orbs drifting behind everything.",
+      "css": "position: fixed;\nz-index: 1;\nborder-radius: 50%;\nfilter: blur(64px);\npointer-events: none;\ntransform: translateZ(0);"
+    },
+    {
+      "selector": ".bg-noise",
+      "name": "Film grain",
+      "usage": "SVG fractal noise at 4% — kills banding in the gradients.",
+      "css": "position: fixed;\ninset: 0;\nz-index: 1;\npointer-events: none;\nopacity: 0.04;\nbackground-image: url(\"/images/noise.png\");\nbackground-size: 128px 128px;\nbackground-repeat: repeat;\ntransform: translateZ(0);"
+    },
+    {
+      "selector": ".ds-reveal",
+      "name": "Reveal",
+      "usage": "Scroll reveal — 40px rise, 0.9s.",
+      "css": "opacity: 0;\ntransform: translateY(40px);\ntransition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);"
+    }
+  ],
+  "keyframes": [
+    {
+      "name": "scroll-left",
+      "css": "@keyframes scroll-left {\r\n  0% { transform: translateX(0); }\r\n  100% { transform: translateX(-50%); }\r\n}"
+    },
+    {
+      "name": "scroll-right",
+      "css": "@keyframes scroll-right {\r\n  0% { transform: translateX(-50%); }\r\n  100% { transform: translateX(0); }\r\n}"
+    },
+    {
+      "name": "fadeIn",
+      "css": "@keyframes fadeIn {\r\n  0% {\r\n    opacity: 0;\r\n    transform: translateY(10px);\r\n  }\r\n  100% {\r\n    opacity: 1;\r\n    transform: translateY(0);\r\n  }\r\n}"
+    },
+    {
+      "name": "orbA",
+      "css": "@keyframes orbA {\r\n  0%, 100% { transform: translate(0, 0) scale(1); }\r\n  50% { transform: translate(-80px, 60px) scale(1.1); }\r\n}"
+    },
+    {
+      "name": "orbB",
+      "css": "@keyframes orbB {\r\n  0%, 100% { transform: translate(0, 0) scale(1); }\r\n  50% { transform: translate(80px, -40px) scale(1.15); }\r\n}"
+    },
+    {
+      "name": "orbC",
+      "css": "@keyframes orbC {\r\n  0%, 100% { transform: translate(0, 0) scale(1); }\r\n  50% { transform: translate(60px, 80px) scale(0.85); }\r\n}"
+    },
+    {
+      "name": "pulse-ds",
+      "css": "@keyframes pulse-ds {\r\n  0%, 100% { opacity: 1; }\r\n  50% { opacity: 0.4; }\r\n}"
+    },
+    {
+      "name": "gradientShift",
+      "css": "@keyframes gradientShift {\r\n  0%, 100% { background-position: 0% 50%; }\r\n  50% { background-position: 100% 50%; }\r\n}"
+    },
+    {
+      "name": "scanlines",
+      "css": "@keyframes scanlines {\r\n  0% { background-position: 0 0; }\r\n  100% { background-position: 0 4px; }\r\n}"
+    },
+    {
+      "name": "floatY",
+      "css": "@keyframes floatY {\r\n  0%, 100% { transform: translateY(0); }\r\n  50% { transform: translateY(-10px); }\r\n}"
+    },
+    {
+      "name": "eq-bar",
+      "css": "@keyframes eq-bar {\r\n  0%, 100% { height: 20%; }\r\n  50% { height: 100%; }\r\n}"
+    },
+    {
+      "name": "shimmer-spin",
+      "css": "@keyframes shimmer-spin {\r\n  to { --shimmer-angle: 360deg; }\r\n}"
+    }
+  ],
+  "animations": [
+    {
+      "className": "animate-fadeIn",
+      "keyframes": "fadeIn",
+      "duration": "0.3s",
+      "timing": "ease-out forwards",
+      "css": "fadeIn 0.3s ease-out forwards"
+    },
+    {
+      "className": "animate-scroll-left",
+      "keyframes": "scroll-left",
+      "duration": "76s",
+      "timing": "linear infinite",
+      "css": "scroll-left 76s linear infinite"
+    },
+    {
+      "className": "animate-scroll-right",
+      "keyframes": "scroll-right",
+      "duration": "84s",
+      "timing": "linear infinite",
+      "css": "scroll-right 84s linear infinite"
+    },
+    {
+      "className": "animate-pulse-ds",
+      "keyframes": "pulse-ds",
+      "duration": "2s",
+      "timing": "ease-in-out infinite",
+      "css": "pulse-ds 2s ease-in-out infinite"
+    },
+    {
+      "className": "animate-gradient-shift",
+      "keyframes": "gradientShift",
+      "duration": "6s",
+      "timing": "ease-in-out infinite",
+      "css": "gradientShift 6s ease-in-out infinite"
+    },
+    {
+      "className": "animate-scanlines",
+      "keyframes": "scanlines",
+      "duration": "3s",
+      "timing": "linear infinite",
+      "css": "scanlines 3s linear infinite"
+    },
+    {
+      "className": "animate-float-y",
+      "keyframes": "floatY",
+      "duration": "5s",
+      "timing": "ease-in-out infinite",
+      "css": "floatY 5s ease-in-out infinite"
+    },
+    {
+      "className": "animate-eq",
+      "keyframes": "eq-bar",
+      "duration": "1.2s",
+      "timing": "ease-in-out infinite",
+      "css": "eq-bar 1.2s ease-in-out infinite"
+    },
+    {
+      "className": ".ds-pill .dot",
+      "keyframes": "pulse-ds",
+      "duration": "2s",
+      "timing": "ease-in-out infinite",
+      "css": "pulse-ds 2s ease-in-out infinite"
+    }
+  ],
+  "radius": {
+    "base": "0.875rem",
+    "theme": {
+      "sm": "calc(var(--radius) - 4px)",
+      "md": "calc(var(--radius) - 2px)",
+      "lg": "var(--radius)",
+      "xl": "calc(var(--radius) + 4px)"
+    },
+    "scale": [
+      {
+        "px": 6,
+        "classes": [
+          "rounded-md"
+        ],
+        "uses": 68,
+        "role": "shadcn primitives, small chips"
+      },
+      {
+        "px": 8,
+        "classes": [
+          "rounded-lg",
+          "rounded-[8px]"
+        ],
+        "uses": 90,
+        "role": "Small icon tiles, image thumbs"
+      },
+      {
+        "px": 10,
+        "classes": [
+          "rounded-[10px]"
+        ],
+        "uses": 30,
+        "role": "Nav items, header buttons, icon tiles"
+      },
+      {
+        "px": 12,
+        "classes": [
+          "rounded-xl",
+          "rounded-[12px]"
+        ],
+        "uses": 214,
+        "role": "Buttons (.ds-btn-*), inputs, CTAs"
+      },
+      {
+        "px": 14,
+        "classes": [
+          "rounded-[14px]"
+        ],
+        "uses": 20,
+        "role": "Accordion rows, logo tiles, floating cards"
+      },
+      {
+        "px": 16,
+        "classes": [
+          "rounded-2xl",
+          "rounded-[16px]"
+        ],
+        "uses": 67,
+        "role": "Header bar, sheets, modals"
+      },
+      {
+        "px": 20,
+        "classes": [
+          ".ds-glass"
+        ],
+        "uses": 0,
+        "role": ".ds-glass panels"
+      },
+      {
+        "px": 22,
+        "classes": [
+          "rounded-[22px]",
+          ".ds-card"
+        ],
+        "uses": 5,
+        "role": ".ds-card"
+      },
+      {
+        "px": 24,
+        "classes": [
+          "rounded-3xl",
+          "rounded-[24px]"
+        ],
+        "uses": 12,
+        "role": "Hero glass frame, big media"
+      },
+      {
+        "px": 9999,
+        "classes": [
+          "rounded-full"
+        ],
+        "uses": 115,
+        "role": "Pills, dots, avatars"
+      }
+    ]
+  },
+  "spacing": {
+    "step": "0.25rem (4px)",
+    "scale": [
+      {
+        "step": "0.5",
+        "px": 2,
+        "rem": "0.125rem",
+        "uses": 42
+      },
+      {
+        "step": "1",
+        "px": 4,
+        "rem": "0.25rem",
+        "uses": 110
+      },
+      {
+        "step": "1.5",
+        "px": 6,
+        "rem": "0.375rem",
+        "uses": 114
+      },
+      {
+        "step": "2",
+        "px": 8,
+        "rem": "0.5rem",
+        "uses": 397
+      },
+      {
+        "step": "2.5",
+        "px": 10,
+        "rem": "0.625rem",
+        "uses": 103
+      },
+      {
+        "step": "3",
+        "px": 12,
+        "rem": "0.75rem",
+        "uses": 388
+      },
+      {
+        "step": "3.5",
+        "px": 14,
+        "rem": "0.875rem",
+        "uses": 35
+      },
+      {
+        "step": "4",
+        "px": 16,
+        "rem": "1rem",
+        "uses": 545
+      },
+      {
+        "step": "5",
+        "px": 20,
+        "rem": "1.25rem",
+        "uses": 131
+      },
+      {
+        "step": "6",
+        "px": 24,
+        "rem": "1.5rem",
+        "uses": 222
+      },
+      {
+        "step": "7",
+        "px": 28,
+        "rem": "1.75rem",
+        "uses": 25
+      },
+      {
+        "step": "8",
+        "px": 32,
+        "rem": "2rem",
+        "uses": 126
+      },
+      {
+        "step": "10",
+        "px": 40,
+        "rem": "2.5rem",
+        "uses": 77
+      },
+      {
+        "step": "12",
+        "px": 48,
+        "rem": "3rem",
+        "uses": 60
+      },
+      {
+        "step": "14",
+        "px": 56,
+        "rem": "3.5rem",
+        "uses": 25
+      },
+      {
+        "step": "16",
+        "px": 64,
+        "rem": "4rem",
+        "uses": 85
+      },
+      {
+        "step": "20",
+        "px": 80,
+        "rem": "5rem",
+        "uses": 80
+      },
+      {
+        "step": "24",
+        "px": 96,
+        "rem": "6rem",
+        "uses": 32
+      },
+      {
+        "step": "28",
+        "px": 112,
+        "rem": "7rem",
+        "uses": 16
+      }
+    ],
+    "sectionPadding": [
+      {
+        "key": "py-16",
+        "uses": 61
+      },
+      {
+        "key": "md:py-20",
+        "uses": 57
+      },
+      {
+        "key": "py-20",
+        "uses": 21
+      },
+      {
+        "key": "md:py-24",
+        "uses": 20
+      },
+      {
+        "key": "md:py-28",
+        "uses": 14
+      },
+      {
+        "key": "md:py-16",
+        "uses": 14
+      },
+      {
+        "key": "py-12",
+        "uses": 13
+      },
+      {
+        "key": "py-14",
+        "uses": 11
+      },
+      {
+        "key": "py-24",
+        "uses": 8
+      },
+      {
+        "key": "md:py-14",
+        "uses": 2
+      },
+      {
+        "key": "md:py-12",
+        "uses": 2
+      },
+      {
+        "key": "lg:py-28",
+        "uses": 1
+      }
+    ],
+    "gutter": "px-4 (16px) — every max-w-7xl container"
+  },
+  "containers": [
+    {
+      "key": "max-w-7xl",
+      "px": 1280,
+      "uses": 81,
+      "role": "Every section and the header — the site grid"
+    },
+    {
+      "key": "max-w-6xl",
+      "px": 1152,
+      "uses": 9,
+      "role": "Wide galleries"
+    },
+    {
+      "key": "max-w-5xl",
+      "px": 1024,
+      "uses": 4,
+      "role": "Section titles"
+    },
+    {
+      "key": "max-w-4xl",
+      "px": 896,
+      "uses": 25,
+      "role": "FAQ, narrow reading sections"
+    },
+    {
+      "key": "max-w-3xl",
+      "px": 768,
+      "uses": 14,
+      "role": "Centered intros"
+    },
+    {
+      "key": "max-w-2xl",
+      "px": 672,
+      "uses": 35,
+      "role": "Lede paragraphs"
+    },
+    {
+      "key": "max-w-xl",
+      "px": 576,
+      "uses": 5,
+      "role": ""
+    },
+    {
+      "key": "max-w-lg",
+      "px": 512,
+      "uses": 5,
+      "role": ""
+    },
+    {
+      "key": "max-w-md",
+      "px": 448,
+      "uses": 7,
+      "role": ""
+    },
+    {
+      "key": "max-w-sm",
+      "px": 384,
+      "uses": 2,
+      "role": ""
+    }
+  ],
+  "breakpoints": [
+    {
+      "key": "base",
+      "px": 0,
+      "note": "Mobile first — favicon mark in the header, bottom nav",
+      "uses": 0
+    },
+    {
+      "key": "sm",
+      "px": 640,
+      "note": "Two-column grids, side-by-side buttons",
+      "uses": 249
+    },
+    {
+      "key": "md",
+      "px": 768,
+      "note": "Header phone + quote CTA appear, sticky CTA bar",
+      "uses": 509
+    },
+    {
+      "key": "lg",
+      "px": 1024,
+      "note": "Desktop mega-menu, two-column hero, 4-column grids",
+      "uses": 126
+    },
+    {
+      "key": "xl",
+      "px": 1280,
+      "note": "Container hits max-w-7xl",
+      "uses": 4
+    }
+  ],
+  "typography": {
+    "families": [
+      {
+        "name": "Manrope",
+        "token": "--font-sans",
+        "cssVar": "--font-manrope",
+        "stack": "\"Manrope\", \"Manrope Fallback\", system-ui, sans-serif",
+        "loader": "next/font/google — Manrope, weights 400–800, display: swap (app/layout.tsx)",
+        "role": "Everything: display, headings, UI, body. Features ss01 + cv11 are on site-wide.",
+        "weights": [
+          400,
+          500,
+          600,
+          700,
+          800
+        ],
+        "features": "font-feature-settings: 'ss01', 'cv11'"
+      },
+      {
+        "name": "JetBrains Mono",
+        "token": "--font-mono",
+        "cssVar": "--font-jetbrains-mono",
+        "stack": "\"JetBrains Mono\", \"JetBrains Mono Fallback\", monospace",
+        "loader": "next/font/google — JetBrains_Mono, weights 400–500 (app/layout.tsx)",
+        "role": "Phone numbers, time pickers, codes — anything that should read as tabular data.",
+        "weights": [
+          400,
+          500
+        ]
+      }
+    ],
+    "sizes": [
+      {
+        "px": 9,
+        "uses": 15
+      },
+      {
+        "px": 10,
+        "uses": 38
+      },
+      {
+        "px": 11,
+        "uses": 95
+      },
+      {
+        "px": 12,
+        "uses": 68
+      },
+      {
+        "px": 13,
+        "uses": 145
+      },
+      {
+        "px": 14,
+        "uses": 81
+      },
+      {
+        "px": 15,
+        "uses": 37
+      },
+      {
+        "px": 16,
+        "uses": 14
+      },
+      {
+        "px": 17,
+        "uses": 13
+      },
+      {
+        "px": 18,
+        "uses": 10
+      },
+      {
+        "px": 20,
+        "uses": 6
+      },
+      {
+        "px": 22,
+        "uses": 8
+      },
+      {
+        "px": 24,
+        "uses": 2
+      },
+      {
+        "px": 26,
+        "uses": 2
+      },
+      {
+        "px": 28,
+        "uses": 6
+      },
+      {
+        "px": 30,
+        "uses": 2
+      },
+      {
+        "px": 32,
+        "uses": 10
+      },
+      {
+        "px": 34,
+        "uses": 4
+      },
+      {
+        "px": 38,
+        "uses": 1
+      },
+      {
+        "px": 40,
+        "uses": 7
+      },
+      {
+        "px": 42,
+        "uses": 3
+      },
+      {
+        "px": 44,
+        "uses": 8
+      },
+      {
+        "px": 48,
+        "uses": 9
+      },
+      {
+        "px": 50,
+        "uses": 3
+      },
+      {
+        "px": 64,
+        "uses": 2
+      },
+      {
+        "px": 72,
+        "uses": 2
+      },
+      {
+        "px": 76,
+        "uses": 2
+      },
+      {
+        "px": 100,
+        "uses": 1
+      }
+    ],
+    "tracking": [
+      {
+        "value": "-0.04em",
+        "uses": 1
+      },
+      {
+        "value": "-0.035em",
+        "uses": 2
+      },
+      {
+        "value": "-0.03em",
+        "uses": 2
+      },
+      {
+        "value": "-0.025em",
+        "uses": 17
+      },
+      {
+        "value": "-0.02em",
+        "uses": 11
+      },
+      {
+        "value": "-0.01em",
+        "uses": 4
+      },
+      {
+        "value": "0.01em",
+        "uses": 8
+      },
+      {
+        "value": "0.02em",
+        "uses": 16
+      },
+      {
+        "value": "0.04em",
+        "uses": 6
+      },
+      {
+        "value": "0.06em",
+        "uses": 13
+      },
+      {
+        "value": "0.08em",
+        "uses": 13
+      },
+      {
+        "value": "0.12em",
+        "uses": 2
+      },
+      {
+        "value": "0.14em",
+        "uses": 10
+      },
+      {
+        "value": "0.16em",
+        "uses": 26
+      },
+      {
+        "value": "0.18em",
+        "uses": 3
+      }
+    ],
+    "weights": [
+      {
+        "key": "normal",
+        "weight": 400,
+        "uses": 2
+      },
+      {
+        "key": "medium",
+        "weight": 500,
+        "uses": 80
+      },
+      {
+        "key": "semibold",
+        "weight": 600,
+        "uses": 152
+      },
+      {
+        "key": "bold",
+        "weight": 700,
+        "uses": 325
+      },
+      {
+        "key": "extrabold",
+        "weight": 800,
+        "uses": 66
+      },
+      {
+        "key": "black",
+        "weight": 900,
+        "uses": 68
+      }
+    ],
+    "scale": [
+      {
+        "key": "Display",
+        "sample": "Full-Service AV Production",
+        "accent": "AV Production",
+        "classes": "text-[30px] sm:text-[38px] lg:text-[42px] font-extrabold tracking-[-0.02em] leading-[1.08]",
+        "size": "30 → 38 → 42px",
+        "lineHeight": "1.08",
+        "weight": 800,
+        "tracking": "-0.02em",
+        "usage": "Landing hero H1 (landing/landing-hero.tsx)"
+      },
+      {
+        "key": "H2",
+        "sample": "Every Format. Every Industry.",
+        "accent": "Every Industry.",
+        "classes": "text-[32px] md:text-[44px] lg:text-[50px] font-extrabold tracking-[-0.025em] leading-[1.05]",
+        "size": "32 → 44 → 50px",
+        "lineHeight": "1.05",
+        "weight": 800,
+        "tracking": "-0.025em",
+        "usage": "Centred section titles (services, event types)"
+      },
+      {
+        "key": "H2 · compact",
+        "sample": "Why 1,900+ Events Trust Prime Line",
+        "accent": "Trust Prime Line",
+        "classes": "text-[28px] md:text-[40px] font-extrabold tracking-[-0.025em] leading-[1.1]",
+        "size": "28 → 40px",
+        "lineHeight": "1.1",
+        "weight": 800,
+        "tracking": "-0.025em",
+        "usage": "Why-us, products section"
+      },
+      {
+        "key": "H3 · service",
+        "sample": "Sound System Rental",
+        "classes": "text-[15px] sm:text-[20px] font-bold tracking-[-0.01em] leading-tight",
+        "size": "15 → 20px",
+        "lineHeight": "1.25",
+        "weight": 700,
+        "tracking": "-0.01em",
+        "usage": "Service cards"
+      },
+      {
+        "key": "H3 · card",
+        "sample": "One Team, Start to Finish",
+        "classes": "text-[16px] md:text-[17px] font-bold leading-snug",
+        "size": "16 → 17px",
+        "lineHeight": "1.375",
+        "weight": 700,
+        "tracking": "0",
+        "usage": "Why-us cards"
+      },
+      {
+        "key": "Product",
+        "sample": "Stage + LED Package 1",
+        "classes": "text-[14px] sm:text-lg font-bold",
+        "size": "14 → 18px",
+        "lineHeight": "1.55",
+        "weight": 700,
+        "tracking": "0",
+        "usage": "Product card titles"
+      },
+      {
+        "key": "Price",
+        "sample": "$3,049",
+        "classes": "text-xl sm:text-2xl font-black",
+        "size": "20 → 24px",
+        "lineHeight": "1.33",
+        "weight": 900,
+        "tracking": "0",
+        "usage": "Product price (“/ 24h” in text-white/40)"
+      },
+      {
+        "key": "Lede",
+        "sample": "Your event runs flawlessly — or we make it right. One team, one contract, zero surprises.",
+        "classes": "text-[15px] md:text-[17px] leading-relaxed text-white/65",
+        "size": "15 → 17px",
+        "lineHeight": "1.625",
+        "weight": 400,
+        "tracking": "0",
+        "usage": "Hero paragraph"
+      },
+      {
+        "key": "Quote",
+        "sample": "They own the entire production so I can actually focus on my guests.",
+        "accent": "focus on my guests.",
+        "classes": "text-[18px] md:text-[22px] leading-relaxed font-medium text-white/90",
+        "size": "18 → 22px",
+        "lineHeight": "1.625",
+        "weight": 500,
+        "tracking": "0",
+        "usage": "Testimonial block (landing-why-us.tsx)"
+      },
+      {
+        "key": "Eyebrow",
+        "sample": "Why Prime Line",
+        "classes": "ds-pill",
+        "size": "12px",
+        "lineHeight": "1.5",
+        "weight": 700,
+        "tracking": "0.14em",
+        "usage": "Gold pill above centred section titles"
+      },
+      {
+        "key": "Shop pill",
+        "sample": "Rent the Gear",
+        "classes": "text-[11px] font-bold tracking-[0.16em] uppercase text-[#FFB366]",
+        "size": "11px",
+        "lineHeight": "1.5",
+        "weight": 700,
+        "tracking": "0.16em",
+        "usage": "Shop section eyebrow (home-products-section.tsx)"
+      },
+      {
+        "key": "Microcopy",
+        "sample": "Delivered in under 4 hours — not days.",
+        "classes": "text-[11px] font-semibold tracking-[0.01em] text-white/85",
+        "size": "11px",
+        "lineHeight": "1.5",
+        "weight": 600,
+        "tracking": "0.01em",
+        "usage": "Under the hero CTA label"
+      },
+      {
+        "key": "Badge",
+        "sample": "Brand activations",
+        "classes": "text-[9px] font-extrabold tracking-[0.08em] uppercase",
+        "size": "9px",
+        "lineHeight": "1.5",
+        "weight": 800,
+        "tracking": "0.08em",
+        "usage": "Event-type pill (on #FF2D6F)"
+      }
+    ]
+  },
+  "motion": {
+    "durations": [
+      {
+        "ms": 150,
+        "uses": 1,
+        "source": "utility"
+      },
+      {
+        "ms": 200,
+        "uses": 3,
+        "source": "utility"
+      },
+      {
+        "ms": 300,
+        "uses": 34,
+        "source": "utility",
+        "css": [
+          ".ds-btn-primary"
+        ]
+      },
+      {
+        "ms": 350,
+        "uses": 1,
+        "source": "utility"
+      },
+      {
+        "ms": 500,
+        "uses": 20,
+        "source": "utility",
+        "css": [
+          ".ds-card",
+          ".ds-card::before"
+        ]
+      },
+      {
+        "ms": 700,
+        "uses": 4,
+        "source": "utility"
+      },
+      {
+        "ms": 900,
+        "uses": 0,
+        "source": "css",
+        "css": [
+          ".ds-reveal"
+        ]
+      }
+    ],
+    "easings": [
+      {
+        "key": "ease-out",
+        "value": "cubic-bezier(0, 0, 0.2, 1)",
+        "uses": 7,
+        "note": "Entrances, header slide, fadeIn"
+      },
+      {
+        "key": "ease-in-out",
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "uses": 7,
+        "note": "Loops: float, orbs, gradientShift, pulse"
+      },
+      {
+        "key": "standard",
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "uses": 2,
+        "note": ".ds-card and .ds-reveal transforms"
+      },
+      {
+        "key": "linear",
+        "value": "linear",
+        "uses": 4,
+        "note": "Logo tickers (scroll-left / scroll-right)"
+      },
+      {
+        "key": "easeOutQuart",
+        "value": "1 - (1 - t)^4",
+        "uses": 2,
+        "note": "Hero stat count-up (JS, 2–2.5s)"
+      }
+    ]
+  },
+  "raw": {
+    "root": {
+      "--bg-0": "#03070a",
+      "--bg-1": "#061018",
+      "--bg-2": "#0a1a22",
+      "--emerald": "#FF2D6F",
+      "--emerald-deep": "#FF5E3A",
+      "--emerald-dark": "#7C2D5A",
+      "--teal": "#FFD24A",
+      "--cyan": "#38bdf8",
+      "--ink": "#e6f4ee",
+      "--muted-ds": "rgba(230, 244, 238, 0.62)",
+      "--muted-ds-2": "rgba(230, 244, 238, 0.42)",
+      "--line": "rgba(255, 45, 111, 0.16)",
+      "--line-2": "rgba(255, 255, 255, 0.08)",
+      "--brand-primary": "#FF5E3A",
+      "--brand-secondary": "#7C2D5A",
+      "--brand-accent": "#FF2D6F",
+      "--brand-blue": "#3B82F6",
+      "--brand-dark": "#03070a",
+      "--brand-yellow": "#fad53f",
+      "--background": "#03070a",
+      "--foreground": "#e6f4ee",
+      "--card": "#061018",
+      "--card-foreground": "#e6f4ee",
+      "--popover": "#0a1a22",
+      "--popover-foreground": "#e6f4ee",
+      "--primary": "#FF2D6F",
+      "--primary-foreground": "#03070a",
+      "--secondary": "rgba(255, 255, 255, 0.04)",
+      "--secondary-foreground": "#e6f4ee",
+      "--muted": "rgba(255, 255, 255, 0.04)",
+      "--muted-foreground": "rgba(230, 244, 238, 0.62)",
+      "--accent": "rgba(255, 45, 111, 0.12)",
+      "--accent-foreground": "#FF2D6F",
+      "--destructive": "#ef4444",
+      "--destructive-foreground": "#ffffff",
+      "--border": "rgba(255, 255, 255, 0.08)",
+      "--input": "rgba(255, 255, 255, 0.10)",
+      "--ring": "#FF2D6F",
+      "--radius": "0.875rem",
+      "--sidebar": "#061018",
+      "--sidebar-foreground": "#e6f4ee",
+      "--sidebar-primary": "#FF2D6F",
+      "--sidebar-primary-foreground": "#03070a",
+      "--sidebar-accent": "rgba(255, 45, 111, 0.12)",
+      "--sidebar-accent-foreground": "#FF2D6F",
+      "--sidebar-border": "rgba(255, 255, 255, 0.08)",
+      "--sidebar-ring": "#FF2D6F",
+      "--shadow-x": "0px",
+      "--shadow-y": "1px",
+      "--shadow-blur": "2px",
+      "--shadow-spread": "0px",
+      "--shadow-opacity": "0.05",
+      "--shadow-color": "#000000"
+    },
+    "dark": {
+      "--background": "#03070a",
+      "--foreground": "#e6f4ee",
+      "--card": "#061018",
+      "--card-foreground": "#e6f4ee",
+      "--popover": "#0a1a22",
+      "--popover-foreground": "#e6f4ee",
+      "--primary": "#FF2D6F",
+      "--primary-foreground": "#03070a",
+      "--secondary": "rgba(255, 255, 255, 0.04)",
+      "--secondary-foreground": "#e6f4ee",
+      "--muted": "rgba(255, 255, 255, 0.04)",
+      "--muted-foreground": "rgba(230, 244, 238, 0.62)",
+      "--accent": "rgba(255, 45, 111, 0.12)",
+      "--accent-foreground": "#FF2D6F",
+      "--destructive": "#ef4444",
+      "--destructive-foreground": "#ffffff",
+      "--border": "rgba(255, 255, 255, 0.08)",
+      "--input": "rgba(255, 255, 255, 0.10)",
+      "--ring": "#FF2D6F"
+    },
+    "theme": {
+      "--font-sans": "\"Manrope\", \"Manrope Fallback\", system-ui, sans-serif",
+      "--font-mono": "\"JetBrains Mono\", \"JetBrains Mono Fallback\", monospace",
+      "--font-display": "\"Manrope\", \"Manrope Fallback\", system-ui, sans-serif",
+      "--color-background": "var(--background)",
+      "--color-foreground": "var(--foreground)",
+      "--color-card": "var(--card)",
+      "--color-card-foreground": "var(--card-foreground)",
+      "--color-popover": "var(--popover)",
+      "--color-popover-foreground": "var(--popover-foreground)",
+      "--color-primary": "var(--primary)",
+      "--color-primary-foreground": "var(--primary-foreground)",
+      "--color-secondary": "var(--secondary)",
+      "--color-secondary-foreground": "var(--secondary-foreground)",
+      "--color-muted": "var(--muted)",
+      "--color-muted-foreground": "var(--muted-foreground)",
+      "--color-accent": "var(--accent)",
+      "--color-accent-foreground": "var(--accent-foreground)",
+      "--color-destructive": "var(--destructive)",
+      "--color-destructive-foreground": "var(--destructive-foreground)",
+      "--color-border": "var(--border)",
+      "--color-input": "var(--input)",
+      "--color-ring": "var(--ring)",
+      "--radius-sm": "calc(var(--radius) - 4px)",
+      "--radius-md": "calc(var(--radius) - 2px)",
+      "--radius-lg": "var(--radius)",
+      "--radius-xl": "calc(var(--radius) + 4px)",
+      "--color-sidebar": "var(--sidebar)",
+      "--color-sidebar-foreground": "var(--sidebar-foreground)",
+      "--color-sidebar-primary": "var(--sidebar-primary)",
+      "--color-sidebar-primary-foreground": "var(--sidebar-primary-foreground)",
+      "--color-sidebar-accent": "var(--sidebar-accent)",
+      "--color-sidebar-accent-foreground": "var(--sidebar-accent-foreground)",
+      "--color-sidebar-border": "var(--sidebar-border)",
+      "--color-sidebar-ring": "var(--sidebar-ring)",
+      "--shadow-2xs": "var(--shadow-x) var(--shadow-y) color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent)",
+      "--shadow-xs": "var(--shadow-x) var(--shadow-y) var(--shadow-blur) var(--shadow-spread) color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent)",
+      "--shadow-sm": "var(--shadow-x) var(--shadow-y) calc(var(--shadow-blur) * 1.5) var(--shadow-spread) color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent)",
+      "--shadow-md": "calc(var(--shadow-x) * 2) calc(var(--shadow-y) * 2) calc(var(--shadow-blur) * 3) calc(var(--shadow-spread) - 1px) color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent)",
+      "--shadow-lg": "calc(var(--shadow-x) * 4) calc(var(--shadow-y) * 4) calc(var(--shadow-blur) * 5) calc(var(--shadow-spread) - 3px) color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent)",
+      "--shadow-xl": "calc(var(--shadow-x) * 6) calc(var(--shadow-y) * 6) calc(var(--shadow-blur) * 7) calc(var(--shadow-spread) - 5px) color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent)",
+      "--shadow-2xl": "calc(var(--shadow-x) * 8) calc(var(--shadow-y) * 8) calc(max(0px, var(--shadow-blur) * 9 - 8px)) calc(var(--shadow-spread) - 12px) color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 250%), transparent)",
+      "--shadow": "var(--shadow-md)",
+      "--color-shadow-color": "var(--shadow-color)",
+      "--shadow-opacity": "var(--shadow-opacity)",
+      "--shadow-spread": "var(--shadow-spread)",
+      "--shadow-blur": "var(--shadow-blur)",
+      "--shadow-y": "var(--shadow-y)",
+      "--shadow-x": "var(--shadow-x)"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+Prime Line AV — logo construction (generated)
+
+Lockup artboard   753 × 112  (aspect 6.723 : 1)
+Clear space x     = cap height of the “P” in PRIMELINE.
+                  Keep x clear on all four sides; nothing enters it.
+
+Minimum size
+  Lockup, screen     140 px wide  (header renders 36 px tall ≈ 242 px wide)
+  Lockup, print       35 mm wide
+  Monogram, screen    16 px       (favicon)
+
+Tones
+  dark   — white wordmark + gradient AV. Default; the site is dark-only.
+  light  — #2F2F2F wordmark + gradient AV. Print, partner decks, light pages.
+  white  — all-white knockout over photography or the brand gradient.
+  black  — one-colour print, embroidery, engraving.

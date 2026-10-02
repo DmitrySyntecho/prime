@@ -1,0 +1,380 @@
+/**
+ * Prime Line AV — design tokens
+ *
+ * Generated from app/globals.css by scripts/generate-design-tokens.mjs.
+ * Drop-in for any surface that needs the brand outside the Next app
+ * (email, landing builders, decks). Dark-only brand.
+ */
+
+:root {
+  /* ── Typography ── */
+  --font-sans: "Manrope", "Manrope Fallback", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "JetBrains Mono Fallback", monospace;
+
+  /* ── Primary — Prime Pink & Coral ── */
+  --emerald: #FF2D6F; /* Prime Pink */
+  --emerald-deep: #FF5E3A; /* Stage Coral */
+  --emerald-dark: #7C2D5A; /* Plum */
+  --pl-ribbon-shade: #C41F55; /* Ribbon Shade */
+
+  /* ── Accent — Spotlight Gold & Atmosphere ── */
+  --teal: #FFD24A; /* Spotlight Gold */
+  --pl-peach: #FFB366; /* Peach */
+  --pl-best-seller-orange: #FF9500; /* Best-Seller Orange */
+  --pl-delivery-coral: #FF8A5E; /* Delivery Coral */
+  --pl-haze-violet: #7C3AED; /* Haze Violet */
+  --pl-haze-blue: #3B5CF6; /* Haze Blue */
+
+  /* ── Dark surfaces ── */
+  --pl-stage-black: #050310; /* Stage Black */
+  --pl-midnight: #0a0820; /* Midnight */
+  --bg-0: #03070a; /* Ink 0 */
+  --bg-1: #061018; /* Ink 1 */
+  --bg-2: #0a1a22; /* Ink 2 */
+  --pl-card-black: #0A0A0A; /* Card Black */
+
+  /* ── Text & lines ── */
+  --ink: #e6f4ee; /* Ink White */
+  --muted-ds: rgba(230, 244, 238, 0.62); /* Muted 62 · ≈ #91989A on ink */
+  --muted-ds-2: rgba(230, 244, 238, 0.42); /* Muted 42 · ≈ #64686D on ink */
+  --line: rgba(255, 45, 111, 0.16); /* Pink Line · ≈ #2D0A1F on ink */
+  --line-2: rgba(255, 255, 255, 0.08); /* Hairline · ≈ #191723 on ink */
+  --input: rgba(255, 255, 255, 0.10); /* Input Line · ≈ #1E1C28 on ink */
+
+  /* ── Status ── */
+  --destructive: #ef4444; /* Error Red */
+
+  /* ── Semantic (shadcn / Tailwind theme) ── */
+  --background: #03070a;
+  --foreground: #e6f4ee;
+  --card: #061018;
+  --card-foreground: #e6f4ee;
+  --popover: #0a1a22;
+  --primary: #FF2D6F;
+  --primary-foreground: #03070a;
+  --secondary: rgba(255, 255, 255, 0.04);
+  --muted: rgba(255, 255, 255, 0.04);
+  --muted-foreground: rgba(230, 244, 238, 0.62);
+  --accent: rgba(255, 45, 111, 0.12);
+  --accent-foreground: #FF2D6F;
+  --destructive: #ef4444;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.10);
+  --ring: #FF2D6F;
+
+  /* ── Logo ── */
+  --pl-logo-1: #FF3467; /* “AV” + underline swoosh — gradient top */
+  --pl-logo-2: #FF593F; /* “AV” + underline swoosh — gradient bottom */
+  --pl-logo-3: #3B2075; /* Monogram disc — gradient bottom (indigo) */
+  --pl-logo-4: #2F2F2F; /* PRIMELINE wordmark on light grounds */
+  --pl-logo-5: #FFFFFF; /* PRIMELINE wordmark on dark grounds */
+
+  /* ── Gradients ── */
+  --pl-gradient-brand: linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%);
+  --pl-gradient-accent-text: linear-gradient(135deg, #FF2D6F 0%, #FFD24A 60%, #FF2D6F 100%);
+  --pl-gradient-logo: linear-gradient(180deg, #FF3467 0%, #FF593F 100%);
+  --pl-gradient-monogram: linear-gradient(180deg, #FF3467 0%, #3B2075 100%);
+  --pl-gradient-atmosphere: radial-gradient(ellipse 70% 50% at 80% 0%, rgba(255, 45, 111, 0.42) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 0% 30%, rgba(124, 58, 237, 0.40) 0%, transparent 60%), radial-gradient(ellipse 80% 60% at 50% 110%, rgba(255, 94, 58, 0.30) 0%, transparent 60%), linear-gradient(180deg, #050310 0%, #0a0820 50%, #050310 100%);
+  --pl-gradient-glass-frame: linear-gradient(135deg, rgba(255, 45, 111,0.10), rgba(255, 210, 74,0.05));
+
+  /* ── Radius ── */
+  --radius: 0.875rem;
+  --pl-radius-6: 6px; /* shadcn primitives, small chips */
+  --pl-radius-8: 8px; /* Small icon tiles, image thumbs */
+  --pl-radius-10: 10px; /* Nav items, header buttons, icon tiles */
+  --pl-radius-12: 12px; /* Buttons (.ds-btn-*), inputs, CTAs */
+  --pl-radius-14: 14px; /* Accordion rows, logo tiles, floating cards */
+  --pl-radius-16: 16px; /* Header bar, sheets, modals */
+  --pl-radius-20: 20px; /* .ds-glass panels */
+  --pl-radius-22: 22px; /* .ds-card */
+  --pl-radius-24: 24px; /* Hero glass frame, big media */
+  --pl-radius-pill: 999px;
+
+  /* ── Motion ── */
+  --pl-duration-150: 150ms;
+  --pl-duration-200: 200ms;
+  --pl-duration-300: 300ms;
+  --pl-duration-350: 350ms;
+  --pl-duration-500: 500ms;
+  --pl-duration-700: 700ms;
+  --pl-duration-900: 900ms;
+  --pl-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --pl-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --pl-standard: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Signature effects (verbatim from globals.css) ── */
+
+/* Glass — Neutral frosted panel — 24px blur, 180% saturate, inner top highlight. */
+.ds-glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 24px 48px -16px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+/* Glass · pink — The same panel tinted with Prime Pink and a plum drop shadow. */
+.ds-glass-emerald {
+  background: linear-gradient(135deg, rgba(255, 45, 111, 0.1) 0%, rgba(255, 45, 111, 0.02) 100%);
+  border: 1px solid rgba(255, 45, 111, 0.18);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  box-shadow: inset 0 1px 0 rgba(255, 45, 111, 0.2), 0 24px 48px -16px rgba(124, 45, 90, 0.5);
+  border-radius: 20px;
+}
+
+/* Card — Service / event cards. 22px radius, lifts 4px on hover. */
+.ds-card {
+  position: relative;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 16px 36px -12px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+/* Card · hover — Border warms to pink 30%, a pink radial blooms from the top edge. */
+.ds-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 45, 111, 0.3);
+}
+
+/* Card · glow layer — The radial that fades in on hover. */
+.ds-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(ellipse 80% 70% at 50% 0%, rgba(255, 45, 111, 0.18) 0%, transparent 70%);
+  transition: opacity 0.5s;
+}
+
+/* Shimmer stroke — Applied automatically to every pink→coral button/link, and by class to glass buttons (Watch, phone). */
+.shimmer-stroke {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Shimmer stroke · ring — 2px masked conic ring cream → pink → coral → gold on @property --shimmer-angle, 3s linear. */
+.shimmer-stroke::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient( from var(--shimmer-angle), #FFE3B0, #FF2D6F, #FF5E3A, #FFD24A, #FF2D6F, #FFE3B0 );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: shimmer-spin 3s linear infinite;
+}
+
+/* Eyebrow pill — Gold uppercase kicker above every section heading. */
+.ds-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 184, 55, 0.10);
+  border: 1px solid rgba(255, 184, 55, 0.30);
+  backdrop-filter: blur(12px);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #FFD24A;
+}
+
+/* Pill dot — Glowing gold dot, pulses on pulse-ds 2s. */
+.ds-pill .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FFD24A;
+  box-shadow: 0 0 8px #FFD24A;
+  animation: pulse-ds 2s ease-in-out infinite;
+}
+
+/* Primary button — Brand gradient, pink glow shadow, white inner highlight. */
+.ds-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 28px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--emerald) 0%, var(--emerald-deep) 100%);
+  color: var(--bg-0);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 12px 36px -8px rgba(255, 45, 111, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.3s;
+  font-family: inherit;
+}
+
+/* Primary · hover — Lifts 2px, glow intensifies to 0.7. */
+.ds-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 44px -8px rgba(255, 45, 111, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Secondary button — Glass outline button. */
+.ds-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 26px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: inherit;
+}
+
+/* Secondary · hover — Fill and border step up. */
+.ds-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+/* Accent text — Gradient-clipped italic word, animated. */
+.ds-accent-text {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--emerald) 0%, var(--teal) 60%, var(--emerald) 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease-in-out infinite;
+  font-style: italic;
+  padding: 0.12em 0.18em 0.18em 0;
+  margin: -0.12em -0.04em -0.18em 0;
+  line-height: 1.18;
+  vertical-align: baseline;
+}
+
+/* Stage grid — 56px pink grid, masked to a soft ellipse. */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background-image: linear-gradient(to right, rgba(255, 45, 111, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 45, 111, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 100% 70% at 50% 50%, black 30%, transparent 80%);
+  pointer-events: none;
+}
+
+/* Orb — 110px-blurred colour orbs drifting behind everything. */
+.bg-orb {
+  position: fixed;
+  z-index: 1;
+  border-radius: 50%;
+  filter: blur(64px);
+  pointer-events: none;
+  transform: translateZ(0);
+}
+
+/* Film grain — SVG fractal noise at 4% — kills banding in the gradients. */
+.bg-noise {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("/images/noise.png");
+  background-size: 128px 128px;
+  background-repeat: repeat;
+  transform: translateZ(0);
+}
+
+/* Reveal — Scroll reveal — 40px rise, 0.9s. */
+.ds-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Keyframes ── */
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes orbA {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-80px, 60px) scale(1.1); }
+}
+
+@keyframes orbB {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(80px, -40px) scale(1.15); }
+}
+
+@keyframes orbC {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, 80px) scale(0.85); }
+}
+
+@keyframes pulse-ds {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes scanlines {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 4px; }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes eq-bar {
+  0%, 100% { height: 20%; }
+  50% { height: 100%; }
+}
+
+@keyframes shimmer-spin {
+  to { --shimmer-angle: 360deg; }
+}

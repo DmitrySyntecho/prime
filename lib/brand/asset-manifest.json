@@ -1,0 +1,621 @@
+{
+  "meta": {
+    "generator": "scripts/generate-brand-assets.mjs",
+    "note": "Generated file — do not edit by hand.",
+    "ink": "#03070A"
+  },
+  "logos": [
+    {
+      "slug": "prime-line-av-logo",
+      "tone": "dark",
+      "label": "Primary — for dark grounds",
+      "ground": "ink",
+      "kind": "lockup",
+      "svg": "/brand/logo/prime-line-av-logo.svg",
+      "pngs": [
+        {
+          "width": 128,
+          "src": "/brand/logo/png/prime-line-av-logo-128.png"
+        },
+        {
+          "width": 256,
+          "src": "/brand/logo/png/prime-line-av-logo-256.png"
+        },
+        {
+          "width": 512,
+          "src": "/brand/logo/png/prime-line-av-logo-512.png"
+        },
+        {
+          "width": 1024,
+          "src": "/brand/logo/png/prime-line-av-logo-1024.png"
+        },
+        {
+          "width": 2048,
+          "src": "/brand/logo/png/prime-line-av-logo-2048.png"
+        }
+      ]
+    },
+    {
+      "slug": "prime-line-av-logo-light",
+      "tone": "light",
+      "label": "Primary — for light grounds",
+      "ground": "paper",
+      "kind": "lockup",
+      "svg": "/brand/logo/prime-line-av-logo-light.svg",
+      "pngs": [
+        {
+          "width": 128,
+          "src": "/brand/logo/png/prime-line-av-logo-light-128.png"
+        },
+        {
+          "width": 256,
+          "src": "/brand/logo/png/prime-line-av-logo-light-256.png"
+        },
+        {
+          "width": 512,
+          "src": "/brand/logo/png/prime-line-av-logo-light-512.png"
+        },
+        {
+          "width": 1024,
+          "src": "/brand/logo/png/prime-line-av-logo-light-1024.png"
+        },
+        {
+          "width": 2048,
+          "src": "/brand/logo/png/prime-line-av-logo-light-2048.png"
+        }
+      ]
+    },
+    {
+      "slug": "prime-line-av-logo-white",
+      "tone": "white",
+      "label": "White knockout",
+      "ground": "brand",
+      "kind": "lockup",
+      "svg": "/brand/logo/prime-line-av-logo-white.svg",
+      "pngs": [
+        {
+          "width": 128,
+          "src": "/brand/logo/png/prime-line-av-logo-white-128.png"
+        },
+        {
+          "width": 256,
+          "src": "/brand/logo/png/prime-line-av-logo-white-256.png"
+        },
+        {
+          "width": 512,
+          "src": "/brand/logo/png/prime-line-av-logo-white-512.png"
+        },
+        {
+          "width": 1024,
+          "src": "/brand/logo/png/prime-line-av-logo-white-1024.png"
+        },
+        {
+          "width": 2048,
+          "src": "/brand/logo/png/prime-line-av-logo-white-2048.png"
+        }
+      ]
+    },
+    {
+      "slug": "prime-line-av-logo-black",
+      "tone": "black",
+      "label": "Black mono",
+      "ground": "paper",
+      "kind": "lockup",
+      "svg": "/brand/logo/prime-line-av-logo-black.svg",
+      "pngs": [
+        {
+          "width": 128,
+          "src": "/brand/logo/png/prime-line-av-logo-black-128.png"
+        },
+        {
+          "width": 256,
+          "src": "/brand/logo/png/prime-line-av-logo-black-256.png"
+        },
+        {
+          "width": 512,
+          "src": "/brand/logo/png/prime-line-av-logo-black-512.png"
+        },
+        {
+          "width": 1024,
+          "src": "/brand/logo/png/prime-line-av-logo-black-1024.png"
+        },
+        {
+          "width": 2048,
+          "src": "/brand/logo/png/prime-line-av-logo-black-2048.png"
+        }
+      ]
+    },
+    {
+      "slug": "prime-line-monogram",
+      "tone": "brand",
+      "label": "Monogram — gradient disc",
+      "ground": "ink",
+      "kind": "monogram",
+      "svg": "/brand/logo/prime-line-monogram.svg",
+      "pngs": [
+        {
+          "width": 128,
+          "src": "/brand/logo/png/prime-line-monogram-128.png"
+        },
+        {
+          "width": 256,
+          "src": "/brand/logo/png/prime-line-monogram-256.png"
+        },
+        {
+          "width": 512,
+          "src": "/brand/logo/png/prime-line-monogram-512.png"
+        },
+        {
+          "width": 1024,
+          "src": "/brand/logo/png/prime-line-monogram-1024.png"
+        },
+        {
+          "width": 2048,
+          "src": "/brand/logo/png/prime-line-monogram-2048.png"
+        }
+      ]
+    },
+    {
+      "slug": "prime-line-monogram-white",
+      "tone": "white",
+      "label": "Monogram — white disc",
+      "ground": "brand",
+      "kind": "monogram",
+      "svg": "/brand/logo/prime-line-monogram-white.svg",
+      "pngs": [
+        {
+          "width": 128,
+          "src": "/brand/logo/png/prime-line-monogram-white-128.png"
+        },
+        {
+          "width": 256,
+          "src": "/brand/logo/png/prime-line-monogram-white-256.png"
+        },
+        {
+          "width": 512,
+          "src": "/brand/logo/png/prime-line-monogram-white-512.png"
+        },
+        {
+          "width": 1024,
+          "src": "/brand/logo/png/prime-line-monogram-white-1024.png"
+        },
+        {
+          "width": 2048,
+          "src": "/brand/logo/png/prime-line-monogram-white-2048.png"
+        }
+      ]
+    },
+    {
+      "slug": "prime-line-monogram-black",
+      "tone": "black",
+      "label": "Monogram — ink disc",
+      "ground": "paper",
+      "kind": "monogram",
+      "svg": "/brand/logo/prime-line-monogram-black.svg",
+      "pngs": [
+        {
+          "width": 128,
+          "src": "/brand/logo/png/prime-line-monogram-black-128.png"
+        },
+        {
+          "width": 256,
+          "src": "/brand/logo/png/prime-line-monogram-black-256.png"
+        },
+        {
+          "width": 512,
+          "src": "/brand/logo/png/prime-line-monogram-black-512.png"
+        },
+        {
+          "width": 1024,
+          "src": "/brand/logo/png/prime-line-monogram-black-1024.png"
+        },
+        {
+          "width": 2048,
+          "src": "/brand/logo/png/prime-line-monogram-black-2048.png"
+        }
+      ]
+    }
+  ],
+  "favicons": {
+    "svg": "/brand/favicon/favicon.svg",
+    "ico": "/brand/favicon/favicon.ico",
+    "sizes": [
+      {
+        "size": 16,
+        "src": "/brand/favicon/favicon-16x16.png",
+        "label": "16×16"
+      },
+      {
+        "size": 32,
+        "src": "/brand/favicon/favicon-32x32.png",
+        "label": "32×32"
+      },
+      {
+        "size": 48,
+        "src": "/brand/favicon/favicon-48x48.png",
+        "label": "48×48"
+      },
+      {
+        "size": 96,
+        "src": "/brand/favicon/favicon-96x96.png",
+        "label": "96×96"
+      }
+    ],
+    "apple": {
+      "size": 180,
+      "src": "/brand/favicon/apple-touch-icon.png"
+    },
+    "pwa": [
+      {
+        "size": 192,
+        "src": "/brand/favicon/icon-192.png",
+        "maskable": "/brand/favicon/maskable-192.png"
+      },
+      {
+        "size": 512,
+        "src": "/brand/favicon/icon-512.png",
+        "maskable": "/brand/favicon/maskable-512.png"
+      }
+    ]
+  },
+  "icons3d": [
+    {
+      "slug": "led-wall",
+      "label": "LED Wall",
+      "web": "/brand/icons-3d/web/led-wall.webp",
+      "png1024": "/brand/icons-3d/png/led-wall-1024.png",
+      "png256": "/brand/icons-3d/png/led-wall-256.png",
+      "bytes": 216182
+    },
+    {
+      "slug": "speaker",
+      "label": "Sound System",
+      "web": "/brand/icons-3d/web/speaker.webp",
+      "png1024": "/brand/icons-3d/png/speaker-1024.png",
+      "png256": "/brand/icons-3d/png/speaker-256.png",
+      "bytes": 231415
+    },
+    {
+      "slug": "moving-head",
+      "label": "Lighting",
+      "web": "/brand/icons-3d/web/moving-head.webp",
+      "png1024": "/brand/icons-3d/png/moving-head-1024.png",
+      "png256": "/brand/icons-3d/png/moving-head-256.png",
+      "bytes": 178215
+    },
+    {
+      "slug": "stage",
+      "label": "Stage & Truss",
+      "web": "/brand/icons-3d/web/stage.webp",
+      "png1024": "/brand/icons-3d/png/stage-1024.png",
+      "png256": "/brand/icons-3d/png/stage-256.png",
+      "bytes": 257240
+    },
+    {
+      "slug": "dj-deck",
+      "label": "DJ Setup",
+      "web": "/brand/icons-3d/web/dj-deck.webp",
+      "png1024": "/brand/icons-3d/png/dj-deck-1024.png",
+      "png256": "/brand/icons-3d/png/dj-deck-256.png",
+      "bytes": 213008
+    },
+    {
+      "slug": "tv-display",
+      "label": "TVs & Displays",
+      "web": "/brand/icons-3d/web/tv-display.webp",
+      "png1024": "/brand/icons-3d/png/tv-display-1024.png",
+      "png256": "/brand/icons-3d/png/tv-display-256.png",
+      "bytes": 154903
+    },
+    {
+      "slug": "pipe-drape",
+      "label": "Pipe & Drape",
+      "web": "/brand/icons-3d/web/pipe-drape.webp",
+      "png1024": "/brand/icons-3d/png/pipe-drape-1024.png",
+      "png256": "/brand/icons-3d/png/pipe-drape-256.png",
+      "bytes": 162722
+    },
+    {
+      "slug": "microphone",
+      "label": "Microphones",
+      "web": "/brand/icons-3d/web/microphone.webp",
+      "png1024": "/brand/icons-3d/png/microphone-1024.png",
+      "png256": "/brand/icons-3d/png/microphone-256.png",
+      "bytes": 123184
+    },
+    {
+      "slug": "projector",
+      "label": "Projector & Screen",
+      "web": "/brand/icons-3d/web/projector.webp",
+      "png1024": "/brand/icons-3d/png/projector-1024.png",
+      "png256": "/brand/icons-3d/png/projector-256.png",
+      "bytes": 163252
+    },
+    {
+      "slug": "live-camera",
+      "label": "Live Streaming",
+      "web": "/brand/icons-3d/web/live-camera.webp",
+      "png1024": "/brand/icons-3d/png/live-camera-1024.png",
+      "png256": "/brand/icons-3d/png/live-camera-256.png",
+      "bytes": 201452
+    },
+    {
+      "slug": "delivery-truck",
+      "label": "Delivery & Setup",
+      "web": "/brand/icons-3d/web/delivery-truck.webp",
+      "png1024": "/brand/icons-3d/png/delivery-truck-1024.png",
+      "png256": "/brand/icons-3d/png/delivery-truck-256.png",
+      "bytes": 205977
+    },
+    {
+      "slug": "quote-cart",
+      "label": "Add to Quote",
+      "web": "/brand/icons-3d/web/quote-cart.webp",
+      "png1024": "/brand/icons-3d/png/quote-cart-1024.png",
+      "png256": "/brand/icons-3d/png/quote-cart-256.png",
+      "bytes": 190989
+    }
+  ],
+  "banners": [
+    {
+      "id": "banner-16x9-full-av",
+      "kind": "banner",
+      "label": "YouTube / display leaderboard",
+      "ratio": "16:9",
+      "width": 1920,
+      "height": 1080,
+      "src": "/brand/banners/banner-16x9-full-av.jpg",
+      "preview": "/brand/banners/preview/banner-16x9-full-av.webp",
+      "plate": "/brand/banners/plates/plate-16x9-keynote.jpg",
+      "content": {
+        "eyebrow": "Full AV production",
+        "headline": "Your event runs\n[flawlessly.]",
+        "body": "Stages, sound, lighting and LED walls — one team, one contract, zero surprises.",
+        "offer": "Free 3D render + site survey",
+        "cta": "Get Your Custom Quote"
+      },
+      "bytes": 201493
+    },
+    {
+      "id": "banner-1x1-sound",
+      "kind": "banner",
+      "label": "Feed square",
+      "ratio": "1:1",
+      "width": 1080,
+      "height": 1080,
+      "src": "/brand/banners/banner-1x1-sound.jpg",
+      "preview": "/brand/banners/preview/banner-1x1-sound.webp",
+      "plate": "/brand/banners/plates/plate-1x1-sound.jpg",
+      "content": {
+        "eyebrow": "Sound system rental",
+        "headline": "Every word,\n[heard.]",
+        "body": "L-Acoustics and d&b systems, tuned to your room by A1 + A2 engineers.",
+        "offer": "Quote in under 4 hours",
+        "cta": "Get a Quote"
+      },
+      "bytes": 159697
+    },
+    {
+      "id": "banner-4x5-lighting",
+      "kind": "banner",
+      "label": "Portrait feed post",
+      "ratio": "4:5",
+      "width": 1080,
+      "height": 1350,
+      "src": "/brand/banners/banner-4x5-lighting.jpg",
+      "preview": "/brand/banners/preview/banner-4x5-lighting.webp",
+      "plate": "/brand/banners/plates/plate-4x5-gala.jpg",
+      "content": {
+        "eyebrow": "Lighting & staging",
+        "headline": "Light the room.\nOwn the [night.]",
+        "body": "Designed, pre-vis’d and programmed by a senior LD — moving heads, washes, GrandMA3.",
+        "offer": "1,986+ events delivered",
+        "cta": "Plan My Event"
+      },
+      "bytes": 334304
+    },
+    {
+      "id": "banner-9x16-stage",
+      "kind": "banner",
+      "label": "Story / Reel",
+      "ratio": "9:16",
+      "width": 1080,
+      "height": 1920,
+      "src": "/brand/banners/banner-9x16-stage.jpg",
+      "preview": "/brand/banners/preview/banner-9x16-stage.webp",
+      "plate": "/brand/banners/plates/plate-9x16-festival.jpg",
+      "content": {
+        "eyebrow": "Stage & LED rental",
+        "headline": "Built for\n[the big stage.]",
+        "body": "Portable, truss-built or mobile stages — engineered, certified and crewed.",
+        "offer": "Show-ready 2 hours early",
+        "cta": "Get Your Custom Quote"
+      },
+      "bytes": 366655
+    }
+  ],
+  "social": [
+    {
+      "id": "social-1080x1080-product-launch",
+      "kind": "social",
+      "label": "Feed square · 1080 × 1080",
+      "ratio": "1080×1080",
+      "width": 1080,
+      "height": 1080,
+      "src": "/brand/social/social-1080x1080-product-launch.jpg",
+      "preview": "/brand/social/preview/social-1080x1080-product-launch.webp",
+      "plate": "/brand/banners/plates/plate-1x1-launch.jpg",
+      "content": {
+        "eyebrow": "Product launches",
+        "headline": "Launch it\n[louder.]",
+        "body": "LED walls, sound and show lighting, fully crewed.",
+        "offer": "Quote in under 4 hours — not days",
+        "cta": "Plan My Launch"
+      },
+      "note": "Body drops to one line; headline keeps two. Copy sits low under the LED wall.",
+      "safe": null,
+      "bytes": 146742
+    },
+    {
+      "id": "social-1080x1350-product-launch",
+      "kind": "social",
+      "label": "Portrait feed · 1080 × 1350",
+      "ratio": "1080×1350",
+      "width": 1080,
+      "height": 1350,
+      "src": "/brand/social/social-1080x1350-product-launch.jpg",
+      "preview": "/brand/social/preview/social-1080x1350-product-launch.webp",
+      "plate": "/brand/banners/plates/plate-4x5-launch.jpg",
+      "content": {
+        "eyebrow": "Product launches",
+        "headline": "Launch it\n[louder.]",
+        "body": "LED walls, sound and show lighting for product reveals — designed, delivered and run by one crew.",
+        "offer": "Quote in under 4 hours — not days",
+        "cta": "Plan My Launch"
+      },
+      "note": "Extra height buys back the full description and a bigger headline.",
+      "safe": null,
+      "bytes": 173980
+    },
+    {
+      "id": "social-1080x1920-product-launch",
+      "kind": "social",
+      "label": "Story / Reel · 1080 × 1920",
+      "ratio": "1080×1920",
+      "width": 1080,
+      "height": 1920,
+      "src": "/brand/social/social-1080x1920-product-launch.jpg",
+      "preview": "/brand/social/preview/social-1080x1920-product-launch.webp",
+      "plate": "/brand/banners/plates/plate-9x16-launch.jpg",
+      "content": {
+        "eyebrow": "Product launches",
+        "headline": "Launch it\n[louder.]",
+        "body": "LED walls, sound and show lighting for product reveals — designed, delivered and run by one crew.",
+        "offer": "Quote in under 4 hours — not days",
+        "cta": "Plan My Launch"
+      },
+      "note": "Stack lifted above the bottom 340 px reply bar; nothing in the top 250 px profile strip.",
+      "safe": {
+        "top": 250,
+        "bottom": 340
+      },
+      "bytes": 224993
+    },
+    {
+      "id": "social-1200x628-product-launch",
+      "kind": "social",
+      "label": "Link preview / LinkedIn · 1200 × 628",
+      "ratio": "1200×628",
+      "width": 1200,
+      "height": 628,
+      "src": "/brand/social/social-1200x628-product-launch.jpg",
+      "preview": "/brand/social/preview/social-1200x628-product-launch.webp",
+      "plate": "/brand/banners/plates/plate-16x9-launch.jpg",
+      "content": {
+        "eyebrow": "Product launches",
+        "headline": "Launch it\n[louder.]",
+        "body": "LED walls, sound and show lighting, fully crewed.",
+        "offer": "Quote in under 4 hours — not days",
+        "cta": "Plan My Launch"
+      },
+      "note": "Rotated into a left column — a centre-cropped square would lose the CTA.",
+      "safe": null,
+      "bytes": 108058
+    }
+  ],
+  "plates": [
+    {
+      "slug": "plate-16x9-keynote",
+      "src": "/brand/banners/plates/plate-16x9-keynote.jpg",
+      "preview": "/brand/banners/plates/preview/plate-16x9-keynote.webp",
+      "width": 2688,
+      "height": 1520
+    },
+    {
+      "slug": "plate-16x9-launch",
+      "src": "/brand/banners/plates/plate-16x9-launch.jpg",
+      "preview": "/brand/banners/plates/preview/plate-16x9-launch.webp",
+      "width": 2688,
+      "height": 1520
+    },
+    {
+      "slug": "plate-1x1-launch",
+      "src": "/brand/banners/plates/plate-1x1-launch.jpg",
+      "preview": "/brand/banners/plates/preview/plate-1x1-launch.webp",
+      "width": 2048,
+      "height": 2048
+    },
+    {
+      "slug": "plate-1x1-sound",
+      "src": "/brand/banners/plates/plate-1x1-sound.jpg",
+      "preview": "/brand/banners/plates/preview/plate-1x1-sound.webp",
+      "width": 2048,
+      "height": 2048
+    },
+    {
+      "slug": "plate-4x5-gala",
+      "src": "/brand/banners/plates/plate-4x5-gala.jpg",
+      "preview": "/brand/banners/plates/preview/plate-4x5-gala.webp",
+      "width": 1792,
+      "height": 2240
+    },
+    {
+      "slug": "plate-4x5-launch",
+      "src": "/brand/banners/plates/plate-4x5-launch.jpg",
+      "preview": "/brand/banners/plates/preview/plate-4x5-launch.webp",
+      "width": 1792,
+      "height": 2240
+    },
+    {
+      "slug": "plate-9x16-festival",
+      "src": "/brand/banners/plates/plate-9x16-festival.jpg",
+      "preview": "/brand/banners/plates/preview/plate-9x16-festival.webp",
+      "width": 1520,
+      "height": 2688
+    },
+    {
+      "slug": "plate-9x16-launch",
+      "src": "/brand/banners/plates/plate-9x16-launch.jpg",
+      "preview": "/brand/banners/plates/preview/plate-9x16-launch.webp",
+      "width": 1520,
+      "height": 2688
+    }
+  ],
+  "packages": {
+    "icons3d": {
+      "src": "/brand/zip/prime-line-av-3d-icons.zip",
+      "bytes": 2465292,
+      "count": 24
+    },
+    "logo": {
+      "src": "/brand/zip/prime-line-av-logo-package.zip",
+      "bytes": 466557,
+      "count": 43
+    },
+    "favicon": {
+      "src": "/brand/zip/prime-line-av-favicons.zip",
+      "bytes": 49681,
+      "count": 11
+    },
+    "tokens": {
+      "src": "/brand/zip/prime-line-av-design-tokens.zip",
+      "bytes": 14235,
+      "count": 2
+    },
+    "social": {
+      "src": "/brand/zip/prime-line-av-banners-social.zip",
+      "bytes": 5621849,
+      "count": 16
+    },
+    "kit": {
+      "src": "/brand/zip/prime-line-av-brand-kit.zip",
+      "bytes": 8623873,
+      "count": 101
+    }
+  },
+  "docs": {
+    "prompts": "/brand/AI-PROMPTS.md",
+    "readme": "/brand/README.txt",
+    "clearspace": "/brand/logo/CLEARSPACE.txt"
+  }
+}
