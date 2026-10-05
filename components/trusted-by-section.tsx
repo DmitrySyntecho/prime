@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-export function TrustedBySection({ header }: { header?: React.ReactNode } = {}) {
+export function TrustedBySection({ header, compact = false }: { header?: React.ReactNode; compact?: boolean } = {}) {
   const row1 = [
     { name: "Walmart", src: "/images/brands/walmart.svg" },
     { name: "Amazon", src: "/images/brands/amazon.svg" },
@@ -66,6 +66,20 @@ export function TrustedBySection({ header }: { header?: React.ReactNode } = {}) 
           ))}
         </div>
       </div>
+    )
+  }
+
+  // First-screen variant: one row with every logo, fitted under the hero.
+  if (compact) {
+    return (
+      <section className="relative pb-6 pt-7 md:pb-5 md:pt-6" aria-label="Clients">
+        <p className="mx-auto mb-4 max-w-7xl px-4 text-center text-[12px] font-semibold uppercase tracking-[0.18em] text-white/55 md:text-[13px]">
+          Prime Line AV is trusted by <span className="text-white">500+ brands</span>
+        </p>
+        <div className="[mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]">
+          <Row items={[...row1, ...row2]} direction="left" />
+        </div>
+      </section>
     )
   }
 

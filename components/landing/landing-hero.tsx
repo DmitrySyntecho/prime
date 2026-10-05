@@ -185,11 +185,11 @@ function GiftLine({ fullWidth }: { fullWidth?: boolean }) {
 function StatsStrip({ stats }: { stats: HeroStat[] }) {
   return (
     <div
-      className="mt-8 grid grid-cols-2 overflow-hidden rounded-[20px] border border-white/10 lg:mt-12 lg:grid-cols-4"
+      className="mt-8 grid grid-cols-2 overflow-hidden rounded-[20px] border border-white/10 lg:mt-8 lg:grid-cols-4"
       style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}
     >
       {stats.map((s, i) => (
-        <div key={s.label} className={`px-5 py-4 md:px-7 md:py-5 ${i % 2 === 1 ? "border-l border-white/[0.08]" : ""} ${i >= 2 ? "border-t border-white/[0.08] lg:border-t-0" : ""} ${i === 2 ? "lg:border-l" : ""}`}>
+        <div key={s.label} className={`px-5 py-4 md:px-7 md:py-4 ${i % 2 === 1 ? "border-l border-white/[0.08]" : ""} ${i >= 2 ? "border-t border-white/[0.08] lg:border-t-0" : ""} ${i === 2 ? "lg:border-l" : ""}`}>
           <p className="text-[26px] font-extrabold leading-none tracking-[-0.03em] tabular-nums md:text-[32px]">
             <span className="ds-accent-text">{s.value}</span>
           </p>
@@ -232,7 +232,7 @@ export function LandingHero({ hero, onQuote }: LandingHeroProps) {
               <div className="mt-6">
                 <Bullets />
               </div>
-              <div className="mt-7 w-fit">
+              <div className="mt-6 w-fit">
                 <CtaButtons hero={hero} onQuote={onQuote} onWatch={openVideo} />
                 {showIncludes && (
                   <div className="mt-4 w-0 min-w-full">

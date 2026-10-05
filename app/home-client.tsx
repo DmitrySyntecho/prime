@@ -38,7 +38,9 @@ export function HomeClient() {
 
   return (
     <div className="min-h-screen">
-      {/* Block 02 — hero */}
+      {/* Block 02 — hero, with the client logos (Block 09) pinned to the first screen */}
+      <div className="flex min-h-[calc(100svh-92px)] flex-col">
+        <div className="flex flex-1 flex-col justify-center">
       <LandingHero
         hero={{
           title: "AV Company & Audio Visual Service in the USA",
@@ -59,6 +61,9 @@ export function HomeClient() {
         }}
         onQuote={handleStartQuote}
       />
+        </div>
+        <TrustedBySection compact />
+      </div>
 
       {/* Block 03 — trust bar */}
       <RatingsBar only={["Google", "G2"]} />
@@ -83,9 +88,6 @@ export function HomeClient() {
           </SectionHeader>
         }
       />
-
-      {/* Block 09 — client logos */}
-      <TrustedBySection header={<SectionHeader eyebrow="Our clients" title="Prime Line AV is trusted by 500+ brands" accent="500+ brands" />} />
 
       {/* Block 10 — written reviews */}
       <WrittenReviewsSection header={<SectionHeader eyebrow="Client reviews" title="What clients say about working with us" accent="working with us" />} />
