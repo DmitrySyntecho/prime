@@ -95,12 +95,12 @@ export function ServicesGridSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
+        <div className="reveal-stagger grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
           {services.map((service, index) => (
             <Link
               key={index}
               href={service.href}
-              className="keep-original group flex flex-col rounded-[22px] border border-[#FF2D6F]/20 overflow-hidden transition-transform hover:-translate-y-0.5 hover:border-[#FF2D6F]/45 bg-[#0a0a0a]"
+              className="keep-original fx-spot group flex flex-col rounded-[22px] border border-[#FF2D6F]/20 overflow-hidden transition-transform hover:-translate-y-0.5 hover:border-[#FF2D6F]/45 bg-[#0a0a0a]"
               style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06), 0 16px 36px -12px rgba(0,0,0,0.4)" }}
             >
               {/* Image — fully visible, never covered by text */}

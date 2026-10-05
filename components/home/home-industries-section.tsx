@@ -75,11 +75,11 @@ export function HomeIndustriesSection() {
         </SectionHeader>
 
         {/* 2 large + 3 regular on desktop: the first two rows read as a bento, not a uniform grid. */}
-        <div className="grid gap-4 md:grid-cols-6 lg:gap-5">
+        <div className="reveal-stagger grid gap-4 md:grid-cols-6 lg:gap-5">
           {INDUSTRIES.map((ind, i) => (
             <article
               key={ind.title}
-              className={`keep-original group relative flex min-h-[340px] flex-col justify-end overflow-hidden rounded-[22px] border border-white/[0.08] transition-[border-color,transform] duration-500 hover:-translate-y-1 hover:border-[#FF2D6F]/30 ${
+              className={`keep-original fx-spot group relative flex min-h-[340px] flex-col justify-end overflow-hidden rounded-[22px] border border-white/[0.08] transition-[border-color,transform] duration-500 hover:-translate-y-1 hover:border-[#FF2D6F]/30 ${
                 i < 2 ? "md:col-span-3 md:min-h-[400px]" : "md:col-span-2"
               }`}
             >
@@ -95,7 +95,7 @@ export function HomeIndustriesSection() {
 
         {/* CTA strip */}
         <div
-          className="mt-10 flex flex-col items-center justify-between gap-5 overflow-hidden rounded-[24px] border border-white/10 px-6 py-6 text-center md:flex-row md:px-9 md:text-left"
+          className="reveal-zoom mt-10 flex flex-col items-center justify-between gap-5 overflow-hidden rounded-[24px] border border-white/10 px-6 py-6 text-center md:flex-row md:px-9 md:text-left"
           style={{ background: "linear-gradient(135deg, rgba(255,45,111,0.16), rgba(255,94,58,0.08))", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}
         >
           <div className="flex flex-col items-center gap-4 md:flex-row">
@@ -108,13 +108,12 @@ export function HomeIndustriesSection() {
           <a
             href={PHONE_TEL}
             suppressHydrationWarning
-            className="inline-flex shrink-0 flex-col items-center justify-center gap-0.5 rounded-xl px-7 py-3 text-white transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
-            style={{ background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)", boxShadow: "0 12px 36px -8px rgba(255,45,111,0.55), inset 0 1px 0 rgba(255,255,255,0.3)" }}
+            className="cta-yellow shimmer-stroke inline-flex shrink-0 flex-col items-center justify-center gap-0.5 rounded-xl px-7 py-3"
           >
             <span className="inline-flex items-center gap-2 text-[15px] font-extrabold">
               <Phone className="h-4 w-4" /> Click here to call now
             </span>
-            <span suppressHydrationWarning className="font-mono text-[12px] font-semibold tabular-nums text-white/85">
+            <span suppressHydrationWarning className="font-mono text-[12px] font-semibold tabular-nums opacity-70">
               {PHONE_DISPLAY}
             </span>
           </a>

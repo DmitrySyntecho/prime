@@ -88,8 +88,6 @@ export function StickyCTA({ onStartQuote }: StickyCTAProps) {
       },
       style: {
         background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
-        color: "#fff",
-        boxShadow: "0 8px 24px -6px rgba(255,45,111,0.55)",
       },
     },
     {
@@ -135,7 +133,7 @@ export function StickyCTA({ onStartQuote }: StickyCTAProps) {
           const inner = (
             <span
               suppressHydrationWarning
-              className="flex items-center gap-2.5 px-5 py-3 rounded-full text-[13px] font-bold whitespace-nowrap backdrop-blur-xl transition-all duration-200 hover:scale-105 active:scale-95"
+              className={`flex items-center gap-2.5 px-5 py-3 rounded-full text-[13px] font-bold whitespace-nowrap backdrop-blur-xl transition-all duration-200 hover:scale-105 active:scale-95 ${action.key === "quote" ? "cta-yellow" : ""}`}
               style={{ ...action.style, width: "200px", justifyContent: "flex-start" }}
             >
               {action.icon}
@@ -165,11 +163,11 @@ export function StickyCTA({ onStartQuote }: StickyCTAProps) {
           <>
             <span
               className="absolute inset-0 rounded-full animate-ping"
-              style={{ background: "rgba(255,45,111,0.35)", animationDuration: "1.8s" }}
+              style={{ background: "rgba(255,210,74,0.35)", animationDuration: "1.8s" }}
             />
             <span
               className="absolute inset-0 rounded-full animate-ping"
-              style={{ background: "rgba(255,45,111,0.2)", animationDuration: "1.8s", animationDelay: "0.6s" }}
+              style={{ background: "rgba(255,210,74,0.2)", animationDuration: "1.8s", animationDelay: "0.6s" }}
             />
           </>
         )}
@@ -177,12 +175,9 @@ export function StickyCTA({ onStartQuote }: StickyCTAProps) {
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Contact us"}
-          className="relative w-14 h-14 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none"
+          className="cta-yellow relative w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none"
           style={{
             background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
-            boxShadow: open
-              ? "0 8px 32px -6px rgba(255,45,111,0.7), 0 0 0 4px rgba(255,45,111,0.15)"
-              : "0 8px 32px -6px rgba(255,45,111,0.55)",
           }}
         >
           <MessageCircle className="w-6 h-6" />

@@ -69,7 +69,7 @@ export default function CheckoutPage() {
           </div>
           <h1 className="text-3xl font-black text-white mb-3">Your Cart is Empty</h1>
           <p className="text-white/50 mb-8">Add equipment to your quote, then come back to check out.</p>
-          <Link href="/shop" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white font-bold"
+          <Link href="/shop" className="cta-yellow inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold"
             style={{ background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)" }}>
             Browse Equipment
           </Link>
@@ -113,8 +113,8 @@ export default function CheckoutPage() {
             </div>
 
             <button type="submit" disabled={submitting}
-              className="w-full flex items-center justify-center gap-2 py-4 rounded-xl text-white font-bold text-[15px] transition-all hover:-translate-y-0.5 disabled:opacity-60"
-              style={{ background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)", boxShadow: "0 12px 32px -8px rgba(255,45,111,0.6)" }}>
+              className="cta-yellow w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-[15px] transition-all hover:-translate-y-0.5 disabled:opacity-60"
+              style={{ background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)" }}>
               {submitting ? <Loader2 className="w-5 h-5 animate-spin" /> : <CheckCircle2 className="w-5 h-5" />}
               Request Quote
             </button>

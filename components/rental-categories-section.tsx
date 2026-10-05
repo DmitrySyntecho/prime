@@ -61,14 +61,14 @@ export function RentalCategoriesSection() {
         </div>
 
         {/* Flex-wrap with center justify so the last (partial) row is also centered */}
-        <div className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
+        <div className="reveal-stagger flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
           {categories.map((category) => {
             return (
               <button
                 key={category.slug}
                 type="button"
                 onClick={openQuote}
-                className="group relative flex items-center justify-between gap-3 p-5 rounded-[14px] border border-white/[0.08] bg-white/[0.03] backdrop-blur-md hover:border-[#FF2D6F]/30 hover:bg-[#FF2D6F]/[0.04] transition-all duration-300 cursor-pointer overflow-hidden text-left w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)] xl:w-[calc(25%-0.75rem)]"
+                className="fx-spot group relative flex items-center justify-between gap-3 p-5 rounded-[14px] border border-white/[0.08] bg-white/[0.03] backdrop-blur-md hover:border-[#FF2D6F]/30 hover:bg-[#FF2D6F]/[0.04] transition-all duration-300 cursor-pointer overflow-hidden text-left w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)] xl:w-[calc(25%-0.75rem)]"
               >
                 <div className="relative flex items-center gap-3.5 min-w-0">
                   <Icon3D name={category.icon} size={48} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)] transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-110" />

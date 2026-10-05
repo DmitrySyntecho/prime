@@ -35,7 +35,7 @@ export function WhyChooseUsSection() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-16 items-center">
           {/* Left Content */}
-          <div>
+          <div className="reveal-left">
             <span className="ds-pill mb-5">
               <span className="dot" />
               {t("whyUs.title")}
@@ -45,7 +45,7 @@ export function WhyChooseUsSection() {
             </h2>
             <p className="text-white/55 text-[16px] md:text-[17px] mb-8 leading-relaxed">{t("about.description")}</p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="reveal-stagger grid grid-cols-1 sm:grid-cols-2 gap-4">
               {features.map((feature, index) => (
                 <div
                   key={index}
@@ -63,7 +63,7 @@ export function WhyChooseUsSection() {
 
           {/* Right - equalizer visual (no image, no overflow) */}
           <div
-            className="relative aspect-[1/1.05] rounded-[24px] overflow-hidden border border-[#FF2D6F]/[0.18] backdrop-blur-2xl flex flex-col p-7"
+            className="reveal-right relative aspect-[1/1.05] rounded-[24px] overflow-hidden border border-[#FF2D6F]/[0.18] backdrop-blur-2xl flex flex-col p-7"
             style={{
               background:
                 "linear-gradient(135deg, rgba(255, 45, 111,0.08) 0%, rgba(255, 210, 74,0.03) 100%)",

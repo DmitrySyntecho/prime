@@ -31,7 +31,7 @@ export function WrittenReviewsSection({ heading = "What Our Clients Say", header
   return (
     <section className="py-16 md:py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+        <div className="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
           {header ?? (
           <div>
             <span
@@ -72,13 +72,13 @@ export function WrittenReviewsSection({ heading = "What Our Clients Say", header
 
         <div
           ref={scrollRef}
-          className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory"
+          className="reveal flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {REVIEWS.map((r, i) => (
             <div
               key={i}
-              className="flex-shrink-0 w-[320px] md:w-[360px] snap-start rounded-2xl p-6 flex flex-col"
+              className="fx-spot flex-shrink-0 w-[320px] md:w-[360px] snap-start rounded-2xl p-6 flex flex-col"
               style={{
                 background: "linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)",
                 border: "1px solid rgba(255,255,255,0.10)",

@@ -171,10 +171,10 @@ export function CallNowPopup() {
                 href={PHONE_TEL}
                 suppressHydrationWarning
                 onClick={dismiss}
-                className="inline-flex items-center justify-center gap-2.5 w-full py-3.5 rounded-xl text-white font-extrabold text-[15px] tracking-[0.01em] transition-all active:scale-95 hover:-translate-y-0.5"
+                className={`inline-flex items-center justify-center gap-2.5 w-full py-3.5 rounded-xl font-extrabold text-[15px] tracking-[0.01em] transition-all active:scale-95 hover:-translate-y-0.5 ${isFifa ? "text-white" : "cta-yellow"}`}
                 style={{
                   background: `linear-gradient(135deg, ${accent} 0%, ${accentDeep} 100%)`,
-                  boxShadow: ctaShadow,
+                  ...(isFifa ? { boxShadow: ctaShadow } : {}),
                 }}
               >
                 <Phone className="w-4 h-4 shrink-0" />

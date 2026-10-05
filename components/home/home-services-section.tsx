@@ -79,11 +79,11 @@ export function HomeServicesSection() {
           anywhere in the United States. You can book the whole package or pick only the service you need.
         </SectionHeader>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+        <div className="reveal-stagger grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
           {SERVICES.map((s) => (
             <article
               key={s.title}
-              className="keep-original group relative flex flex-col overflow-hidden rounded-[22px] border border-[#FF2D6F]/20 bg-[#0a0a0a] transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-[#FF2D6F]/45"
+              className="keep-original fx-spot group relative flex flex-col overflow-hidden rounded-[22px] border border-[#FF2D6F]/20 bg-[#0a0a0a] transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-[#FF2D6F]/45"
               style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06), 0 16px 36px -12px rgba(0,0,0,0.4)" }}
             >
               <Link href={s.href} className="relative block aspect-[16/10] overflow-hidden" aria-label={s.title} tabIndex={-1}>

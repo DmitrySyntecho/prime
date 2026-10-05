@@ -77,7 +77,7 @@ export default function LocationsPage() {
       {/* Equipment & rentals — product interlinking */}
       <section className="py-12 md:py-16 relative">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-end justify-between gap-4 flex-wrap mb-8">
+          <div className="reveal flex items-end justify-between gap-4 flex-wrap mb-8">
             <h2 className="text-2xl md:text-3xl font-black text-white">Rent Equipment in Every Market</h2>
             <Link
               href="/shop"
@@ -87,7 +87,7 @@ export default function LocationsPage() {
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {CATEGORIES.map((c) => {
               const count = getProductsByCategory(c.slug).length
               const href = c.serviceSlug ? `/services/${c.serviceSlug}` : "/shop"
@@ -95,7 +95,7 @@ export default function LocationsPage() {
                 <Link
                   key={c.slug}
                   href={href}
-                  className="group flex items-center gap-4 rounded-xl p-5 transition-all hover:border-[#FF5E3A]/40"
+                  className="fx-spot group flex items-center gap-4 rounded-xl p-5 transition-all hover:border-[#FF5E3A]/40"
                   style={GLASS}
                 >
                   <Icon3D name={CATEGORY_ICON_3D[c.slug] ?? "flight-case"} size={56} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
@@ -115,14 +115,14 @@ export default function LocationsPage() {
 
       {/* CTA */}
       <section className="py-16 md:py-24 relative">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+        <div className="reveal max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-black text-white mb-4">{"Don't See Your City?"}</h2>
           <p className="text-white/55 mb-8 max-w-xl mx-auto">
             We provide AV production services nationwide. Contact us for a custom quote for your event location.
           </p>
           <Link
             href="/quote"
-            className="inline-flex items-center gap-2 text-white font-bold px-8 py-4 rounded-xl transition-all hover:opacity-90"
+            className="cta-yellow inline-flex items-center gap-2 font-bold px-8 py-4 rounded-xl transition-all hover:opacity-90"
             style={{ background: BTN }}
           >
             Get a Quote

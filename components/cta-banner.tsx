@@ -14,7 +14,7 @@ export function CTABanner({ onStartQuote }: CTABannerProps) {
     <section className="keep-original py-24 md:py-28 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div
-          className="relative px-6 md:px-14 py-14 md:py-20 rounded-[28px] border border-[#FF2D6F]/20 backdrop-blur-2xl text-center overflow-hidden"
+          className="reveal-zoom relative px-6 md:px-14 py-14 md:py-20 rounded-[28px] border border-[#FF2D6F]/20 backdrop-blur-2xl text-center overflow-hidden"
           style={{
             background:
               "linear-gradient(135deg, rgba(255, 45, 111,0.08) 0%, rgba(124, 45, 90,0.04) 100%)",
@@ -46,11 +46,7 @@ export function CTABanner({ onStartQuote }: CTABannerProps) {
 
             <button
               onClick={onStartQuote}
-              className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-gradient-to-br from-[#FF2D6F] to-[#FF5E3A] text-white font-extrabold text-[15px] tracking-[0.01em] transition-all hover:-translate-y-0.5"
-              style={{
-                boxShadow:
-                  "0 12px 36px -8px rgba(255, 45, 111,0.55), inset 0 1px 0 rgba(255,255,255,0.3)",
-              }}
+              className="cta-yellow group inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-gradient-to-br from-[#FF2D6F] to-[#FF5E3A] font-extrabold text-[15px] tracking-[0.01em] transition-all hover:-translate-y-0.5"
             >
               {t("cta.button")}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />

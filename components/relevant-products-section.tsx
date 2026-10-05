@@ -26,7 +26,7 @@ export function RelevantProductsSection({ category, limit = 3 }: RelevantProduct
   return (
     <section className="py-16 md:py-20 relative">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+        <div className="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
           <div>
             <span
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 text-[11px] font-bold tracking-[0.16em] uppercase"
@@ -60,10 +60,9 @@ export function RelevantProductsSection({ category, limit = 3 }: RelevantProduct
 
           <Link
             href="/shop"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[13px] font-bold text-white whitespace-nowrap transition-all hover:-translate-y-0.5 self-start md:self-auto"
+            className="cta-yellow inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[13px] font-bold whitespace-nowrap transition-all hover:-translate-y-0.5 self-start md:self-auto"
             style={{
               background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
-              boxShadow: "0 8px 24px -6px rgba(255,45,111,0.5)",
             }}
           >
             View All in Shop

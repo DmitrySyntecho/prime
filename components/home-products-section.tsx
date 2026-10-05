@@ -50,10 +50,9 @@ export function HomeProductsSection() {
 
           <Link
             href="/shop"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[13px] font-bold text-white whitespace-nowrap transition-all hover:-translate-y-0.5 self-start md:self-auto"
+            className="cta-yellow inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[13px] font-bold whitespace-nowrap transition-all hover:-translate-y-0.5 self-start md:self-auto"
             style={{
               background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
-              boxShadow: "0 8px 24px -6px rgba(255,45,111,0.5)",
             }}
           >
             Shop All Equipment

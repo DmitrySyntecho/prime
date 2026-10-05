@@ -19,7 +19,7 @@ export function AboutUsSection() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
-          <div className="space-y-6">
+          <div className="reveal-left space-y-6">
             <span className="ds-pill">
               <span className="dot" />
               About Us
@@ -48,11 +48,7 @@ export function AboutUsSection() {
             <div className="flex flex-wrap justify-center gap-3 mt-2">
               <button
                 onClick={openQuote}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-br from-[#FF2D6F] to-[#FF5E3A] text-white font-bold transition-all hover:-translate-y-0.5"
-                style={{
-                  boxShadow:
-                    "0 12px 36px -8px rgba(255,45,111,0.55), inset 0 1px 0 rgba(255,255,255,0.30)",
-                }}
+                className="cta-yellow inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-br from-[#FF2D6F] to-[#FF5E3A] font-bold transition-all hover:-translate-y-0.5"
               >
                 Get a Quote
                 <ArrowRight className="w-4 h-4" />
@@ -67,7 +63,7 @@ export function AboutUsSection() {
             </div>
           </div>
 
-          <div className="relative h-[420px] md:h-[520px]">
+          <div className="reveal-right relative h-[420px] md:h-[520px]">
             {/* Main top image - full width, positioned to overlap */}
             <div 
               className="absolute top-0 left-[5%] w-[90%] h-[55%] rounded-2xl overflow-hidden border border-white/10 z-10 transition-transform duration-500 hover:scale-[1.02]"

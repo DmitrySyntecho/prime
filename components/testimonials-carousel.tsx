@@ -62,7 +62,7 @@ function MuxVideoCard({ testimonial }: { testimonial: Testimonial }) {
   return (
     <div className="flex-shrink-0 w-[260px] md:w-[280px] relative">
       <div
-        className="relative w-full overflow-hidden rounded-[18px] border border-white/[0.08] bg-black"
+        className="fx-spot relative w-full overflow-hidden rounded-[18px] border border-white/[0.08] bg-black"
         style={{
           aspectRatio: "9 / 16",
           boxShadow: "0 20px 40px -12px rgba(0,0,0,0.5)",
@@ -140,7 +140,7 @@ export function TestimonialsCarousel({ header }: { header?: React.ReactNode } = 
     <section className="py-20 md:py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         {header ?? (
-        <div className="text-center mb-12 max-w-5xl mx-auto px-2">
+        <div className="reveal text-center mb-12 max-w-5xl mx-auto px-2">
           <span className="ds-pill mb-5">
             <span className="dot" />
             Testimonials
@@ -152,7 +152,7 @@ export function TestimonialsCarousel({ header }: { header?: React.ReactNode } = 
         </div>
         )}
 
-        <div className="relative">
+        <div className="reveal relative">
           <button
             onClick={() => scroll("left")}
             className="absolute -left-2 top-1/2 -translate-y-1/2 z-10 bg-white/[0.04] border border-white/[0.10] hover:bg-[#FF2D6F]/10 hover:border-[#FF2D6F]/30 rounded-[12px] p-2.5 backdrop-blur-md hidden md:block transition-all"

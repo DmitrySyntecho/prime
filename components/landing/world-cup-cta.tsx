@@ -11,10 +11,9 @@ export function WorldCupCTA({ onClick }: { onClick: () => void }) {
   return (
     <button
       onClick={onClick}
-      className="relative inline-flex items-center justify-center px-4 py-2.5 rounded-[10px] text-white font-extrabold transition-all hover:-translate-y-0.5"
+      className="cta-yellow relative inline-flex items-center justify-center px-4 py-2.5 rounded-[10px] font-extrabold transition-all hover:-translate-y-0.5"
       style={{
         background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
-        boxShadow: "0 8px 22px -6px rgba(255,45,111,0.45), inset 0 1px 0 rgba(255,255,255,0.30)",
       }}
       aria-label="World Cup 2026 — book your crew now"
     >

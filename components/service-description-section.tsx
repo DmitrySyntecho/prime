@@ -85,7 +85,7 @@ export function ServiceDescriptionSection({
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
           {/* LEFT — heading, body, highlights, CTA */}
-          <div className="order-2 lg:order-1">
+          <div className="reveal-left order-2 lg:order-1">
             <span className="ds-pill mb-5">
               <span className="dot" />
               Service Overview
@@ -110,10 +110,7 @@ export function ServiceDescriptionSection({
 
             <button
               onClick={onStartQuote}
-              className="group inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-gradient-to-br from-[#FF2D6F] to-[#FF5E3A] text-white font-extrabold text-[14px] md:text-[15px] tracking-[0.01em] transition-all hover:-translate-y-0.5"
-              style={{
-                boxShadow: "0 12px 36px -8px rgba(255, 45, 111,0.55), inset 0 1px 0 rgba(255,255,255,0.3)",
-              }}
+              className="cta-yellow group inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-gradient-to-br from-[#FF2D6F] to-[#FF5E3A] font-extrabold text-[14px] md:text-[15px] tracking-[0.01em] transition-all hover:-translate-y-0.5"
             >
               {ctaLabel}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -121,7 +118,7 @@ export function ServiceDescriptionSection({
           </div>
 
           {/* RIGHT — 3-photo animated collage */}
-          <div className="order-1 lg:order-2 relative">
+          <div className="reveal-right order-1 lg:order-2 relative">
             <div className="relative h-[420px] md:h-[520px]">
               {slotLayout.map((slot, i) => (
                 <div key={i} className={slot.className} style={slot.style}>

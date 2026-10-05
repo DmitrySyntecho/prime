@@ -92,11 +92,7 @@ export function ServiceHero({ eyebrow, h1, subheadline, heroCta, image, onStartQ
           <div className="flex flex-col sm:flex-row gap-3">
             <button
               onClick={onStartQuote}
-              className="group inline-flex items-center justify-center gap-2.5 px-6 md:px-7 py-3.5 md:py-4 rounded-xl bg-gradient-to-br from-[#FF2D6F] to-[#FF5E3A] text-white font-extrabold text-[14px] md:text-[15px] tracking-[0.01em] transition-all hover:-translate-y-0.5"
-              style={{
-                boxShadow:
-                  "0 12px 36px -8px rgba(255, 45, 111,0.55), inset 0 1px 0 rgba(255,255,255,0.3)",
-              }}
+              className="cta-yellow group inline-flex items-center justify-center gap-2.5 px-6 md:px-7 py-3.5 md:py-4 rounded-xl bg-gradient-to-br from-[#FF2D6F] to-[#FF5E3A] font-extrabold text-[14px] md:text-[15px] tracking-[0.01em] transition-all hover:-translate-y-0.5"
             >
               {heroCta}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />

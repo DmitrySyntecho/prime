@@ -69,7 +69,7 @@ const LIVE_TAG = (
  */
 function HeroVideoBleed({ clips }: { clips: string[] }) {
   return (
-    <div className="pointer-events-none absolute -top-[92px] bottom-0 right-0 hidden w-[52vw] lg:block" aria-hidden>
+    <div className="intro-fade pointer-events-none absolute -top-[92px] bottom-0 right-0 hidden w-[52vw] lg:block" aria-hidden>
       <div
         className="absolute inset-0"
         style={{
@@ -211,7 +211,7 @@ function CtaButtons({ hero, onQuote, onWatch, centered }: { hero: HeroConfig; on
     <div className={`flex flex-col gap-3 sm:flex-row ${centered ? "sm:justify-center" : ""}`}>
       <button
         onClick={onQuote}
-        className={`shimmer-stroke group inline-flex flex-col items-center justify-center gap-0.5 rounded-xl px-6 py-3 text-[#0a0612] transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 active:scale-[0.98] md:px-8 ${fullWidth}`}
+        className={`cta-yellow shimmer-stroke group inline-flex flex-col items-center justify-center gap-0.5 rounded-xl px-6 py-3 text-[#0a0612] transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 active:scale-[0.98] md:px-8 ${fullWidth}`}
         style={{ background: "linear-gradient(135deg, #FFE27A 0%, #FFD24A 45%, #FFB01F 100%)", boxShadow: "0 12px 36px -8px rgba(255,190,40,0.55), inset 0 1px 0 rgba(255,255,255,0.55)" }}
       >
         <span className="inline-flex items-center gap-2.5 text-[15px] font-extrabold tracking-[0.01em]">
@@ -310,11 +310,13 @@ export function LandingHero({ hero, onQuote }: LandingHeroProps) {
           {/* DESKTOP: text column; the video bleeds behind the right half */}
           <div className="hidden items-stretch lg:grid lg:grid-cols-[1fr_1fr] lg:gap-14">
             <div>
-              <Heading hero={hero} />
-              <div className="mt-6">
+              <div className="intro">
+                <Heading hero={hero} />
+              </div>
+              <div className="intro intro-2 mt-6">
                 <Bullets />
               </div>
-              <div className="mt-6 w-fit">
+              <div className="intro intro-3 mt-6 w-fit">
                 <CtaButtons hero={hero} onQuote={onQuote} onWatch={openVideo} />
                 {showIncludes && (
                   <div className="mt-4 w-0 min-w-full">
@@ -322,7 +324,11 @@ export function LandingHero({ hero, onQuote }: LandingHeroProps) {
                   </div>
                 )}
               </div>
-              {hero.stats?.length ? <StatsInline stats={hero.stats} /> : null}
+              {hero.stats?.length ? (
+                <div className="intro intro-4">
+                  <StatsInline stats={hero.stats} />
+                </div>
+              ) : null}
             </div>
             <BleedCards />
           </div>

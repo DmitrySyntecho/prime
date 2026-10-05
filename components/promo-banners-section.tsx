@@ -60,7 +60,7 @@ export function PromoBannersSection() {
     <section className="py-16 md:py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         {/* Single Banner Carousel */}
-        <div className="relative">
+        <div className="reveal-zoom relative">
           {/* Main Banner */}
           <div
             className="relative overflow-hidden rounded-[22px] border border-white/[0.08] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)] aspect-[2/1] sm:aspect-[2.5/1] md:aspect-[4/1] touch-pan-y"
@@ -94,11 +94,7 @@ export function PromoBannersSection() {
                     <button
                       type="button"
                       onClick={openQuote}
-                      className="inline-flex items-center gap-1.5 sm:gap-2 bg-gradient-to-br from-[#FF2D6F] to-[#FF5E3A] text-white font-bold px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 rounded-lg sm:rounded-xl transition-all hover:-translate-y-0.5 text-xs sm:text-sm md:text-base"
-                      style={{
-                        boxShadow:
-                          "0 12px 36px -8px rgba(255,45,111,0.55), inset 0 1px 0 rgba(255,255,255,0.30)",
-                      }}
+                      className="cta-yellow inline-flex items-center gap-1.5 sm:gap-2 bg-gradient-to-br from-[#FF2D6F] to-[#FF5E3A] font-bold px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 rounded-lg sm:rounded-xl transition-all hover:-translate-y-0.5 text-xs sm:text-sm md:text-base"
                     >
                       {banner.cta}
                       <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />

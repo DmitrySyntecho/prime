@@ -45,7 +45,7 @@ export function HomeWhySection() {
   return (
     <section id="why-us" className="relative scroll-mt-24 py-20 md:py-28">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-        <div className="lg:sticky lg:top-28 lg:self-start">
+        <div className="reveal-left lg:sticky lg:top-28 lg:self-start">
           <span className="ds-pill mb-5">
             <span className="dot" />
             Why choose Prime Line AV
@@ -62,11 +62,11 @@ export function HomeWhySection() {
           </div>
         </div>
 
-        <div className="grid gap-4">
+        <div className="reveal-stagger grid gap-4">
           {REASONS.map((r, i) => (
             <article
               key={r.title}
-              className="group flex items-start gap-4 rounded-[24px] border border-white/10 p-5 transition-[border-color,transform] duration-300 hover:-translate-y-0.5 hover:border-[#FF2D6F]/30 md:gap-5 md:p-6"
+              className="fx-spot group flex items-start gap-4 rounded-[24px] border border-white/10 p-5 transition-[border-color,transform] duration-300 hover:-translate-y-0.5 hover:border-[#FF2D6F]/30 md:gap-5 md:p-6"
               style={{
                 background:
                   i === 0

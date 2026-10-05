@@ -195,7 +195,7 @@ export default function QuotePage() {
 
                   <button
                     type="submit"
-                    className="w-full mt-6 py-4 px-6 rounded-xl text-lg font-bold text-white transition-all hover:opacity-90"
+                    className="cta-yellow w-full mt-6 py-4 px-6 rounded-xl text-lg font-bold transition-all hover:opacity-90"
                     style={{ background: BTN }}
                   >
                     Continue
@@ -269,7 +269,7 @@ export default function QuotePage() {
 
                   <button
                     type="submit"
-                    className="w-full py-4 px-6 rounded-xl text-lg font-bold text-white transition-all hover:opacity-90"
+                    className="cta-yellow w-full py-4 px-6 rounded-xl text-lg font-bold transition-all hover:opacity-90"
                     style={{ background: BTN }}
                   >
                     Get My Quote

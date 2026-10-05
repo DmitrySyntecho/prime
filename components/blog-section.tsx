@@ -18,7 +18,7 @@ export function BlogSection({ heading = "From Our Blog", limit = 3, header }: { 
   return (
     <section className="py-16 md:py-20 relative">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+        <div className="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
           {header ?? (
           <div>
             <span
@@ -49,12 +49,13 @@ export function BlogSection({ heading = "From Our Blog", limit = 3, header }: { 
           )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-6">
           {items.map((r) => (
+            // wrapper takes the reveal animation so the card's hover lift still works
+            <div key={r.slug}>
             <Link
-              key={r.slug}
               href={`/resources/${r.slug}`}
-              className="group rounded-2xl p-6 flex flex-col transition-all hover:-translate-y-1"
+              className="fx-spot group h-full rounded-2xl p-6 flex flex-col transition-all hover:-translate-y-1"
               style={{
                 background: "linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)",
                 border: "1px solid rgba(255,255,255,0.10)",
@@ -74,6 +75,7 @@ export function BlogSection({ heading = "From Our Blog", limit = 3, header }: { 
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
               </span>
             </Link>
+            </div>
           ))}
         </div>
       </div>

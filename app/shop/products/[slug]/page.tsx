@@ -331,11 +331,9 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
             <div className="flex gap-3 mb-8">
               <button
                 onClick={addToQuote}
-                className="flex-1 flex items-center justify-center gap-3 py-4 rounded-xl text-[15px] font-bold transition-all hover:-translate-y-0.5"
+                className="cta-yellow flex-1 flex items-center justify-center gap-3 py-4 rounded-xl text-[15px] font-bold transition-all hover:-translate-y-0.5"
                 style={{
                   background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
-                  color: "#fff",
-                  boxShadow: "0 12px 32px -8px rgba(255,45,111,0.6)",
                 }}
               >
                 <ShoppingCart className="w-5 h-5" />

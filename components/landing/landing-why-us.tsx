@@ -35,7 +35,7 @@ export function LandingWhyUs() {
         <div className="grid lg:grid-cols-2 gap-7 md:gap-10 items-stretch">
           {/* LEFT — Video (matches the right cards grid height on desktop) */}
           <div
-            className="relative rounded-[20px] overflow-hidden border border-white/10 backdrop-blur-2xl flex lg:h-full"
+            className="reveal-left relative rounded-[20px] overflow-hidden border border-white/10 backdrop-blur-2xl flex lg:h-full"
             style={{
               background: "linear-gradient(135deg, rgba(255, 45, 111,0.10), rgba(255, 210, 74,0.05))",
               boxShadow: "0 40px 80px -20px rgba(0,0,0,0.7)",
@@ -75,9 +75,9 @@ export function LandingWhyUs() {
           </div>
 
           {/* RIGHT — 4 cards */}
-          <div className="grid sm:grid-cols-2 gap-3 md:gap-4">
+          <div className="reveal-stagger grid sm:grid-cols-2 gap-3 md:gap-4">
             {cards.map(({ icon, title, body }) => (
-              <div key={title} className="ds-card group p-5 md:p-6">
+              <div key={title} className="ds-card fx-spot group p-5 md:p-6">
                 <Icon3D name={icon} size={56} className="mb-3 -ml-1 drop-shadow-[0_10px_16px_rgba(0,0,0,0.45)] transition-transform duration-500 group-hover:-rotate-3 group-hover:scale-105" />
                 <h3 className="text-[16px] md:text-[17px] font-bold text-white mb-1.5 leading-snug">{title}</h3>
                 <p className="text-[13px] md:text-[14px] text-white/60 leading-relaxed">{body}</p>
@@ -88,7 +88,7 @@ export function LandingWhyUs() {
 
         {/* Testimonial */}
         <div
-          className="mt-8 md:mt-12 relative rounded-[24px] border border-white/[0.08] px-6 py-7 md:px-10 md:py-9 overflow-hidden"
+          className="reveal mt-8 md:mt-12 relative rounded-[24px] border border-white/[0.08] px-6 py-7 md:px-10 md:py-9 overflow-hidden"
           style={{
             background: "linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)",
             boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06), 0 16px 36px -12px rgba(0,0,0,0.4)",

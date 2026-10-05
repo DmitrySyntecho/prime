@@ -221,7 +221,7 @@ export function CaseStudiesSection() {
 
         {/* Header */}
         <div className="flex items-end justify-between gap-6 mb-12 flex-wrap">
-          <div className="max-w-3xl">
+          <div className="reveal max-w-3xl">
             <span className="ds-pill mb-5">
               <span className="dot" />
               See Us At Work
@@ -257,7 +257,7 @@ export function CaseStudiesSection() {
         <div className="grid md:grid-cols-2 gap-8 items-center">
 
           {/* Video Player */}
-          <div className="relative aspect-video rounded-xl overflow-hidden bg-black">
+          <div className="reveal-left relative aspect-video rounded-xl overflow-hidden bg-black">
             {isPlaying && (
               <MuxPlayer
                 playbackId={activeStudy.muxId}
@@ -291,7 +291,7 @@ export function CaseStudiesSection() {
           </div>
 
           {/* Text Content */}
-          <div className="space-y-6">
+          <div className="reveal-right space-y-6">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">{activeStudy.title}</h3>
               <p className="text-white/45">{activeStudy.location}</p>
@@ -303,10 +303,9 @@ export function CaseStudiesSection() {
               <button
                 type="button"
                 onClick={() => document.dispatchEvent(new CustomEvent("openQuoteForm"))}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-white font-extrabold text-[13px] tracking-[0.02em] transition-all hover:-translate-y-0.5"
+                className="cta-yellow inline-flex items-center gap-2 px-5 py-3 rounded-xl font-extrabold text-[13px] tracking-[0.02em] transition-all hover:-translate-y-0.5"
                 style={{
                   background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
-                  boxShadow: "0 12px 36px -8px rgba(255,45,111,0.55), inset 0 1px 0 rgba(255,255,255,0.30)",
                 }}
               >
                 Get a Similar Quote
@@ -351,7 +350,7 @@ export function CaseStudiesSection() {
 
         {/* Photo Gallery */}
         <div className="mt-8 md:mt-10">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3">
+          <div className="reveal-stagger grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3">
             {galleryPhotos.map((photo, i) => (
               <button
                 /* key includes the study id so React fully remounts each Image

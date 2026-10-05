@@ -49,7 +49,7 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <>
       <div
-        className="group relative rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
+        className="fx-spot group relative rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
         style={{
           background: "linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)",
           border: "1px solid rgba(255,255,255,0.10)",
@@ -184,7 +184,7 @@ export function ProductCard({ product }: { product: Product }) {
             <div className="flex gap-2">
               <button
                 onClick={addToQuote}
-                className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 sm:py-3 rounded-xl text-[12px] sm:text-[13px] font-bold transition-all hover:opacity-90"
+                className="cta-yellow flex-1 flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 sm:py-3 rounded-xl text-[12px] sm:text-[13px] font-bold"
                 style={{
                   background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
                   color: "#fff",

@@ -28,10 +28,9 @@ export function NeedHelpBanner({ label }: { label?: string }) {
 
       <button
         onClick={openQuote}
-        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[13px] font-bold uppercase tracking-wide text-white whitespace-nowrap transition-all hover:-translate-y-0.5 flex-shrink-0"
+        className="cta-yellow inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[13px] font-bold uppercase tracking-wide whitespace-nowrap transition-all hover:-translate-y-0.5 flex-shrink-0"
         style={{
           background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
-          boxShadow: "0 10px 28px -8px rgba(255,45,111,0.55)",
         }}
       >
         Get a Quote

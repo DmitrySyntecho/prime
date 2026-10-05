@@ -49,7 +49,7 @@ export function PortfolioSection() {
     <section id="our-work" className="py-24 md:py-28 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section head */}
-        <div className="text-center mb-12 max-w-3xl mx-auto">
+        <div className="reveal text-center mb-12 max-w-3xl mx-auto">
           <span className="ds-pill mb-5">
             <span className="dot" />
             Portfolio
@@ -63,7 +63,7 @@ export function PortfolioSection() {
         </div>
 
         <div
-          className="hidden md:grid md:grid-cols-3 gap-4"
+          className="reveal hidden md:grid md:grid-cols-3 gap-4"
           style={{ gridTemplateRows: "1fr 1fr", minHeight: "560px" }}
         >
           {/* Large card */}
@@ -126,7 +126,7 @@ export function PortfolioSection() {
         </div>
 
         {/* Mobile */}
-        <div className="md:hidden space-y-4">
+        <div className="reveal-stagger md:hidden space-y-4">
           {projects.map((project) => (
             <button
               key={project.title}
@@ -164,10 +164,9 @@ function PortfolioHoverCTA() {
   return (
     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
       <span
-        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-extrabold tracking-[0.06em] uppercase text-white"
+        className="cta-yellow inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-extrabold tracking-[0.06em] uppercase"
         style={{
           background: "linear-gradient(135deg, #FF2D6F, #FF5E3A)",
-          boxShadow: "0 8px 22px -6px rgba(255,45,111,0.55)",
         }}
       >
         <Sparkles className="w-3 h-3" />

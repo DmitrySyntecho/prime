@@ -55,7 +55,7 @@ function ProductCard({ product }: { product: Product }) {
   return (
     <>
     <div
-      className="group relative rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
+      className="fx-spot group relative rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
       style={{
         background: "linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)",
         border: "1px solid rgba(255,255,255,0.10)",
@@ -194,11 +194,9 @@ function ProductCard({ product }: { product: Product }) {
           <div className="flex gap-2">
             <button
               onClick={() => setQuoteOpen(true)}
-              className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-[13px] font-bold transition-all hover:opacity-90"
+              className="cta-yellow flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-[13px] font-bold transition-all hover:opacity-90"
               style={{
                 background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
-                color: "#fff",
-                boxShadow: "0 8px 20px -4px rgba(255,45,111,0.5)",
               }}
             >
               <ShoppingCart className="w-4 h-4" />
@@ -231,7 +229,7 @@ export function ShopProductsSection() {
   return (
     <section className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="reveal text-center mb-12">
           <span
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 text-[11px] font-bold tracking-[0.16em] uppercase"
             style={{
@@ -276,7 +274,7 @@ export function ShopProductsSection() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
@@ -285,10 +283,9 @@ export function ShopProductsSection() {
         <div className="mt-12 text-center">
           <Link
             href="/shop/cart"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl text-white font-bold text-[14px] uppercase tracking-wide transition-all hover:-translate-y-0.5"
+            className="cta-yellow inline-flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-[14px] uppercase tracking-wide transition-all hover:-translate-y-0.5"
             style={{
               background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
-              boxShadow: "0 12px 36px -8px rgba(255,45,111,0.5)",
             }}
           >
             <ShoppingCart className="w-5 h-5" />

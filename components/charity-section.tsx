@@ -157,7 +157,7 @@ export function CharitySection() {
 
           <div className="relative z-10 grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-14 p-7 md:p-10 lg:p-14 items-center">
             {/* LEFT — text + CTA */}
-            <div>
+            <div className="reveal-left">
               <span
                 className="inline-flex items-center gap-2 px-3 py-1.5 mb-5 rounded-full text-[11px] font-bold tracking-[0.16em] uppercase backdrop-blur-md"
                 style={{
@@ -211,7 +211,7 @@ export function CharitySection() {
             </div>
 
             {/* RIGHT — kids photo collage with floating stat cards */}
-            <div className="relative pt-6 pb-10 px-2">
+            <div className="reveal-right relative pt-6 pb-10 px-2">
               <div className="grid grid-cols-3 gap-2.5 md:gap-3">
                 {photos.map((photo, i) => (
                   <div

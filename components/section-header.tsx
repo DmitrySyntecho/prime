@@ -50,7 +50,7 @@ export function SectionHeader({
     )
   }
   return (
-    <div className={`${centered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"} mb-10 md:mb-12 ${className}`}>
+    <div className={`reveal ${centered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"} mb-10 md:mb-12 ${className}`}>
       {eyebrow && (
         <span className="ds-pill mb-5">
           <span className="dot" />
@@ -70,8 +70,7 @@ export function QuoteCTA({ label = "Get your custom quote", microcopy = "Quote i
       <button
         type="button"
         onClick={() => document.dispatchEvent(new CustomEvent("openQuoteForm"))}
-        className="group inline-flex flex-col items-center justify-center gap-0.5 rounded-xl bg-gradient-to-br from-[#FF2D6F] to-[#FF5E3A] px-8 py-3 text-white transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
-        style={{ boxShadow: "0 12px 36px -8px rgba(255, 45, 111,0.55), inset 0 1px 0 rgba(255,255,255,0.3)" }}
+        className="cta-yellow shimmer-stroke group inline-flex flex-col items-center justify-center gap-0.5 rounded-xl bg-gradient-to-br from-[#FF2D6F] to-[#FF5E3A] px-8 py-3 transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
       >
         <span className="inline-flex items-center gap-2.5 text-[15px] font-extrabold tracking-[0.01em]">
           {label}
@@ -79,7 +78,7 @@ export function QuoteCTA({ label = "Get your custom quote", microcopy = "Quote i
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </span>
-        <span className="text-[11px] font-semibold tracking-[0.01em] text-white/85">{microcopy}</span>
+        <span className="text-[11px] font-semibold tracking-[0.01em] text-[#0a0612]/70">{microcopy}</span>
       </button>
     </div>
   )

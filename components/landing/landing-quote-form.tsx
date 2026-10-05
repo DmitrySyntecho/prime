@@ -319,8 +319,8 @@ export function LandingQuoteForm({ isOpen, onClose, citySlug = "los-angeles", de
                   type="button"
                   onClick={next}
                   disabled={!canContinue()}
-                  className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-xl text-white font-extrabold text-[13px] tracking-[0.02em] transition-all disabled:opacity-40 disabled:cursor-not-allowed enabled:hover:-translate-y-0.5"
-                  style={{ background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)", boxShadow: "0 12px 36px -8px rgba(255,45,111,0.55), inset 0 1px 0 rgba(255,255,255,0.30)" }}
+                  className="cta-yellow inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-xl font-extrabold text-[13px] tracking-[0.02em] transition-all disabled:opacity-40 disabled:cursor-not-allowed enabled:hover:-translate-y-0.5"
+                  style={{ background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)" }}
                 >
                   Continue
                   <ArrowRight className="w-4 h-4" />
@@ -329,8 +329,8 @@ export function LandingQuoteForm({ isOpen, onClose, citySlug = "los-angeles", de
                 <button
                   type="submit"
                   disabled={!canContinue() || submitting}
-                  className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-xl text-white font-extrabold text-[13px] tracking-[0.02em] transition-all disabled:opacity-40 disabled:cursor-not-allowed enabled:hover:-translate-y-0.5"
-                  style={{ background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)", boxShadow: "0 12px 36px -8px rgba(255,45,111,0.55), inset 0 1px 0 rgba(255,255,255,0.30)" }}
+                  className="cta-yellow inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-xl font-extrabold text-[13px] tracking-[0.02em] transition-all disabled:opacity-40 disabled:cursor-not-allowed enabled:hover:-translate-y-0.5"
+                  style={{ background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)" }}
                 >
                   <Sparkles className="w-4 h-4" />
                   Submit Request

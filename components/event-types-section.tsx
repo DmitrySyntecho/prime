@@ -41,14 +41,14 @@ export function EventTypesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
+        <div className="reveal-stagger grid grid-cols-2 lg:grid-cols-5 gap-3">
           {eventTypes.map((event) => (
             <button
               key={event.title}
               type="button"
               onClick={() => openQuote(event.id)}
               aria-label={`Get a quote for ${event.title}`}
-              className="group relative aspect-[3/4] rounded-[16px] overflow-hidden border border-white/[0.08] cursor-pointer transition-all duration-500 hover:-translate-y-1 hover:border-[#FF2D6F]/30 text-left"
+              className="fx-spot group relative aspect-[3/4] rounded-[16px] overflow-hidden border border-white/[0.08] cursor-pointer transition-all duration-500 hover:-translate-y-1 hover:border-[#FF2D6F]/30 text-left"
             >
               <img
                 src={event.image || "/placeholder.svg"}

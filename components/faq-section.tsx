@@ -33,7 +33,7 @@ export function FAQSection() {
     <section className="py-20 md:py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-10">
+        <div className="reveal text-center mb-10">
           <span className="ds-pill mb-5">
             <span className="dot" />
             FAQ
@@ -43,7 +43,7 @@ export function FAQSection() {
           </h2>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-2">
+        <Accordion type="single" collapsible className="reveal-stagger space-y-2">
           {faqs.map((faq, index) => (
             <AccordionItem
               key={index}

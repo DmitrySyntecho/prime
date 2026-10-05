@@ -69,7 +69,7 @@ export function CategoryProductsShowcase({ category }: { category: ProductCatego
     <section className="py-16 md:py-20 relative">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="reveal text-center mb-12">
           <span
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 text-[11px] font-bold tracking-[0.16em] uppercase"
             style={{
@@ -100,7 +100,7 @@ export function CategoryProductsShowcase({ category }: { category: ProductCatego
         {/* Lanes — stacked vertically */}
         <div className="space-y-16">
           {lanes.map(({ title, blurb, Icon, items }) => (
-            <div key={title}>
+            <div key={title} className="reveal fx-spot rounded-[24px]">
               <div className="flex items-center gap-3 mb-6">
                 <Icon3D name={Icon} size={52} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
                 <div>
@@ -121,10 +121,9 @@ export function CategoryProductsShowcase({ category }: { category: ProductCatego
         <div className="mt-14 text-center">
           <Link
             href="/shop"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl text-white font-bold text-[14px] uppercase tracking-wide transition-all hover:-translate-y-0.5"
+            className="cta-yellow inline-flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-[14px] uppercase tracking-wide transition-all hover:-translate-y-0.5"
             style={{
               background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
-              boxShadow: "0 12px 36px -8px rgba(255,45,111,0.5)",
             }}
           >
             Explore Full {label} Catalog

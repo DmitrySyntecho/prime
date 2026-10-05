@@ -291,10 +291,9 @@ export function CartPanel() {
                 <Link
                   href="/shop/checkout"
                   onClick={closeCart}
-                  className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-[14px] font-bold text-white transition-all hover:opacity-90 active:scale-[0.99]"
+                  className="cta-yellow w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-[14px] font-bold transition-all hover:opacity-90 active:scale-[0.99]"
                   style={{
                     background: 'linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)',
-                    boxShadow: '0 8px 24px rgba(255,45,111,0.35)',
                   }}
                 >
                   Proceed to Checkout
@@ -495,10 +494,9 @@ export function CartPanel() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-[14px] font-bold text-white transition-all hover:opacity-90 active:scale-[0.99] disabled:opacity-70"
+                  className="cta-yellow w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-[14px] font-bold transition-all hover:opacity-90 active:scale-[0.99] disabled:opacity-70"
                   style={{
                     background: 'linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)',
-                    boxShadow: '0 8px 24px rgba(255,45,111,0.35)',
                   }}
                 >
                   {submitting ? (

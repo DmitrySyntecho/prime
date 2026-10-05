@@ -83,10 +83,9 @@ export function QuoteChooser({
             <button
               type="button"
               onClick={onForm}
-              className="flex items-center gap-4 px-4 py-4 rounded-2xl text-left text-white transition-transform active:scale-[0.99] hover:-translate-y-0.5"
+              className="cta-yellow flex items-center gap-4 px-4 py-4 rounded-2xl text-left transition-transform active:scale-[0.99] hover:-translate-y-0.5"
               style={{
                 background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
-                boxShadow: "0 14px 36px -10px rgba(255,45,111,0.6), inset 0 1px 0 rgba(255,255,255,0.25)",
               }}
             >
               <span className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(255,255,255,0.18)" }}>

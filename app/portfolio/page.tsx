@@ -85,16 +85,20 @@ export default function PortfolioPage() {
         <div className="max-w-7xl mx-auto px-4 space-y-16 md:space-y-24">
           {caseStudies.map((study, i) => {
             const videoFirst = i % 2 === 0
+            // first block sits in the opening screen — no scroll reveal there
+            const animate = i > 0
+            const videoReveal = animate ? (videoFirst ? "reveal-left " : "reveal-right ") : ""
+            const textReveal = animate ? (videoFirst ? "reveal-right " : "reveal-left ") : ""
             return (
               <div key={study.id}>
                 <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                   {/* Video */}
-                  <div className={videoFirst ? "md:order-1" : "md:order-2"}>
+                  <div className={videoReveal + (videoFirst ? "md:order-1" : "md:order-2")}>
                     <VideoPlayer muxId={study.muxId} thumbnail={study.thumbnail} title={study.title} />
                   </div>
 
                   {/* Text */}
-                  <div className={videoFirst ? "md:order-2" : "md:order-1"}>
+                  <div className={textReveal + (videoFirst ? "md:order-2" : "md:order-1")}>
                     <div className="flex items-center gap-2 text-[#FFB366] text-[12px] font-bold uppercase tracking-wider mb-3">
                       <MapPin className="w-3.5 h-3.5" /> {study.location}
                     </div>
@@ -103,8 +107,8 @@ export default function PortfolioPage() {
                     <div className="flex flex-wrap gap-3">
                       <button
                         onClick={startQuote}
-                        className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-white font-bold text-[13px] tracking-[0.02em] transition-all hover:-translate-y-0.5"
-                        style={{ background: BTN, boxShadow: "0 12px 36px -8px rgba(255,45,111,0.55), inset 0 1px 0 rgba(255,255,255,0.30)" }}
+                        className="cta-yellow inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-[13px] tracking-[0.02em] transition-all hover:-translate-y-0.5"
+                        style={{ background: BTN }}
                       >
                         Get a Similar Quote
                         <ArrowRight className="w-4 h-4" />
@@ -121,7 +125,7 @@ export default function PortfolioPage() {
 
                 {/* Photo gallery under the block */}
                 {study.gallery?.length > 0 && (
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3 mt-6 md:mt-8">
+                  <div className={`${animate ? "reveal-stagger " : ""}grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3 mt-6 md:mt-8`}>
                     {study.gallery.map((photo) => (
                       <div
                         key={photo.src}

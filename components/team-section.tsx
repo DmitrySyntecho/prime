@@ -20,7 +20,7 @@ export function TeamSection({ heading = "Meet Our Team", header }: { heading?: s
     <section className="py-16 md:py-20 relative">
       <div className="max-w-7xl mx-auto px-4">
         {header ?? (
-        <div className="text-center mb-10">
+        <div className="reveal text-center mb-10">
           <span
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 text-[11px] font-bold tracking-[0.16em] uppercase"
             style={{
@@ -47,11 +47,12 @@ export function TeamSection({ heading = "Meet Our Team", header }: { heading?: s
         </div>
         )}
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="reveal-stagger grid grid-cols-2 lg:grid-cols-4 gap-5">
           {TEAM.map((m) => (
+            // wrapper takes the reveal animation so the card's hover lift still works
+            <div key={m.name}>
             <div
-              key={m.name}
-              className="group rounded-2xl p-6 text-center transition-all hover:-translate-y-1"
+              className="fx-spot group h-full rounded-2xl p-6 text-center transition-all hover:-translate-y-1"
               style={{
                 background: "linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)",
                 border: "1px solid rgba(255,255,255,0.10)",
@@ -69,6 +70,7 @@ export function TeamSection({ heading = "Meet Our Team", header }: { heading?: s
                 <Linkedin className="w-4 h-4" />
                 <ArrowUpRight className="w-4 h-4" />
               </div>
+            </div>
             </div>
           ))}
         </div>

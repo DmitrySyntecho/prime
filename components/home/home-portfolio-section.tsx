@@ -90,7 +90,7 @@ export function HomePortfolioSection() {
           <strong className="font-semibold text-[#FFB366]">watch our crews bring real events to life behind the scenes.</strong>
         </SectionHeader>
 
-        <div className="grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="reveal-stagger grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {STUDIES.map((s) => (
             <StudyCard key={s.mux} s={s} onPlay={() => setActive(s)} />
           ))}

@@ -103,13 +103,15 @@ export function Footer() {
 
             <button
               onClick={openQuote}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-[13px] font-extrabold tracking-[0.02em] transition-all hover:-translate-y-0.5 self-start"
+              className={`inline-flex items-center gap-2 px-5 py-3 rounded-xl text-[13px] font-extrabold tracking-[0.02em] transition-all hover:-translate-y-0.5 self-start ${isFifa ? "" : "cta-yellow"}`}
               style={{
                 background: `linear-gradient(135deg, ${accent} 0%, ${accentDeep} 100%)`,
-                color: "#fff",
-                boxShadow: isFifa
-                  ? "0 12px 36px -8px rgba(230,29,37,0.55), inset 0 1px 0 rgba(255,255,255,0.25)"
-                  : "0 12px 36px -8px rgba(255,45,111,0.55), inset 0 1px 0 rgba(255,255,255,0.30)",
+                ...(isFifa
+                  ? {
+                      color: "#fff",
+                      boxShadow: "0 12px 36px -8px rgba(230,29,37,0.55), inset 0 1px 0 rgba(255,255,255,0.25)",
+                    }
+                  : {}),
               }}
             >
               Get a Quote

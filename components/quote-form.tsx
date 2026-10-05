@@ -587,12 +587,10 @@ export function QuoteForm({ isOpen, onClose, serviceSlug, eventTypeId }: QuoteFo
                   <button
                     onClick={goNext}
                     disabled={!canContinue()}
-                    className="inline-flex items-center gap-1.5 sm:gap-2 px-5 sm:px-7 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-white font-extrabold text-[12px] sm:text-[13px] tracking-[0.02em] transition-all disabled:opacity-40 disabled:cursor-not-allowed enabled:hover:-translate-y-0.5"
+                    className="cta-yellow inline-flex items-center gap-1.5 sm:gap-2 px-5 sm:px-7 py-2.5 sm:py-3 rounded-lg sm:rounded-xl font-extrabold text-[12px] sm:text-[13px] tracking-[0.02em] transition-all disabled:opacity-40 disabled:cursor-not-allowed enabled:hover:-translate-y-0.5"
                     style={{
                       background:
                         "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
-                      boxShadow:
-                        "0 12px 36px -8px rgba(255,45,111,0.55), inset 0 1px 0 rgba(255,255,255,0.30)",
                     }}
                   >
                     Continue
@@ -602,12 +600,10 @@ export function QuoteForm({ isOpen, onClose, serviceSlug, eventTypeId }: QuoteFo
                   <button
                     onClick={handleSubmit}
                     disabled={!canContinue() || submitting}
-                    className="inline-flex items-center gap-1.5 sm:gap-2 px-5 sm:px-7 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-white font-extrabold text-[12px] sm:text-[13px] tracking-[0.02em] transition-all disabled:opacity-40 disabled:cursor-not-allowed enabled:hover:-translate-y-0.5"
+                    className="cta-yellow inline-flex items-center gap-1.5 sm:gap-2 px-5 sm:px-7 py-2.5 sm:py-3 rounded-lg sm:rounded-xl font-extrabold text-[12px] sm:text-[13px] tracking-[0.02em] transition-all disabled:opacity-40 disabled:cursor-not-allowed enabled:hover:-translate-y-0.5"
                     style={{
                       background:
                         "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
-                      boxShadow:
-                        "0 12px 36px -8px rgba(255,45,111,0.55), inset 0 1px 0 rgba(255,255,255,0.30)",
                     }}
                   >
                     {submitting ? "Sending…" : "Submit"}

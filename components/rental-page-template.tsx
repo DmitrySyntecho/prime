@@ -123,7 +123,7 @@ export function RentalPageTemplate({
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={() => setShowQuoteForm(true)}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#FF2D6F] text-[#0B1217] font-semibold rounded-md hover:bg-[#22c55e] transition-colors"
+                  className="cta-yellow inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#FF2D6F] text-[#0B1217] font-semibold rounded-md hover:bg-[#22c55e] transition-colors"
                 >
                   {ctaButton}
                   <ArrowRight className="w-5 h-5" />
@@ -285,7 +285,7 @@ export function RentalPageTemplate({
           </p>
           <button
             onClick={() => setShowQuoteForm(true)}
-            className="inline-flex items-center gap-2 px-10 py-5 bg-[#FF2D6F] text-[#0B1217] font-semibold text-lg rounded-md hover:bg-[#22c55e] transition-colors"
+            className="cta-yellow inline-flex items-center gap-2 px-10 py-5 bg-[#FF2D6F] text-[#0B1217] font-semibold text-lg rounded-md hover:bg-[#22c55e] transition-colors"
           >
             {ctaButton}
             <ArrowRight className="w-5 h-5" />

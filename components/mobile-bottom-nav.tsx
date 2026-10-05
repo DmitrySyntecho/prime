@@ -362,10 +362,10 @@ function ContactSheet({
             <button
               type="button"
               onClick={onStartQuote}
-              className="flex items-center gap-3 px-4 py-3.5 rounded-2xl text-left text-white font-bold transition-transform active:scale-[0.99]"
+              className={`flex items-center gap-3 px-4 py-3.5 rounded-2xl text-left font-bold transition-transform active:scale-[0.99] ${accent === "#FF2D6F" ? "cta-yellow" : "text-white"}`}
               style={{
                 background: `linear-gradient(135deg, ${accent} 0%, ${accentDeep} 100%)`,
-                boxShadow: "0 10px 30px -10px rgba(255,45,111,0.55), inset 0 1px 0 rgba(255,255,255,0.25)",
+                ...(accent === "#FF2D6F" ? {} : { boxShadow: "0 10px 30px -10px rgba(255,45,111,0.55), inset 0 1px 0 rgba(255,255,255,0.25)" }),
               }}
             >
               <span className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(255,255,255,0.18)" }}>

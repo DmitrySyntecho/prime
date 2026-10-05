@@ -73,7 +73,7 @@ export default function AboutPage() {
               </p>
               <button
                 onClick={startQuote}
-                className="inline-flex items-center gap-2 text-white font-bold px-8 py-4 rounded-xl transition-all hover:opacity-90"
+                className="cta-yellow inline-flex items-center gap-2 font-bold px-8 py-4 rounded-xl transition-all hover:opacity-90"
                 style={{ background: BTN }}
               >
                 Work With Us <ArrowRight className="w-5 h-5" />
@@ -103,7 +103,7 @@ export default function AboutPage() {
 
       {/* Story */}
       <section className="py-16 md:py-20 relative">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+        <div className="reveal max-w-4xl mx-auto px-4 text-center">
           <Eyebrow>Our Story</Eyebrow>
           <h2 className="text-3xl md:text-4xl font-black text-white mb-8">
             Built for{" "}
@@ -135,13 +135,13 @@ export default function AboutPage() {
       {/* Team */}
       <section className="py-16 md:py-20 relative">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="reveal text-center mb-12">
             <Eyebrow>Our Team</Eyebrow>
             <h2 className="text-3xl md:text-4xl font-black text-white">The crew behind every show</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="reveal-stagger grid md:grid-cols-3 gap-6">
             {team.map((member) => (
-              <div key={member.name} className="text-center rounded-2xl p-8" style={GLASS}>
+              <div key={member.name} className="fx-spot text-center rounded-2xl p-8" style={GLASS}>
                 <div className="relative w-40 h-40 mx-auto rounded-2xl overflow-hidden mb-6 border border-white/10">
                   <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
                 </div>
@@ -156,19 +156,19 @@ export default function AboutPage() {
       {/* Locations */}
       <section className="py-16 md:py-20 relative">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="reveal text-center mb-12">
             <Eyebrow>Our Locations</Eyebrow>
             <h2 className="text-3xl md:text-4xl font-black text-white">Two coasts. Nationwide reach.</h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="rounded-2xl p-8" style={GLASS}>
+          <div className="reveal-stagger grid md:grid-cols-2 gap-6">
+            <div className="fx-spot rounded-2xl p-8" style={GLASS}>
               <div className="flex items-center gap-2 text-[#FFB366] text-sm font-bold uppercase tracking-wider mb-3">
                 <MapPin className="w-4 h-4" /> West Coast HQ
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Los Angeles</h3>
               <p className="text-white/55">Serving California, Nevada, Arizona, and the Western United States.</p>
             </div>
-            <div className="rounded-2xl p-8" style={GLASS}>
+            <div className="fx-spot rounded-2xl p-8" style={GLASS}>
               <div className="flex items-center gap-2 text-[#FFB366] text-sm font-bold uppercase tracking-wider mb-3">
                 <MapPin className="w-4 h-4" /> Southeast
               </div>

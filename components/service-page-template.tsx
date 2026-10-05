@@ -122,7 +122,7 @@ export function ServicePageTemplate({
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   onClick={handleStartQuote}
-                  className="bg-[#FF2D6F] hover:bg-[#FF2D6F]/90 text-[#0B1217] font-bold px-8 py-6 text-base rounded-lg"
+                  className="cta-yellow bg-[#FF2D6F] hover:bg-[#FF2D6F]/90 text-[#0B1217] font-bold px-8 py-6 text-base rounded-lg"
                 >
                   Start Your Quote
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -288,7 +288,7 @@ export function ServicePageTemplate({
           </p>
           <Button
             onClick={handleStartQuote}
-            className="inline-flex items-center gap-2 px-10 py-5 bg-[#FF2D6F] text-[#0B1217] font-semibold text-lg rounded-md hover:bg-[#3ab8c9] transition-colors"
+            className="cta-yellow inline-flex items-center gap-2 px-10 py-5 bg-[#FF2D6F] text-[#0B1217] font-semibold text-lg rounded-md hover:bg-[#3ab8c9] transition-colors"
           >
             Start Your Quote
             <ArrowRight className="w-5 h-5" />

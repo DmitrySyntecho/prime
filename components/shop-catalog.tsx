@@ -505,10 +505,9 @@ export function ShopCatalog() {
             <div className="mt-12 text-center">
               <Link
                 href="/shop/checkout"
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-xl text-white font-bold text-[14px] uppercase tracking-wide transition-all hover:-translate-y-0.5"
+                className="cta-yellow inline-flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-[14px] uppercase tracking-wide transition-all hover:-translate-y-0.5"
                 style={{
                   background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
-                  boxShadow: "0 12px 36px -8px rgba(255,45,111,0.5)",
                 }}
               >
                 <ShoppingCart className="w-5 h-5" />

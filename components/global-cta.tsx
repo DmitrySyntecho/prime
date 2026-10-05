@@ -41,10 +41,11 @@ export function GlobalCTA() {
       <button
         onClick={openChooser}
         aria-label="Get a quote"
-        className="hidden md:flex fixed bottom-6 right-6 z-[90] items-center justify-center w-14 h-14 rounded-full text-white transition-transform hover:-translate-y-0.5 active:scale-95"
+        className="cta-yellow hidden md:flex fixed bottom-6 right-6 z-[90] items-center justify-center w-14 h-14 rounded-full transition-transform hover:-translate-y-0.5 active:scale-95"
         style={{
+          // .cta-yellow sets position: relative — keep the bubble fixed
+          position: "fixed",
           background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
-          boxShadow: "0 16px 40px -8px rgba(255,45,111,0.6), inset 0 1px 0 rgba(255,255,255,0.3)",
         }}
       >
         <Sparkles className="w-6 h-6" />

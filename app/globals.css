@@ -827,3 +827,139 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover {
   background: linear-gradient(180deg, #FF2D6F 0%, #FF5E3A 100%);
   border-radius: 9999px;
 }
+
+/* ============ YELLOW CALL-TO-ACTION (all CTAs except the header) ============ */
+/* Gold fill + dark label. !important beats the inline pink gradients the CTA
+   components were authored with. The attention pulse is a pseudo-element ring
+   animated on transform/opacity only (compositor — no repaints). */
+/* position lives in a layer so Tailwind's absolute/fixed utilities still win. */
+@layer components {
+  .cta-yellow, .fx-spot { position: relative; }
+}
+.cta-yellow {
+  isolation: isolate;
+  background: linear-gradient(135deg, #FFE27A 0%, #FFD24A 45%, #FFB01F 100%) !important;
+  color: #0a0612 !important;
+  box-shadow: 0 12px 36px -8px rgba(255, 190, 40, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.55) !important;
+  animation: cta-breathe 2.8s ease-in-out infinite;
+}
+.cta-yellow :where(span, svg, b, strong) { color: inherit !important; }
+.cta-yellow :where(.text-white\/85, .text-white\/75, .text-white\/80) { color: rgba(10, 6, 18, 0.7) !important; }
+.cta-yellow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  border: 2px solid rgba(255, 210, 74, 0.85);
+  box-shadow: 0 0 18px 2px rgba(255, 210, 74, 0.55);
+  pointer-events: none;
+  animation: cta-ring 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+/* Breathing uses `scale`; hover/press use `translate` + a separate transform, so
+   the always-running animation never blocks the hover lift. */
+.cta-yellow:hover { animation-play-state: paused; translate: 0 -2px; }
+.cta-yellow:active { transform: scale(0.97); }
+@keyframes cta-ring {
+  0% { transform: scale(1); opacity: 0.9; }
+  75%, 100% { transform: scale(1.12, 1.35); opacity: 0; }
+}
+@keyframes cta-breathe {
+  0%, 100% { scale: 1; }
+  50% { scale: 1.025; }
+}
+
+/* ============ SCROLL REVEAL (zero JS) ============ */
+/* Scroll-driven animations: elements rise in as they enter the viewport.
+   Browsers without animation-timeline simply show the content. */
+@supports (animation-timeline: view()) {
+  .reveal,
+  .reveal-stagger > * {
+    animation: reveal-up linear backwards;
+    animation-timeline: view();
+    animation-range: entry 0% entry 55%;
+  }
+  .reveal-stagger > *:nth-child(3n + 2) { animation-range: entry 8% entry 63%; }
+  .reveal-stagger > *:nth-child(3n + 3) { animation-range: entry 16% entry 71%; }
+  .reveal-left, .reveal-right {
+    animation: reveal-left linear backwards;
+    animation-timeline: view();
+    animation-range: entry 0% entry 60%;
+  }
+  .reveal-right { animation-name: reveal-right; }
+  .reveal-zoom {
+    animation: reveal-zoom linear backwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+  }
+}
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(48px) scale(0.98); filter: blur(6px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+@keyframes reveal-left {
+  from { opacity: 0; transform: translateX(-80px); filter: blur(6px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+@keyframes reveal-right {
+  from { opacity: 0; transform: translateX(80px); filter: blur(6px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+/* Fallback (no scroll timelines, e.g. Firefox): components/motion-fx.tsx adds
+   .sda-off to <html> and toggles .in-view with one IntersectionObserver. */
+html.sda-off :is(.reveal, .reveal-stagger > *, .reveal-left, .reveal-right, .reveal-zoom) {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+html.sda-off .reveal-left { transform: translateX(-60px); }
+html.sda-off .reveal-right { transform: translateX(60px); }
+html.sda-off :is(.reveal, .reveal-stagger > *, .reveal-left, .reveal-right, .reveal-zoom).in-view { opacity: 1; transform: none; }
+@keyframes reveal-zoom {
+  from { opacity: 0.3; transform: scale(0.92); clip-path: inset(8% 6% round 28px); }
+  to { opacity: 1; transform: none; clip-path: inset(0 round 0); }
+}
+
+/* ============ SPOTLIGHT HOVER ============ */
+/* A soft pink light follows the cursor across cards. --mx/--my are set by
+   components/motion-fx.tsx (one delegated pointer listener for the page). */
+.fx-spot { isolation: isolate; }
+.fx-spot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 45, 111, 0.18), rgba(255, 210, 74, 0.06) 35%, transparent 60%);
+  mix-blend-mode: screen;
+}
+.fx-spot:hover::after { opacity: 1; }
+
+/* Image zoom + lift for any media card */
+.fx-lift { transition: translate 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.5s ease; }
+.fx-lift:hover { translate: 0 -6px; box-shadow: 0 30px 60px -24px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 45, 111, 0.25); }
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-yellow, .cta-yellow::before { animation: none !important; }
+  .reveal, .reveal-stagger > *, .reveal-zoom, .reveal-left, .reveal-right { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; filter: none !important; clip-path: none !important; }
+  .fx-lift:hover { translate: none; }
+}
+
+/* ============ HERO INTRO (on load) ============ */
+.intro { animation: intro-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) backwards; }
+.intro-2 { animation-delay: 0.12s; }
+.intro-3 { animation-delay: 0.24s; }
+.intro-4 { animation-delay: 0.36s; }
+.intro-fade { animation: intro-fade 1.4s ease-out backwards; }
+@keyframes intro-up {
+  from { opacity: 0; transform: translateY(28px); filter: blur(8px); }
+}
+@keyframes intro-fade {
+  from { opacity: 0; transform: scale(1.06); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro, .intro-fade { animation: none !important; }
+}
