@@ -8,9 +8,6 @@ import type { Product } from "@/lib/cart-context"
 import { QuoteForm } from "@/components/quote-form"
 import {
   Truck,
-  Shield,
-  Clock,
-  Zap,
   CheckCircle2,
   ShoppingCart,
   ArrowRight,
@@ -19,6 +16,7 @@ import {
   Wrench,
   Eye,
 } from "lucide-react"
+import { Icon3D, type Icon3DName } from "@/components/icon-3d"
 
 // Consistent number formatting to avoid hydration mismatch
 function formatPrice(num: number): string {
@@ -265,14 +263,14 @@ export function ShopProductsSection() {
         </div>
 
         <div className="flex flex-wrap justify-center gap-6 mb-12">
-          {[
-            { icon: Truck, text: "Free LA Delivery Over $5k" },
-            { icon: Clock, text: "Same-Day Setup Available" },
-            { icon: Shield, text: "Full Insurance Included" },
-            { icon: Zap, text: "24/7 Technical Support" },
-          ].map(({ icon: Icon, text }) => (
+          {([
+            { icon: "delivery-truck", text: "Free LA Delivery Over $5k" },
+            { icon: "stopwatch", text: "Same-Day Setup Available" },
+            { icon: "shield", text: "Full Insurance Included" },
+            { icon: "headset", text: "24/7 Technical Support" },
+          ] as { icon: Icon3DName; text: string }[]).map(({ icon, text }) => (
             <div key={text} className="flex items-center gap-2 text-[13px] text-white/60">
-              <Icon className="w-4 h-4 text-[#FF5E3A]" />
+              <Icon3D name={icon} size={26} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
               <span>{text}</span>
             </div>
           ))}

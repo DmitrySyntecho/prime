@@ -75,7 +75,7 @@ export function IconsSection({ id, num }: SectionProps) {
         </div>
       </Panel>
 
-      <SubHead meta={<a href={kit.packages.icons3d.src} download className="font-bold text-[#FF2D6F] hover:text-white">Download all (ZIP)</a>}>3D equipment icons · Higgsfield</SubHead>
+      <SubHead meta={<a href={kit.packages.icons3d.src} download className="font-bold text-[#FF2D6F] hover:text-white">Download all (ZIP)</a>}>3D icon set · Higgsfield</SubHead>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
         {kit.icons3d.map((ic) => (
           <div key={ic.slug} className="group overflow-hidden rounded-[18px] border border-white/[0.08] transition-all hover:-translate-y-1 hover:border-[#FF2D6F]/30" style={{ background: "radial-gradient(ellipse 80% 70% at 50% 20%, rgba(255,45,111,0.14), transparent 70%), linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01))" }}>

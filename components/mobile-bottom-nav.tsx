@@ -25,6 +25,8 @@ import {
   Phone,
   ArrowRight,
 } from "lucide-react"
+import { Icon3D } from "@/components/icon-3d"
+import { navIcon } from "@/lib/nav-icons"
 import type React from "react"
 
 import { WHATSAPP_HREF, PHONE_TEL as PHONE_HREF, PHONE_DISPLAY as PHONE_LABEL } from "@/lib/contact"
@@ -179,8 +181,14 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
                   className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl transition-all"
                   style={{ background: active ? `${accent}18` : "rgba(255,255,255,0.04)", color: active ? accent : "rgba(255,255,255,0.82)" }}
                 >
-                  <span className="flex items-center justify-center w-8 h-8 rounded-lg shrink-0" style={{ background: active ? `${accent}22` : "rgba(255,255,255,0.05)" }}>
-                    {Icon ? <Icon className="w-4 h-4" strokeWidth={2.2} /> : <Box className="w-4 h-4" strokeWidth={2.2} />}
+                  <span className="flex items-center justify-center w-9 h-9 rounded-lg shrink-0" style={{ background: active ? `${accent}22` : "rgba(255,255,255,0.05)" }}>
+                    {navIcon(label, href) ? (
+                      <Icon3D name={navIcon(label, href)!} size={32} />
+                    ) : Icon ? (
+                      <Icon className="w-4 h-4" strokeWidth={2.2} />
+                    ) : (
+                      <Box className="w-4 h-4" strokeWidth={2.2} />
+                    )}
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="block text-[12.5px] font-semibold leading-tight truncate">{label}</span>

@@ -1,17 +1,18 @@
 "use client"
 
 import { useState } from "react"
-import { Play, Users, ShieldCheck, CheckCircle2, Clock, Quote, Star } from "lucide-react"
+import { Play, Quote, Star } from "lucide-react"
+import { Icon3D } from "@/components/icon-3d"
 
 /* Block 2 showreel — Prime Line reel (Mux). Swap this ID for a dedicated LA cut
    when one is available. The heavy player iframe only mounts after play. */
 const SHOWREEL_MUX_ID = "sotNy01Bw9hXSjlHAaTe4lF9vEG00ZRO2Z7Wpf6QF1Ou00"
 
 const cards = [
-  { icon: Users, title: "One Team, Start to Finish", body: "Same crew from site survey to strike. No handoffs, no miscommunication." },
-  { icon: ShieldCheck, title: "Your Event, Our Reputation", body: "Your Technical Director is on call 24/7 because your event is our name on the line." },
-  { icon: CheckCircle2, title: "1,986 Flawless Events", body: "Not 1,986 rentals. 1,986 events where everything went exactly as planned." },
-  { icon: Clock, title: "Show-Ready 2 Hours Early", body: "Walk into a venue that's already tested, tuned, and waiting for your guests." },
+  { icon: "walkie-talkie" as const, title: "One Team, Start to Finish", body: "Same crew from site survey to strike. No handoffs, no miscommunication." },
+  { icon: "shield" as const, title: "Your Event, Our Reputation", body: "Your Technical Director is on call 24/7 because your event is our name on the line." },
+  { icon: "award" as const, title: "1,986 Flawless Events", body: "Not 1,986 rentals. 1,986 events where everything went exactly as planned." },
+  { icon: "stopwatch" as const, title: "Show-Ready 2 Hours Early", body: "Walk into a venue that's already tested, tuned, and waiting for your guests." },
 ]
 
 export function LandingWhyUs() {
@@ -75,11 +76,9 @@ export function LandingWhyUs() {
 
           {/* RIGHT — 4 cards */}
           <div className="grid sm:grid-cols-2 gap-3 md:gap-4">
-            {cards.map(({ icon: Icon, title, body }) => (
-              <div key={title} className="ds-card p-5 md:p-6">
-                <div className="w-11 h-11 rounded-[12px] bg-[#FF2D6F]/14 border border-[#FF2D6F]/24 grid place-items-center text-[#FF2D6F] mb-3.5">
-                  <Icon className="w-5 h-5" strokeWidth={2} />
-                </div>
+            {cards.map(({ icon, title, body }) => (
+              <div key={title} className="ds-card group p-5 md:p-6">
+                <Icon3D name={icon} size={56} className="mb-3 -ml-1 drop-shadow-[0_10px_16px_rgba(0,0,0,0.45)] transition-transform duration-500 group-hover:-rotate-3 group-hover:scale-105" />
                 <h3 className="text-[16px] md:text-[17px] font-bold text-white mb-1.5 leading-snug">{title}</h3>
                 <p className="text-[13px] md:text-[14px] text-white/60 leading-relaxed">{body}</p>
               </div>

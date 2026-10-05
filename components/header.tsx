@@ -6,6 +6,8 @@ import {
   Store, Monitor, Volume2, Lightbulb, Layers, Sparkles, Tv, Projector, Columns, Images, MapPin, Building2,
   type LucideIcon,
 } from "lucide-react"
+import { Icon3D } from "@/components/icon-3d"
+import { navIcon } from "@/lib/nav-icons"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
@@ -289,7 +291,7 @@ export function Header() {
                         className="flex items-center justify-center w-8 h-8 rounded-lg flex-shrink-0 text-[#FF5E3A]"
                         style={{ background: "rgba(255,45,111,0.10)", border: "1px solid rgba(255,45,111,0.20)" }}
                       >
-                        <link.icon className="w-4 h-4" />
+                        <Icon3D name={navIcon(link.label, link.href) ?? (group.heading === "Locations" ? "location-pin" : "award")} size={26} />
                       </span>
                       {link.label}
                     </Link>

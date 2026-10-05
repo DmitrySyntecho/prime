@@ -394,6 +394,22 @@ const ICONS_3D = [
   ['live-camera', 'Live Streaming'],
   ['delivery-truck', 'Delivery & Setup'],
   ['quote-cart', 'Add to Quote'],
+  ['sound-console', 'AV Production'],
+  ['installation', 'AV Installation'],
+  ['clapperboard', 'Video Production'],
+  ['led-billboard', 'LED Walls for Sale'],
+  ['live-stream', 'Live Streaming'],
+  ['render-3d', '3D Event Render'],
+  ['flight-case', 'Packages'],
+  ['award', 'Premium Quality'],
+  ['headset', '24/7 Support'],
+  ['location-pin', 'Nationwide'],
+  ['stopwatch', 'On Time'],
+  ['shield', 'Insured & Safe'],
+  ['walkie-talkie', 'One Crew'],
+  ['heart', 'Giving Back'],
+  ['calendar', 'Booking'],
+  ['clipboard', 'Planning'],
 ]
 
 /**
@@ -413,6 +429,8 @@ async function buildIcons3d() {
     }
     const webp = await sharp(file).resize(512, 512).webp({ quality: 88, alphaQuality: 100 }).toBuffer()
     out(path.join(dir, 'web', `${slug}.webp`), webp)
+    // Site UI size: tiles render the icon at 36–64 CSS px, so 192 covers 3x DPR.
+    out(path.join(dir, 'ui', `${slug}.webp`), await sharp(file).resize(192, 192).webp({ quality: 86, alphaQuality: 100 }).toBuffer())
     const png = {}
     for (const size of [1024, 256]) {
       png[size] = await sharp(file).resize(size, size).png({ palette: true, quality: 92, effort: 10, compressionLevel: 9 }).toBuffer()
@@ -445,7 +463,7 @@ function buildDocs() {
         '',
         'logo/        Lockup in 4 tones (dark, light, white, black) + PL monogram in 3,',
         '             SVG and PNG at 128 / 256 / 512 / 1024 / 2048 px. CLEARSPACE.txt.',
-        'icons-3d/    12 Higgsfield 3D equipment icons, transparent PNG 1024 + 256.',
+        'icons-3d/    28 Higgsfield 3D icons (equipment, services, values), transparent PNG 1024 + 256.',
         'favicon/     favicon.svg, favicon.ico (16/32/48), PNG 16–96, apple-touch 180,',
         '             PWA 192/512 + maskable variants.',
         'tokens/      design-tokens.css + design-tokens.json, generated from app/globals.css.',
@@ -484,7 +502,7 @@ function zipOf(name, dirs, extra = []) {
   const addDir = (dir, prefix) => {
     if (!fs.existsSync(dir)) return
     for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
-      if (e.name === 'preview' || e.name === 'web') continue // web previews are page furniture, not kit
+      if (e.name === 'preview' || e.name === 'web' || e.name === 'ui') continue // web previews are page furniture, not kit
       const full = path.join(dir, e.name)
       if (e.isDirectory()) addDir(full, `${prefix}/${e.name}`)
       else files.push({ name: `${prefix}/${e.name}`, data: fs.readFileSync(full) })

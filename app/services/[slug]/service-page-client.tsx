@@ -1,6 +1,7 @@
 "use client"
 
 import { LandingHero } from "@/components/landing/landing-hero"
+import { clipsForService } from "@/lib/hero-clips"
 import { LandingWhyUs } from "@/components/landing/landing-why-us"
 import { AV_PRODUCTION_COLLAGE } from "@/components/landing/landing-page"
 import { TrustedBySection } from "@/components/trusted-by-section"
@@ -59,7 +60,7 @@ export function ServicePageClient({ service, slug }: ServicePageClientProps) {
       <div className="flex flex-col min-h-[calc(100svh-92px)]">
         <div className="flex-1 flex flex-col justify-center">
           <LandingHero
-            hero={{ title: s.h1, accentPhrase: city, pillLabel: s.eyebrow, collage: heroCollage }}
+            hero={{ title: s.h1, accentPhrase: city, pillLabel: s.eyebrow, collage: heroCollage, clips: clipsForService(slug) }}
             onQuote={handleStartQuote}
           />
         </div>

@@ -1,6 +1,7 @@
 "use client"
 
 import { ArrowRight } from "lucide-react"
+import { Icon3D } from "@/components/icon-3d"
 import { useCity } from "@/lib/city-context"
 import {
   Monitor,
@@ -20,20 +21,20 @@ import {
 } from "lucide-react"
 
 const categories = [
-  { name: "LED Screen & Video Wall Rentals", icon: Monitor, slug: "led-walls" },
-  { name: "Audio System Rental", icon: Volume2, slug: "audio-systems" },
-  { name: "Event Lighting Rental", icon: Lightbulb, slug: "lighting" },
-  { name: "Microphones & Audio Accessories", icon: Mic, slug: "microphones" },
-  { name: "Projectors & Screens", icon: Projector, slug: "projectors" },
-  { name: "TV & Monitor Rentals", icon: Tv, slug: "tv-monitors" },
-  { name: "Video Production & Switching Gear", icon: Video, slug: "video-production" },
-  { name: "Stage & Platform Rentals", icon: LayoutGrid, slug: "staging" },
-  { name: "Truss & Rigging Rentals", icon: Box, slug: "truss-rigging" },
-  { name: "Pipe & Drape Rentals", icon: Columns, slug: "pipe-drape" },
-  { name: "Full AV Production Packages", icon: Package, slug: "full-production" },
-  { name: "Live Streaming & Hybrid Packages", icon: Radio, slug: "live-streaming" },
-  { name: "Event Design & 3D Rendering Services", icon: Palette, slug: "event-design" },
-  { name: "DJ Equipment Rentals", icon: Music, slug: "dj-equipment" },
+  { name: "LED Screen & Video Wall Rentals", icon: "led-wall" as const, slug: "led-walls" },
+  { name: "Audio System Rental", icon: "speaker" as const, slug: "audio-systems" },
+  { name: "Event Lighting Rental", icon: "moving-head" as const, slug: "lighting" },
+  { name: "Microphones & Audio Accessories", icon: "microphone" as const, slug: "microphones" },
+  { name: "Projectors & Screens", icon: "projector" as const, slug: "projectors" },
+  { name: "TV & Monitor Rentals", icon: "tv-display" as const, slug: "tv-monitors" },
+  { name: "Video Production & Switching Gear", icon: "live-camera" as const, slug: "video-production" },
+  { name: "Stage & Platform Rentals", icon: "stage" as const, slug: "staging" },
+  { name: "Truss & Rigging Rentals", icon: "stage" as const, slug: "truss-rigging" },
+  { name: "Pipe & Drape Rentals", icon: "pipe-drape" as const, slug: "pipe-drape" },
+  { name: "Full AV Production Packages", icon: "flight-case" as const, slug: "full-production" },
+  { name: "Live Streaming & Hybrid Packages", icon: "live-stream" as const, slug: "live-streaming" },
+  { name: "Event Design & 3D Rendering Services", icon: "render-3d" as const, slug: "event-design" },
+  { name: "DJ Equipment Rentals", icon: "dj-deck" as const, slug: "dj-equipment" },
 ]
 
 export function RentalCategoriesSection() {
@@ -62,7 +63,6 @@ export function RentalCategoriesSection() {
         {/* Flex-wrap with center justify so the last (partial) row is also centered */}
         <div className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
           {categories.map((category) => {
-            const IconComponent = category.icon
             return (
               <button
                 key={category.slug}
@@ -71,9 +71,7 @@ export function RentalCategoriesSection() {
                 className="group relative flex items-center justify-between gap-3 p-5 rounded-[14px] border border-white/[0.08] bg-white/[0.03] backdrop-blur-md hover:border-[#FF2D6F]/30 hover:bg-[#FF2D6F]/[0.04] transition-all duration-300 cursor-pointer overflow-hidden text-left w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)] xl:w-[calc(25%-0.75rem)]"
               >
                 <div className="relative flex items-center gap-3.5 min-w-0">
-                  <div className="flex-shrink-0 w-11 h-11 rounded-[12px] bg-[#FF2D6F]/12 border border-[#FF2D6F]/20 flex items-center justify-center group-hover:bg-[#FF2D6F] transition-all duration-300">
-                    <IconComponent className="w-5 h-5 text-[#FF2D6F] group-hover:text-[#03070a] transition-colors duration-300" />
-                  </div>
+                  <Icon3D name={category.icon} size={48} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)] transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-110" />
                   <span className="text-[13px] font-semibold text-white/85 group-hover:text-white transition-colors leading-tight">
                     {category.name}
                   </span>

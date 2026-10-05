@@ -9,15 +9,11 @@ import {
   ArrowLeft,
   ArrowRight,
   CheckCircle2,
-  Clock,
   Minus,
   Plus,
-  Shield,
   ShoppingCart,
   Star,
-  Truck,
   Wrench,
-  Zap,
   Phone,
   Eye,
   Monitor,
@@ -26,6 +22,7 @@ import {
   Activity,
   Timer,
 } from "lucide-react"
+import { Icon3D, type Icon3DName } from "@/components/icon-3d"
 import { FrequentlyTogether } from "@/components/frequently-together"
 import { RecentlyViewed, recordRecentlyViewed } from "@/components/recently-viewed"
 import { useCart } from "@/lib/cart-context"
@@ -182,12 +179,12 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
 
             {/* Trust badges */}
             <div className="grid grid-cols-2 gap-3">
-              {[
-                { icon: Shield, title: "Full Insurance", desc: "Coverage included" },
-                { icon: Truck, title: "White-Glove Delivery", desc: "Professional setup" },
-                { icon: Zap, title: "24/7 Support", desc: "On-call technicians" },
-                { icon: Clock, title: "Same-Day Setup", desc: "Quick turnaround" },
-              ].map(({ icon: Icon, title, desc }) => (
+              {([
+                { icon: "shield", title: "Full Insurance", desc: "Coverage included" },
+                { icon: "delivery-truck", title: "White-Glove Delivery", desc: "Professional setup" },
+                { icon: "headset", title: "24/7 Support", desc: "On-call technicians" },
+                { icon: "stopwatch", title: "Same-Day Setup", desc: "Quick turnaround" },
+              ] as { icon: Icon3DName; title: string; desc: string }[]).map(({ icon, title, desc }) => (
                 <div
                   key={title}
                   className="flex items-center gap-3 p-3 rounded-xl"
@@ -196,12 +193,7 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
                     border: "1px solid rgba(255,255,255,0.08)",
                   }}
                 >
-                  <div
-                    className="w-10 h-10 rounded-lg flex items-center justify-center"
-                    style={{ background: "rgba(255,45,111,0.15)" }}
-                  >
-                    <Icon className="w-5 h-5 text-[#FF5E3A]" />
-                  </div>
+                  <Icon3D name={icon} size={48} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
                   <div>
                     <div className="text-[12px] font-bold text-white">{title}</div>
                     <div className="text-[11px] text-white/50">{desc}</div>

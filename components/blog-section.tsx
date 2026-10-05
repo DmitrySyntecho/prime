@@ -1,3 +1,4 @@
+import type React from "react"
 import Link from "next/link"
 import { RESOURCES } from "@/lib/sitemap-data"
 import { BookOpen, ArrowRight } from "lucide-react"
@@ -11,13 +12,14 @@ const CATEGORY_LABEL: Record<string, string> = {
 }
 
 /** Blog / articles block — cards from RESOURCES (link to /resources/[slug]). */
-export function BlogSection({ heading = "From Our Blog", limit = 3 }: { heading?: string; limit?: number }) {
+export function BlogSection({ heading = "From Our Blog", limit = 3, header }: { heading?: string; limit?: number; header?: React.ReactNode }) {
   const items = RESOURCES.slice(0, limit)
 
   return (
     <section className="py-16 md:py-20 relative">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+          {header ?? (
           <div>
             <span
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 text-[11px] font-bold tracking-[0.16em] uppercase"
@@ -44,6 +46,7 @@ export function BlogSection({ heading = "From Our Blog", limit = 3 }: { heading?
               </span>
             </h2>
           </div>
+          )}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

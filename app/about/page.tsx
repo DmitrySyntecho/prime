@@ -1,15 +1,16 @@
 "use client"
 
 import type { ReactNode } from "react"
-import { ArrowRight, Users, Award, MapPin, Clock } from "lucide-react"
+import { ArrowRight, MapPin } from "lucide-react"
 import Image from "next/image"
 import { ContactSpecialistBanner } from "@/components/contact-specialist-banner"
+import { Icon3D, type Icon3DName } from "@/components/icon-3d"
 
-const stats = [
-  { icon: Users, value: "500+", label: "Events Produced" },
-  { icon: Award, value: "50+", label: "Brand Partners" },
-  { icon: MapPin, value: "2", label: "Office Locations" },
-  { icon: Clock, value: "24/7", label: "Support Available" },
+const stats: { icon: Icon3DName; value: string; label: string }[] = [
+  { icon: "stage", value: "500+", label: "Events Produced" },
+  { icon: "award", value: "50+", label: "Brand Partners" },
+  { icon: "location-pin", value: "2", label: "Office Locations" },
+  { icon: "headset", value: "24/7", label: "Support Available" },
 ]
 
 const team = [
@@ -91,7 +92,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center rounded-2xl p-6" style={GLASS}>
-                <stat.icon className="w-8 h-8 text-[#FF5E3A] mx-auto mb-4" />
+                <Icon3D name={stat.icon} size={56} className="mx-auto mb-4 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
                 <p className="text-4xl font-black text-white mb-2">{stat.value}</p>
                 <p className="text-white/50 text-sm">{stat.label}</p>
               </div>

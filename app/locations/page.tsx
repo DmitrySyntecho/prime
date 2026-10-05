@@ -1,19 +1,10 @@
 import { Metadata } from "next"
 import Link from "next/link"
-import { MapPin, ChevronRight, ArrowRight, Monitor, Disc3, Volume2, Lightbulb, Layers, Blinds, Tv, ShoppingCart, type LucideIcon } from "lucide-react"
+import { MapPin, ChevronRight, ArrowRight, ShoppingCart } from "lucide-react"
 import { STATES } from "@/lib/sitemap-data"
 import { CATEGORIES, getProductsByCategory } from "@/lib/products-data"
-import type { ProductCategory } from "@/lib/cart-context"
-
-const CATEGORY_ICONS: Record<ProductCategory, LucideIcon> = {
-  "led-screens": Monitor,
-  "dj-setups": Disc3,
-  "sound-systems": Volume2,
-  lighting: Lightbulb,
-  stage: Layers,
-  "pipe-drape": Blinds,
-  tv: Tv,
-}
+import { Icon3D } from "@/components/icon-3d"
+import { CATEGORY_ICON_3D } from "@/lib/nav-icons"
 
 export const metadata: Metadata = {
   title: "AV Production Locations | Nationwide Event AV Services | Prime Line AV",
@@ -100,7 +91,6 @@ export default function LocationsPage() {
             {CATEGORIES.map((c) => {
               const count = getProductsByCategory(c.slug).length
               const href = c.serviceSlug ? `/services/${c.serviceSlug}` : "/shop"
-              const Icon = CATEGORY_ICONS[c.slug]
               return (
                 <Link
                   key={c.slug}
@@ -108,12 +98,7 @@ export default function LocationsPage() {
                   className="group flex items-center gap-4 rounded-xl p-5 transition-all hover:border-[#FF5E3A]/40"
                   style={GLASS}
                 >
-                  <span
-                    className="flex items-center justify-center w-12 h-12 rounded-xl flex-shrink-0 text-[#FF5E3A]"
-                    style={{ background: "rgba(255,45,111,0.12)", border: "1px solid rgba(255,45,111,0.22)" }}
-                  >
-                    <Icon className="w-5 h-5" />
-                  </span>
+                  <Icon3D name={CATEGORY_ICON_3D[c.slug] ?? "flight-case"} size={56} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
                   <div className="min-w-0 flex-1">
                     <h3 className="text-white font-semibold group-hover:text-[#FF5E3A] transition-colors truncate">
                       {c.label}

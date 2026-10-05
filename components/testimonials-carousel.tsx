@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { useState, useRef } from "react"
 import { ChevronLeft, ChevronRight, Play } from "lucide-react"
 import Image from "next/image"
@@ -121,7 +123,7 @@ function MuxVideoCard({ testimonial }: { testimonial: Testimonial }) {
   )
 }
 
-export function TestimonialsCarousel() {
+export function TestimonialsCarousel({ header }: { header?: React.ReactNode } = {}) {
   const scrollRef = useRef<HTMLDivElement>(null)
 
   const scroll = (direction: "left" | "right") => {
@@ -137,6 +139,7 @@ export function TestimonialsCarousel() {
   return (
     <section className="py-20 md:py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
+        {header ?? (
         <div className="text-center mb-12 max-w-5xl mx-auto px-2">
           <span className="ds-pill mb-5">
             <span className="dot" />
@@ -147,6 +150,7 @@ export function TestimonialsCarousel() {
             <span className="ds-accent-text whitespace-nowrap">Real Results.</span>
           </h2>
         </div>
+        )}
 
         <div className="relative">
           <button

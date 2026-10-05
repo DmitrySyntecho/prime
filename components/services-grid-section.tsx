@@ -2,7 +2,8 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Layers, Volume2, Monitor, Lightbulb, Box, Tv, Projector, Columns, ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import { Icon3D } from "@/components/icon-3d"
 import { useCity } from "@/lib/city-context"
 
 export function ServicesGridSection() {
@@ -10,7 +11,7 @@ export function ServicesGridSection() {
   const citySlug = city === "Miami" ? "-miami" : city === "Orlando" ? "-orlando" : ""
   const services = [
     {
-      icon: Box,
+      icon: "stage" as const,
       title: "Stage Rental",
       description: `Portable, truss-built, or mobile stages — engineered, certified, and crewed for any event in ${city}.`,
       image: "/images/services/stage-rental-card.webp",
@@ -18,7 +19,7 @@ export function ServicesGridSection() {
       darkening: "heavy",
     },
     {
-      icon: Volume2,
+      icon: "speaker" as const,
       title: "Sound System Rental",
       description: "L-Acoustics and d&b audio systems, tuned to your room with A1 + A2 engineers on every show.",
       image: "/images/services/sound-system-card.webp",
@@ -26,7 +27,7 @@ export function ServicesGridSection() {
       darkening: "medium",
     },
     {
-      icon: Lightbulb,
+      icon: "moving-head" as const,
       title: "Lighting Equipment Rental",
       description: "Designed, pre-vis'd, and programmed by a senior LD — moving heads, washes, and GrandMA3 console.",
       image: "/images/services/lighting-rental-card.webp",
@@ -34,7 +35,7 @@ export function ServicesGridSection() {
       darkening: "medium",
     },
     {
-      icon: Layers,
+      icon: "sound-console" as const,
       title: "Full AV Production",
       description: "One team, one contract, one producer — sound, lighting, video, LED, and stage from pre-vis to strike.",
       image: "/images/services/full-av-card.webp",
@@ -42,7 +43,7 @@ export function ServicesGridSection() {
       darkening: "extra",
     },
     {
-      icon: Tv,
+      icon: "tv-display" as const,
       title: "TV Rental",
       description: "Confidence monitors to video walls — 32\" to 98\", indoor and outdoor, with on-site video tech.",
       image: "/images/services/tv-rental-card.webp",
@@ -50,7 +51,7 @@ export function ServicesGridSection() {
       darkening: "medium",
     },
     {
-      icon: Projector,
+      icon: "projector" as const,
       title: "Projector & Screen Rental",
       description: "Boardroom to ballroom — 6 ft to 40+ ft screens, 4K laser projectors, and projection mapping.",
       image: "/images/services/projector-screen.webp",
@@ -58,7 +59,7 @@ export function ServicesGridSection() {
       darkening: "medium",
     },
     {
-      icon: Columns,
+      icon: "pipe-drape" as const,
       title: "Pipe & Drape Rental",
       description: `IFR-certified drape in any height and color, installed and struck by our crew across ${city}.`,
       image: "/images/services/pipe-drape-card.webp",
@@ -66,7 +67,7 @@ export function ServicesGridSection() {
       darkening: "medium",
     },
     {
-      icon: Monitor,
+      icon: "led-wall" as const,
       title: "LED Screen Rental",
       description: "Indoor, outdoor, and curved LED walls — same-day quote, senior LED tech and rigger on every job.",
       image: "/images/services/led-screen-card.webp",
@@ -117,10 +118,10 @@ export function ServicesGridSection() {
               {/* Content plate below the image */}
               <div className="relative flex flex-col flex-1 p-4 sm:p-6">
                 <div
-                  className="w-11 h-11 sm:w-14 sm:h-14 rounded-[14px] flex items-center justify-center text-[#FF2D6F] -mt-11 sm:-mt-14 mb-3 sm:mb-4 backdrop-blur-md"
-                  style={{ background: "rgba(255,45,111,0.22)", border: "1px solid rgba(255,45,111,0.35)" }}
+                  className="w-14 h-14 sm:w-[68px] sm:h-[68px] rounded-[16px] flex items-center justify-center -mt-12 sm:-mt-16 mb-3 sm:mb-4 backdrop-blur-md"
+                  style={{ background: "radial-gradient(ellipse 80% 80% at 50% 30%, rgba(255,45,111,0.32), rgba(10,10,10,0.75) 75%)", border: "1px solid rgba(255,45,111,0.35)" }}
                 >
-                  <service.icon className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.7} />
+                  <Icon3D name={service.icon} size={56} className="w-[46px] h-[46px] sm:w-[58px] sm:h-[58px] drop-shadow-[0_8px_14px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:scale-105" />
                 </div>
 
                 <h3 className="text-[15px] sm:text-[20px] font-bold text-white tracking-[-0.01em] mb-2 leading-tight">

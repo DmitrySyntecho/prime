@@ -1,6 +1,8 @@
 "use client"
 
-export function TrustedBySection() {
+import type React from "react"
+
+export function TrustedBySection({ header }: { header?: React.ReactNode } = {}) {
   const row1 = [
     { name: "Walmart", src: "/images/brands/walmart.svg" },
     { name: "Amazon", src: "/images/brands/amazon.svg" },
@@ -69,11 +71,13 @@ export function TrustedBySection() {
 
   return (
     <section className="pb-14 md:pb-16 relative">
+      {header ?? (
       <div className="max-w-7xl mx-auto px-4 mb-8">
         <h2 className="text-center text-[13px] md:text-sm font-semibold text-white/55 tracking-[0.18em] uppercase">
           Trusted by Leading Brands, Agencies &amp; Corporate Teams
         </h2>
       </div>
+      )}
 
       <div className="space-y-4">
         <Row items={row1} direction="left" />

@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { CityProvider } from "@/lib/city-context"
 import { LandingHero } from "@/components/landing/landing-hero"
+import { clipsForPath } from "@/lib/hero-clips"
 import { LandingWhyUs } from "@/components/landing/landing-why-us"
 import { AV_PRODUCTION_COLLAGE } from "@/components/landing/landing-page"
 import { RatingsBar } from "@/components/ratings-bar"
@@ -44,6 +45,7 @@ export function SeoPageTemplate({ page, siblings }: { page: SeoPage; siblings: S
                 accentPhrase: page.national ? undefined : page.location,
                 pillLabel: page.national ? "United States" : page.location,
                 collage: AV_PRODUCTION_COLLAGE,
+                clips: clipsForPath(page.path),
               }}
               onQuote={startQuote}
             />

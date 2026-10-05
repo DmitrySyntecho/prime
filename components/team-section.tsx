@@ -1,3 +1,4 @@
+import type React from "react"
 import { Linkedin, ArrowUpRight } from "lucide-react"
 
 interface Member {
@@ -14,10 +15,11 @@ const TEAM: Member[] = [
   { name: "Daniel Kim", role: "Audio Systems Engineer", initials: "DK" },
 ]
 
-export function TeamSection({ heading = "Meet Our Team" }: { heading?: string }) {
+export function TeamSection({ heading = "Meet Our Team", header }: { heading?: string; header?: React.ReactNode }) {
   return (
     <section className="py-16 md:py-20 relative">
       <div className="max-w-7xl mx-auto px-4">
+        {header ?? (
         <div className="text-center mb-10">
           <span
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 text-[11px] font-bold tracking-[0.16em] uppercase"
@@ -43,6 +45,7 @@ export function TeamSection({ heading = "Meet Our Team" }: { heading?: string })
             </span>
           </h2>
         </div>
+        )}
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
           {TEAM.map((m) => (

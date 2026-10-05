@@ -2,32 +2,24 @@
 
 import { useEffect } from "react"
 import { LandingHero } from "@/components/landing/landing-hero"
-import { AV_PRODUCTION_COLLAGE } from "@/components/landing/landing-page"
-import { LandingWhyUs } from "@/components/landing/landing-why-us"
 import { TrustedBySection } from "@/components/trusted-by-section"
 import { TestimonialsCarousel } from "@/components/testimonials-carousel"
-import { AboutUsSection } from "@/components/about-us-section"
-import { EventTypesSection } from "@/components/event-types-section"
-import { CaseStudiesSection } from "@/components/case-studies-section"
-import { WhyChooseUsSection } from "@/components/why-choose-us-section"
-import { CharitySection } from "@/components/charity-section"
-import { RentalCategoriesSection } from "@/components/rental-categories-section"
-import { PromoBannersSection } from "@/components/promo-banners-section"
-import { ServicesGridSection } from "@/components/services-grid-section"
-import { FAQSection } from "@/components/faq-section"
-import { FIFAPromoBanner } from "@/components/fifa-promo-banner"
-import { ContactSpecialistBanner } from "@/components/contact-specialist-banner"
-import { HomeProductsSection } from "@/components/home-products-section"
 import { RatingsBar } from "@/components/ratings-bar"
 import { WrittenReviewsSection } from "@/components/written-reviews-section"
 import { TeamSection } from "@/components/team-section"
 import { MediaMentionsSection } from "@/components/media-mentions-section"
 import { BlogSection } from "@/components/blog-section"
-import { useCity } from "@/lib/city-context"
+import { SectionHeader } from "@/components/section-header"
+import { HomeServicesSection } from "@/components/home/home-services-section"
+import { HomePortfolioSection } from "@/components/home/home-portfolio-section"
+import { HomeIndustriesSection } from "@/components/home/home-industries-section"
+import { HomeWhySection } from "@/components/home/home-why-section"
+import { HOME_CLIPS } from "@/lib/hero-clips"
 
+/**
+ * Homepage — block order and copy follow the homepage copy deck (Blocks 02–13).
+ */
 export function HomeClient() {
-  const city = useCity()
-
   const handleStartQuote = () => {
     document.dispatchEvent(new CustomEvent("openQuoteForm"))
   }
@@ -46,42 +38,72 @@ export function HomeClient() {
 
   return (
     <div className="min-h-screen">
-      {/* New hero (with "Watch How We Work" video) fills the first screen,
-          brand logos pinned to its bottom. */}
-      <div className="flex flex-col min-h-[calc(100svh-92px)]">
-        <div className="flex-1 flex flex-col justify-center">
-          <LandingHero
-            hero={{
-              title: `Full-Service AV Production in ${city}`,
-              accentPhrase: "AV Production",
-              pillLabel: "Lights · Sound · LED · Staging",
-              collage: AV_PRODUCTION_COLLAGE,
-            }}
-            onQuote={handleStartQuote}
-          />
-        </div>
-        <TrustedBySection />
-      </div>
+      {/* Block 02 — hero */}
+      <LandingHero
+        hero={{
+          title: "AV Company & Audio Visual Service in the USA",
+          accentPhrase: "Audio Visual Service",
+          pillLabel: "Lights · Sound · LED · Staging",
+          lede: "Prime Line AV is a full-service AV company offering audio, video, lighting, staging and LED walls for events across the USA. One team. No surprises.",
+          ctaLabel: "Get your custom quote",
+          microcopy: "Quote in 30 minutes · No obligation",
+          secondary: "portfolio",
+          showIncludes: false,
+          clips: HOME_CLIPS,
+          stats: [
+            { value: "15+", label: "years of AV experience" },
+            { value: "2,500+", label: "events delivered" },
+            { value: "30+", label: "events per month" },
+            { value: "Nationwide", label: "coverage" },
+          ],
+        }}
+        onQuote={handleStartQuote}
+      />
 
-      <RatingsBar />
-      <LandingWhyUs />
-      <ServicesGridSection />
-      <HomeProductsSection />
-      <CaseStudiesSection />
-      <EventTypesSection />
-      <WhyChooseUsSection />
-      <TestimonialsCarousel />
-      <WrittenReviewsSection />
-      <RentalCategoriesSection />
-      <TeamSection />
-      <MediaMentionsSection />
-      <BlogSection />
-      <AboutUsSection />
-      <PromoBannersSection />
-      <CharitySection />
-      <FIFAPromoBanner />
-      <FAQSection />
-      <ContactSpecialistBanner onStartQuote={handleStartQuote} />
+      {/* Block 03 — trust bar */}
+      <RatingsBar only={["Google", "G2"]} />
+
+      {/* Block 04 — services */}
+      <HomeServicesSection />
+
+      {/* Block 05 — portfolio */}
+      <HomePortfolioSection />
+
+      {/* Block 06 — industries + call strip */}
+      <HomeIndustriesSection />
+
+      {/* Block 07 — why choose us */}
+      <HomeWhySection />
+
+      {/* Block 08 — video testimonials */}
+      <TestimonialsCarousel
+        header={
+          <SectionHeader eyebrow="Testimonials" title="Hear what our clients have to say" accent="our clients">
+            Don&apos;t take our word for it. Just listen to what our happy clients say about their events, because they say it better than we ever could.
+          </SectionHeader>
+        }
+      />
+
+      {/* Block 09 — client logos */}
+      <TrustedBySection header={<SectionHeader eyebrow="Our clients" title="Prime Line AV is trusted by 500+ brands" accent="500+ brands" />} />
+
+      {/* Block 10 — written reviews */}
+      <WrittenReviewsSection header={<SectionHeader eyebrow="Client reviews" title="What clients say about working with us" accent="working with us" />} />
+
+      {/* Block 11 — team */}
+      <TeamSection
+        header={
+          <SectionHeader eyebrow="Our team" title="Meet the team behind our successful events" accent="successful events">
+            Get to know the technical directors, engineers, technicians and account managers who make every Prime Line AV event possible.
+          </SectionHeader>
+        }
+      />
+
+      {/* Block 12 — press */}
+      <MediaMentionsSection header={<SectionHeader eyebrow="Press" title="Prime Line AV in the press" accent="in the press" />} />
+
+      {/* Block 13 — blog */}
+      <BlogSection header={<SectionHeader eyebrow="Resources" title="From the blog" accent="the blog" align="left" className="!mb-0" />} />
     </div>
   )
 }

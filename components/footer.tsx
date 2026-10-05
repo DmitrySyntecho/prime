@@ -1,7 +1,8 @@
 "use client"
 
 import type React from "react"
-import { Phone, MapPin, Clock, ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import { Icon3D } from "@/components/icon-3d"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -46,7 +47,6 @@ export function Footer() {
   const accentDeep = isFifa ? "#BF1119" : "#FF5E3A"
   const accentText = isFifa ? "text-[#E61D25]" : "text-[#FF2D6F]"
   const accentBorder = isFifa ? "border-[#E61D25]/10" : "border-[#FF2D6F]/10"
-  const accentBg = isFifa ? "bg-[#E61D25]/15" : "bg-[#FF2D6F]/15"
   const accentHover = isFifa ? "hover:text-[#E61D25]" : "hover:text-[#FF2D6F]"
 
   const openQuote = () => {
@@ -162,23 +162,17 @@ export function Footer() {
                 suppressHydrationWarning
                 className="group flex items-center gap-2.5"
               >
-                <span className={`w-7 h-7 rounded-lg ${accentBg} flex items-center justify-center ${accentText} shrink-0`}>
-                  <Phone className="w-3.5 h-3.5" strokeWidth={2.4} />
-                </span>
+                <Icon3D name="headset" size={26} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
                 <span suppressHydrationWarning className={`text-[13px] font-semibold text-white/65 ${accentHover} transition-colors`}>
                   {PHONE_DISPLAY}
                 </span>
               </a>
               <div className="flex items-center gap-2.5">
-                <span className={`w-7 h-7 rounded-lg ${accentBg} flex items-center justify-center ${accentText} shrink-0`}>
-                  <Clock className="w-3.5 h-3.5" strokeWidth={2.4} />
-                </span>
+                <Icon3D name="stopwatch" size={26} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
                 <span className="text-[13px] text-white/45">Mon–Fri 8am–7pm · Sat 10am–4pm</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <span className={`w-7 h-7 rounded-lg ${accentBg} flex items-center justify-center ${accentText} shrink-0`}>
-                  <MapPin className="w-3.5 h-3.5" strokeWidth={2.4} />
-                </span>
+                <Icon3D name="location-pin" size={26} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
                 <span className="text-[13px] text-white/45">Nationwide · Coast-to-coast</span>
               </div>
             </div>

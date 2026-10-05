@@ -1,17 +1,18 @@
 "use client"
 
-import { ArrowRight, CheckCircle2, Monitor, Volume2, Lightbulb, Video, Mic2, Users, Radio, Headphones, UserCheck } from "lucide-react"
+import { ArrowRight, CheckCircle2 } from "lucide-react"
+import { Icon3D, type Icon3DName } from "@/components/icon-3d"
 
-const services = [
-  { icon: Monitor, label: "LED wall rental (indoor & outdoor)" },
-  { icon: Video, label: "Video engineering & content playback" },
-  { icon: Volume2, label: "Audio / sound systems" },
-  { icon: Lightbulb, label: "Lighting design & control" },
-  { icon: Users, label: "Staging & rigging" },
-  { icon: Monitor, label: "Confidence monitors & teleprompters" },
-  { icon: Radio, label: "Live streaming & recording" },
-  { icon: Headphones, label: "Translation & interpretation support" },
-  { icon: UserCheck, label: "On-site technical crew & show callers" },
+const services: { icon: Icon3DName; label: string }[] = [
+  { icon: "led-wall", label: "LED wall rental (indoor & outdoor)" },
+  { icon: "live-camera", label: "Video engineering & content playback" },
+  { icon: "speaker", label: "Audio / sound systems" },
+  { icon: "moving-head", label: "Lighting design & control" },
+  { icon: "stage", label: "Staging & rigging" },
+  { icon: "tv-display", label: "Confidence monitors & teleprompters" },
+  { icon: "live-stream", label: "Live streaming & recording" },
+  { icon: "headset", label: "Translation & interpretation support" },
+  { icon: "clipboard", label: "On-site technical crew & show callers" },
 ]
 
 const eventTypes = [
@@ -58,15 +59,12 @@ export function LEDPageContentBlocks({ onOpenQuoteForm, ctaButton = "Get a Fail-
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {services.map((service, index) => {
-                const Icon = service.icon
                 return (
                   <div
                     key={index}
                     className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg border border-gray-100 hover:border-[#FF5E3A]/30 transition-colors"
                   >
-                    <div className="w-10 h-10 bg-[#FF5E3A]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-5 h-5 text-[#FF5E3A]" />
-                    </div>
+                    <Icon3D name={service.icon} size={48} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
                     <span className="text-gray-700 font-medium">{service.label}</span>
                   </div>
                 )

@@ -21,6 +21,8 @@ import {
   Images,
   type LucideIcon,
 } from "lucide-react"
+import { Icon3D } from "@/components/icon-3d"
+import { navIcon } from "@/lib/nav-icons"
 import { getProductsByCategory } from "@/lib/products-data"
 
 interface MenuItem {
@@ -155,14 +157,23 @@ function MegaPanel({ menu, accent, accentDeep, onQuote }: { menu: MenuDef; accen
                 className="group flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all"
                 style={{ background: hovered === i ? "rgba(255,45,111,0.10)" : "transparent" }}
               >
-                <span
-                  className="flex items-center justify-center w-9 h-9 rounded-lg flex-shrink-0 transition-colors"
-                  style={{
-                    background: hovered === i ? `linear-gradient(135deg, ${accent} 0%, ${accentDeep} 100%)` : "rgba(255,255,255,0.06)",
-                  }}
-                >
-                  <item.Icon className={`w-[18px] h-[18px] ${hovered === i ? "text-white" : "text-white/55"}`} />
-                </span>
+                {navIcon(item.label, item.href) ? (
+                  <span
+                    className="flex items-center justify-center w-10 h-10 rounded-[12px] flex-shrink-0 transition-[background-color] duration-200"
+                    style={{ background: hovered === i ? "rgba(255,45,111,0.16)" : "rgba(255,255,255,0.04)" }}
+                  >
+                    <Icon3D name={navIcon(item.label, item.href)!} size={36} className={`transition-transform duration-300 ${hovered === i ? "scale-110 -rotate-3" : ""}`} />
+                  </span>
+                ) : (
+                  <span
+                    className="flex items-center justify-center w-9 h-9 rounded-lg flex-shrink-0 transition-colors"
+                    style={{
+                      background: hovered === i ? `linear-gradient(135deg, ${accent} 0%, ${accentDeep} 100%)` : "rgba(255,255,255,0.06)",
+                    }}
+                  >
+                    <item.Icon className={`w-[18px] h-[18px] ${hovered === i ? "text-white" : "text-white/55"}`} />
+                  </span>
+                )}
                 <span className="min-w-0 flex-1">
                   <span className="flex items-center gap-2">
                     <span className="text-[14px] font-bold text-white truncate">{item.label}</span>

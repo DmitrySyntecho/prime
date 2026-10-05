@@ -1,6 +1,6 @@
 "use client"
 
-import { CheckCircle, Clock, Users, Truck } from "lucide-react"
+import { Icon3D } from "@/components/icon-3d"
 import { useLanguage } from "@/lib/i18n/language-context"
 import { CountUp } from "./count-up"
 
@@ -9,22 +9,22 @@ export function WhyChooseUsSection() {
 
   const features = [
     {
-      icon: CheckCircle,
+      icon: "award" as const,
       title: t("whyUs.equipment"),
       description: t("whyUs.equipment.desc"),
     },
     {
-      icon: Clock,
+      icon: "headset" as const,
       title: t("whyUs.support"),
       description: t("whyUs.support.desc"),
     },
     {
-      icon: Users,
+      icon: "walkie-talkie" as const,
       title: t("whyUs.experience"),
       description: t("whyUs.experience.desc"),
     },
     {
-      icon: Truck,
+      icon: "location-pin" as const,
       title: t("whyUs.nationwide"),
       description: t("whyUs.nationwide.desc"),
     },
@@ -51,9 +51,7 @@ export function WhyChooseUsSection() {
                   key={index}
                   className="flex gap-3.5 p-4 rounded-[14px] border border-white/[0.07] bg-white/[0.03] backdrop-blur-xl transition-all hover:bg-[#FF2D6F]/[0.05] hover:border-[#FF2D6F]/[0.18]"
                 >
-                  <div className="w-[38px] h-[38px] rounded-[10px] bg-[#FF2D6F]/14 flex items-center justify-center flex-shrink-0 text-[#FF2D6F]">
-                    <feature.icon className="w-[18px] h-[18px]" strokeWidth={2.4} />
-                  </div>
+                  <Icon3D name={feature.icon} size={44} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
                   <div>
                     <b className="block text-white font-bold text-[14px] mb-1">{feature.title}</b>
                     <span className="text-white/45 text-[12px] leading-[1.5]">{feature.description}</span>

@@ -1,6 +1,7 @@
 "use client"
 
-import { Headphones, ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import { Icon3D } from "@/components/icon-3d"
 
 export function NeedHelpBanner({ label }: { label?: string }) {
   const openQuote = () => document.dispatchEvent(new CustomEvent("openQuoteForm"))
@@ -14,12 +15,7 @@ export function NeedHelpBanner({ label }: { label?: string }) {
       }}
     >
       <div className="flex items-center gap-4 text-center sm:text-left">
-        <div
-          className="hidden sm:flex items-center justify-center w-12 h-12 rounded-xl flex-shrink-0"
-          style={{ background: "rgba(255,45,111,0.16)" }}
-        >
-          <Headphones className="w-6 h-6 text-[#FF5E3A]" />
-        </div>
+        <Icon3D name="headset" size={56} className="hidden sm:block flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
         <div>
           <div className="text-white font-bold text-[16px] md:text-[18px]">
             Need Help Setting {label ? `Up ${label}` : "This Up"}? Hire Our AV Team.

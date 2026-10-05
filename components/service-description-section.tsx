@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { ArrowRight, CheckCircle2, Sparkles, Clock } from "lucide-react"
+import { ArrowRight, CheckCircle2 } from "lucide-react"
+import { Icon3D } from "@/components/icon-3d"
 
 interface ServiceDescriptionSectionProps {
   heading: string
@@ -157,9 +158,7 @@ export function ServiceDescriptionSection({
                     boxShadow: "0 18px 40px -12px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06)",
                   }}
                 >
-                  <div className="w-9 h-9 rounded-[10px] bg-[#FF2D6F]/16 grid place-items-center text-[#FF2D6F]">
-                    <Sparkles className="w-[18px] h-[18px]" />
-                  </div>
+                  <Icon3D name="award" size={40} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
                   <div>
                     <b className="block text-[13px] font-bold text-white leading-tight">{stat0.value}</b>
                     <span className="text-[11px] text-white/45">{stat0.label}</span>
@@ -177,9 +176,7 @@ export function ServiceDescriptionSection({
                     boxShadow: "0 18px 40px -12px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06)",
                   }}
                 >
-                  <div className="w-9 h-9 rounded-[10px] bg-[#FF2D6F]/16 grid place-items-center text-[#FF2D6F]">
-                    <Clock className="w-[18px] h-[18px]" />
-                  </div>
+                  <Icon3D name="stopwatch" size={40} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
                   <div>
                     <b className="block text-[13px] font-bold text-white leading-tight">{stat1.value}</b>
                     <span className="text-[11px] text-white/45">{stat1.label}</span>

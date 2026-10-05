@@ -4,7 +4,8 @@ import type React from "react"
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Heart, ArrowRight, Sparkles, HandHeart, Users2, CalendarHeart } from "lucide-react"
+import { Heart, ArrowRight, Sparkles } from "lucide-react"
+import { Icon3D, type Icon3DName } from "@/components/icon-3d"
 
 const photos = [
   { src: "/images/charity/charity-1.webp", alt: "Young girl with walker giving thumbs up" },
@@ -49,13 +50,13 @@ function AnimatedNumber({ end, format }: { end: number; format: (n: number) => s
 }
 
 function FloatingStat({
-  icon: Icon,
+  icon,
   value,
   label,
   positionClass,
   delay = "0s",
 }: {
-  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>
+  icon: Icon3DName
   value: React.ReactNode
   label: string
   positionClass: string
@@ -75,15 +76,7 @@ function FloatingStat({
           animationDelay: delay,
         }}
       >
-        <div
-          className="w-9 h-9 rounded-[10px] flex items-center justify-center text-[#FF2D6F] flex-shrink-0"
-          style={{
-            background: "rgba(255,45,111,0.18)",
-            border: "1px solid rgba(255,45,111,0.30)",
-          }}
-        >
-          <Icon className="w-[16px] h-[16px]" strokeWidth={2.2} />
-        </div>
+        <Icon3D name={icon} size={40} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
         <div>
           <div
             className="text-[16px] font-black tracking-[-0.02em] leading-none tabular-nums"
@@ -249,14 +242,14 @@ export function CharitySection() {
 
               {/* Floating stat cards positioned around the photo collage */}
               <FloatingStat
-                icon={HandHeart}
+                icon="heart"
                 value={<AnimatedNumber end={250} format={(n) => `$${n}K+`} />}
                 label="Donated"
                 positionClass="-top-2 -left-4 sm:-left-6"
                 delay="0s"
               />
               <FloatingStat
-                icon={Users2}
+                icon="walkie-talkie"
                 value={
                   <AnimatedNumber
                     end={5000}
@@ -271,7 +264,7 @@ export function CharitySection() {
                 delay="-1.5s"
               />
               <FloatingStat
-                icon={CalendarHeart}
+                icon="calendar"
                 value={<AnimatedNumber end={50} format={(n) => `${n}+`} />}
                 label="Charity Events"
                 positionClass="-bottom-3 left-1/2 -translate-x-1/2"

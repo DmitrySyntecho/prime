@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { useRef } from "react"
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react"
 
@@ -20,7 +22,7 @@ const REVIEWS: Review[] = [
   { text: "Outstanding service and top-tier equipment. They made our product launch feel like a flagship Apple event.", name: "Tom W.", role: "Marketing Director", source: "G2" },
 ]
 
-export function WrittenReviewsSection({ heading = "What Our Clients Say" }: { heading?: string }) {
+export function WrittenReviewsSection({ heading = "What Our Clients Say", header }: { heading?: string; header?: React.ReactNode }) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const scroll = (dir: "left" | "right") => {
     scrollRef.current?.scrollBy({ left: dir === "left" ? -360 : 360, behavior: "smooth" })
@@ -30,6 +32,7 @@ export function WrittenReviewsSection({ heading = "What Our Clients Say" }: { he
     <section className="py-16 md:py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+          {header ?? (
           <div>
             <span
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 text-[11px] font-bold tracking-[0.16em] uppercase"
@@ -56,6 +59,7 @@ export function WrittenReviewsSection({ heading = "What Our Clients Say" }: { he
               </span>
             </h2>
           </div>
+          )}
           <div className="hidden md:flex gap-2">
             <button onClick={() => scroll("left")} className="p-2.5 rounded-xl bg-white/[0.06] border border-white/[0.12] hover:bg-[#FF2D6F]/15 transition-all" aria-label="Previous">
               <ChevronLeft className="w-5 h-5 text-white" />

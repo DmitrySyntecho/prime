@@ -354,6 +354,134 @@
       "png1024": "/brand/icons-3d/png/quote-cart-1024.png",
       "png256": "/brand/icons-3d/png/quote-cart-256.png",
       "bytes": 190989
+    },
+    {
+      "slug": "sound-console",
+      "label": "AV Production",
+      "web": "/brand/icons-3d/web/sound-console.webp",
+      "png1024": "/brand/icons-3d/png/sound-console-1024.png",
+      "png256": "/brand/icons-3d/png/sound-console-256.png",
+      "bytes": 265828
+    },
+    {
+      "slug": "installation",
+      "label": "AV Installation",
+      "web": "/brand/icons-3d/web/installation.webp",
+      "png1024": "/brand/icons-3d/png/installation-1024.png",
+      "png256": "/brand/icons-3d/png/installation-256.png",
+      "bytes": 220638
+    },
+    {
+      "slug": "clapperboard",
+      "label": "Video Production",
+      "web": "/brand/icons-3d/web/clapperboard.webp",
+      "png1024": "/brand/icons-3d/png/clapperboard-1024.png",
+      "png256": "/brand/icons-3d/png/clapperboard-256.png",
+      "bytes": 164975
+    },
+    {
+      "slug": "led-billboard",
+      "label": "LED Walls for Sale",
+      "web": "/brand/icons-3d/web/led-billboard.webp",
+      "png1024": "/brand/icons-3d/png/led-billboard-1024.png",
+      "png256": "/brand/icons-3d/png/led-billboard-256.png",
+      "bytes": 103632
+    },
+    {
+      "slug": "live-stream",
+      "label": "Live Streaming",
+      "web": "/brand/icons-3d/web/live-stream.webp",
+      "png1024": "/brand/icons-3d/png/live-stream-1024.png",
+      "png256": "/brand/icons-3d/png/live-stream-256.png",
+      "bytes": 183696
+    },
+    {
+      "slug": "render-3d",
+      "label": "3D Event Render",
+      "web": "/brand/icons-3d/web/render-3d.webp",
+      "png1024": "/brand/icons-3d/png/render-3d-1024.png",
+      "png256": "/brand/icons-3d/png/render-3d-256.png",
+      "bytes": 163699
+    },
+    {
+      "slug": "flight-case",
+      "label": "Packages",
+      "web": "/brand/icons-3d/web/flight-case.webp",
+      "png1024": "/brand/icons-3d/png/flight-case-1024.png",
+      "png256": "/brand/icons-3d/png/flight-case-256.png",
+      "bytes": 208771
+    },
+    {
+      "slug": "award",
+      "label": "Premium Quality",
+      "web": "/brand/icons-3d/web/award.webp",
+      "png1024": "/brand/icons-3d/png/award-1024.png",
+      "png256": "/brand/icons-3d/png/award-256.png",
+      "bytes": 131106
+    },
+    {
+      "slug": "headset",
+      "label": "24/7 Support",
+      "web": "/brand/icons-3d/web/headset.webp",
+      "png1024": "/brand/icons-3d/png/headset-1024.png",
+      "png256": "/brand/icons-3d/png/headset-256.png",
+      "bytes": 197829
+    },
+    {
+      "slug": "location-pin",
+      "label": "Nationwide",
+      "web": "/brand/icons-3d/web/location-pin.webp",
+      "png1024": "/brand/icons-3d/png/location-pin-1024.png",
+      "png256": "/brand/icons-3d/png/location-pin-256.png",
+      "bytes": 132130
+    },
+    {
+      "slug": "stopwatch",
+      "label": "On Time",
+      "web": "/brand/icons-3d/web/stopwatch.webp",
+      "png1024": "/brand/icons-3d/png/stopwatch-1024.png",
+      "png256": "/brand/icons-3d/png/stopwatch-256.png",
+      "bytes": 162197
+    },
+    {
+      "slug": "shield",
+      "label": "Insured & Safe",
+      "web": "/brand/icons-3d/web/shield.webp",
+      "png1024": "/brand/icons-3d/png/shield-1024.png",
+      "png256": "/brand/icons-3d/png/shield-256.png",
+      "bytes": 165650
+    },
+    {
+      "slug": "walkie-talkie",
+      "label": "One Crew",
+      "web": "/brand/icons-3d/web/walkie-talkie.webp",
+      "png1024": "/brand/icons-3d/png/walkie-talkie-1024.png",
+      "png256": "/brand/icons-3d/png/walkie-talkie-256.png",
+      "bytes": 187651
+    },
+    {
+      "slug": "heart",
+      "label": "Giving Back",
+      "web": "/brand/icons-3d/web/heart.webp",
+      "png1024": "/brand/icons-3d/png/heart-1024.png",
+      "png256": "/brand/icons-3d/png/heart-256.png",
+      "bytes": 175558
+    },
+    {
+      "slug": "calendar",
+      "label": "Booking",
+      "web": "/brand/icons-3d/web/calendar.webp",
+      "png1024": "/brand/icons-3d/png/calendar-1024.png",
+      "png256": "/brand/icons-3d/png/calendar-256.png",
+      "bytes": 191319
+    },
+    {
+      "slug": "clipboard",
+      "label": "Planning",
+      "web": "/brand/icons-3d/web/clipboard.webp",
+      "png1024": "/brand/icons-3d/png/clipboard-1024.png",
+      "png256": "/brand/icons-3d/png/clipboard-256.png",
+      "bytes": 153494
     }
   ],
   "banners": [
@@ -584,8 +712,8 @@
   "packages": {
     "icons3d": {
       "src": "/brand/zip/prime-line-av-3d-icons.zip",
-      "bytes": 2465292,
-      "count": 24
+      "bytes": 5492292,
+      "count": 56
     },
     "logo": {
       "src": "/brand/zip/prime-line-av-logo-package.zip",
@@ -609,8 +737,8 @@
     },
     "kit": {
       "src": "/brand/zip/prime-line-av-brand-kit.zip",
-      "bytes": 8623873,
-      "count": 101
+      "bytes": 11650910,
+      "count": 133
     }
   },
   "docs": {

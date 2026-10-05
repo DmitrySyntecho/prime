@@ -6,28 +6,29 @@ import { FILTER_META } from "@/lib/product-filters"
 import type { Product, ProductCategory } from "@/lib/cart-context"
 import { ProductCarousel } from "@/components/product-carousel"
 import { NeedHelpBanner } from "@/components/need-help-banner"
-import { Package, ArrowRight, Layers, Crown, Monitor, Sun, Circle, Square, type LucideIcon } from "lucide-react"
+import { Package, ArrowRight } from "lucide-react"
+import { Icon3D, type Icon3DName } from "@/components/icon-3d"
 
 interface Lane {
   title: string
   blurb: string
-  Icon: LucideIcon
+  Icon: Icon3DName
   items: Product[]
 }
 
 const TIERS = [
-  { key: "basic" as const, title: "Essentials", blurb: "Polished, budget-friendly setups that make everyday events look and sound professional.", Icon: Layers },
-  { key: "premium" as const, title: "Premium & Large-Format", blurb: "Broadcast-grade production that turns flagship events into headline moments.", Icon: Crown },
+  { key: "basic" as const, title: "Essentials", blurb: "Polished, budget-friendly setups that make everyday events look and sound professional.", Icon: "flight-case" as Icon3DName },
+  { key: "premium" as const, title: "Premium & Large-Format", blurb: "Broadcast-grade production that turns flagship events into headline moments.", Icon: "award" as Icon3DName },
 ]
 
 // Stage is grouped by stage TYPE instead of tier, so customers can quickly find
 // the right kind (with LED screen, outdoor, portable, round, platform kit).
-const STAGE_GROUPS: Record<string, { title: string; blurb: string; Icon: LucideIcon }> = {
-  led: { title: "Stages + LED Screen", blurb: "Stage decks paired with an LED video wall backdrop.", Icon: Monitor },
-  outdoor: { title: "Outdoor Stages", blurb: "Weather-ready stages for outdoor events & festivals.", Icon: Sun },
-  portable: { title: "Portable Stages", blurb: "Quick-deploy modular stages, risers & backdrops.", Icon: Layers },
-  round: { title: "Round Stages", blurb: "Circular stages for in-the-round setups.", Icon: Circle },
-  "platform-kit": { title: "Platform Kits", blurb: "Compact deck kits for risers & podiums.", Icon: Square },
+const STAGE_GROUPS: Record<string, { title: string; blurb: string; Icon: Icon3DName }> = {
+  led: { title: "Stages + LED Screen", blurb: "Stage decks paired with an LED video wall backdrop.", Icon: "led-wall" },
+  outdoor: { title: "Outdoor Stages", blurb: "Weather-ready stages for outdoor events & festivals.", Icon: "stage" },
+  portable: { title: "Portable Stages", blurb: "Quick-deploy modular stages, risers & backdrops.", Icon: "stage" },
+  round: { title: "Round Stages", blurb: "Circular stages for in-the-round setups.", Icon: "stage" },
+  "platform-kit": { title: "Platform Kits", blurb: "Compact deck kits for risers & podiums.", Icon: "stage" },
 }
 
 function buildLanes(category: ProductCategory): Lane[] {
@@ -46,7 +47,7 @@ function buildLanes(category: ProductCategory): Lane[] {
       }
     }
     const other = all.filter((p) => !used.has(p.id)).sort((a, b) => b.price - a.price)
-    if (other.length) lanes.push({ title: "More Stage Equipment", blurb: "Additional staging & AV gear.", Icon: Package, items: other })
+    if (other.length) lanes.push({ title: "More Stage Equipment", blurb: "Additional staging & AV gear.", Icon: "flight-case", items: other })
     return lanes
   }
 
@@ -101,12 +102,7 @@ export function CategoryProductsShowcase({ category }: { category: ProductCatego
           {lanes.map(({ title, blurb, Icon, items }) => (
             <div key={title}>
               <div className="flex items-center gap-3 mb-6">
-                <div
-                  className="flex items-center justify-center w-10 h-10 rounded-xl flex-shrink-0"
-                  style={{ background: "rgba(255,45,111,0.14)" }}
-                >
-                  <Icon className="w-5 h-5 text-[#FF5E3A]" />
-                </div>
+                <Icon3D name={Icon} size={52} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
                 <div>
                   <h3 className="text-xl md:text-2xl font-black text-white">{title}</h3>
                   <p className="text-white/45 text-[13px]">{blurb}</p>

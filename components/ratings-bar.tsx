@@ -15,7 +15,8 @@ const SOURCES: RatingSource[] = [
 ]
 
 /** Trust bar — block #3 across templates: platform ratings + review counts. */
-export function RatingsBar() {
+export function RatingsBar({ only }: { only?: string[] } = {}) {
+  const sources = only ? SOURCES.filter((s) => only.includes(s.label)) : SOURCES
   return (
     <section className="py-10 relative">
       <div className="max-w-7xl mx-auto px-4">
@@ -29,7 +30,7 @@ export function RatingsBar() {
           <span className="text-[12px] font-bold uppercase tracking-[0.14em] text-white/45">
             Trusted &amp; top-rated
           </span>
-          {SOURCES.map((s, i) => (
+          {sources.map((s, i) => (
             <a
               key={s.label}
               href={s.href}
