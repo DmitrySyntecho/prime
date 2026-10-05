@@ -52,7 +52,71 @@ const bullets: { icon: Icon3DName; text: string }[] = [
   { icon: "award", text: "Trusted by Apple, Nike, TikTok and 500+ brands" },
 ]
 
-/* Video showcase in the site's glass hero frame + floating proof cards. */
+const LIVE_TAG = (
+  <div className="inline-flex items-center gap-2 rounded-[10px] border border-white/[0.12] bg-black/55 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-white backdrop-blur-md">
+    <span className="relative flex h-2 w-2">
+      <span className="absolute inset-0 animate-ping rounded-full bg-[#FFD24A] opacity-75" />
+      <span className="relative inline-flex h-2 w-2 rounded-full bg-[#FFD24A]" />
+    </span>
+    Real events · Our crews
+  </div>
+)
+
+/**
+ * Desktop: the video fills the whole right half of the first screen — from
+ * under the floating header down to the logo strip, out to the window edge —
+ * and dissolves into the page on its left and bottom edges.
+ */
+function HeroVideoBleed({ clips }: { clips: string[] }) {
+  return (
+    <div className="pointer-events-none absolute -top-[92px] bottom-0 right-0 hidden w-[52vw] lg:block" aria-hidden>
+      <div
+        className="absolute inset-0"
+        style={{
+          WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 22%), linear-gradient(to top, transparent 0%, black 16%)",
+          WebkitMaskComposite: "source-in",
+          maskImage: "linear-gradient(to right, transparent 0%, black 22%), linear-gradient(to top, transparent 0%, black 16%)",
+          maskComposite: "intersect",
+        }}
+      >
+        <HeroVideo clips={clips} className="h-full w-full" />
+        {/* Darken the top so the header glass stays readable over bright footage. */}
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/55 to-transparent" />
+      </div>
+    </div>
+  )
+}
+
+/* Floating proof cards over the full-bleed video (desktop). */
+function BleedCards() {
+  return (
+    <div className="pointer-events-none relative hidden h-full min-h-[420px] lg:block">
+      <div className="absolute right-0 top-2">{LIVE_TAG}</div>
+      <div
+        className="animate-float-y absolute right-0 top-[30%] z-20 flex items-center gap-3 rounded-[14px] border border-[#FFD24A]/25 px-4 py-3 backdrop-blur-2xl"
+        style={{ background: "rgba(8,18,26,0.78)", boxShadow: "0 18px 40px -12px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06)" }}
+      >
+        <Icon3D name="award" size={38} priority />
+        <div>
+          <b className="block text-[13px] font-bold leading-tight text-white tabular-nums">2,500+ Events</b>
+          <span className="text-[11px] text-white/55">Delivered flawlessly</span>
+        </div>
+      </div>
+      <div
+        className="animate-float-y absolute bottom-6 left-[12%] z-20 flex items-center gap-3 rounded-[14px] border border-[#FFD24A]/20 px-4 py-3 backdrop-blur-2xl"
+        style={{ animationDelay: "-2.5s", background: "rgba(8,18,26,0.72)", boxShadow: "0 18px 40px -12px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06)" }}
+      >
+        <Icon3D name="stopwatch" size={38} priority />
+        <div>
+          <b className="block text-[13px] font-bold leading-tight text-white">2 Hours Early</b>
+          <span className="text-[11px] text-white/55">Tested before doors</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* Mobile/tablet: framed video between heading and buttons. */
 function HeroMedia({ clips }: { clips: string[] }) {
   return (
     <div className="relative">
@@ -142,19 +206,19 @@ function Bullets({ centered }: { centered?: boolean }) {
 function CtaButtons({ hero, onQuote, onWatch, centered }: { hero: HeroConfig; onQuote: () => void; onWatch: () => void; centered?: boolean }) {
   // On mobile the buttons stretch to the full content width; from sm up they size to content.
   const fullWidth = centered ? "w-full sm:w-auto" : ""
-  const secondaryCls = `shimmer-stroke inline-flex items-center justify-center gap-2.5 rounded-xl border border-white/[0.12] bg-white/[0.05] px-6 py-3.5 text-[14px] font-bold text-white backdrop-blur-md transition-[background-color,border-color] duration-200 hover:border-white/[0.22] hover:bg-white/[0.10] md:py-4 ${fullWidth}`
+  const secondaryCls = `inline-flex items-center justify-center gap-2.5 rounded-xl border border-[#FFD24A]/55 bg-[#FFD24A]/[0.08] px-6 py-3.5 text-[14px] font-bold text-[#FFD24A] backdrop-blur-md transition-[background-color,border-color,color] duration-200 hover:border-[#FFD24A] hover:bg-[#FFD24A]/[0.16] hover:text-[#FFE27A] md:py-4 ${fullWidth}`
   return (
     <div className={`flex flex-col gap-3 sm:flex-row ${centered ? "sm:justify-center" : ""}`}>
       <button
         onClick={onQuote}
-        className={`group inline-flex flex-col items-center justify-center gap-0.5 rounded-xl bg-gradient-to-br from-[#FF2D6F] to-[#FF5E3A] px-6 py-3 text-white transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.98] md:px-8 ${fullWidth}`}
-        style={{ boxShadow: "0 12px 36px -8px rgba(255, 45, 111,0.55), inset 0 1px 0 rgba(255,255,255,0.3)" }}
+        className={`shimmer-stroke group inline-flex flex-col items-center justify-center gap-0.5 rounded-xl px-6 py-3 text-[#0a0612] transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 active:scale-[0.98] md:px-8 ${fullWidth}`}
+        style={{ background: "linear-gradient(135deg, #FFE27A 0%, #FFD24A 45%, #FFB01F 100%)", boxShadow: "0 12px 36px -8px rgba(255,190,40,0.55), inset 0 1px 0 rgba(255,255,255,0.55)" }}
       >
         <span className="inline-flex items-center gap-2.5 text-[15px] font-extrabold tracking-[0.01em]">
           {hero.ctaLabel ?? "Get Your Custom Quote"}
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
         </span>
-        <span className="text-[11px] font-semibold tracking-[0.01em] text-white/85">{hero.microcopy ?? DEFAULT_MICROCOPY}</span>
+        <span className="text-[11px] font-semibold tracking-[0.01em] text-[#0a0612]/70">{hero.microcopy ?? DEFAULT_MICROCOPY}</span>
       </button>
 
       {hero.secondary === "portfolio" ? (
@@ -164,7 +228,7 @@ function CtaButtons({ hero, onQuote, onWatch, centered }: { hero: HeroConfig; on
         </a>
       ) : (
         <button onClick={onWatch} className={secondaryCls}>
-          <Play className="h-4 w-4 fill-white" />
+          <Play className="h-4 w-4 fill-current" />
           Watch How We Work
         </button>
       )}
@@ -178,6 +242,23 @@ function GiftLine({ fullWidth }: { fullWidth?: boolean }) {
       <Gift className="h-4 w-4 flex-shrink-0 text-[#FFD24A]" strokeWidth={2.2} />
       <span className="text-[12px] font-semibold leading-snug text-[#FFD24A] md:text-[13px]">Includes: Free 3D render + site survey + dedicated Technical Director</span>
     </div>
+  )
+}
+
+/* Desktop: the four figures as a compact row under the CTAs. */
+function StatsInline({ stats }: { stats: HeroStat[] }) {
+  return (
+    <dl className="mt-8 grid max-w-[600px] grid-cols-4 gap-5 border-t border-white/10 pt-6">
+      {stats.map((s) => (
+        <div key={s.label}>
+          <dt className="sr-only">{s.label}</dt>
+          <dd className="text-[24px] font-extrabold leading-none tracking-[-0.03em] tabular-nums xl:text-[28px]">
+            <span className="ds-accent-text">{s.value}</span>
+          </dd>
+          <dd className="mt-1.5 text-[12.5px] font-semibold leading-tight text-white/65">{s.label}</dd>
+        </div>
+      ))}
+    </dl>
   )
 }
 
@@ -208,8 +289,9 @@ export function LandingHero({ hero, onQuote }: LandingHeroProps) {
 
   return (
     <>
-      <section id="top" className="relative overflow-hidden pb-2 pt-6 md:pb-4 md:pt-10">
-        <div className="relative mx-auto max-w-7xl px-4">
+      <section id="top" className="relative overflow-hidden pb-2 pt-6 md:pb-4 md:pt-10 lg:flex lg:flex-1 lg:items-center lg:overflow-visible lg:py-10">
+        <HeroVideoBleed clips={clips} />
+        <div className="relative mx-auto w-full max-w-7xl px-4">
           {/* MOBILE (centered): heading → video → buttons → bullets */}
           <div className="flex flex-col gap-7 text-center lg:hidden">
             <Heading hero={hero} centered />
@@ -225,8 +307,8 @@ export function LandingHero({ hero, onQuote }: LandingHeroProps) {
             <Bullets centered />
           </div>
 
-          {/* DESKTOP: text column + video */}
-          <div className="hidden items-center lg:grid lg:grid-cols-[1fr_1fr] lg:gap-14">
+          {/* DESKTOP: text column; the video bleeds behind the right half */}
+          <div className="hidden items-stretch lg:grid lg:grid-cols-[1fr_1fr] lg:gap-14">
             <div>
               <Heading hero={hero} />
               <div className="mt-6">
@@ -240,11 +322,16 @@ export function LandingHero({ hero, onQuote }: LandingHeroProps) {
                   </div>
                 )}
               </div>
+              {hero.stats?.length ? <StatsInline stats={hero.stats} /> : null}
             </div>
-            <HeroMedia clips={clips} />
+            <BleedCards />
           </div>
 
-          {hero.stats?.length ? <StatsStrip stats={hero.stats} /> : null}
+          {hero.stats?.length ? (
+            <div className="lg:hidden">
+              <StatsStrip stats={hero.stats} />
+            </div>
+          ) : null}
         </div>
       </section>
 
