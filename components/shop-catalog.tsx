@@ -223,20 +223,20 @@ export function ShopCatalog() {
     <div className="space-y-5">
       {/* Search */}
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/65" />
         <input
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search equipment..."
-          className="w-full pl-10 pr-3 py-2.5 rounded-xl text-[14px] text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-[#FF2D6F]/40"
+          className="w-full pl-10 pr-3 py-2.5 rounded-xl text-[14px] text-white placeholder:text-white/50 outline-none focus:ring-2 focus:ring-[#FF2D6F]/40"
           style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.10)" }}
         />
       </div>
 
       {/* Categories — single select */}
       <div>
-        <h3 className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-white/50 mb-2">
+        <h3 className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-white/75 mb-2">
           <Package className="w-3.5 h-3.5 text-[#FF5E3A]" /> Category
         </h3>
         <div className="space-y-1">
@@ -254,11 +254,11 @@ export function ShopCatalog() {
                   border: `1px solid ${checked ? "rgba(255,45,111,0.35)" : "rgba(255,255,255,0.06)"}`,
                 }}
               >
-                <Icon className={`w-4 h-4 flex-shrink-0 ${checked ? "text-[#FF5E3A]" : "text-white/45"}`} />
+                <Icon className={`w-4 h-4 flex-shrink-0 ${checked ? "text-[#FF5E3A]" : "text-white/70"}`} />
                 <span className={`flex-1 text-[13px] font-medium ${checked ? "text-white" : "text-white/80"}`}>
                   {c.shortLabel}
                 </span>
-                <span className="text-[11px] text-white/35">{count}</span>
+                <span className="text-[11px] text-white/55">{count}</span>
                 {checked && <Check className="w-3.5 h-3.5 text-[#FF5E3A] flex-shrink-0" />}
               </button>
             )
@@ -277,7 +277,7 @@ export function ShopCatalog() {
           </div>
           {activeFacets.map((facet) => (
             <div key={facet.key}>
-              <h4 className="text-[11px] font-semibold uppercase tracking-wider text-white/45 mb-2">{facet.label}</h4>
+              <h4 className="text-[11px] font-semibold uppercase tracking-wider text-white/70 mb-2">{facet.label}</h4>
               <div className="flex flex-wrap gap-1.5">
                 {facet.options.map((o) => {
                   const checked = subFilters[facet.key]?.has(o.value) || false
@@ -304,7 +304,7 @@ export function ShopCatalog() {
 
       {/* Price */}
       <div>
-        <h3 className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-white/50 mb-2">
+        <h3 className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-white/75 mb-2">
           <DollarSign className="w-3.5 h-3.5 text-[#FF5E3A]" /> Price / 24h
         </h3>
         <div className="flex flex-wrap gap-1.5">
@@ -330,7 +330,7 @@ export function ShopCatalog() {
 
       {/* Tier */}
       <div>
-        <h3 className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-white/50 mb-2">
+        <h3 className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-white/75 mb-2">
           <Crown className="w-3.5 h-3.5 text-[#FF5E3A]" /> Package Tier
         </h3>
         <div className="grid grid-cols-2 gap-1.5">
@@ -359,7 +359,7 @@ export function ShopCatalog() {
       {activeFilters > 0 && (
         <button
           onClick={clearAll}
-          className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-[13px] font-semibold text-white/70 transition-all hover:text-white"
+          className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-[13px] font-semibold text-white/90 transition-all hover:text-white"
           style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.10)" }}
         >
           <X className="w-4 h-4" />
@@ -398,7 +398,7 @@ export function ShopCatalog() {
               Equipment Rentals
             </span>
           </h1>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/75 text-lg max-w-2xl mx-auto leading-relaxed">
             LED video walls, sound systems, DJ setups, lighting and stage packages — everything for your
             next event, available across Los Angeles.
           </p>
@@ -412,7 +412,7 @@ export function ShopCatalog() {
             { icon: "shield", text: "Full Insurance Included" },
             { icon: "headset", text: "24/7 Technical Support" },
           ] as { icon: Icon3DName; text: string }[]).map(({ icon, text }) => (
-            <div key={text} className="flex items-center gap-2 text-[13px] text-white/60">
+            <div key={text} className="flex items-center gap-2 text-[13px] text-white/85">
               <Icon3D name={icon} size={26} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
               <span>{text}</span>
             </div>
@@ -462,12 +462,12 @@ export function ShopCatalog() {
 
             {/* Toolbar */}
             <div className="flex items-center justify-between gap-3 mb-6">
-              <p className="text-[13px] sm:text-[14px] text-white/50">
+              <p className="text-[13px] sm:text-[14px] text-white/75">
                 <span className="text-white font-bold">{filtered.length}</span> products
               </p>
 
               <div className="flex items-center gap-2">
-                <span className="text-[12px] text-white/40 hidden sm:block">Sort</span>
+                <span className="text-[12px] text-white/65 hidden sm:block">Sort</span>
                 <select
                   value={sort}
                   onChange={(e) => setSort(e.target.value as SortKey)}
@@ -484,7 +484,7 @@ export function ShopCatalog() {
 
             {/* Grid */}
             {filtered.length > 0 ? (
-              <div ref={gridRef} className="grid grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-6">
+              <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6">
                 {filtered.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
@@ -494,8 +494,8 @@ export function ShopCatalog() {
                 className="text-center py-20 rounded-2xl"
                 style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
               >
-                <Package className="w-10 h-10 text-white/30 mx-auto mb-4" />
-                <p className="text-white/60 mb-4">No products match your filters.</p>
+                <Package className="w-10 h-10 text-white/50 mx-auto mb-4" />
+                <p className="text-white/85 mb-4">No products match your filters.</p>
                 <button
                   onClick={clearAll}
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[13px] font-bold text-white"
@@ -564,7 +564,7 @@ export function ShopCatalog() {
           >
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-lg font-bold text-white">Filters</h2>
-              <button onClick={() => setMobileFiltersOpen(false)} className="text-white/60 hover:text-white">
+              <button onClick={() => setMobileFiltersOpen(false)} className="text-white/85 hover:text-white">
                 <X className="w-6 h-6" />
               </button>
             </div>

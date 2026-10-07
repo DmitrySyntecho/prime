@@ -7,7 +7,7 @@ export function MediaMentionsSection({ heading = "As Seen In", header }: { headi
     <section className="py-12 md:py-14 relative">
       <div className="max-w-7xl mx-auto px-4">
         {header ?? (
-        <h2 className="reveal text-center text-[13px] md:text-sm font-semibold text-white/55 tracking-[0.18em] uppercase mb-8">
+        <h2 className="reveal text-center text-[13px] md:text-sm font-semibold text-white/80 tracking-[0.18em] uppercase mb-8">
           {heading}
         </h2>
         )}
@@ -15,7 +15,7 @@ export function MediaMentionsSection({ heading = "As Seen In", header }: { headi
           {PUBLICATIONS.map((p) => (
             <span
               key={p}
-              className="text-[18px] md:text-[22px] font-black tracking-tight text-white/35 hover:text-white/60 transition-colors"
+              className="text-[18px] md:text-[22px] font-black tracking-tight text-white/55 hover:text-white/85 transition-colors"
               style={{ fontFamily: "var(--font-manrope)" }}
             >
               {p}

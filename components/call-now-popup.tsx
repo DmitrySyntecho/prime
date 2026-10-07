@@ -161,7 +161,7 @@ export function CallNowPopup() {
                 >
                   Need help with your event?
                 </h3>
-                <p className="text-[13px] text-white/55 leading-relaxed">
+                <p className="text-[13px] text-white/80 leading-relaxed">
                   Talk to a real AV expert right now. We'll help you pick the right setup for your event.
                 </p>
               </div>

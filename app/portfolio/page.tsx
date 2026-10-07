@@ -73,7 +73,7 @@ export default function PortfolioPage() {
               Work
             </span>
           </h1>
-          <p className="text-lg text-white/60 max-w-2xl leading-relaxed">
+          <p className="text-lg text-white/85 max-w-2xl leading-relaxed">
             Behind-the-scenes videos showing how our team sets up, builds, and produces events — from
             concept through strike.
           </p>
@@ -103,7 +103,7 @@ export default function PortfolioPage() {
                       <MapPin className="w-3.5 h-3.5" /> {study.location}
                     </div>
                     <h2 className="text-2xl md:text-3xl font-black text-white mb-4 leading-tight">{study.title}</h2>
-                    <p className="text-white/60 leading-relaxed mb-6">{study.description}</p>
+                    <p className="text-white/85 leading-relaxed mb-6">{study.description}</p>
                     <div className="flex flex-wrap gap-3">
                       <button
                         onClick={startQuote}

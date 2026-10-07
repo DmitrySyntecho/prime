@@ -482,6 +482,38 @@
       "png1024": "/brand/icons-3d/png/clipboard-1024.png",
       "png256": "/brand/icons-3d/png/clipboard-256.png",
       "bytes": 153494
+    },
+    {
+      "slug": "rental-tag",
+      "label": "Rental Price",
+      "web": "/brand/icons-3d/web/rental-tag.webp",
+      "png1024": "/brand/icons-3d/png/rental-tag-1024.png",
+      "png256": "/brand/icons-3d/png/rental-tag-256.png",
+      "bytes": 117216
+    },
+    {
+      "slug": "setup-tools",
+      "label": "Setup",
+      "web": "/brand/icons-3d/web/setup-tools.webp",
+      "png1024": "/brand/icons-3d/png/setup-tools-1024.png",
+      "png256": "/brand/icons-3d/png/setup-tools-256.png",
+      "bytes": 176821
+    },
+    {
+      "slug": "savings",
+      "label": "Savings",
+      "web": "/brand/icons-3d/web/savings.webp",
+      "png1024": "/brand/icons-3d/png/savings-1024.png",
+      "png256": "/brand/icons-3d/png/savings-256.png",
+      "bytes": 155872
+    },
+    {
+      "slug": "receipt",
+      "label": "Total",
+      "web": "/brand/icons-3d/web/receipt.webp",
+      "png1024": "/brand/icons-3d/png/receipt-1024.png",
+      "png256": "/brand/icons-3d/png/receipt-256.png",
+      "bytes": 140262
     }
   ],
   "banners": [
@@ -712,8 +744,8 @@
   "packages": {
     "icons3d": {
       "src": "/brand/zip/prime-line-av-3d-icons.zip",
-      "bytes": 5492292,
-      "count": 56
+      "bytes": 6126566,
+      "count": 64
     },
     "logo": {
       "src": "/brand/zip/prime-line-av-logo-package.zip",
@@ -737,8 +769,8 @@
     },
     "kit": {
       "src": "/brand/zip/prime-line-av-brand-kit.zip",
-      "bytes": 11650910,
-      "count": 133
+      "bytes": 12285184,
+      "count": 141
     }
   },
   "docs": {

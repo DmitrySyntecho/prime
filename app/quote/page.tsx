@@ -8,7 +8,7 @@ import { ArrowLeft } from "lucide-react"
 const GRADIENT = "linear-gradient(90deg, #FF2D6F 0%, #FF5E3A 100%)"
 const BTN = "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)"
 const INPUT =
-  "w-full py-4 px-6 rounded-xl text-lg text-white placeholder:text-white/35 outline-none focus:ring-2 focus:ring-[#FF2D6F]/40 transition-all"
+  "w-full py-4 px-6 rounded-xl text-lg text-white placeholder:text-white/55 outline-none focus:ring-2 focus:ring-[#FF2D6F]/40 transition-all"
 const INPUT_STYLE = { background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)" }
 
 const STEPS = [
@@ -168,7 +168,7 @@ export default function QuotePage() {
 
                 <button
                   onClick={handleBack}
-                  className="flex items-center justify-center gap-2 mx-auto mt-8 text-sm font-bold uppercase tracking-wider text-white/60 transition-colors hover:text-white"
+                  className="flex items-center justify-center gap-2 mx-auto mt-8 text-sm font-bold uppercase tracking-wider text-white/85 transition-colors hover:text-white"
                 >
                   <ArrowLeft className="w-4 h-4" /> Back
                 </button>
@@ -204,7 +204,7 @@ export default function QuotePage() {
 
                 <button
                   onClick={handleBack}
-                  className="flex items-center justify-center gap-2 mx-auto mt-6 text-sm font-bold uppercase tracking-wider text-white/60 transition-colors hover:text-white"
+                  className="flex items-center justify-center gap-2 mx-auto mt-6 text-sm font-bold uppercase tracking-wider text-white/85 transition-colors hover:text-white"
                 >
                   <ArrowLeft className="w-4 h-4" /> Back
                 </button>
@@ -278,7 +278,7 @@ export default function QuotePage() {
 
                 <button
                   onClick={handleBack}
-                  className="flex items-center justify-center gap-2 mx-auto mt-6 text-sm font-bold uppercase tracking-wider text-white/60 transition-colors hover:text-white"
+                  className="flex items-center justify-center gap-2 mx-auto mt-6 text-sm font-bold uppercase tracking-wider text-white/85 transition-colors hover:text-white"
                 >
                   <ArrowLeft className="w-4 h-4" /> Back
                 </button>

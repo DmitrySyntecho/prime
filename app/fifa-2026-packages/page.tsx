@@ -290,7 +290,7 @@ function CountdownPill() {
       style={{ background: "rgba(255,210,74,0.10)", border: "1px solid rgba(255,210,74,0.20)" }}
     >
       <span className="block text-[13px] leading-none">{String(val).padStart(2, "0")}</span>
-      <small className="block text-[8px] tracking-[0.16em] text-white/40 mt-0.5">{label}</small>
+      <small className="block text-[8px] tracking-[0.16em] text-white/65 mt-0.5">{label}</small>
     </span>
   )
 
@@ -441,7 +441,7 @@ export default function FIFA2026PackagesPage() {
                 </span>
               </h1>
 
-              <p className="text-white/65 text-[17px] max-w-[560px] mb-8">
+              <p className="text-white/85 text-[17px] max-w-[560px] mb-8">
                 Big screens, powerful sound, and complete production for watch parties, fan zones, and corporate events
                 across Los Angeles. Sit back — we handle every kickoff.
               </p>
@@ -473,7 +473,7 @@ export default function FIFA2026PackagesPage() {
                   (tag) => (
                     <span
                       key={tag}
-                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.10] text-white/60 text-[12px] font-semibold"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.10] text-white/85 text-[12px] font-semibold"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-[#5BC25A]" />
                       {tag}
@@ -543,7 +543,7 @@ export default function FIFA2026PackagesPage() {
                 </div>
                 <div>
                   <b className="block text-[13px] font-bold text-white leading-tight">All 104 matches</b>
-                  <span className="text-[11px] text-white/45">Group → Final</span>
+                  <span className="text-[11px] text-white/70">Group → Final</span>
                 </div>
               </div>
               <div
@@ -563,7 +563,7 @@ export default function FIFA2026PackagesPage() {
                 </div>
                 <div>
                   <b className="block text-[13px] font-bold text-white leading-tight">SoFi Stadium · LA</b>
-                  <span className="text-[11px] text-white/45">8 matches scheduled</span>
+                  <span className="text-[11px] text-white/70">8 matches scheduled</span>
                 </div>
               </div>
             </div>
@@ -597,7 +597,7 @@ export default function FIFA2026PackagesPage() {
                 >
                   <CountUp end={s.end} suffix={s.suffix} />
                 </div>
-                <div className="mt-2 text-[11px] tracking-[0.10em] uppercase text-white/45 font-semibold">{s.lbl}</div>
+                <div className="mt-2 text-[11px] tracking-[0.10em] uppercase text-white/70 font-semibold">{s.lbl}</div>
               </div>
             ))}
           </div>
@@ -612,7 +612,7 @@ export default function FIFA2026PackagesPage() {
             <h2 className="mt-5 text-[34px] md:text-[48px] lg:text-[56px] font-black tracking-[-0.03em] leading-[1.18] uppercase text-white mb-4">
               Pick Your <FifaAccent>Format.</FifaAccent>
             </h2>
-            <p className="text-white/55 text-[16px] md:text-[17px]">
+            <p className="text-white/80 text-[16px] md:text-[17px]">
               From intimate gatherings to massive fan festivals — we have the right package for your event.
             </p>
           </div>
@@ -671,7 +671,7 @@ export default function FIFA2026PackagesPage() {
                     <div className="text-[11px] font-extrabold tracking-[0.16em] uppercase text-[#5BC25A] mb-2">
                       {pkg.title}
                     </div>
-                    <p className="text-white/60 text-[13px]">{pkg.description}</p>
+                    <p className="text-white/85 text-[13px]">{pkg.description}</p>
                   </div>
 
                   <ul className="space-y-2.5 mb-6">
@@ -683,7 +683,7 @@ export default function FIFA2026PackagesPage() {
                     ))}
                   </ul>
 
-                  <div className="text-[12px] text-white/40 mb-3">Starting at</div>
+                  <div className="text-[12px] text-white/65 mb-3">Starting at</div>
                   <div
                     className="text-[28px] font-extrabold tracking-[-0.02em] mb-4"
                     style={{
@@ -694,7 +694,7 @@ export default function FIFA2026PackagesPage() {
                     }}
                   >
                     ${pkg.price.toLocaleString()}
-                    <span className="text-[13px] font-medium text-white/45"> /day</span>
+                    <span className="text-[13px] font-medium text-white/70"> /day</span>
                   </div>
 
                   <button
@@ -733,7 +733,7 @@ export default function FIFA2026PackagesPage() {
             <h2 className="mt-5 text-[34px] md:text-[48px] lg:text-[56px] font-black tracking-[-0.03em] leading-[1.18] uppercase text-white mb-4">
               Book a Screen for the <FifaAccent>Marquee Games.</FifaAccent>
             </h2>
-            <p className="text-white/55 text-[16px] md:text-[17px]">
+            <p className="text-white/80 text-[16px] md:text-[17px]">
               Reserve early — these dates sell out first. Multi-match bookings get our best rates.
             </p>
           </div>
@@ -766,7 +766,7 @@ export default function FIFA2026PackagesPage() {
                     {m.round}
                   </b>
                   <span
-                    className="block text-white/45 text-[10px] mt-1 leading-tight"
+                    className="block text-white/70 text-[10px] mt-1 leading-tight"
                     style={{ fontFamily: "Manrope, system-ui, sans-serif" }}
                   >
                     {m.venue}
@@ -781,7 +781,7 @@ export default function FIFA2026PackagesPage() {
 
                 {/* VS */}
                 <span
-                  className="font-mono text-[12px] md:text-[14px] font-bold text-white/40 px-3 py-1.5 rounded-md"
+                  className="font-mono text-[12px] md:text-[14px] font-bold text-white/65 px-3 py-1.5 rounded-md"
                   style={{
                     background: "rgba(0,0,0,0.30)",
                     border: "1px solid rgba(255,255,255,0.08)",
@@ -859,7 +859,7 @@ export default function FIFA2026PackagesPage() {
                   <f.icon className="w-5 h-5" strokeWidth={1.8} />
                 </div>
                 <h3 className="text-[17px] font-bold text-white mb-2">{f.title}</h3>
-                <p className="text-white/55 text-[13px] leading-[1.6]">{f.desc}</p>
+                <p className="text-white/80 text-[13px] leading-[1.6]">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -874,7 +874,7 @@ export default function FIFA2026PackagesPage() {
             <h2 className="mt-5 text-[34px] md:text-[48px] lg:text-[56px] font-black tracking-[-0.03em] leading-[1.18] uppercase text-white mb-4">
               United States <FifaAccent>Hosts.</FifaAccent>
             </h2>
-            <p className="text-white/55 text-[16px] md:text-[17px]">
+            <p className="text-white/80 text-[16px] md:text-[17px]">
               11 cities across the US will host matches. We&apos;re LA-based and ready coast-to-coast.
             </p>
           </div>
@@ -939,7 +939,7 @@ export default function FIFA2026PackagesPage() {
                   {s.num}
                 </div>
                 <h3 className="text-[17px] font-extrabold text-white mb-2">{s.title}</h3>
-                <p className="text-white/55 text-[13px] leading-[1.6]">{s.desc}</p>
+                <p className="text-white/80 text-[13px] leading-[1.6]">{s.desc}</p>
                 {idx < howSteps.length - 1 && (
                   <div
                     className="hidden lg:block absolute top-1/2 -right-2.5 w-5 h-0.5 opacity-40"
@@ -1001,7 +1001,7 @@ export default function FIFA2026PackagesPage() {
                     className="overflow-hidden transition-all"
                     style={{ maxHeight: open ? 200 : 0 }}
                   >
-                    <p className="px-5 pb-5 text-white/55 text-[14px] leading-[1.6]">{f.a}</p>
+                    <p className="px-5 pb-5 text-white/80 text-[14px] leading-[1.6]">{f.a}</p>
                   </div>
                 </div>
               )
@@ -1043,7 +1043,7 @@ export default function FIFA2026PackagesPage() {
               <h2 className="text-[36px] md:text-[56px] lg:text-[64px] font-black tracking-[-0.035em] leading-[1.18] uppercase text-white mb-5">
                 Ready for <FifaAccent>Kickoff?</FifaAccent>
               </h2>
-              <p className="text-white/55 text-[16px] md:text-[17px] max-w-[540px] mx-auto mb-8">
+              <p className="text-white/80 text-[16px] md:text-[17px] max-w-[540px] mx-auto mb-8">
                 Get a custom quote with a 3D render of your event in 24 hours. No commitment, no upselling.
               </p>
               <div className="flex flex-wrap gap-3 justify-center">
@@ -1071,7 +1071,7 @@ export default function FIFA2026PackagesPage() {
                   {PHONE_DISPLAY}
                 </a>
               </div>
-              <div className="text-white/40 text-[12px] mt-7 tracking-[0.04em]">
+              <div className="text-white/65 text-[12px] mt-7 tracking-[0.04em]">
                 Free consultation · No commitment · Response within hours
               </div>
             </div>

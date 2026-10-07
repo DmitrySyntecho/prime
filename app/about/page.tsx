@@ -67,7 +67,7 @@ export default function AboutPage() {
                   Trust
                 </span>
               </h1>
-              <p className="text-lg text-white/60 mb-8 leading-relaxed">
+              <p className="text-lg text-white/85 mb-8 leading-relaxed">
                 Full AV production for corporate events, brand activations, experiential marketing, and studio work.
                 Based in Los Angeles and Fort Lauderdale, serving clients nationwide.
               </p>
@@ -94,7 +94,7 @@ export default function AboutPage() {
               <div key={stat.label} className="text-center rounded-2xl p-6" style={GLASS}>
                 <Icon3D name={stat.icon} size={56} className="mx-auto mb-4 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
                 <p className="text-4xl font-black text-white mb-2">{stat.value}</p>
-                <p className="text-white/50 text-sm">{stat.label}</p>
+                <p className="text-white/75 text-sm">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -112,7 +112,7 @@ export default function AboutPage() {
             </span>{" "}
             experiences
           </h2>
-          <div className="space-y-5 text-white/60 text-lg leading-relaxed text-left">
+          <div className="space-y-5 text-white/85 text-lg leading-relaxed text-left">
             <p>
               Prime Line AV was founded with a simple mission: to provide world-class audiovisual production services
               that help brands create unforgettable experiences. What started as a small rental company has grown into a
@@ -146,7 +146,7 @@ export default function AboutPage() {
                   <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
-                <p className="text-white/50 text-sm">{member.role}</p>
+                <p className="text-white/75 text-sm">{member.role}</p>
               </div>
             ))}
           </div>
@@ -166,15 +166,15 @@ export default function AboutPage() {
                 <MapPin className="w-4 h-4" /> West Coast HQ
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Los Angeles</h3>
-              <p className="text-white/55">Serving California, Nevada, Arizona, and the Western United States.</p>
+              <p className="text-white/80">Serving California, Nevada, Arizona, and the Western United States.</p>
             </div>
             <div className="fx-spot rounded-2xl p-8" style={GLASS}>
               <div className="flex items-center gap-2 text-[#FFB366] text-sm font-bold uppercase tracking-wider mb-3">
                 <MapPin className="w-4 h-4" /> Southeast
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Fort Lauderdale</h3>
-              <p className="text-white/40 text-sm mb-1">5553 Anglers Ave #101, FL 33312</p>
-              <p className="text-white/55">Serving Florida, the Southeast, and nationwide events.</p>
+              <p className="text-white/65 text-sm mb-1">5553 Anglers Ave #101, FL 33312</p>
+              <p className="text-white/80">Serving Florida, the Southeast, and nationwide events.</p>
             </div>
           </div>
         </div>

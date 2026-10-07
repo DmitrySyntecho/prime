@@ -38,7 +38,7 @@ function LinkCard({ href, label }: { href: string; label: string }) {
       style={GLASS}
     >
       <span className="text-[14px] font-semibold text-white/85 group-hover:text-white transition-colors">{label}</span>
-      <ArrowRight className="w-4 h-4 text-white/30 group-hover:text-[#FF5E3A] group-hover:translate-x-1 transition-all flex-shrink-0" />
+      <ArrowRight className="w-4 h-4 text-white/50 group-hover:text-[#FF5E3A] group-hover:translate-x-1 transition-all flex-shrink-0" />
     </Link>
   )
 }
@@ -88,7 +88,7 @@ export default function CityPage() {
                 {cityData.city}
               </span>
             </h2>
-            <p className="text-white/55 mt-3 max-w-2xl mx-auto">
+            <p className="text-white/80 mt-3 max-w-2xl mx-auto">
               Every service below is available for events in {cityData.city} — delivered and operated by our on-site production team.
             </p>
           </div>

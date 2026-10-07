@@ -159,7 +159,7 @@ export function PromoTopBanner() {
 
         <button
           onClick={handleClose}
-          className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 w-7 h-7 rounded-md hover:bg-white/[0.08] text-white/45 hover:text-white transition-colors flex items-center justify-center"
+          className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 w-7 h-7 rounded-md hover:bg-white/[0.08] text-white/70 hover:text-white transition-colors flex items-center justify-center"
           aria-label="Close banner"
         >
           <X className="w-4 h-4" />

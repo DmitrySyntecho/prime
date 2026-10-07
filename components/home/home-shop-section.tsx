@@ -122,10 +122,10 @@ function Spotlight({ tab }: { tab: Tab }) {
             {tab.key === "popular" ? `${tab.items.length} best sellers` : `${tab.total} rental options`}
           </p>
           <h3 className="mt-1 text-balance text-[19px] font-extrabold leading-[1.15] tracking-[-0.02em] text-white lg:mt-1.5 lg:text-[24px]">{tab.title}</h3>
-          <p className="mt-1 text-[13px] text-white/60 lg:mt-2 lg:text-[14px]">
+          <p className="mt-1 text-[13px] text-white/85 lg:mt-2 lg:text-[14px]">
             From <span className="text-[18px] font-black tracking-[-0.01em] text-white lg:text-[22px]">${formatPrice(tab.from)}</span> / 24h
           </p>
-          <p className="mt-3 hidden items-center gap-2 text-[13px] text-white/70 lg:flex">
+          <p className="mt-3 hidden items-center gap-2 text-[13px] text-white/90 lg:flex">
             <Truck className="h-4 w-4 shrink-0 text-[#FF5E3A]" />
             Delivered, set up and tested by our crew
           </p>
@@ -187,8 +187,7 @@ export function HomeShopSection() {
     <section id="shop" className="relative scroll-mt-24 py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeader eyebrow="Rent the gear" title="Rent the same equipment we bring to our shows" accent="same equipment">
-          LED walls, sound, lighting, staging and more from our own inventory. Add what you need to your quote, and our team will confirm availability and send you an
-          itemized price.
+          LED walls, sound, lighting, staging and more from our own inventory. Add what you need to your quote, and our team will confirm availability and <span className="hl">send you an itemized price.</span>
         </SectionHeader>
 
         {/* Category tabs — scroll sideways on mobile, one centred row on desktop */}
@@ -212,7 +211,7 @@ export function HomeShopSection() {
                 tabIndex={on ? 0 : -1}
                 onClick={() => setActive(t.key)}
                 className={`group inline-flex shrink-0 snap-start items-center gap-2 rounded-2xl border py-1.5 pl-1.5 pr-4 text-[13.5px] font-bold outline-none ring-[#FFD24A]/60 transition-[background-color,border-color,color,translate] duration-300 hover:-translate-y-0.5 focus-visible:ring-2 ${
-                  on ? "border-[#FF2D6F]/55 text-white" : "border-white/10 bg-white/[0.04] text-white/65 hover:border-white/25 hover:text-white"
+                  on ? "border-[#FF2D6F]/55 text-white" : "border-white/10 bg-white/[0.04] text-white/85 hover:border-white/25 hover:text-white"
                 }`}
                 style={
                   on
@@ -287,8 +286,8 @@ export function HomeShopSection() {
               <Icon3D name={s.icon} size={56} className="shrink-0 drop-shadow-[0_10px_16px_rgba(0,0,0,0.45)]" />
               <div className="min-w-0">
                 <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#FFD24A]">Step {i + 1}</p>
-                <p className="text-[15px] font-bold leading-snug text-white">{s.title}</p>
-                <p className="text-[13px] leading-snug text-white/55">{s.body}</p>
+                <p className="text-[16px] font-extrabold leading-snug text-white">{s.title}</p>
+                <p className="text-[14.5px] font-medium leading-snug text-white/90">{s.body}</p>
               </div>
             </div>
           ))}

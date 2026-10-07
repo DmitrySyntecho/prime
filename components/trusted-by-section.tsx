@@ -73,7 +73,7 @@ export function TrustedBySection({ header, compact = false }: { header?: React.R
   if (compact) {
     return (
       <section className="relative pb-6 pt-7 md:pb-5 md:pt-6" aria-label="Clients">
-        <p className="mx-auto mb-4 max-w-7xl px-4 text-center text-[12px] font-semibold uppercase tracking-[0.18em] text-white/55 md:text-[13px]">
+        <p className="mx-auto mb-4 max-w-7xl px-4 text-center text-[12px] font-semibold uppercase tracking-[0.18em] text-white/80 md:text-[13px]">
           Prime Line AV is trusted by <span className="text-white">500+ brands</span>
         </p>
         <div className="[mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]">
@@ -87,7 +87,7 @@ export function TrustedBySection({ header, compact = false }: { header?: React.R
     <section className="pb-14 md:pb-16 relative">
       {header ?? (
       <div className="max-w-7xl mx-auto px-4 mb-8">
-        <h2 className="text-center text-[13px] md:text-sm font-semibold text-white/55 tracking-[0.18em] uppercase">
+        <h2 className="text-center text-[13px] md:text-sm font-semibold text-white/80 tracking-[0.18em] uppercase">
           Trusted by Leading Brands, Agencies &amp; Corporate Teams
         </h2>
       </div>

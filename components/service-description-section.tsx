@@ -158,7 +158,7 @@ export function ServiceDescriptionSection({
                   <Icon3D name="award" size={40} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
                   <div>
                     <b className="block text-[13px] font-bold text-white leading-tight">{stat0.value}</b>
-                    <span className="text-[11px] text-white/45">{stat0.label}</span>
+                    <span className="text-[11px] text-white/70">{stat0.label}</span>
                   </div>
                 </div>
               )}
@@ -176,7 +176,7 @@ export function ServiceDescriptionSection({
                   <Icon3D name="stopwatch" size={40} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
                   <div>
                     <b className="block text-[13px] font-bold text-white leading-tight">{stat1.value}</b>
-                    <span className="text-[11px] text-white/45">{stat1.label}</span>
+                    <span className="text-[11px] text-white/70">{stat1.label}</span>
                   </div>
                 </div>
               )}

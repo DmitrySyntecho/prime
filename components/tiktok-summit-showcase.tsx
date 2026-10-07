@@ -88,7 +88,7 @@ export function TikTokSummitShowcase() {
               Summit 2026
             </span>
           </h2>
-          <p className="text-white/50 text-[14px] md:text-[15px] max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/75 text-[14px] md:text-[15px] max-w-2xl mx-auto leading-relaxed">
             Full-scale AV production for TikTok&apos;s flagship creator summit — main stage, exhibition floor,
             LED walls, lighting design, and live streaming for 5,000+ attendees.
           </p>

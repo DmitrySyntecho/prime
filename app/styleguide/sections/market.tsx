@@ -461,7 +461,7 @@ export function DownloadsSection({ id, num }: SectionProps) {
   const p = kit.packages
   const cards = [
     { key: "logo", title: "Logo package", icon: Palette, desc: "4 lockups + 3 monograms · SVG and PNG 128–2048 · construction notes.", pkg: p.logo },
-    { key: "icons3d", title: "3D icons", icon: Sparkles, desc: "28 Higgsfield 3D icons — equipment, services and values — in the brand palette · transparent PNG 1024 + 256.", pkg: p.icons3d },
+    { key: "icons3d", title: "3D icons", icon: Sparkles, desc: "32 Higgsfield 3D icons — equipment, services, values and pricing — in the brand palette · transparent PNG 1024 + 256.", pkg: p.icons3d },
     { key: "favicon", title: "Favicons", icon: ImageIcon, desc: "favicon.svg / .ico, PNG 16–96, apple-touch 180, PWA 192 / 512 + maskable.", pkg: p.favicon },
     { key: "tokens", title: "Design tokens", icon: Braces, desc: "design-tokens.css + design-tokens.json, generated from globals.css.", pkg: p.tokens },
     { key: "social", title: "Banners & social", icon: Sparkles, desc: "4 ad banners, 4 social formats and the raw Higgsfield plates.", pkg: p.social },

@@ -171,21 +171,21 @@ function MegaPanel({ menu, accent, accentDeep, onQuote }: { menu: MenuDef; accen
                       background: hovered === i ? `linear-gradient(135deg, ${accent} 0%, ${accentDeep} 100%)` : "rgba(255,255,255,0.06)",
                     }}
                   >
-                    <item.Icon className={`w-[18px] h-[18px] ${hovered === i ? "text-white" : "text-white/55"}`} />
+                    <item.Icon className={`w-[18px] h-[18px] ${hovered === i ? "text-white" : "text-white/80"}`} />
                   </span>
                 )}
                 <span className="min-w-0 flex-1">
                   <span className="flex items-center gap-2">
                     <span className="text-[14px] font-bold text-white truncate">{item.label}</span>
                     {item.badge && (
-                      <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full text-white/70" style={{ background: "rgba(255,255,255,0.08)" }}>
+                      <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full text-white/90" style={{ background: "rgba(255,255,255,0.08)" }}>
                         {item.badge}
                       </span>
                     )}
                   </span>
-                  <span className="block text-[12px] text-white/45 truncate">{item.desc}</span>
+                  <span className="block text-[12px] text-white/70 truncate">{item.desc}</span>
                 </span>
-                <ArrowRight className={`w-4 h-4 flex-shrink-0 transition-all ${hovered === i ? "text-[#FF5E3A] translate-x-0 opacity-100" : "text-white/30 -translate-x-1 opacity-0"}`} />
+                <ArrowRight className={`w-4 h-4 flex-shrink-0 transition-all ${hovered === i ? "text-[#FF5E3A] translate-x-0 opacity-100" : "text-white/50 -translate-x-1 opacity-0"}`} />
               </Link>
             ))}
           </div>
@@ -266,7 +266,7 @@ function LocationsPanel({ accent, accentDeep }: { accent: string; accentDeep: st
             <ul className="space-y-1.5">
               {g.cities.map((c) => (
                 <li key={c}>
-                  <Link href={toSlug(c)} className="text-[13px] text-white/70 hover:text-white transition-colors">
+                  <Link href={toSlug(c)} className="text-[13px] text-white/90 hover:text-white transition-colors">
                     {c}
                   </Link>
                 </li>
@@ -322,7 +322,7 @@ export function DesktopNav({
             onMouseEnter={() => open(menu.id)}
             onClick={() => open(menu.id)}
             className={`inline-flex items-center gap-1 px-3.5 py-2.5 rounded-[10px] text-[13px] font-semibold tracking-[0.04em] uppercase transition-all ${
-              active === menu.id ? "text-white bg-white/[0.06]" : "text-white/65 hover:text-white hover:bg-white/[0.04]"
+              active === menu.id ? "text-white bg-white/[0.06]" : "text-white/85 hover:text-white hover:bg-white/[0.04]"
             }`}
           >
             {menu.label}
@@ -333,7 +333,7 @@ export function DesktopNav({
           onMouseEnter={() => open("locations")}
           onClick={() => open("locations")}
           className={`inline-flex items-center gap-1 px-3.5 py-2.5 rounded-[10px] text-[13px] font-semibold tracking-[0.04em] uppercase transition-all ${
-            active === "locations" ? "text-white bg-white/[0.06]" : "text-white/65 hover:text-white hover:bg-white/[0.04]"
+            active === "locations" ? "text-white bg-white/[0.06]" : "text-white/85 hover:text-white hover:bg-white/[0.04]"
           }`}
         >
           Locations

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useCart } from '@/lib/cart-context'
+import { PriceBreakdown } from '@/components/price-breakdown'
 import {
   X,
   ShoppingCart,
@@ -131,7 +132,7 @@ export function CartPanel() {
                 </div>
                 <div>
                   <h2 className="text-[15px] font-bold text-white">Your Cart</h2>
-                  <p className="text-[11px] text-white/40">
+                  <p className="text-[13px] text-white/85">
                     {items.length === 0 ? 'Empty' : `${items.reduce((s, i) => s + i.quantity, 0)} item${items.reduce((s, i) => s + i.quantity, 0) !== 1 ? 's' : ''}`}
                   </p>
                 </div>
@@ -141,7 +142,7 @@ export function CartPanel() {
                 className="w-8 h-8 flex items-center justify-center rounded-lg transition-colors hover:bg-white/8"
                 style={{ border: '1px solid rgba(255,255,255,0.10)' }}
               >
-                <X className="w-4 h-4 text-white/60" />
+                <X className="w-4 h-4 text-white/85" />
               </button>
             </div>
 
@@ -155,7 +156,7 @@ export function CartPanel() {
                   >
                     <ShoppingCart className="w-6 h-6 text-[#FF2D6F]" />
                   </div>
-                  <p className="text-white/40 text-sm">Your cart is empty</p>
+                  <p className="text-white/65 text-sm">Your cart is empty</p>
                 </div>
               ) : (
                 items.map((item) => {
@@ -180,14 +181,14 @@ export function CartPanel() {
                           />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="text-[13px] font-semibold text-white leading-tight line-clamp-2">{item.product.name}</p>
-                          <p className="text-[11px] text-white/40 mt-0.5">{item.product.dimensions}</p>
+                          <p className="text-[15.5px] font-bold text-white leading-tight line-clamp-2">{item.product.name}</p>
+                          <p className="text-[13px] text-white/85 mt-0.5">{item.product.dimensions}</p>
                         </div>
                         <button
                           onClick={() => removeItem(item.product.id)}
                           className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-md transition-colors hover:bg-red-500/20"
                         >
-                          <Trash2 className="w-3.5 h-3.5 text-white/30 hover:text-red-400" />
+                          <Trash2 className="w-3.5 h-3.5 text-white/50 hover:text-red-400" />
                         </button>
                       </div>
 
@@ -201,14 +202,14 @@ export function CartPanel() {
                             onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
                             className="w-6 h-6 flex items-center justify-center rounded transition-colors hover:bg-white/10"
                           >
-                            <Minus className="w-3 h-3 text-white/60" />
+                            <Minus className="w-3 h-3 text-white/85" />
                           </button>
-                          <span className="text-[12px] font-medium text-white w-5 text-center">{item.quantity}</span>
+                          <span className="text-[15px] font-bold text-white w-5 text-center">{item.quantity}</span>
                           <button
                             onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
                             className="w-6 h-6 flex items-center justify-center rounded transition-colors hover:bg-white/10"
                           >
-                            <Plus className="w-3 h-3 text-white/60" />
+                            <Plus className="w-3 h-3 text-white/85" />
                           </button>
                         </div>
 
@@ -220,29 +221,29 @@ export function CartPanel() {
                             onClick={() => updateRentalDays(item.product.id, item.rentalDays - 1)}
                             className="w-6 h-6 flex items-center justify-center rounded transition-colors hover:bg-white/10"
                           >
-                            <Minus className="w-3 h-3 text-white/60" />
+                            <Minus className="w-3 h-3 text-white/85" />
                           </button>
-                          <span className="text-[12px] font-medium text-white w-10 text-center">{item.rentalDays}d</span>
+                          <span className="text-[15px] font-bold text-white w-10 text-center">{item.rentalDays}d</span>
                           <button
                             onClick={() => updateRentalDays(item.product.id, item.rentalDays + 1)}
                             className="w-6 h-6 flex items-center justify-center rounded transition-colors hover:bg-white/10"
                           >
-                            <Plus className="w-3 h-3 text-white/60" />
+                            <Plus className="w-3 h-3 text-white/85" />
                           </button>
                         </div>
 
-                        <span className="ml-auto text-[14px] font-bold text-white">
+                        <span className="ml-auto text-[17px] font-extrabold text-white">
                           ${formatPrice(lineTotal)}
                         </span>
                       </div>
 
                       {/* Fees row */}
                       <div className="flex gap-3 mt-2">
-                        <span className="flex items-center gap-1 text-[10px] text-white/35">
+                        <span className="flex items-center gap-1 text-[12.5px] font-medium text-white/85">
                           <Truck className="w-3 h-3" />
                           +${item.product.deliveryFee} delivery
                         </span>
-                        <span className="flex items-center gap-1 text-[10px] text-white/35">
+                        <span className="flex items-center gap-1 text-[12.5px] font-medium text-white/85">
                           <Wrench className="w-3 h-3" />
                           +${item.product.installationFee} setup
                         </span>
@@ -259,39 +260,21 @@ export function CartPanel() {
                 className="flex-shrink-0 px-6 py-5 space-y-4"
                 style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
               >
-                <div className="space-y-2">
-                  <div className="flex justify-between text-[13px]">
-                    <span className="text-white/50">Subtotal</span>
-                    <span className="text-white">${formatPrice(subtotal)}</span>
-                  </div>
-                  <div className="flex justify-between text-[13px]">
-                    <span className="text-white/50">Delivery</span>
-                    <span className="text-white">${formatPrice(delivery)}</span>
-                  </div>
-                  <div className="flex justify-between text-[13px]">
-                    <span className="text-white/50">Setup / Installation</span>
-                    <span className="text-white">${formatPrice(installation)}</span>
-                  </div>
-                  {savings > 0 && (
-                    <div className="flex justify-between text-[13px]">
-                      <span className="text-[#FF5E3A]">You Save</span>
-                      <span className="text-[#FF5E3A] font-semibold">-${formatPrice(savings)}</span>
-                    </div>
-                  )}
-                </div>
-
-                <div
-                  className="flex justify-between items-center pt-3"
-                  style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
-                >
-                  <span className="text-[15px] font-bold text-white">Total</span>
-                  <span className="text-[22px] font-black text-white">${formatPrice(total)}</span>
-                </div>
+                <PriceBreakdown
+                  compact
+                  total={total}
+                  rows={[
+                    { kind: 'rental', label: 'Rental', amount: subtotal },
+                    { kind: 'delivery', label: 'Delivery', amount: delivery },
+                    { kind: 'setup', label: 'Setup & installation', amount: installation },
+                    ...(savings > 0 ? [{ kind: 'savings' as const, label: 'You save', amount: savings }] : []),
+                  ]}
+                />
 
                 <Link
                   href="/shop/checkout"
                   onClick={closeCart}
-                  className="cta-yellow w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-[14px] font-bold transition-all hover:opacity-90 active:scale-[0.99]"
+                  className="cta-yellow w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-[16px] font-extrabold transition-all hover:opacity-90 active:scale-[0.99]"
                   style={{
                     background: 'linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)',
                   }}
@@ -302,7 +285,7 @@ export function CartPanel() {
 
                 <button
                   onClick={closeCart}
-                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-[13px] font-semibold text-white/70 hover:text-white transition-all"
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-[15px] font-semibold text-white/90 hover:text-white transition-all"
                   style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)' }}
                 >
                   Continue Shopping
@@ -324,18 +307,18 @@ export function CartPanel() {
                 className="w-8 h-8 flex items-center justify-center rounded-lg transition-colors hover:bg-white/8"
                 style={{ border: '1px solid rgba(255,255,255,0.10)' }}
               >
-                <ArrowLeft className="w-4 h-4 text-white/60" />
+                <ArrowLeft className="w-4 h-4 text-white/85" />
               </button>
               <div>
                 <h2 className="text-[15px] font-bold text-white">Your Details</h2>
-                <p className="text-[11px] text-white/40">Event & contact information</p>
+                <p className="text-[13px] text-white/85">Event & contact information</p>
               </div>
               <button
                 onClick={handleClose}
                 className="ml-auto w-8 h-8 flex items-center justify-center rounded-lg transition-colors hover:bg-white/8"
                 style={{ border: '1px solid rgba(255,255,255,0.10)' }}
               >
-                <X className="w-4 h-4 text-white/60" />
+                <X className="w-4 h-4 text-white/85" />
               </button>
             </div>
 
@@ -347,10 +330,10 @@ export function CartPanel() {
                 border: '1px solid rgba(255,45,111,0.18)',
               }}
             >
-              <span className="text-[12px] text-white/60">
+              <span className="text-[14px] text-white/90">
                 {items.reduce((s, i) => s + i.quantity, 0)} item{items.reduce((s, i) => s + i.quantity, 0) !== 1 ? 's' : ''} &middot; {items.map(i => i.product.dimensions).join(', ')}
               </span>
-              <span className="text-[14px] font-bold text-white">${formatPrice(total)}</span>
+              <span className="text-[17px] font-extrabold text-white">${formatPrice(total)}</span>
             </div>
 
             <form onSubmit={handleSubmit} className="flex-1 overflow-y-auto px-6 py-4">
@@ -358,30 +341,30 @@ export function CartPanel() {
                 {/* Name row */}
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-[11px] font-medium text-white/50 mb-1.5 uppercase tracking-wider">First Name *</label>
+                    <label className="block text-[12.5px] font-bold text-white/90 mb-1.5 uppercase tracking-wider">First Name *</label>
                     <div className="relative">
-                      <User className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/30" />
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/50" />
                       <input
                         required
                         type="text"
                         value={form.firstName}
                         onChange={e => setForm(f => ({ ...f, firstName: e.target.value }))}
-                        className="w-full pl-9 pr-3 py-2.5 rounded-lg text-[13px] text-white placeholder-white/25 outline-none focus:border-[#FF2D6F] transition-colors"
+                        className="w-full pl-9 pr-3 py-2.5 rounded-lg text-[16px] text-white placeholder-white/50 outline-none focus:border-[#FF2D6F] transition-colors"
                         style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)' }}
                         placeholder="John"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-[11px] font-medium text-white/50 mb-1.5 uppercase tracking-wider">Last Name *</label>
+                    <label className="block text-[12.5px] font-bold text-white/90 mb-1.5 uppercase tracking-wider">Last Name *</label>
                     <div className="relative">
-                      <User className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/30" />
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/50" />
                       <input
                         required
                         type="text"
                         value={form.lastName}
                         onChange={e => setForm(f => ({ ...f, lastName: e.target.value }))}
-                        className="w-full pl-9 pr-3 py-2.5 rounded-lg text-[13px] text-white placeholder-white/25 outline-none focus:border-[#FF2D6F] transition-colors"
+                        className="w-full pl-9 pr-3 py-2.5 rounded-lg text-[16px] text-white placeholder-white/50 outline-none focus:border-[#FF2D6F] transition-colors"
                         style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)' }}
                         placeholder="Doe"
                       />
@@ -391,15 +374,15 @@ export function CartPanel() {
 
                 {/* Email */}
                 <div>
-                  <label className="block text-[11px] font-medium text-white/50 mb-1.5 uppercase tracking-wider">Email *</label>
+                  <label className="block text-[12.5px] font-bold text-white/90 mb-1.5 uppercase tracking-wider">Email *</label>
                   <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/30" />
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/50" />
                     <input
                       required
                       type="email"
                       value={form.email}
                       onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-lg text-[13px] text-white placeholder-white/25 outline-none focus:border-[#FF2D6F] transition-colors"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-lg text-[16px] text-white placeholder-white/50 outline-none focus:border-[#FF2D6F] transition-colors"
                       style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)' }}
                       placeholder="john@company.com"
                     />
@@ -408,15 +391,15 @@ export function CartPanel() {
 
                 {/* Phone */}
                 <div>
-                  <label className="block text-[11px] font-medium text-white/50 mb-1.5 uppercase tracking-wider">Phone *</label>
+                  <label className="block text-[12.5px] font-bold text-white/90 mb-1.5 uppercase tracking-wider">Phone *</label>
                   <div className="relative">
-                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/30" />
+                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/50" />
                     <input
                       required
                       type="tel"
                       value={form.phone}
                       onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-lg text-[13px] text-white placeholder-white/25 outline-none focus:border-[#FF2D6F] transition-colors"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-lg text-[16px] text-white placeholder-white/50 outline-none focus:border-[#FF2D6F] transition-colors"
                       style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)' }}
                       placeholder="+1 (555) 000-0000"
                     />
@@ -425,14 +408,14 @@ export function CartPanel() {
 
                 {/* Company */}
                 <div>
-                  <label className="block text-[11px] font-medium text-white/50 mb-1.5 uppercase tracking-wider">Company / Organization</label>
+                  <label className="block text-[12.5px] font-bold text-white/90 mb-1.5 uppercase tracking-wider">Company / Organization</label>
                   <div className="relative">
-                    <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/30" />
+                    <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/50" />
                     <input
                       type="text"
                       value={form.company}
                       onChange={e => setForm(f => ({ ...f, company: e.target.value }))}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-lg text-[13px] text-white placeholder-white/25 outline-none focus:border-[#FF2D6F] transition-colors"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-lg text-[16px] text-white placeholder-white/50 outline-none focus:border-[#FF2D6F] transition-colors"
                       style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)' }}
                       placeholder="Acme Events LLC"
                     />
@@ -441,15 +424,15 @@ export function CartPanel() {
 
                 {/* Event Address */}
                 <div>
-                  <label className="block text-[11px] font-medium text-white/50 mb-1.5 uppercase tracking-wider">Event Address *</label>
+                  <label className="block text-[12.5px] font-bold text-white/90 mb-1.5 uppercase tracking-wider">Event Address *</label>
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-3 w-3.5 h-3.5 text-white/30" />
+                    <MapPin className="absolute left-3 top-3 w-3.5 h-3.5 text-white/50" />
                     <input
                       required
                       type="text"
                       value={form.eventAddress}
                       onChange={e => setForm(f => ({ ...f, eventAddress: e.target.value }))}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-lg text-[13px] text-white placeholder-white/25 outline-none focus:border-[#FF2D6F] transition-colors"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-lg text-[16px] text-white placeholder-white/50 outline-none focus:border-[#FF2D6F] transition-colors"
                       style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)' }}
                       placeholder="123 Venue St, Los Angeles, CA"
                     />
@@ -458,15 +441,15 @@ export function CartPanel() {
 
                 {/* Event Date */}
                 <div>
-                  <label className="block text-[11px] font-medium text-white/50 mb-1.5 uppercase tracking-wider">Event Date *</label>
+                  <label className="block text-[12.5px] font-bold text-white/90 mb-1.5 uppercase tracking-wider">Event Date *</label>
                   <div className="relative">
-                    <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/30" />
+                    <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/50" />
                     <input
                       required
                       type="date"
                       value={form.eventDate}
                       onChange={e => setForm(f => ({ ...f, eventDate: e.target.value }))}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-lg text-[13px] text-white placeholder-white/25 outline-none focus:border-[#FF2D6F] transition-colors"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-lg text-[16px] text-white placeholder-white/50 outline-none focus:border-[#FF2D6F] transition-colors"
                       style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)', colorScheme: 'dark' }}
                     />
                   </div>
@@ -474,14 +457,14 @@ export function CartPanel() {
 
                 {/* Notes */}
                 <div>
-                  <label className="block text-[11px] font-medium text-white/50 mb-1.5 uppercase tracking-wider">Additional Notes</label>
+                  <label className="block text-[12.5px] font-bold text-white/90 mb-1.5 uppercase tracking-wider">Additional Notes</label>
                   <div className="relative">
-                    <FileText className="absolute left-3 top-3 w-3.5 h-3.5 text-white/30" />
+                    <FileText className="absolute left-3 top-3 w-3.5 h-3.5 text-white/50" />
                     <textarea
                       rows={3}
                       value={form.notes}
                       onChange={e => setForm(f => ({ ...f, notes: e.target.value }))}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-lg text-[13px] text-white placeholder-white/25 outline-none focus:border-[#FF2D6F] transition-colors resize-none"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-lg text-[16px] text-white placeholder-white/50 outline-none focus:border-[#FF2D6F] transition-colors resize-none"
                       style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)' }}
                       placeholder="Special setup requirements, power needs, access details..."
                     />
@@ -494,7 +477,7 @@ export function CartPanel() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="cta-yellow w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-[14px] font-bold transition-all hover:opacity-90 active:scale-[0.99] disabled:opacity-70"
+                  className="cta-yellow w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-[16px] font-extrabold transition-all hover:opacity-90 active:scale-[0.99] disabled:opacity-70"
                   style={{
                     background: 'linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)',
                   }}
@@ -511,7 +494,7 @@ export function CartPanel() {
                     </>
                   )}
                 </button>
-                <p className="text-[11px] text-white/30 text-center mt-3">
+                <p className="text-[13px] text-white/80 text-center mt-3">
                   Our team will confirm availability and contact you within 2 hours.
                 </p>
               </div>
@@ -530,7 +513,7 @@ export function CartPanel() {
             </div>
             <div>
               <h2 className="text-[22px] font-black text-white mb-2">Request Sent!</h2>
-              <p className="text-[14px] text-white/50 leading-relaxed">
+              <p className="text-[15px] text-white/90 leading-relaxed">
                 Thanks, <span className="text-white">{form.firstName}</span>! We&apos;ve received your order request and will reach out to <span className="text-[#FF5E3A]">{form.email}</span> within 2 hours to confirm availability.
               </p>
             </div>
@@ -539,22 +522,22 @@ export function CartPanel() {
               style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
             >
               {items.map(item => (
-                <div key={item.product.id} className="flex justify-between text-[13px]">
-                  <span className="text-white/60 truncate mr-2">{item.product.name}</span>
+                <div key={item.product.id} className="flex justify-between text-[15px]">
+                  <span className="text-white/85 truncate mr-2">{item.product.name}</span>
                   <span className="text-white flex-shrink-0">${formatPrice(item.product.price * item.quantity * item.rentalDays)}</span>
                 </div>
               ))}
               <div
-                className="flex justify-between text-[14px] font-bold pt-2"
+                className="flex justify-between text-[16px] font-extrabold pt-2"
                 style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
               >
-                <span className="text-white/70">Total</span>
+                <span className="text-white/90">Total</span>
                 <span className="text-white">${formatPrice(total)}</span>
               </div>
             </div>
             <button
               onClick={handleClose}
-              className="w-full py-3.5 rounded-xl text-[14px] font-bold text-white transition-all hover:opacity-90"
+              className="w-full py-3.5 rounded-xl text-[16px] font-extrabold text-white transition-all hover:opacity-90"
               style={{
                 background: 'linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)',
                 boxShadow: '0 8px 24px rgba(255,45,111,0.35)',

@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { type Product, useCart } from "@/lib/cart-context"
 import { CheckCircle2, ShoppingCart, ArrowRight, Star, Eye } from "lucide-react"
-import { Truck, Wrench } from "lucide-react"
+import { Icon3D, type Icon3DName } from "@/components/icon-3d"
 
 // Consistent number formatting to avoid hydration mismatch
 export function formatPrice(num: number): string {
@@ -13,9 +13,9 @@ export function formatPrice(num: number): string {
 
 function DiscountRibbon({ discount }: { discount: number }) {
   return (
-    <div className="absolute -right-[2px] top-4 z-20">
+    <div className="pointer-events-none absolute -right-[2px] top-4 z-20">
       <div
-        className="relative px-3 py-1.5 text-[11px] font-black tracking-wide text-white uppercase"
+        className="relative px-3 py-1.5 text-[12px] font-black tracking-wide text-white uppercase"
         style={{
           background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
           clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%, 8px 50%)",
@@ -35,11 +35,29 @@ function DiscountRibbon({ discount }: { discount: number }) {
   )
 }
 
+function Fee({ icon, label, amount }: { icon: Icon3DName; label: string; amount: number }) {
+  return (
+    <div className="flex items-center gap-2 rounded-xl bg-[#FFF1F5] py-1.5 pl-1.5 pr-2.5 ring-1 ring-[#FFD6E3]">
+      <Icon3D name={icon} size={32} className="shrink-0" />
+      <span className="min-w-0 leading-tight">
+        <span className="block text-[12px] font-semibold text-[#5B5368]">{label}</span>
+        <span className="block text-[15px] font-extrabold tabular-nums text-[#120B1A]">${formatPrice(amount)}</span>
+      </span>
+    </div>
+  )
+}
+
+/**
+ * Product tile on a white .sheet: dark ink on white reads on any phone, and the
+ * neutral surface works with product photos shot on any background. The whole card
+ * is one link (stretched title link); only the quote buttons sit above it.
+ */
 export function ProductCard({ product }: { product: Product }) {
   const { addItem, openCart } = useCart()
 
   const savings = product.originalPrice - product.price
   const badge = product.dimensions.split("(")[0].trim()
+  const href = `/shop/products/${product.slug}`
 
   const addToQuote = () => {
     addItem(product)
@@ -47,168 +65,109 @@ export function ProductCard({ product }: { product: Product }) {
   }
 
   return (
-    <>
-      <div
-        className="fx-spot group relative rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
-        style={{
-          background: "linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)",
-          border: "1px solid rgba(255,255,255,0.10)",
-          boxShadow: "0 8px 32px -8px rgba(0,0,0,0.5)",
-        }}
-      >
-        {product.discount > 0 && <DiscountRibbon discount={product.discount} />}
+    <article className="sheet keep-original group relative flex h-full flex-col overflow-hidden rounded-[22px] transition-[translate,box-shadow] duration-300 focus-within:ring-2 focus-within:ring-[#FF2D6F]/60 hover:-translate-y-1 hover:shadow-[0_30px_60px_-24px_rgba(255,45,111,0.55)]">
+      {product.discount > 0 && <DiscountRibbon discount={product.discount} />}
 
-        {product.featured && (
-          <div className="absolute top-4 left-4 z-20">
-            <span
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider"
-              style={{
-                background: "linear-gradient(135deg, #FFD24A 0%, #FF9500 100%)",
-                color: "#000",
-                boxShadow: "0 4px 12px rgba(255,210,74,0.4)",
-              }}
-            >
-              <Star className="w-3 h-3" fill="currentColor" />
-              Best Seller
-            </span>
-          </div>
+      {product.featured && (
+        <div className="pointer-events-none absolute top-4 left-4 z-20">
+          <span
+            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider"
+            style={{
+              background: "linear-gradient(135deg, #FFD24A 0%, #FF9500 100%)",
+              color: "#000",
+              boxShadow: "0 4px 12px rgba(255,210,74,0.4)",
+            }}
+          >
+            <Star className="w-3 h-3" fill="currentColor" />
+            Best Seller
+          </span>
+        </div>
+      )}
+
+      <div className="relative aspect-[4/3] overflow-hidden bg-[#F1ECF4]">
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+        {badge && (
+          <span className="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-black/70 px-2.5 py-1 text-[12px] font-bold text-white backdrop-blur-md">
+            {badge}
+          </span>
         )}
+        <span className="absolute inset-0 hidden items-center justify-center bg-black/10 opacity-0 transition-opacity group-hover:opacity-100 md:flex">
+          <span
+            className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-[13px] font-bold text-white"
+            style={{ background: "rgba(255,45,111,0.92)", boxShadow: "0 8px 24px rgba(255,45,111,0.5)" }}
+          >
+            <Eye className="w-4 h-4" />
+            View details
+          </span>
+        </span>
+      </div>
 
-        <Link href={`/shop/products/${product.slug}`} className="block">
-          <div className="relative aspect-[4/3] overflow-hidden">
-            <Image
-              src={product.image}
-              alt={product.name}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            />
-            {badge && (
-              <div className="absolute bottom-3 left-3">
-                <span
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-bold text-white/90 backdrop-blur-md"
-                  style={{
-                    background: "rgba(0,0,0,0.5)",
-                    border: "1px solid rgba(255,255,255,0.15)",
-                  }}
-                >
-                  {badge}
-                </span>
-              </div>
-            )}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-              <span
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[12px] font-bold text-white backdrop-blur-md"
-                style={{
-                  background: "rgba(255,45,111,0.9)",
-                  boxShadow: "0 8px 24px rgba(255,45,111,0.5)",
-                }}
-              >
-                <Eye className="w-4 h-4" />
-                Quick View
-              </span>
-            </div>
-          </div>
-        </Link>
-
-        <div className="p-3 sm:p-5 flex flex-col flex-1">
-          <Link href={`/shop/products/${product.slug}`}>
-            <h3 className="text-[14px] sm:text-lg font-bold text-white mb-1 line-clamp-2 sm:line-clamp-1 group-hover:text-[#FF2D6F] transition-colors">
-              {product.name}
-            </h3>
+      <div className="flex flex-1 flex-col p-5">
+        <h3 className="line-clamp-2 text-[18px] font-extrabold leading-snug tracking-[-0.01em] text-[#120B1A] transition-colors group-hover:text-[#C8124F]">
+          {/* Stretched link: the whole card opens the product page. */}
+          <Link href={href} className="outline-none after:absolute after:inset-0 after:z-[1] after:content-['']">
+            {product.name}
           </Link>
+        </h3>
 
-          <p className="hidden sm:block text-[13px] text-white/50 mb-4 line-clamp-2">
-            {product.description.substring(0, 80)}...
-          </p>
+        <p className="mt-2 line-clamp-2 text-[15px] leading-relaxed text-[#4A4356]">{product.description}</p>
 
-          <div className="hidden sm:flex flex-wrap gap-1.5 mb-4 min-h-[28px]">
-            {product.features.slice(0, 3).map((feature) => (
-              <span
-                key={feature}
-                className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium text-white/70"
-                style={{ background: "rgba(255,255,255,0.06)" }}
-              >
-                <CheckCircle2 className="w-2.5 h-2.5 text-[#FF5E3A]" />
-                {feature}
-              </span>
-            ))}
+        <ul className="mt-3 flex flex-wrap gap-1.5">
+          {product.features.slice(0, 3).map((feature) => (
+            <li key={feature} className="inline-flex items-center gap-1 rounded-full bg-[#F5F0F8] px-2.5 py-1 text-[12.5px] font-semibold text-[#3B3446]">
+              <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[#E0245E]" />
+              {feature}
+            </li>
+          ))}
+        </ul>
+
+        {/* Price + actions pinned to bottom */}
+        <div className="mt-auto pt-5">
+          <div className="flex items-baseline gap-1.5">
+            <span className="text-[30px] font-black leading-none tracking-[-0.02em] text-[#120B1A]">${formatPrice(product.price)}</span>
+            <span className="text-[15px] font-semibold text-[#5B5368]">/ 24h</span>
+          </div>
+          {/* Reserve the line so cards without a discount stay the same height */}
+          <div className="mt-1.5 flex h-6 items-center gap-2">
+            {product.discount > 0 && (
+              <>
+                <span className="text-[15px] font-medium text-[#6B6475] line-through">${formatPrice(product.originalPrice)}</span>
+                <span className="text-[14px] font-extrabold text-[#C8124F]">You save ${formatPrice(savings)}</span>
+              </>
+            )}
           </div>
 
-          {/* Price + actions pinned to bottom */}
-          <div className="mt-auto">
-            <div className="mb-3 sm:mb-4">
-              <div className="flex items-baseline gap-1.5 sm:gap-2">
-                <span className="text-xl sm:text-2xl font-black text-white">${formatPrice(product.price)}</span>
-                <span className="text-[12px] sm:text-[13px] text-white/40">/ 24h</span>
-              </div>
-              {/* Reserve space so cards without discount stay the same height */}
-              <div className="h-5 mt-0.5">
-                {product.discount > 0 && (
-                  <div className="flex items-center gap-2">
-                    <span className="text-[13px] text-white/40 line-through">
-                      ${formatPrice(product.originalPrice)}
-                    </span>
-                    <span className="text-[11px] font-bold text-[#FF5E3A]">
-                      Save ${formatPrice(savings)}
-                    </span>
-                  </div>
-                )}
-              </div>
-            </div>
+          <div className="mt-3 grid grid-cols-2 gap-2">
+            <Fee icon="delivery-truck" label="Delivery" amount={product.deliveryFee} />
+            <Fee icon="setup-tools" label="Setup" amount={product.installationFee} />
+          </div>
 
-            <div
-              className="hidden sm:flex items-center gap-3 p-3 rounded-xl mb-4"
-              style={{
-                background: "rgba(255,94,58,0.08)",
-                border: "1px solid rgba(255,94,58,0.18)",
-              }}
+          <div className="relative z-[2] mt-4 flex gap-2">
+            <button
+              type="button"
+              onClick={addToQuote}
+              className="cta-yellow flex flex-1 items-center justify-center gap-2 rounded-xl py-3.5 text-[15px] font-extrabold"
             >
-              <div
-                className="flex items-center gap-1.5 text-[11px] font-semibold"
-                style={{ color: "#FF8A5E" }}
-              >
-                <Truck className="w-3.5 h-3.5" style={{ color: "#FF5E3A" }} />
-                <span>Delivery: ${product.deliveryFee}</span>
-              </div>
-              <div className="w-px h-3 bg-white/10" />
-              <div
-                className="flex items-center gap-1.5 text-[11px] font-semibold"
-                style={{ color: "#FF8A5E" }}
-              >
-                <Wrench className="w-3.5 h-3.5" style={{ color: "#FF5E3A" }} />
-                <span>Setup: ${product.installationFee}</span>
-              </div>
-            </div>
-
-            <div className="flex gap-2">
-              <button
-                onClick={addToQuote}
-                className="cta-yellow flex-1 flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 sm:py-3 rounded-xl text-[12px] sm:text-[13px] font-bold"
-                style={{
-                  background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)",
-                  color: "#fff",
-                  boxShadow: "0 8px 20px -4px rgba(255,45,111,0.5)",
-                }}
-              >
-                <ShoppingCart className="w-4 h-4" />
-                <span className="sm:hidden">Add</span>
-                <span className="hidden sm:inline">Add to Quote</span>
-              </button>
-              <Link
-                href={`/shop/products/${product.slug}`}
-                className="hidden sm:flex items-center justify-center w-12 rounded-xl transition-all hover:bg-white/10"
-                style={{
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.10)",
-                }}
-              >
-                <ArrowRight className="w-4 h-4 text-white/70" />
-              </Link>
-            </div>
+              <ShoppingCart className="w-4 h-4" />
+              Add to Quote
+            </button>
+            <Link
+              href={href}
+              tabIndex={-1}
+              aria-hidden
+              className="grid w-12 place-items-center rounded-xl bg-[#F1ECF4] text-[#120B1A] transition-colors hover:bg-[#E7DEEE]"
+            >
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </div>
-    </>
+    </article>
   )
 }

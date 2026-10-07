@@ -40,7 +40,7 @@ export function CTABanner({ onStartQuote }: CTABannerProps) {
               <span className="ds-accent-text">{t("cta.subtitle")}</span>
             </h2>
 
-            <p className="text-white/55 text-[16px] md:text-[18px] max-w-[560px] mx-auto mb-9">
+            <p className="text-white/80 text-[16px] md:text-[18px] max-w-[560px] mx-auto mb-9">
               {t("hero.description")}
             </p>
 
@@ -52,7 +52,7 @@ export function CTABanner({ onStartQuote }: CTABannerProps) {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </button>
 
-            <p className="text-white/40 text-[13px] mt-7 tracking-[0.04em]">
+            <p className="text-white/65 text-[13px] mt-7 tracking-[0.04em]">
               Free consultation · No commitment · Response within hours
             </p>
           </div>

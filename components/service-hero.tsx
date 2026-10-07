@@ -85,7 +85,7 @@ export function ServiceHero({ eyebrow, h1, subheadline, heroCta, image, onStartQ
             {h1}
           </h1>
 
-          <p className="text-white/70 text-[15px] md:text-[18px] leading-relaxed max-w-[560px] mb-7 md:mb-10">
+          <p className="text-white/90 text-[15px] md:text-[18px] leading-relaxed max-w-[560px] mb-7 md:mb-10">
             {subheadline}
           </p>
 

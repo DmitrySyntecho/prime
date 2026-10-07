@@ -97,7 +97,7 @@ export function Footer() {
                 className="h-9 w-auto theme-logo-light"
               />
             </Link>
-            <p className="text-white/50 text-[14px] leading-relaxed max-w-xs">
+            <p className="text-white/75 text-[14px] leading-relaxed max-w-xs">
               Full-service AV production for the brands that demand flawless execution. Coast-to-coast deployment, one team, one bill.
             </p>
 
@@ -129,7 +129,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`text-[13px] font-medium text-white/55 ${accentHover} transition-colors`}
+                    className={`text-[13px] font-medium text-white/80 ${accentHover} transition-colors`}
                   >
                     {item.label}
                   </Link>
@@ -149,7 +149,7 @@ export function Footer() {
                   <Link
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className={`text-[13px] font-medium text-white/55 ${accentHover} transition-colors`}
+                    className={`text-[13px] font-medium text-white/80 ${accentHover} transition-colors`}
                   >
                     {item.label}
                   </Link>
@@ -165,17 +165,17 @@ export function Footer() {
                 className="group flex items-center gap-2.5"
               >
                 <Icon3D name="headset" size={26} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
-                <span suppressHydrationWarning className={`text-[13px] font-semibold text-white/65 ${accentHover} transition-colors`}>
+                <span suppressHydrationWarning className={`text-[13px] font-semibold text-white/85 ${accentHover} transition-colors`}>
                   {PHONE_DISPLAY}
                 </span>
               </a>
               <div className="flex items-center gap-2.5">
                 <Icon3D name="stopwatch" size={26} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
-                <span className="text-[13px] text-white/45">Mon–Fri 8am–7pm · Sat 10am–4pm</span>
+                <span className="text-[13px] text-white/70">Mon–Fri 8am–7pm · Sat 10am–4pm</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Icon3D name="location-pin" size={26} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
-                <span className="text-[13px] text-white/45">Nationwide · Coast-to-coast</span>
+                <span className="text-[13px] text-white/70">Nationwide · Coast-to-coast</span>
               </div>
             </div>
           </div>
@@ -190,7 +190,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`text-[13px] font-medium text-white/55 ${accentHover} transition-colors`}
+                    className={`text-[13px] font-medium text-white/80 ${accentHover} transition-colors`}
                   >
                     {item.label}
                   </Link>
@@ -210,7 +210,7 @@ export function Footer() {
               <Link
                 key={loc.href}
                 href={loc.href}
-                className={`text-[13px] font-medium text-white/55 ${accentHover} transition-colors`}
+                className={`text-[13px] font-medium text-white/80 ${accentHover} transition-colors`}
               >
                 {loc.name}
               </Link>
@@ -224,7 +224,7 @@ export function Footer() {
             <div key={item.href} className="flex items-center gap-4">
               <Link
                 href={item.href}
-                className={`font-medium text-white/55 ${accentHover} transition-colors`}
+                className={`font-medium text-white/80 ${accentHover} transition-colors`}
               >
                 {item.label}
               </Link>
@@ -234,7 +234,7 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="pt-7 flex flex-col sm:flex-row items-center justify-between gap-2 text-white/35 text-[12px]">
+        <div className="pt-7 flex flex-col sm:flex-row items-center justify-between gap-2 text-white/55 text-[12px]">
           <p suppressHydrationWarning>© {new Date().getFullYear()} Prime Line AV. All rights reserved.</p>
           <p>When everything is just perfect.</p>
         </div>

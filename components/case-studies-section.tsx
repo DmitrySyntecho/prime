@@ -229,7 +229,7 @@ export function CaseStudiesSection() {
             <h2 className="text-[32px] md:text-[44px] lg:text-[48px] font-extrabold tracking-[-0.025em] leading-[1.05] text-white mb-3">
               Our Recent <span className="ds-accent-text">Work</span>
             </h2>
-            <p className="text-white/55 text-[16px] md:text-[17px]">
+            <p className="text-white/80 text-[16px] md:text-[17px]">
               Behind-the-scenes videos showing how our team sets up, builds, and produces events.
             </p>
           </div>
@@ -238,14 +238,14 @@ export function CaseStudiesSection() {
           <div className="flex gap-2">
             <button
               onClick={handlePrev}
-              className="w-11 h-11 rounded-[12px] border border-white/[0.10] bg-white/[0.04] flex items-center justify-center text-white/65 hover:border-[#FF2D6F]/30 hover:bg-[#FF2D6F]/10 hover:text-white transition-all backdrop-blur-md"
+              className="w-11 h-11 rounded-[12px] border border-white/[0.10] bg-white/[0.04] flex items-center justify-center text-white/85 hover:border-[#FF2D6F]/30 hover:bg-[#FF2D6F]/10 hover:text-white transition-all backdrop-blur-md"
               aria-label="Previous"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={handleNext}
-              className="w-11 h-11 rounded-[12px] border border-white/[0.10] bg-white/[0.04] flex items-center justify-center text-white/65 hover:border-[#FF2D6F]/30 hover:bg-[#FF2D6F]/10 hover:text-white transition-all backdrop-blur-md"
+              className="w-11 h-11 rounded-[12px] border border-white/[0.10] bg-white/[0.04] flex items-center justify-center text-white/85 hover:border-[#FF2D6F]/30 hover:bg-[#FF2D6F]/10 hover:text-white transition-all backdrop-blur-md"
               aria-label="Next"
             >
               <ChevronRight className="w-5 h-5" />
@@ -294,10 +294,10 @@ export function CaseStudiesSection() {
           <div className="reveal-right space-y-6">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">{activeStudy.title}</h3>
-              <p className="text-white/45">{activeStudy.location}</p>
+              <p className="text-white/70">{activeStudy.location}</p>
             </div>
 
-            <p className="text-white/65 leading-relaxed">{activeStudy.description}</p>
+            <p className="text-white/85 leading-relaxed">{activeStudy.description}</p>
 
             <div className="flex flex-wrap gap-3 pt-1">
               <button
@@ -399,7 +399,7 @@ export function CaseStudiesSection() {
           </button>
 
           {/* Counter */}
-          <span className="absolute top-5 left-1/2 -translate-x-1/2 text-white/50 text-sm tabular-nums">
+          <span className="absolute top-5 left-1/2 -translate-x-1/2 text-white/75 text-sm tabular-nums">
             {lightboxIndex + 1} / {galleryPhotos.length}
           </span>
 

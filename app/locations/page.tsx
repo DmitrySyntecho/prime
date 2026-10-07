@@ -39,7 +39,7 @@ export default function LocationsPage() {
                 Nationwide
               </span>
             </h1>
-            <p className="text-lg text-white/60 leading-relaxed">
+            <p className="text-lg text-white/85 leading-relaxed">
               Professional AV production, LED wall rental, sound systems, and event lighting available in major markets
               across the United States. Local expertise, national reach.
             </p>
@@ -64,9 +64,9 @@ export default function LocationsPage() {
                     <h3 className="text-white font-semibold group-hover:text-[#FF5E3A] transition-colors">
                       {state.state}
                     </h3>
-                    <p className="text-sm text-white/40 mt-1">{state.cities?.length || 0} cities</p>
+                    <p className="text-sm text-white/65 mt-1">{state.cities?.length || 0} cities</p>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-white/30 group-hover:text-[#FF5E3A] group-hover:translate-x-1 transition-all" />
+                  <ChevronRight className="w-5 h-5 text-white/50 group-hover:text-[#FF5E3A] group-hover:translate-x-1 transition-all" />
                 </div>
               </Link>
             ))}
@@ -103,9 +103,9 @@ export default function LocationsPage() {
                     <h3 className="text-white font-semibold group-hover:text-[#FF5E3A] transition-colors truncate">
                       {c.label}
                     </h3>
-                    <p className="text-sm text-white/40 mt-0.5">{count} products available</p>
+                    <p className="text-sm text-white/65 mt-0.5">{count} products available</p>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-white/30 group-hover:text-[#FF5E3A] group-hover:translate-x-1 transition-all flex-shrink-0" />
+                  <ChevronRight className="w-5 h-5 text-white/50 group-hover:text-[#FF5E3A] group-hover:translate-x-1 transition-all flex-shrink-0" />
                 </Link>
               )
             })}
@@ -117,7 +117,7 @@ export default function LocationsPage() {
       <section className="py-16 md:py-24 relative">
         <div className="reveal max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-black text-white mb-4">{"Don't See Your City?"}</h2>
-          <p className="text-white/55 mb-8 max-w-xl mx-auto">
+          <p className="text-white/80 mb-8 max-w-xl mx-auto">
             We provide AV production services nationwide. Contact us for a custom quote for your event location.
           </p>
           <Link

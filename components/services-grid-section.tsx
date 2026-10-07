@@ -89,7 +89,7 @@ export function ServicesGridSection() {
             <br />
             <span className="ds-accent-text">Engineered for Impact</span>
           </h2>
-          <p className="text-white/55 text-[16px] md:text-[17px] max-w-[640px] mx-auto">
+          <p className="text-white/80 text-[16px] md:text-[17px] max-w-[640px] mx-auto">
             From concept through strike — audio, video, lighting, staging and LED walls handled by a single accountable
             team.
           </p>
@@ -128,7 +128,7 @@ export function ServicesGridSection() {
                   {service.title}
                 </h3>
 
-                <p className="hidden sm:block text-white/65 text-[14px] leading-[1.6] mb-5 flex-1">
+                <p className="hidden sm:block text-white/85 text-[14px] leading-[1.6] mb-5 flex-1">
                   {service.description}
                 </p>
 

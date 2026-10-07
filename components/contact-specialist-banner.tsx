@@ -165,7 +165,7 @@ export function ContactSpecialistBanner({ onStartQuote, variant = "default" }: C
               </h2>
 
               {/* Sub */}
-              <p className="text-white/60 text-[14px] md:text-[15px] leading-relaxed mb-7 max-w-2xl">
+              <p className="text-white/85 text-[14px] md:text-[15px] leading-relaxed mb-7 max-w-2xl">
                 Talk to a real Prime Line AV specialist. We&apos;ll help you pick the right setup, find the best package for your budget, and answer any technical questions — no bots, no waiting.
               </p>
 
@@ -200,7 +200,7 @@ export function ContactSpecialistBanner({ onStartQuote, variant = "default" }: C
                   ? ["Watch Party Packages", "LED Wall Rental", "Sound & Lighting", "Full Crew Setup"]
                   : ["LED Wall & Staging", "Audio & Lighting", "Permanent Installs", "Event Packages"]
                 ).map((topic) => (
-                  <span key={topic} className="flex items-center gap-1.5 text-[11px] text-white/35 tracking-[0.06em] uppercase font-semibold">
+                  <span key={topic} className="flex items-center gap-1.5 text-[11px] text-white/55 tracking-[0.06em] uppercase font-semibold">
                     <span className="w-1 h-1 rounded-full inline-block" style={{ background: `${pillDot}80` }} />
                     {topic}
                   </span>

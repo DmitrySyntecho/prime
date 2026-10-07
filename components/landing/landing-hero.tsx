@@ -22,7 +22,7 @@ export interface HeroConfig {
   /** Legacy collage photos — kept for callers; the hero now shows video. */
   collage?: string[]
   /** Paragraph under the H1. */
-  lede?: string
+  lede?: React.ReactNode
   /** Hero clips (public/videos/hero/<name>.mp4), played back to back. */
   clips?: string[]
   /** Microcopy under the primary CTA label. */
@@ -99,7 +99,7 @@ function BleedCards() {
         <Icon3D name="award" size={38} priority />
         <div>
           <b className="block text-[13px] font-bold leading-tight text-white tabular-nums">2,500+ Events</b>
-          <span className="text-[11px] text-white/55">Delivered flawlessly</span>
+          <span className="text-[11px] text-white/80">Delivered flawlessly</span>
         </div>
       </div>
       <div
@@ -109,7 +109,7 @@ function BleedCards() {
         <Icon3D name="stopwatch" size={38} priority />
         <div>
           <b className="block text-[13px] font-bold leading-tight text-white">2 Hours Early</b>
-          <span className="text-[11px] text-white/55">Tested before doors</span>
+          <span className="text-[11px] text-white/80">Tested before doors</span>
         </div>
       </div>
     </div>
@@ -145,7 +145,7 @@ function HeroMedia({ clips }: { clips: string[] }) {
         <Icon3D name="award" size={38} priority />
         <div>
           <b className="block text-[13px] font-bold leading-tight text-white tabular-nums">2,500+ Events</b>
-          <span className="text-[11px] text-white/45">Delivered flawlessly</span>
+          <span className="text-[11px] text-white/70">Delivered flawlessly</span>
         </div>
       </div>
       <div
@@ -155,7 +155,7 @@ function HeroMedia({ clips }: { clips: string[] }) {
         <Icon3D name="stopwatch" size={38} priority />
         <div>
           <b className="block text-[13px] font-bold leading-tight text-white">2 Hours Early</b>
-          <span className="text-[11px] text-white/45">Tested before doors</span>
+          <span className="text-[11px] text-white/70">Tested before doors</span>
         </div>
       </div>
     </div>
@@ -183,7 +183,7 @@ function Heading({ hero, centered }: { hero: HeroConfig; centered?: boolean }) {
       <h1 className="mb-4 text-balance text-[30px] font-extrabold leading-[1.08] tracking-[-0.02em] text-white sm:text-[38px] lg:text-[42px]">
         {renderTitle(hero.title, hero.accentPhrase)}
       </h1>
-      <p className={`max-w-[540px] text-pretty text-[15px] leading-relaxed text-white/65 md:text-[17px] ${centered ? "mx-auto" : ""}`}>
+      <p className={`max-w-[560px] text-pretty text-[17px] font-medium leading-[1.65] text-white/90 md:text-[18px] ${centered ? "mx-auto" : ""}`}>
         {hero.lede ?? DEFAULT_LEDE}
       </p>
     </div>
@@ -255,7 +255,7 @@ function StatsInline({ stats }: { stats: HeroStat[] }) {
           <dd className="text-[24px] font-extrabold leading-none tracking-[-0.03em] tabular-nums xl:text-[28px]">
             <span className="ds-accent-text">{s.value}</span>
           </dd>
-          <dd className="mt-1.5 text-[12.5px] font-semibold leading-tight text-white/65">{s.label}</dd>
+          <dd className="mt-1.5 text-[12.5px] font-semibold leading-tight text-white/85">{s.label}</dd>
         </div>
       ))}
     </dl>
@@ -274,7 +274,7 @@ function StatsStrip({ stats }: { stats: HeroStat[] }) {
           <p className="text-[26px] font-extrabold leading-none tracking-[-0.03em] tabular-nums md:text-[32px]">
             <span className="ds-accent-text">{s.value}</span>
           </p>
-          <p className="mt-1.5 text-[13px] font-semibold leading-tight text-white/70 md:text-[14px]">{s.label}</p>
+          <p className="mt-1.5 text-[13px] font-semibold leading-tight text-white/90 md:text-[14px]">{s.label}</p>
         </div>
       ))}
     </div>

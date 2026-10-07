@@ -58,7 +58,9 @@ export function SectionHeader({
         </span>
       )}
       <Tag className="text-balance text-[30px] font-extrabold leading-[1.1] tracking-[-0.025em] text-white md:text-[42px]">{heading}</Tag>
-      {children && <div className={`mt-4 text-pretty text-[15px] leading-relaxed text-white/60 md:text-[17px] ${centered ? "mx-auto max-w-[680px]" : "max-w-[680px]"}`}>{children}</div>}
+      {children && (
+        <div className={`mt-4 text-pretty text-[17px] font-medium leading-[1.65] text-white/90 md:text-[18px] ${centered ? "mx-auto max-w-[720px]" : "max-w-[720px]"}`}>{children}</div>
+      )}
     </div>
   )
 }

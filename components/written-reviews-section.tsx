@@ -94,10 +94,10 @@ export function WrittenReviewsSection({ heading = "What Our Clients Say", header
               <div className="flex items-center justify-between mt-5 pt-4 border-t border-white/10">
                 <div>
                   <div className="text-[14px] font-bold text-white">{r.name}</div>
-                  <div className="text-[12px] text-white/45">{r.role}</div>
+                  <div className="text-[12px] text-white/70">{r.role}</div>
                 </div>
                 <span
-                  className="text-[10px] font-bold px-2 py-1 rounded-full text-white/70"
+                  className="text-[10px] font-bold px-2 py-1 rounded-full text-white/90"
                   style={{ background: "rgba(255,255,255,0.08)" }}
                 >
                   via {r.source}

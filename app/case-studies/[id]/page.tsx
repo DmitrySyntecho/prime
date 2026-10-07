@@ -212,7 +212,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ id: 
                   />
                   <div>
                     <p className="font-semibold">{study.testimonial.name}</p>
-                    <p className="text-white/60 text-sm">{study.testimonial.role}</p>
+                    <p className="text-white/85 text-sm">{study.testimonial.role}</p>
                   </div>
                 </div>
               </div>

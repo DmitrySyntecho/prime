@@ -35,7 +35,7 @@ export function EventTypesSection() {
           <h2 className="text-[32px] md:text-[44px] lg:text-[50px] font-extrabold tracking-[-0.025em] leading-[1.05] text-white mb-4">
             Every Format. <span className="ds-accent-text">Every Industry.</span>
           </h2>
-          <p className="text-white/55 text-[16px] md:text-[17px]">
+          <p className="text-white/80 text-[16px] md:text-[17px]">
             We partner with event producers, planners, and marketing agencies to deliver AV support across every event
             format and industry.
           </p>

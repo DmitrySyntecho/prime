@@ -35,7 +35,7 @@ export function FrequentlyTogether({
           </div>
           <div>
             <h2 className="text-2xl md:text-3xl font-black text-white">{heading}</h2>
-            <p className="text-white/45 text-[14px]">{subheading}</p>
+            <p className="text-white/70 text-[14px]">{subheading}</p>
           </div>
         </div>
 

@@ -89,7 +89,7 @@ function FloatingStat({
           >
             {value}
           </div>
-          <div className="text-[9px] tracking-[0.12em] uppercase font-bold text-white/55 mt-0.5">
+          <div className="text-[9px] tracking-[0.12em] uppercase font-bold text-white/80 mt-0.5">
             {label}
           </div>
         </div>
@@ -188,7 +188,7 @@ export function CharitySection() {
                 </span>
               </h2>
 
-              <p className="text-white/65 text-[14px] md:text-[15px] leading-relaxed mb-6 max-w-[480px]">
+              <p className="text-white/85 text-[14px] md:text-[15px] leading-relaxed mb-6 max-w-[480px]">
                 A portion of every booking goes to local children&apos;s charities and educational programs.
                 Together we&apos;ve helped thousands of kids in our community.
               </p>

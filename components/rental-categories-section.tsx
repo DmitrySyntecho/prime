@@ -54,7 +54,7 @@ export function RentalCategoriesSection() {
           <h2 className="text-[32px] md:text-[44px] lg:text-[48px] font-extrabold tracking-[-0.025em] leading-[1.18] text-white mb-4">
             AV Equipment <span className="ds-accent-text">Rental Categories</span> in {city}
           </h2>
-          <p className="text-white/55 text-[15px] md:text-[17px]">
+          <p className="text-white/80 text-[15px] md:text-[17px]">
             Find the right AV equipment fast — LED walls, staging, audio systems, lighting, pipe &amp; drape, and full
             AV production available across {city}.
           </p>
@@ -78,7 +78,7 @@ export function RentalCategoriesSection() {
                 </div>
 
                 <div className="relative flex-shrink-0 w-8 h-8 rounded-[10px] bg-white/[0.04] border border-white/[0.06] flex items-center justify-center group-hover:bg-[#FF2D6F]/15 group-hover:border-[#FF2D6F]/30 transition-all duration-300">
-                  <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-[#FF2D6F] group-hover:translate-x-0.5 transition-all duration-300" />
+                  <ArrowRight className="w-4 h-4 text-white/65 group-hover:text-[#FF2D6F] group-hover:translate-x-0.5 transition-all duration-300" />
                 </div>
               </button>
             )

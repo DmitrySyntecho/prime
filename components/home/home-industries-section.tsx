@@ -71,7 +71,7 @@ export function HomeIndustriesSection() {
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeader eyebrow="Industries we serve" title="From corporate events to live entertainment, we know AV" accent="live entertainment">
           We are a full-service AV company who can run the AV for any event at any venue in the US. Whether you&apos;re setting up a small boardroom meeting or filling a stadium stage,{" "}
-          <strong className="font-semibold text-white">we bring the right equipment and the right crew</strong>.
+          <span className="hl">we bring the right equipment and the right crew</span>.
         </SectionHeader>
 
         {/* 2 large + 3 regular on desktop: the first two rows read as a bento, not a uniform grid. */}
@@ -87,7 +87,7 @@ export function HomeIndustriesSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#03070a] via-[#03070a]/75 to-[#03070a]/10 transition-colors duration-500 group-hover:from-[#1a0614]" />
               <div className="relative p-5 md:p-6">
                 <h3 className="mb-2 text-balance text-[20px] font-bold leading-tight tracking-[-0.01em] text-white md:text-[22px]">{ind.title}</h3>
-                <p className="text-pretty text-[14px] leading-[1.6] text-white/70">{ind.body}</p>
+                <p className="text-pretty text-[15.5px] font-medium leading-[1.6] text-white/95">{ind.body}</p>
               </div>
             </article>
           ))}
@@ -102,7 +102,7 @@ export function HomeIndustriesSection() {
             <Icon3D name="headset" size={64} className="shrink-0 drop-shadow-[0_10px_16px_rgba(0,0,0,0.45)]" />
             <div>
               <p className="text-[22px] font-extrabold leading-tight tracking-[-0.02em] text-white md:text-[26px]">Ready to discuss your event?</p>
-              <p className="mt-1 text-[15px] text-white/65">Talk to us!</p>
+              <p className="mt-1 text-[16px] font-semibold text-white/90">Talk to us!</p>
             </div>
           </div>
           <a

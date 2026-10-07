@@ -35,6 +35,11 @@ export type Icon3DName =
   | "heart"
   | "calendar"
   | "clipboard"
+  // price breakdown rows
+  | "rental-tag"
+  | "setup-tools"
+  | "savings"
+  | "receipt"
 
 export function Icon3D({
   name,

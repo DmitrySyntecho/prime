@@ -53,7 +53,7 @@ export function FAQSection() {
               <AccordionTrigger className="text-left font-semibold text-white hover:no-underline text-sm md:text-base">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-white/55">{faq.answer}</AccordionContent>
+              <AccordionContent className="text-white/80">{faq.answer}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>

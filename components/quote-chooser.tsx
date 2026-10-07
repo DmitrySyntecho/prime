@@ -71,7 +71,7 @@ export function QuoteChooser({
               type="button"
               onClick={onClose}
               aria-label="Close"
-              className="w-9 h-9 rounded-full flex items-center justify-center text-white/70 hover:text-white transition-colors shrink-0"
+              className="w-9 h-9 rounded-full flex items-center justify-center text-white/90 hover:text-white transition-colors shrink-0"
               style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)" }}
             >
               <X className="w-4 h-4" />
@@ -113,7 +113,7 @@ export function QuoteChooser({
               </span>
               <span className="flex flex-col flex-1 min-w-0">
                 <span className="text-[16px] font-bold leading-tight">Call Us Now</span>
-                <span className="text-[12.5px] font-medium text-white/55 leading-snug" suppressHydrationWarning>
+                <span className="text-[12.5px] font-medium text-white/80 leading-snug" suppressHydrationWarning>
                   {PHONE_DISPLAY} · Mon–Fri 8am–7pm PT
                 </span>
               </span>
@@ -133,14 +133,14 @@ export function QuoteChooser({
               </span>
               <span className="flex flex-col flex-1 min-w-0">
                 <span className="text-[16px] font-bold leading-tight">WhatsApp</span>
-                <span className="text-[12.5px] font-medium text-white/55 leading-snug">
+                <span className="text-[12.5px] font-medium text-white/80 leading-snug">
                   For international clients — reply in minutes
                 </span>
               </span>
             </a>
           </div>
 
-          <p className="px-5 pb-4 text-center text-[12px] text-white/35">
+          <p className="px-5 pb-4 text-center text-[12px] text-white/55">
             All channels connect you to the same account manager.
           </p>
         </div>

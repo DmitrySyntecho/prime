@@ -277,7 +277,7 @@ export function Header() {
             <div className="flex flex-col gap-1 max-h-[60vh] overflow-y-auto">
               {mobileGroups.map((group) => (
                 <div key={group.heading} className="mb-1">
-                  <div className="px-3 pt-2 pb-1 text-[11px] font-bold uppercase tracking-wider text-white/40">
+                  <div className="px-3 pt-2 pb-1 text-[11px] font-bold uppercase tracking-wider text-white/65">
                     {group.heading}
                   </div>
                   {group.links.map((link) => (

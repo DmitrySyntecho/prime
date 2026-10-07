@@ -79,7 +79,7 @@ export function HeroSection({ onStartQuote }: HeroSectionProps) {
               Brands <span className="ds-accent-text">Trust</span>
             </h1>
 
-            <p className="text-white/60 text-[14px] md:text-[17px] lg:text-[18px] leading-relaxed max-w-[540px] mb-5 md:mb-9">
+            <p className="text-white/85 text-[14px] md:text-[17px] lg:text-[18px] leading-relaxed max-w-[540px] mb-5 md:mb-9">
               {t("hero.description")}
             </p>
 
@@ -103,7 +103,7 @@ export function HeroSection({ onStartQuote }: HeroSectionProps) {
                 <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-[-0.02em] tabular-nums text-white leading-none">
                   {eventsCounter.count.toLocaleString()}+
                 </p>
-                <p className="text-[10px] md:text-[11px] tracking-[0.14em] md:tracking-[0.16em] uppercase text-white/45 mt-1.5 md:mt-2 font-semibold">
+                <p className="text-[10px] md:text-[11px] tracking-[0.14em] md:tracking-[0.16em] uppercase text-white/70 mt-1.5 md:mt-2 font-semibold">
                   {t("hero.stats.events")}
                 </p>
               </div>
@@ -114,13 +114,13 @@ export function HeroSection({ onStartQuote }: HeroSectionProps) {
                   </p>
                   <Star className="w-5 h-5 md:w-6 md:h-6 text-[#FFD24A] fill-[#FFD24A]" />
                 </div>
-                <p className="text-[10px] md:text-[11px] tracking-[0.14em] md:tracking-[0.16em] uppercase text-white/45 mt-1.5 md:mt-2 font-semibold">
+                <p className="text-[10px] md:text-[11px] tracking-[0.14em] md:tracking-[0.16em] uppercase text-white/70 mt-1.5 md:mt-2 font-semibold">
                   {t("hero.stats.rating")}
                 </p>
               </div>
               <div>
                 <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-[-0.02em] text-white leading-none">24/7</p>
-                <p className="text-[10px] md:text-[11px] tracking-[0.14em] md:tracking-[0.16em] uppercase text-white/45 mt-1.5 md:mt-2 font-semibold">
+                <p className="text-[10px] md:text-[11px] tracking-[0.14em] md:tracking-[0.16em] uppercase text-white/70 mt-1.5 md:mt-2 font-semibold">
                   {t("hero.stats.support")}
                 </p>
               </div>
@@ -198,7 +198,7 @@ export function HeroSection({ onStartQuote }: HeroSectionProps) {
               </div>
               <div>
                 <b className="block text-[13px] font-bold text-white leading-tight">1,986+ Events</b>
-                <span className="text-[11px] text-white/45">Delivered flawlessly</span>
+                <span className="text-[11px] text-white/70">Delivered flawlessly</span>
               </div>
             </div>
 
@@ -216,7 +216,7 @@ export function HeroSection({ onStartQuote }: HeroSectionProps) {
               </div>
               <div>
                 <b className="block text-[13px] font-bold text-white leading-tight">24/7 On-Call</b>
-                <span className="text-[11px] text-white/45">Crew on standby</span>
+                <span className="text-[11px] text-white/70">Crew on standby</span>
               </div>
             </div>
           </div>

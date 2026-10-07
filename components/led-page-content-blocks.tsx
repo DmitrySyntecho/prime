@@ -186,7 +186,7 @@ export function LEDPageContentBlocks({ onOpenQuoteForm, ctaButton = "Get a Fail-
             <ArrowRight className="w-5 h-5" />
           </button>
 
-          <p className="text-white/70 text-sm mt-6">
+          <p className="text-white/90 text-sm mt-6">
             Reviewed by senior production staff &bull; No spam &bull; No pressure
           </p>
         </div>

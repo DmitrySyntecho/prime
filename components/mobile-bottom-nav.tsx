@@ -166,7 +166,7 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
         >
           <div className="flex items-center justify-between px-4 pt-3.5 pb-2">
             <span className="text-[10px] font-extrabold tracking-[0.16em] uppercase" style={{ color: accent }}>Shop by Category</span>
-            <button onClick={() => setShopOpen(false)} className="text-white/40 hover:text-white/80 transition-colors p-1" aria-label="Close">
+            <button onClick={() => setShopOpen(false)} className="text-white/65 hover:text-white/80 transition-colors p-1" aria-label="Close">
               <X className="w-3.5 h-3.5" />
             </button>
           </div>
@@ -192,7 +192,7 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="block text-[12.5px] font-semibold leading-tight truncate">{label}</span>
-                    <span className="block text-[10px] text-white/40">{count} items</span>
+                    <span className="block text-[10px] text-white/65">{count} items</span>
                   </span>
                 </Link>
               )
@@ -343,16 +343,16 @@ function ContactSheet({
           <div className="px-5 pt-3 pb-4 flex items-start justify-between gap-3">
             <div>
               <h3 className="text-white text-[18px] font-extrabold tracking-[-0.01em]">How can we help?</h3>
-              <p className="text-white/55 text-[13px] mt-0.5 leading-snug">
+              <p className="text-white/80 text-[13px] mt-0.5 leading-snug">
                 Pick a channel — we usually reply within minutes.<br />
-                <span className="text-white/35">We Speak English and Spanish</span>
+                <span className="text-white/55">We Speak English and Spanish</span>
               </p>
             </div>
             <button
               type="button"
               onClick={onClose}
               aria-label="Close"
-              className="w-9 h-9 rounded-full flex items-center justify-center text-white/70 hover:text-white transition-colors shrink-0"
+              className="w-9 h-9 rounded-full flex items-center justify-center text-white/90 hover:text-white transition-colors shrink-0"
               style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)" }}
             >
               <X className="w-4 h-4" />
@@ -403,7 +403,7 @@ function ContactSheet({
               </span>
               <span className="flex flex-col">
                 <span className="text-[15px] leading-tight font-bold">Call us</span>
-                <span className="text-[12px] font-medium text-white/55">USA only · {PHONE_LABEL}</span>
+                <span className="text-[12px] font-medium text-white/80">USA only · {PHONE_LABEL}</span>
               </span>
             </a>
           </div>

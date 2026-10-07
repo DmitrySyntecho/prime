@@ -61,7 +61,7 @@ function StudyCard({ s, onPlay }: { s: Study; onPlay: () => void }) {
       </button>
       <div className="mt-3 px-0.5">
         <h3 className="truncate text-[17px] font-bold leading-tight text-white md:text-[18px]">{s.title}</h3>
-        <p className="truncate text-[13px] font-medium text-[#FFB366] md:text-[14px]">{s.location}</p>
+        <p className="truncate text-[14.5px] font-semibold text-[#FFC48A] md:text-[15px]">{s.location}</p>
       </div>
     </div>
   )
@@ -87,7 +87,7 @@ export function HomePortfolioSection() {
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeader eyebrow="Our case studies" title="Browse our event portfolio" accent="event portfolio">
           Any AV company can promise you a flawless show. Here at Prime Line AV, we show you exactly how we make it:{" "}
-          <strong className="font-semibold text-[#FFB366]">watch our crews bring real events to life behind the scenes.</strong>
+          <span className="hl">watch our crews bring real events to life behind the scenes.</span>
         </SectionHeader>
 
         <div className="reveal-stagger grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">

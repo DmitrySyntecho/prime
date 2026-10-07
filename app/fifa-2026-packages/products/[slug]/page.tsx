@@ -99,14 +99,14 @@ export default function ProductDetailPage(props: { params: Promise<{ slug: strin
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-[13px] mb-8">
-          <Link href="/fifa-2026-packages" className="text-white/50 hover:text-white transition-colors">
+          <Link href="/fifa-2026-packages" className="text-white/75 hover:text-white transition-colors">
             FIFA 2026 Packages
           </Link>
-          <span className="text-white/30">/</span>
-          <Link href="/fifa-2026-packages#products" className="text-white/50 hover:text-white transition-colors">
+          <span className="text-white/50">/</span>
+          <Link href="/fifa-2026-packages#products" className="text-white/75 hover:text-white transition-colors">
             LED Screens
           </Link>
-          <span className="text-white/30">/</span>
+          <span className="text-white/50">/</span>
           <span className="text-white">{product.name}</span>
         </nav>
 
@@ -186,7 +186,7 @@ export default function ProductDetailPage(props: { params: Promise<{ slug: strin
                   </div>
                   <div>
                     <div className="text-[12px] font-bold text-white">{title}</div>
-                    <div className="text-[11px] text-white/50">{desc}</div>
+                    <div className="text-[11px] text-white/75">{desc}</div>
                   </div>
                 </div>
               ))}
@@ -213,7 +213,7 @@ export default function ProductDetailPage(props: { params: Promise<{ slug: strin
                 )}
               </div>
               <h1 className="text-3xl md:text-4xl font-black text-white mb-4">{product.name}</h1>
-              <p className="text-white/60 text-[15px] leading-relaxed">{product.description}</p>
+              <p className="text-white/85 text-[15px] leading-relaxed">{product.description}</p>
             </div>
 
             {/* Pricing */}
@@ -226,14 +226,14 @@ export default function ProductDetailPage(props: { params: Promise<{ slug: strin
             >
               <div className="flex items-end justify-between mb-4">
                 <div>
-                  <div className="text-[13px] text-white/50 mb-1">Rental Price</div>
+                  <div className="text-[13px] text-white/75 mb-1">Rental Price</div>
                   <div className="flex items-baseline gap-2">
                     <span className="text-4xl font-black text-white">${product.price.toLocaleString()}</span>
-                    <span className="text-white/40">/ 24h</span>
+                    <span className="text-white/65">/ 24h</span>
                   </div>
                   {product.discount > 0 && (
                     <div className="flex items-center gap-2 mt-1">
-                      <span className="text-[14px] text-white/40 line-through">
+                      <span className="text-[14px] text-white/65 line-through">
                         ${product.originalPrice.toLocaleString()}
                       </span>
                       <span className="text-[12px] font-bold text-[#5BC25A]">
@@ -247,42 +247,42 @@ export default function ProductDetailPage(props: { params: Promise<{ slug: strin
               {/* Quantity & Days */}
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div>
-                  <label className="text-[12px] text-white/50 mb-2 block">Quantity</label>
+                  <label className="text-[12px] text-white/75 mb-2 block">Quantity</label>
                   <div
                     className="flex items-center justify-between p-2 rounded-xl"
                     style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)" }}
                   >
                     <button
                       onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center text-white/60 hover:bg-white/10 transition-colors"
+                      className="w-10 h-10 rounded-lg flex items-center justify-center text-white/85 hover:bg-white/10 transition-colors"
                     >
                       <Minus className="w-4 h-4" />
                     </button>
                     <span className="text-xl font-bold text-white">{quantity}</span>
                     <button
                       onClick={() => setQuantity(quantity + 1)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center text-white/60 hover:bg-white/10 transition-colors"
+                      className="w-10 h-10 rounded-lg flex items-center justify-center text-white/85 hover:bg-white/10 transition-colors"
                     >
                       <Plus className="w-4 h-4" />
                     </button>
                   </div>
                 </div>
                 <div>
-                  <label className="text-[12px] text-white/50 mb-2 block">Rental Days</label>
+                  <label className="text-[12px] text-white/75 mb-2 block">Rental Days</label>
                   <div
                     className="flex items-center justify-between p-2 rounded-xl"
                     style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)" }}
                   >
                     <button
                       onClick={() => setRentalDays(Math.max(1, rentalDays - 1))}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center text-white/60 hover:bg-white/10 transition-colors"
+                      className="w-10 h-10 rounded-lg flex items-center justify-center text-white/85 hover:bg-white/10 transition-colors"
                     >
                       <Minus className="w-4 h-4" />
                     </button>
                     <span className="text-xl font-bold text-white">{rentalDays}</span>
                     <button
                       onClick={() => setRentalDays(rentalDays + 1)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center text-white/60 hover:bg-white/10 transition-colors"
+                      className="w-10 h-10 rounded-lg flex items-center justify-center text-white/85 hover:bg-white/10 transition-colors"
                     >
                       <Plus className="w-4 h-4" />
                     </button>
@@ -293,17 +293,17 @@ export default function ProductDetailPage(props: { params: Promise<{ slug: strin
               {/* Cost breakdown */}
               <div className="space-y-2 pt-4 border-t border-white/10">
                 <div className="flex justify-between text-[13px]">
-                  <span className="text-white/50">
+                  <span className="text-white/75">
                     Rental ({quantity} x {rentalDays} days)
                   </span>
                   <span className="text-white">${subtotal.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between text-[13px]">
-                  <span className="text-white/50">Delivery ({quantity} unit)</span>
+                  <span className="text-white/75">Delivery ({quantity} unit)</span>
                   <span className="text-white">${deliveryTotal.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between text-[13px]">
-                  <span className="text-white/50">Setup & Installation</span>
+                  <span className="text-white/75">Setup & Installation</span>
                   <span className="text-white">${installationTotal.toLocaleString()}</span>
                 </div>
                 {savings > 0 && (
@@ -399,7 +399,7 @@ export default function ProductDetailPage(props: { params: Promise<{ slug: strin
                     >
                       <div className="flex items-center gap-2 mb-1">
                         <Icon className="w-4 h-4 text-[#5BC25A]" />
-                        <span className="text-[11px] text-white/50 uppercase tracking-wider">
+                        <span className="text-[11px] text-white/75 uppercase tracking-wider">
                           {specLabels[key]}
                         </span>
                       </div>
@@ -415,7 +415,7 @@ export default function ProductDetailPage(props: { params: Promise<{ slug: strin
               <h3 className="text-lg font-bold text-white mb-4">What&apos;s Included</h3>
               <div className="grid grid-cols-2 gap-2">
                 {product.includes.map((item) => (
-                  <div key={item} className="flex items-center gap-2 text-[13px] text-white/70">
+                  <div key={item} className="flex items-center gap-2 text-[13px] text-white/90">
                     <CheckCircle2 className="w-4 h-4 text-[#5BC25A] flex-shrink-0" />
                     <span>{item}</span>
                   </div>
@@ -451,7 +451,7 @@ export default function ProductDetailPage(props: { params: Promise<{ slug: strin
                     </h4>
                     <div className="flex items-baseline gap-2">
                       <span className="text-lg font-bold text-white">${p.price.toLocaleString()}</span>
-                      <span className="text-[12px] text-white/40">/ 24h</span>
+                      <span className="text-[12px] text-white/65">/ 24h</span>
                     </div>
                   </div>
                 </Link>
@@ -463,7 +463,7 @@ export default function ProductDetailPage(props: { params: Promise<{ slug: strin
         <div className="mt-12">
           <Link
             href="/fifa-2026-packages"
-            className="inline-flex items-center gap-2 text-[14px] text-white/60 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-[14px] text-white/85 hover:text-white transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to FIFA 2026 Packages

@@ -57,7 +57,7 @@ export function PortfolioSection() {
           <h2 className="text-[32px] md:text-[44px] lg:text-[50px] font-extrabold tracking-[-0.025em] leading-[1.05] text-white mb-4">
             Featured <span className="ds-accent-text">Work</span>
           </h2>
-          <p className="text-white/55 text-[16px] md:text-[17px]">
+          <p className="text-white/80 text-[16px] md:text-[17px]">
             A glimpse of recent productions — from corporate keynotes to nationally broadcast brand activations.
           </p>
         </div>

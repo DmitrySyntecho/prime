@@ -153,7 +153,7 @@ export function FIFAPromoBanner() {
                 </span>
               </h2>
 
-              <p className="text-white/65 text-[14px] md:text-[15px] leading-relaxed mb-6 max-w-[540px]">
+              <p className="text-white/85 text-[14px] md:text-[15px] leading-relaxed mb-6 max-w-[540px]">
                 Stadium-grade LED walls, broadcast-quality sound, and full crew handling — for backyard
                 viewing parties to corporate fan zones. Built for every kickoff from{" "}
                 <b className="text-white">June 11</b> to the <b className="text-white">MetLife Final on July 19</b>.
@@ -258,7 +258,7 @@ export function FIFAPromoBanner() {
                           >
                             {String(c.num).padStart(2, "0")}
                           </div>
-                          <div className="text-[8px] tracking-[0.14em] text-white/45 font-bold mt-0.5">{c.lbl}</div>
+                          <div className="text-[8px] tracking-[0.14em] text-white/70 font-bold mt-0.5">{c.lbl}</div>
                         </div>
                       ))}
                     </div>
@@ -281,7 +281,7 @@ export function FIFAPromoBanner() {
                     </span>
                     <div className="min-w-0">
                       <div className="text-white text-[12px] font-bold leading-tight truncate">June 11 — Estadio Azteca</div>
-                      <div className="text-white/50 text-[10px] truncate">Mexico vs South Africa · Opener</div>
+                      <div className="text-white/75 text-[10px] truncate">Mexico vs South Africa · Opener</div>
                     </div>
                   </div>
                 </div>

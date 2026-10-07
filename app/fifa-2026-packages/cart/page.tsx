@@ -99,10 +99,10 @@ export default function CartPage() {
             className="w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center"
             style={{ background: "rgba(255,255,255,0.05)" }}
           >
-            <ShoppingCart className="w-10 h-10 text-white/30" />
+            <ShoppingCart className="w-10 h-10 text-white/50" />
           </div>
           <h1 className="text-3xl font-bold text-white mb-4">Your Cart is Empty</h1>
-          <p className="text-white/50 mb-8">
+          <p className="text-white/75 mb-8">
             Browse our LED wall rentals and add items to your cart to get started.
           </p>
           <Link
@@ -150,7 +150,7 @@ export default function CartPage() {
             <CheckCircle2 className="w-12 h-12 text-[#5BC25A]" />
           </div>
           <h1 className="text-4xl font-black text-white mb-4">Order Confirmed!</h1>
-          <p className="text-white/60 text-lg mb-8">
+          <p className="text-white/85 text-lg mb-8">
             Thank you for your order. Our team will contact you within 2 hours to confirm your rental details and
             schedule delivery.
           </p>
@@ -177,7 +177,7 @@ export default function CartPage() {
                   >
                     <Icon className="w-4 h-4 text-[#5BC25A]" />
                   </div>
-                  <span className="text-[14px] text-white/70">{text}</span>
+                  <span className="text-[14px] text-white/90">{text}</span>
                 </div>
               ))}
             </div>
@@ -235,10 +235,10 @@ export default function CartPage() {
       <div className="max-w-6xl mx-auto px-4 py-8">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-[13px] mb-8">
-          <Link href="/fifa-2026-packages" className="text-white/50 hover:text-white transition-colors">
+          <Link href="/fifa-2026-packages" className="text-white/75 hover:text-white transition-colors">
             FIFA 2026 Packages
           </Link>
-          <span className="text-white/30">/</span>
+          <span className="text-white/50">/</span>
           <span className="text-white">Cart & Checkout</span>
         </nav>
 
@@ -260,7 +260,7 @@ export default function CartPage() {
                     ? "text-white"
                     : ["details", "payment"].indexOf(step) > ["cart", "details", "payment"].indexOf(key)
                     ? "text-[#5BC25A]"
-                    : "text-white/40"
+                    : "text-white/65"
                 }`}
                 style={{
                   background:
@@ -317,11 +317,11 @@ export default function CartPage() {
                             >
                               {item.product.name}
                             </Link>
-                            <p className="text-[12px] text-white/50">{item.product.dimensions}</p>
+                            <p className="text-[12px] text-white/75">{item.product.dimensions}</p>
                           </div>
                           <button
                             onClick={() => removeItem(item.product.id)}
-                            className="p-2 rounded-lg text-white/40 hover:text-red-500 hover:bg-red-500/10 transition-colors"
+                            className="p-2 rounded-lg text-white/65 hover:text-red-500 hover:bg-red-500/10 transition-colors"
                           >
                             <Trash2 className="w-4 h-4" />
                           </button>
@@ -330,14 +330,14 @@ export default function CartPage() {
                         <div className="flex flex-wrap items-center gap-4 mt-3">
                           {/* Quantity */}
                           <div className="flex items-center gap-2">
-                            <span className="text-[11px] text-white/50 uppercase">Qty:</span>
+                            <span className="text-[11px] text-white/75 uppercase">Qty:</span>
                             <div
                               className="flex items-center rounded-lg overflow-hidden"
                               style={{ background: "rgba(255,255,255,0.06)" }}
                             >
                               <button
                                 onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
-                                className="w-8 h-8 flex items-center justify-center text-white/60 hover:bg-white/10"
+                                className="w-8 h-8 flex items-center justify-center text-white/85 hover:bg-white/10"
                               >
                                 <Minus className="w-3 h-3" />
                               </button>
@@ -346,7 +346,7 @@ export default function CartPage() {
                               </span>
                               <button
                                 onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                                className="w-8 h-8 flex items-center justify-center text-white/60 hover:bg-white/10"
+                                className="w-8 h-8 flex items-center justify-center text-white/85 hover:bg-white/10"
                               >
                                 <Plus className="w-3 h-3" />
                               </button>
@@ -355,14 +355,14 @@ export default function CartPage() {
 
                           {/* Days */}
                           <div className="flex items-center gap-2">
-                            <span className="text-[11px] text-white/50 uppercase">Days:</span>
+                            <span className="text-[11px] text-white/75 uppercase">Days:</span>
                             <div
                               className="flex items-center rounded-lg overflow-hidden"
                               style={{ background: "rgba(255,255,255,0.06)" }}
                             >
                               <button
                                 onClick={() => updateRentalDays(item.product.id, item.rentalDays - 1)}
-                                className="w-8 h-8 flex items-center justify-center text-white/60 hover:bg-white/10"
+                                className="w-8 h-8 flex items-center justify-center text-white/85 hover:bg-white/10"
                               >
                                 <Minus className="w-3 h-3" />
                               </button>
@@ -371,7 +371,7 @@ export default function CartPage() {
                               </span>
                               <button
                                 onClick={() => updateRentalDays(item.product.id, item.rentalDays + 1)}
-                                className="w-8 h-8 flex items-center justify-center text-white/60 hover:bg-white/10"
+                                className="w-8 h-8 flex items-center justify-center text-white/85 hover:bg-white/10"
                               >
                                 <Plus className="w-3 h-3" />
                               </button>
@@ -382,7 +382,7 @@ export default function CartPage() {
                             <div className="text-lg font-bold text-white">
                               ${(item.product.price * item.quantity * item.rentalDays).toLocaleString()}
                             </div>
-                            <div className="text-[11px] text-white/40">
+                            <div className="text-[11px] text-white/65">
                               ${item.product.price.toLocaleString()} x {item.quantity} x {item.rentalDays}d
                             </div>
                           </div>
@@ -430,7 +430,7 @@ export default function CartPage() {
                         placeholder="First Name *"
                         value={formData.firstName}
                         onChange={handleInputChange}
-                        className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-[#5BC25A] focus:outline-none transition-colors"
+                        className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/50 focus:border-[#5BC25A] focus:outline-none transition-colors"
                         required
                       />
                       <input
@@ -439,7 +439,7 @@ export default function CartPage() {
                         placeholder="Last Name *"
                         value={formData.lastName}
                         onChange={handleInputChange}
-                        className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-[#5BC25A] focus:outline-none transition-colors"
+                        className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/50 focus:border-[#5BC25A] focus:outline-none transition-colors"
                         required
                       />
                       <input
@@ -448,7 +448,7 @@ export default function CartPage() {
                         placeholder="Email Address *"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-[#5BC25A] focus:outline-none transition-colors"
+                        className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/50 focus:border-[#5BC25A] focus:outline-none transition-colors"
                         required
                       />
                       <input
@@ -457,7 +457,7 @@ export default function CartPage() {
                         placeholder="Phone Number *"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-[#5BC25A] focus:outline-none transition-colors"
+                        className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/50 focus:border-[#5BC25A] focus:outline-none transition-colors"
                         required
                       />
                       <input
@@ -466,7 +466,7 @@ export default function CartPage() {
                         placeholder="Company (Optional)"
                         value={formData.company}
                         onChange={handleInputChange}
-                        className="md:col-span-2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-[#5BC25A] focus:outline-none transition-colors"
+                        className="md:col-span-2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/50 focus:border-[#5BC25A] focus:outline-none transition-colors"
                       />
                     </div>
                   </div>
@@ -484,7 +484,7 @@ export default function CartPage() {
                         placeholder="Street Address *"
                         value={formData.address}
                         onChange={handleInputChange}
-                        className="md:col-span-2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-[#5BC25A] focus:outline-none transition-colors"
+                        className="md:col-span-2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/50 focus:border-[#5BC25A] focus:outline-none transition-colors"
                         required
                       />
                       <input
@@ -493,7 +493,7 @@ export default function CartPage() {
                         placeholder="City *"
                         value={formData.city}
                         onChange={handleInputChange}
-                        className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-[#5BC25A] focus:outline-none transition-colors"
+                        className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/50 focus:border-[#5BC25A] focus:outline-none transition-colors"
                         required
                       />
                       <div className="grid grid-cols-2 gap-4">
@@ -503,7 +503,7 @@ export default function CartPage() {
                           placeholder="State *"
                           value={formData.state}
                           onChange={handleInputChange}
-                          className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-[#5BC25A] focus:outline-none transition-colors"
+                          className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/50 focus:border-[#5BC25A] focus:outline-none transition-colors"
                           required
                         />
                         <input
@@ -512,7 +512,7 @@ export default function CartPage() {
                           placeholder="ZIP *"
                           value={formData.zip}
                           onChange={handleInputChange}
-                          className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-[#5BC25A] focus:outline-none transition-colors"
+                          className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/50 focus:border-[#5BC25A] focus:outline-none transition-colors"
                           required
                         />
                       </div>
@@ -548,7 +548,7 @@ export default function CartPage() {
                         value={formData.notes}
                         onChange={handleInputChange}
                         rows={3}
-                        className="md:col-span-2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-[#5BC25A] focus:outline-none transition-colors resize-none"
+                        className="md:col-span-2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/50 focus:border-[#5BC25A] focus:outline-none transition-colors resize-none"
                       />
                     </div>
                   </div>
@@ -603,7 +603,7 @@ export default function CartPage() {
                         </div>
                         <div className="flex-1">
                           <div className="font-medium text-white">{item.product.name}</div>
-                          <div className="text-[12px] text-white/50">
+                          <div className="text-[12px] text-white/75">
                             {item.quantity} x {item.rentalDays} days
                           </div>
                         </div>
@@ -626,22 +626,22 @@ export default function CartPage() {
                   <h3 className="text-lg font-bold text-white mb-4">Delivery Information</h3>
                   <div className="grid grid-cols-2 gap-4 text-[14px]">
                     <div>
-                      <div className="text-white/50 mb-1">Contact</div>
+                      <div className="text-white/75 mb-1">Contact</div>
                       <div className="text-white">
                         {formData.firstName} {formData.lastName}
                       </div>
-                      <div className="text-white/70">{formData.email}</div>
-                      <div className="text-white/70">{formData.phone}</div>
+                      <div className="text-white/90">{formData.email}</div>
+                      <div className="text-white/90">{formData.phone}</div>
                     </div>
                     <div>
-                      <div className="text-white/50 mb-1">Delivery Address</div>
+                      <div className="text-white/75 mb-1">Delivery Address</div>
                       <div className="text-white">{formData.address}</div>
-                      <div className="text-white/70">
+                      <div className="text-white/90">
                         {formData.city}, {formData.state} {formData.zip}
                       </div>
                     </div>
                     <div className="col-span-2">
-                      <div className="text-white/50 mb-1">Event Date & Time</div>
+                      <div className="text-white/75 mb-1">Event Date & Time</div>
                       <div className="text-white">
                         {formData.eventDate} at {formData.eventTime}
                       </div>
@@ -660,7 +660,7 @@ export default function CartPage() {
                   <Lock className="w-5 h-5 text-[#FFD24A] mt-0.5 flex-shrink-0" />
                   <div>
                     <div className="text-[14px] font-bold text-white mb-1">Payment on Confirmation</div>
-                    <div className="text-[13px] text-white/60">
+                    <div className="text-[13px] text-white/85">
                       Our team will contact you to confirm your order and process payment securely. No payment is
                       required now.
                     </div>
@@ -718,15 +718,15 @@ export default function CartPage() {
 
               <div className="space-y-3 text-[14px] mb-6">
                 <div className="flex justify-between">
-                  <span className="text-white/60">Subtotal ({items.length} items)</span>
+                  <span className="text-white/85">Subtotal ({items.length} items)</span>
                   <span className="text-white">${getSubtotal().toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-white/60">Delivery</span>
+                  <span className="text-white/85">Delivery</span>
                   <span className="text-white">${getDeliveryTotal().toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-white/60">Installation</span>
+                  <span className="text-white/85">Installation</span>
                   <span className="text-white">${getInstallationTotal().toLocaleString()}</span>
                 </div>
                 {getSavings() > 0 && (
@@ -749,7 +749,7 @@ export default function CartPage() {
                   { icon: Clock, text: "On-time guarantee" },
                   { icon: Zap, text: "24/7 technical support" },
                 ].map(({ icon: Icon, text }) => (
-                  <div key={text} className="flex items-center gap-2 text-[12px] text-white/60">
+                  <div key={text} className="flex items-center gap-2 text-[12px] text-white/85">
                     <Icon className="w-4 h-4 text-[#5BC25A]" />
                     <span>{text}</span>
                   </div>
@@ -758,7 +758,7 @@ export default function CartPage() {
 
               {/* Contact */}
               <div className="mt-6 pt-4 border-t border-white/10">
-                <div className="text-[12px] text-white/50 mb-2">Questions? Call us</div>
+                <div className="text-[12px] text-white/75 mb-2">Questions? Call us</div>
                 <a
                   href={PHONE_TEL}
                   className="flex items-center gap-2 text-[14px] font-bold text-[#FFD24A] hover:underline"
@@ -775,7 +775,7 @@ export default function CartPage() {
         <div className="mt-12">
           <Link
             href="/fifa-2026-packages"
-            className="inline-flex items-center gap-2 text-[14px] text-white/60 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-[14px] text-white/85 hover:text-white transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Continue Shopping

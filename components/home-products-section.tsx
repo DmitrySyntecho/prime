@@ -42,7 +42,7 @@ export function HomeProductsSection() {
                 The Work
               </span>
             </h2>
-            <p className="text-white/50 text-[15px] mt-3 max-w-xl">
+            <p className="text-white/75 text-[15px] mt-3 max-w-xl">
               The same LED walls, sound systems and stage gear from our productions — available to rent
               for your next event.
             </p>

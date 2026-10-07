@@ -39,7 +39,7 @@ function LinkCard({ href, label }: { href: string; label: string }) {
       style={GLASS}
     >
       <span className="text-[14px] font-semibold text-white/85 group-hover:text-white transition-colors">{label}</span>
-      <ArrowRight className="w-4 h-4 text-white/30 group-hover:text-[#FF5E3A] group-hover:translate-x-1 transition-all flex-shrink-0" />
+      <ArrowRight className="w-4 h-4 text-white/50 group-hover:text-[#FF5E3A] group-hover:translate-x-1 transition-all flex-shrink-0" />
     </Link>
   )
 }
@@ -84,7 +84,7 @@ export default function StatePage({ params }: { params: Promise<{ state: string 
                 {stateData.state}
               </span>
             </h2>
-            <p className="text-white/55 mt-3 max-w-2xl mx-auto">
+            <p className="text-white/80 mt-3 max-w-2xl mx-auto">
               We serve every major market in {stateData.state}. Select your city for local availability and event-specific information.
             </p>
           </div>
@@ -98,7 +98,7 @@ export default function StatePage({ params }: { params: Promise<{ state: string 
               >
                 <MapPin className="w-4 h-4 text-[#FF5E3A] flex-shrink-0" />
                 <span className="font-semibold text-white/85 group-hover:text-white transition-colors">{city.city}</span>
-                <ArrowRight className="w-4 h-4 text-white/30 group-hover:text-[#FF5E3A] ml-auto transition-all" />
+                <ArrowRight className="w-4 h-4 text-white/50 group-hover:text-[#FF5E3A] ml-auto transition-all" />
               </Link>
             ))}
           </div>

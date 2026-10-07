@@ -52,7 +52,7 @@ export function RelevantProductsSection({ category, limit = 3 }: RelevantProduct
                 {label}
               </span>
             </h2>
-            <p className="text-white/50 text-[15px] mt-3 max-w-xl">
+            <p className="text-white/75 text-[15px] mt-3 max-w-xl">
               Hand-picked equipment ready for your event. Browse the full catalog for every size and
               configuration.
             </p>

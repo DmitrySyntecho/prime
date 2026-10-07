@@ -43,7 +43,7 @@ export function WhyChooseUsSection() {
             <h2 className="text-[32px] md:text-[44px] lg:text-[48px] font-extrabold tracking-[-0.025em] leading-[1.08] text-white mb-5">
               {t("whyUs.subtitle")}
             </h2>
-            <p className="text-white/55 text-[16px] md:text-[17px] mb-8 leading-relaxed">{t("about.description")}</p>
+            <p className="text-white/80 text-[16px] md:text-[17px] mb-8 leading-relaxed">{t("about.description")}</p>
 
             <div className="reveal-stagger grid grid-cols-1 sm:grid-cols-2 gap-4">
               {features.map((feature, index) => (
@@ -54,7 +54,7 @@ export function WhyChooseUsSection() {
                   <Icon3D name={feature.icon} size={44} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
                   <div>
                     <b className="block text-white font-bold text-[14px] mb-1">{feature.title}</b>
-                    <span className="text-white/45 text-[12px] leading-[1.5]">{feature.description}</span>
+                    <span className="text-white/70 text-[12px] leading-[1.5]">{feature.description}</span>
                   </div>
                 </div>
               ))}
@@ -84,7 +84,7 @@ export function WhyChooseUsSection() {
               >
                 15<span className="text-[0.6em]">+</span>
               </div>
-              <p className="text-white/55 text-[14px] md:text-[15px] max-w-[320px]">
+              <p className="text-white/80 text-[14px] md:text-[15px] max-w-[320px]">
                 Years delivering brand-tier AV production for Fortune 500s and global event producers.
               </p>
             </div>
@@ -116,7 +116,7 @@ export function WhyChooseUsSection() {
                 <b className="block text-[20px] font-extrabold text-[#FF2D6F] tracking-[-0.02em]">
                   <CountUp end={1986} suffix="+" />
                 </b>
-                <span className="text-[10px] tracking-[0.08em] uppercase text-white/45">Events</span>
+                <span className="text-[10px] tracking-[0.08em] uppercase text-white/70">Events</span>
               </div>
               <div
                 className="flex-1 px-4 py-3 rounded-[12px] border border-white/[0.10] backdrop-blur-md"
@@ -125,7 +125,7 @@ export function WhyChooseUsSection() {
                 <b className="block text-[20px] font-extrabold text-[#FF2D6F] tracking-[-0.02em]">
                   <CountUp end={49} duration={1800} format={(n) => (n / 10).toFixed(1)} suffix="★" />
                 </b>
-                <span className="text-[10px] tracking-[0.08em] uppercase text-white/45">Rating</span>
+                <span className="text-[10px] tracking-[0.08em] uppercase text-white/70">Rating</span>
               </div>
               <div
                 className="flex-1 px-4 py-3 rounded-[12px] border border-white/[0.10] backdrop-blur-md"
@@ -134,7 +134,7 @@ export function WhyChooseUsSection() {
                 <b className="block text-[20px] font-extrabold text-[#FF2D6F] tracking-[-0.02em]">
                   <CountUp end={500} suffix="+" />
                 </b>
-                <span className="text-[10px] tracking-[0.08em] uppercase text-white/45">Brands</span>
+                <span className="text-[10px] tracking-[0.08em] uppercase text-white/70">Brands</span>
               </div>
             </div>
           </div>

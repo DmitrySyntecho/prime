@@ -117,7 +117,7 @@ function MuxVideoCard({ testimonial }: { testimonial: Testimonial }) {
       <div className="mt-3 px-1">
         <h3 className="text-white font-semibold text-[14px]">{testimonial.event}</h3>
         <p className="text-[#FF2D6F] text-[13px] font-medium">{testimonial.name}</p>
-        <p className="text-white/45 text-[11px]">{testimonial.role}</p>
+        <p className="text-white/70 text-[11px]">{testimonial.role}</p>
       </div>
     </div>
   )

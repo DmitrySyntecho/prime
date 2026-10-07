@@ -65,8 +65,8 @@ export function TeamSection({ heading = "Meet Our Team", header }: { heading?: s
                 {m.initials}
               </div>
               <div className="text-[15px] font-bold text-white">{m.name}</div>
-              <div className="text-[12px] text-white/45 mt-0.5">{m.role}</div>
-              <div className="mt-4 flex items-center justify-center gap-2 text-white/40 group-hover:text-[#FF5E3A] transition-colors">
+              <div className="text-[12px] text-white/70 mt-0.5">{m.role}</div>
+              <div className="mt-4 flex items-center justify-center gap-2 text-white/65 group-hover:text-[#FF5E3A] transition-colors">
                 <Linkedin className="w-4 h-4" />
                 <ArrowUpRight className="w-4 h-4" />
               </div>

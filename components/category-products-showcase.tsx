@@ -94,7 +94,7 @@ export function CategoryProductsShowcase({ category }: { category: ProductCatego
               {label}
             </span>
           </h2>
-          <p className="text-white/50 text-[15px] mt-3 max-w-2xl mx-auto">{subtitle}</p>
+          <p className="text-white/75 text-[15px] mt-3 max-w-2xl mx-auto">{subtitle}</p>
         </div>
 
         {/* Lanes — stacked vertically */}
@@ -105,9 +105,9 @@ export function CategoryProductsShowcase({ category }: { category: ProductCatego
                 <Icon3D name={Icon} size={52} className="flex-shrink-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]" />
                 <div>
                   <h3 className="text-xl md:text-2xl font-black text-white">{title}</h3>
-                  <p className="text-white/45 text-[13px]">{blurb}</p>
+                  <p className="text-white/70 text-[13px]">{blurb}</p>
                 </div>
-                <span className="ml-auto text-[12px] text-white/40">{items.length} items</span>
+                <span className="ml-auto text-[12px] text-white/65">{items.length} items</span>
               </div>
 
               <ProductCarousel products={items} />

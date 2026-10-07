@@ -182,7 +182,7 @@ export function LandingQuoteForm({ isOpen, onClose, citySlug = "los-angeles", de
 
         <button
           onClick={onClose}
-          className="absolute top-2.5 right-2.5 sm:top-4 sm:right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-[10px] bg-white/[0.05] border border-white/[0.10] hover:bg-white/[0.10] hover:border-white/[0.20] flex items-center justify-center text-white/65 hover:text-white transition-all"
+          className="absolute top-2.5 right-2.5 sm:top-4 sm:right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-[10px] bg-white/[0.05] border border-white/[0.10] hover:bg-white/[0.10] hover:border-white/[0.20] flex items-center justify-center text-white/85 hover:text-white transition-all"
           aria-label="Close"
         >
           <X className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -201,7 +201,7 @@ export function LandingQuoteForm({ isOpen, onClose, citySlug = "los-angeles", de
             <h2 className="text-[18px] sm:text-[24px] md:text-[28px] font-extrabold tracking-[-0.025em] leading-[1.2] text-white pr-8">
               {step === 1 ? "The Basics" : step === 2 ? "The Details" : "Where to send the quote"}
             </h2>
-            <p className="text-white/50 text-[11px] sm:text-[12px] mt-1 sm:mt-1.5">
+            <p className="text-white/75 text-[11px] sm:text-[12px] mt-1 sm:mt-1.5">
               Step {step} of {TOTAL_STEPS}
             </p>
           </div>
@@ -218,7 +218,7 @@ export function LandingQuoteForm({ isOpen, onClose, citySlug = "los-angeles", de
             />
           </div>
 
-          <p className="text-white/70 text-[13px] sm:text-[14px] mb-3 sm:mb-4 leading-snug">{microcopy}</p>
+          <p className="text-white/90 text-[13px] sm:text-[14px] mb-3 sm:mb-4 leading-snug">{microcopy}</p>
 
           <form onSubmit={handleSubmit} className="animate-fadeIn">
             {/* STEP 1 */}
@@ -253,7 +253,7 @@ export function LandingQuoteForm({ isOpen, onClose, citySlug = "los-angeles", de
               <div className="space-y-4 sm:space-y-5">
                 <div>
                   <FieldLabel>Services</FieldLabel>
-                  <p className="text-white/45 text-[12px] mb-2.5 -mt-1">Pick all that apply — multi-select.</p>
+                  <p className="text-white/70 text-[12px] mb-2.5 -mt-1">Pick all that apply — multi-select.</p>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-2.5">
                     {serviceOptions.map(({ id, label, icon: Icon }) => (
                       <Tile key={id} active={form.services.includes(id)} onClick={() => toggleService(id)}>
@@ -268,7 +268,7 @@ export function LandingQuoteForm({ isOpen, onClose, citySlug = "los-angeles", de
                 <TextField icon={MapPin} label="Venue / City" value={form.venue} onChange={(v) => set("venue", v.slice(0, 100))} placeholder="e.g. Los Angeles Convention Center" />
                 <div>
                   <FieldLabel>
-                    Anything specific? <span className="text-white/35 font-normal lowercase tracking-normal">(optional)</span>
+                    Anything specific? <span className="text-white/55 font-normal lowercase tracking-normal">(optional)</span>
                   </FieldLabel>
                   <textarea
                     value={form.details}
@@ -302,7 +302,7 @@ export function LandingQuoteForm({ isOpen, onClose, citySlug = "los-angeles", de
                 <TextField icon={Building2} label="Company (optional)" value={form.company} onChange={(v) => set("company", v.slice(0, 80))} placeholder="Brand or agency" autoComplete="organization" />
                 <div>
                   <TextField icon={Phone} label="Phone (optional)" type="tel" value={form.phone} onChange={(v) => set("phone", v.slice(0, 25))} placeholder="(888) 508-5001" autoComplete="tel" />
-                  <p className="text-white/40 text-[11px] mt-1.5 ml-1">Only if you prefer a call back.</p>
+                  <p className="text-white/65 text-[11px] mt-1.5 ml-1">Only if you prefer a call back.</p>
                 </div>
               </div>
             )}
@@ -347,7 +347,7 @@ export function LandingQuoteForm({ isOpen, onClose, citySlug = "los-angeles", de
 /* ============ PRIMITIVES ============ */
 
 function FieldLabel({ children }: { children: React.ReactNode }) {
-  return <label className="block text-white/65 text-[11px] tracking-[0.08em] uppercase font-semibold mb-2 sm:mb-2.5">{children}</label>
+  return <label className="block text-white/85 text-[11px] tracking-[0.08em] uppercase font-semibold mb-2 sm:mb-2.5">{children}</label>
 }
 
 function Tile({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {

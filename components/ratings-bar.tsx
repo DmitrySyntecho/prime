@@ -27,7 +27,7 @@ export function RatingsBar({ only }: { only?: string[] } = {}) {
             border: "1px solid rgba(255,255,255,0.10)",
           }}
         >
-          <span className="text-[12px] font-bold uppercase tracking-[0.14em] text-white/45">
+          <span className="text-[12px] font-bold uppercase tracking-[0.14em] text-white/70">
             Trusted &amp; top-rated
           </span>
           {sources.map((s, i) => (
@@ -46,7 +46,7 @@ export function RatingsBar({ only }: { only?: string[] } = {}) {
                 ))}
               </span>
               <span className="text-[14px] font-black text-white">{s.rating}</span>
-              <span className="text-[12px] text-white/45 group-hover:text-white/70 transition-colors">
+              <span className="text-[12px] text-white/70 group-hover:text-white/90 transition-colors">
                 {s.reviews}
               </span>
             </a>

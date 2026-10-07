@@ -80,7 +80,7 @@ export function LandingWhyUs() {
               <div key={title} className="ds-card fx-spot group p-5 md:p-6">
                 <Icon3D name={icon} size={56} className="mb-3 -ml-1 drop-shadow-[0_10px_16px_rgba(0,0,0,0.45)] transition-transform duration-500 group-hover:-rotate-3 group-hover:scale-105" />
                 <h3 className="text-[16px] md:text-[17px] font-bold text-white mb-1.5 leading-snug">{title}</h3>
-                <p className="text-[13px] md:text-[14px] text-white/60 leading-relaxed">{body}</p>
+                <p className="text-[13px] md:text-[14px] text-white/85 leading-relaxed">{body}</p>
               </div>
             ))}
           </div>
@@ -117,7 +117,7 @@ export function LandingWhyUs() {
               </div>
               <div className="text-left">
                 <p className="text-white font-bold text-[14px] leading-tight">Lauren Selman</p>
-                <p className="text-white/50 text-[12px]">Event Producer</p>
+                <p className="text-white/75 text-[12px]">Event Producer</p>
               </div>
             </div>
 

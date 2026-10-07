@@ -47,7 +47,12 @@ export function HomeClient() {
           title: "AV Company & Audio Visual Service in the USA",
           accentPhrase: "Audio Visual Service",
           pillLabel: "Lights · Sound · LED · Staging",
-          lede: "Prime Line AV is a full-service AV company offering audio, video, lighting, staging and LED walls for events across the USA. One team. No surprises.",
+          lede: (
+            <>
+              Prime Line AV is a full-service AV company offering audio, video, lighting, staging and LED walls for events across the USA.{" "}
+              <span className="hl">One team. No surprises.</span>
+            </>
+          ),
           ctaLabel: "Get your custom quote",
           microcopy: "Quote in 30 minutes · No obligation",
           secondary: "portfolio",
@@ -88,7 +93,7 @@ export function HomeClient() {
       <TestimonialsCarousel
         header={
           <SectionHeader eyebrow="Testimonials" title="Hear what our clients have to say" accent="our clients">
-            Don&apos;t take our word for it. Just listen to what our happy clients say about their events, because they say it better than we ever could.
+            Don&apos;t take our word for it. Just listen to what our happy clients say about their events, <span className="hl">because they say it better than we ever could.</span>
           </SectionHeader>
         }
       />
@@ -100,7 +105,7 @@ export function HomeClient() {
       <TeamSection
         header={
           <SectionHeader eyebrow="Our team" title="Meet the team behind our successful events" accent="successful events">
-            Get to know the technical directors, engineers, technicians and account managers who make every Prime Line AV event possible.
+            Get to know the technical directors, engineers, technicians and account managers <span className="hl">who make every Prime Line AV event possible.</span>
           </SectionHeader>
         }
       />

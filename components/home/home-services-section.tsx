@@ -18,28 +18,48 @@ const SERVICES: Service[] = [
     href: "/av-production/",
     image: "/images/services/full-av-card.webp",
     icon: "sound-console",
-    body: "Our in-house crews run the staging, sound, video and lighting for your show, built around your program and your venue. One AV production team stays with you from load-in to strike.",
+    body: (
+      <>
+        Our in-house crews run the staging, sound, video and lighting for your show, built around your program and your venue.{" "}
+        <span className="hl">One AV production team stays with you from load-in to strike.</span>
+      </>
+    ),
   },
   {
     title: "AV Rental",
     href: "/av-rental/",
     image: "/images/services/stage-rental-card.webp",
     icon: "flight-case",
-    body: "Sound systems, LED walls, lighting and staging, delivered and set up for your event. Our AV rental crews test everything before doors open, and a technician can stay through the show.",
+    body: (
+      <>
+        Sound systems, LED walls, lighting and staging, delivered and set up for your event. Our AV rental crews <span className="hl">test everything before doors open</span>, and a
+        technician can stay through the show.
+      </>
+    ),
   },
   {
     title: "AV Installations",
     href: "/av-installations/",
     image: "/images/services/permanent-av-1.webp",
     icon: "installation",
-    body: "We design and install permanent AV systems for commercial and residential spaces. Our audio visual installation service also includes documentation and staff training, so your team can run the new system on day one.",
+    body: (
+      <>
+        We design and install permanent AV systems for commercial and residential spaces. Our audio visual installation service also includes documentation and staff
+        training, so <span className="hl">your team can run the new system on day one.</span>
+      </>
+    ),
   },
   {
     title: "Live Streaming Production",
     href: "/live-streaming-production/",
     image: "/images/events/hybrid-events.webp",
     icon: "live-stream",
-    body: "From cameras and switching to graphics and the platform feed, our live streaming production covers the whole broadcast. We plan it with you before the event and run it live while it happens.",
+    body: (
+      <>
+        From cameras and switching to graphics and the platform feed, our live streaming production covers the whole broadcast.{" "}
+        <span className="hl">We plan it with you before the event and run it live while it happens.</span>
+      </>
+    ),
   },
   {
     title: "Video Production",
@@ -65,7 +85,12 @@ const SERVICES: Service[] = [
     href: "/store/led-walls/",
     image: "/images/services/led-screen-card.webp",
     icon: "led-billboard",
-    body: "Indoor and outdoor LED video walls for sale, perfect as a billboard or digital signage for your business. Every LED wall comes with our 12-month warranty, and we handle everything from site survey to installation, with content management on request.",
+    body: (
+      <>
+        Indoor and outdoor LED video walls for sale, perfect as a billboard or digital signage for your business. <span className="hl">Every LED wall comes with our 12-month warranty</span>,
+        and we handle everything from site survey to installation, with content management on request.
+      </>
+    ),
   },
 ]
 
@@ -76,7 +101,7 @@ export function HomeServicesSection() {
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeader eyebrow="What we do" title="End-to-end audio visual services nationwide" accent="audio visual services">
           Our AV company plans and operates the technical side of your event, including AV equipment rental, permanent AV installation, live streaming and LED walls,
-          anywhere in the United States. You can book the whole package or pick only the service you need.
+          anywhere in the United States. <span className="hl">You can book the whole package or pick only the service you need.</span>
         </SectionHeader>
 
         <div className="reveal-stagger grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
@@ -102,7 +127,7 @@ export function HomeServicesSection() {
                     {s.title}
                   </Link>
                 </h3>
-                <p className="mb-5 flex-1 text-pretty text-[14px] leading-[1.6] text-white/65">{s.body}</p>
+                <p className="mb-5 flex-1 text-pretty text-[15.5px] leading-[1.65] text-white/90">{s.body}</p>
                 <Link href={s.href} className="mt-auto inline-flex items-center gap-2 self-start text-[14px] font-bold text-[#FF2D6F] transition-[gap] hover:gap-3">
                   Learn more <ArrowRight className="h-4 w-4" />
                 </Link>

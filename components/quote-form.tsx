@@ -515,7 +515,7 @@ export function QuoteForm({ isOpen, onClose, serviceSlug, eventTypeId }: QuoteFo
 
         <button
           onClick={reset}
-          className="absolute top-2.5 right-2.5 sm:top-4 sm:right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-[10px] bg-white/[0.05] border border-white/[0.10] hover:bg-white/[0.10] hover:border-white/[0.20] flex items-center justify-center text-white/65 hover:text-white transition-all"
+          className="absolute top-2.5 right-2.5 sm:top-4 sm:right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-[10px] bg-white/[0.05] border border-white/[0.10] hover:bg-white/[0.10] hover:border-white/[0.20] flex items-center justify-center text-white/85 hover:text-white transition-all"
           aria-label="Close"
         >
           <X className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -540,9 +540,9 @@ export function QuoteForm({ isOpen, onClose, serviceSlug, eventTypeId }: QuoteFo
                 <h2 className="text-[18px] sm:text-[24px] md:text-[28px] font-extrabold tracking-[-0.025em] leading-[1.2] text-white pr-8">
                   {stepCopy(step)}
                 </h2>
-                <p className="text-white/50 text-[11px] sm:text-[12px] mt-1 sm:mt-1.5 tracking-[0.02em] sm:tracking-[0.04em]">
+                <p className="text-white/75 text-[11px] sm:text-[12px] mt-1 sm:mt-1.5 tracking-[0.02em] sm:tracking-[0.04em]">
                   Step {step}/{totalSteps} ·{" "}
-                  <span className="font-semibold text-white/65 tracking-normal">
+                  <span className="font-semibold text-white/85 tracking-normal">
                     {stepNames[step - 1]}
                   </span>
                 </p>
@@ -733,7 +733,7 @@ function Step2({
 }) {
   return (
     <>
-      <p className="text-white/55 text-[12px] sm:text-[13px] mb-2.5 sm:mb-3">Pick all that apply — multi-select.</p>
+      <p className="text-white/80 text-[12px] sm:text-[13px] mb-2.5 sm:mb-3">Pick all that apply — multi-select.</p>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
         {serviceOptions.map(({ id, title, icon: Icon }) => {
           const active = data.services.includes(id)
@@ -911,7 +911,7 @@ function Step6({
       >
         <div className="flex-1">
           <div className="text-white text-[14px] font-bold">Date not decided yet (TBD)</div>
-          <div className="text-white/50 text-[12px]">We'll reach out to coordinate the schedule.</div>
+          <div className="text-white/75 text-[12px]">We'll reach out to coordinate the schedule.</div>
         </div>
         <span
           className={`w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 transition-all ${
@@ -1089,7 +1089,7 @@ function ZipField({
   return (
     <div>
       <div className="flex items-center mb-2">
-        <label className="block text-white/65 text-[11px] tracking-[0.06em] uppercase font-semibold">
+        <label className="block text-white/85 text-[11px] tracking-[0.06em] uppercase font-semibold">
           ZIP Code
         </label>
         {secured && <SecuredBadge />}
@@ -1130,7 +1130,7 @@ function Step8({
     <div className="space-y-4">
       <div>
         <Label icon={Clock}>Best time to reach you <span className="text-[#FF2D6F]">*</span></Label>
-        <p className="text-white/40 text-[11px] mb-2.5 -mt-1">So we don&apos;t miss you when we call back.</p>
+        <p className="text-white/65 text-[11px] mb-2.5 -mt-1">So we don&apos;t miss you when we call back.</p>
         <div className="grid grid-cols-3 gap-2">
           {["Morning", "Afternoon", "Evening"].map((slot) => (
             <button
@@ -1140,7 +1140,7 @@ function Step8({
               className={`py-3 rounded-xl border text-[13px] font-semibold transition-all ${
                 data.bestTime === slot
                   ? "border-[#FF2D6F]/50 bg-[#FF2D6F]/12 text-white"
-                  : "border-white/[0.10] bg-white/[0.03] text-white/65 hover:border-white/[0.22] hover:text-white"
+                  : "border-white/[0.10] bg-white/[0.03] text-white/85 hover:border-white/[0.22] hover:text-white"
               }`}
             >
               {slot}
@@ -1189,7 +1189,7 @@ function Step9({
 
   return (
     <div className="space-y-5">
-      <p className="text-white/55 text-[13px]">Double-check everything below.</p>
+      <p className="text-white/80 text-[13px]">Double-check everything below.</p>
 
       <div className="rounded-[16px] border border-white/[0.08] bg-white/[0.02] p-5 space-y-2">
         {summaryRow("Event Type", eventLabel)}
@@ -1231,7 +1231,7 @@ function Step9({
             onChange={(e) => update("optInCall", e.target.checked)}
             className="sr-only"
           />
-          <span className="text-white/55 text-[12px] leading-[1.6]">
+          <span className="text-white/80 text-[12px] leading-[1.6]">
             By clicking this box you provide express written consent indicating a willingness for us to call you. We will never share your information.
           </span>
         </label>
@@ -1258,14 +1258,14 @@ function Step9({
             onChange={(e) => update("optInSms", e.target.checked)}
             className="sr-only"
           />
-          <span className="text-white/55 text-[12px] leading-[1.6]">
+          <span className="text-white/80 text-[12px] leading-[1.6]">
             By clicking this box you provide express written consent to contact you via SMS no more than 2-4 times/month. Text STOP to opt-out at anytime.
           </span>
         </label>
       </div>
 
       {/* Privacy Policy */}
-      <p className="text-white/45 text-[11px]">
+      <p className="text-white/70 text-[11px]">
         Privacy Policy:{" "}
         <a
           href="/legal/privacy"
@@ -1294,7 +1294,7 @@ function Step9({
           onChange={(e) => update("agreeTerms", e.target.checked)}
           className="sr-only"
         />
-        <span className="text-white/55 text-[12px] leading-[1.6]">
+        <span className="text-white/80 text-[12px] leading-[1.6]">
           I agree that Prime Line AV may contact me regarding this request via phone, email, SMS or WhatsApp. My
           information is processed solely to prepare and execute the quote and will <b className="text-white/85">never
           be shared with third parties</b>. By submitting I accept the Privacy Policy &amp; Terms.
@@ -1310,7 +1310,7 @@ function summaryRow(label: string, value: string) {
       key={label}
       className="flex items-start justify-between gap-4 py-2 border-b border-white/[0.06] last:border-0"
     >
-      <span className="text-white/45 text-[11px] tracking-[0.06em] uppercase font-semibold flex-shrink-0">
+      <span className="text-white/70 text-[11px] tracking-[0.06em] uppercase font-semibold flex-shrink-0">
         {label}
       </span>
       <span className="text-white text-[13px] text-right break-words">{value || "—"}</span>
@@ -1377,7 +1377,7 @@ function SuccessState({ onClose }: { onClose: () => void }) {
           paddingRight: "0.18em",
         }}>on it.</span>
       </h2>
-      <p className="text-white/60 text-[14px] max-w-md mx-auto mb-8">
+      <p className="text-white/85 text-[14px] max-w-md mx-auto mb-8">
         Expect a call from our team any moment. Can&apos;t wait? Reach us now:
       </p>
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
@@ -1409,7 +1409,7 @@ function SuccessState({ onClose }: { onClose: () => void }) {
       </div>
       <button
         onClick={onClose}
-        className="text-white/40 hover:text-white/70 text-[13px] transition-colors"
+        className="text-white/65 hover:text-white/90 text-[13px] transition-colors"
       >
         Close
       </button>
@@ -1487,7 +1487,7 @@ function Field({
         <Label icon={Icon} secured={secured}>{label}</Label>
       ) : (
         <div className="flex items-center mb-2">
-          <label className="block text-white/65 text-[11px] tracking-[0.06em] uppercase font-semibold">
+          <label className="block text-white/85 text-[11px] tracking-[0.06em] uppercase font-semibold">
             {label}
           </label>
           {secured && <SecuredBadge />}
@@ -1530,7 +1530,7 @@ function SelectField({
   return (
     <div>
       <div className="flex items-center mb-2">
-        <label className="block text-white/65 text-[11px] tracking-[0.06em] uppercase font-semibold">
+        <label className="block text-white/85 text-[11px] tracking-[0.06em] uppercase font-semibold">
           {label}
         </label>
         {secured && <SecuredBadge />}
@@ -1541,7 +1541,7 @@ function SelectField({
           onChange={(e) => onChange(e.target.value)}
           className="w-full appearance-none px-4 py-3 pr-10 rounded-xl bg-white/[0.04] border border-white/[0.10] text-white text-[14px] focus:outline-none focus:border-[#FF2D6F]/50 transition-colors cursor-pointer"
         >
-          <option value="" disabled className="bg-[#0a0818] text-white/45">
+          <option value="" disabled className="bg-[#0a0818] text-white/70">
             {placeholder}
           </option>
           {options.map((opt) => (
@@ -1550,7 +1550,7 @@ function SelectField({
             </option>
           ))}
         </select>
-        <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
+        <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/65" />
       </div>
     </div>
   )
@@ -1632,7 +1632,7 @@ function CalendarPicker({
 
   return (
     <div>
-      <label className="flex items-center gap-1.5 text-white/55 text-[10px] tracking-[0.08em] uppercase font-semibold mb-1.5">
+      <label className="flex items-center gap-1.5 text-white/80 text-[10px] tracking-[0.08em] uppercase font-semibold mb-1.5">
         <Calendar className="w-3 h-3 text-[#FF2D6F]" />
         {label}
       </label>
@@ -1644,7 +1644,7 @@ function CalendarPicker({
           open ? "border-[#FF2D6F]/50" : "border-white/[0.10]"
         }`}
       >
-        <span className={displayVal ? "text-white font-medium" : "text-white/35"}>
+        <span className={displayVal ? "text-white font-medium" : "text-white/55"}>
           {displayVal ?? "Choose date"}
         </span>
         <Calendar className="w-3.5 h-3.5 text-white/25 flex-shrink-0" strokeWidth={1.5} />
@@ -1665,11 +1665,11 @@ function CalendarPicker({
           className="rounded-2xl border border-white/[0.10] p-3"
         >
           <div className="flex items-center justify-between mb-3">
-            <button type="button" onClick={prevMonth} className="w-7 h-7 rounded-[8px] bg-white/[0.05] hover:bg-white/[0.10] text-white/50 hover:text-white flex items-center justify-center transition-all">
+            <button type="button" onClick={prevMonth} className="w-7 h-7 rounded-[8px] bg-white/[0.05] hover:bg-white/[0.10] text-white/75 hover:text-white flex items-center justify-center transition-all">
               <ArrowLeft className="w-3 h-3" />
             </button>
             <span className="text-white text-[13px] font-bold">{CAL_MONTHS[view.m]} {view.y}</span>
-            <button type="button" onClick={nextMonth} className="w-7 h-7 rounded-[8px] bg-white/[0.05] hover:bg-white/[0.10] text-white/50 hover:text-white flex items-center justify-center transition-all">
+            <button type="button" onClick={nextMonth} className="w-7 h-7 rounded-[8px] bg-white/[0.05] hover:bg-white/[0.10] text-white/75 hover:text-white flex items-center justify-center transition-all">
               <ArrowRight className="w-3 h-3" />
             </button>
           </div>
@@ -1689,7 +1689,7 @@ function CalendarPicker({
                     sel ? "bg-[#FF2D6F] text-white shadow-[0_4px_14px_-2px_rgba(255,45,111,0.50)]"
                     : dis ? "text-white/15 cursor-not-allowed"
                     : tod ? "ring-1 ring-[#FF2D6F]/40 text-[#FF2D6F] hover:bg-[#FF2D6F]/10"
-                    : "text-white/70 hover:bg-white/[0.08] hover:text-white"
+                    : "text-white/90 hover:bg-white/[0.08] hover:text-white"
                   }`}
                 >{day}</button>
               )
@@ -1892,7 +1892,7 @@ function TimeDrum({
 
   return (
     <div>
-      <label className="flex items-center gap-1.5 text-white/55 text-[10px] tracking-[0.08em] uppercase font-semibold mb-1.5">
+      <label className="flex items-center gap-1.5 text-white/80 text-[10px] tracking-[0.08em] uppercase font-semibold mb-1.5">
         <Clock className="w-3 h-3 text-[#FF2D6F]" />
         {label}
       </label>
@@ -1904,7 +1904,7 @@ function TimeDrum({
           open ? "border-[#FF2D6F]/50" : "border-white/[0.10]"
         }`}
       >
-        <span className={displayVal ? "text-white font-medium" : "text-white/35"}>
+        <span className={displayVal ? "text-white font-medium" : "text-white/55"}>
           {displayVal ?? "Choose time"}
         </span>
         <Clock className="w-3.5 h-3.5 text-white/25 flex-shrink-0" strokeWidth={1.5} />
@@ -2086,13 +2086,13 @@ function PhoneInput({
         >
           <CountryFlag code={country.code} size={22} />
           <span
-            className="hidden font-mono font-bold text-[10px] text-white/65 tracking-wider"
+            className="hidden font-mono font-bold text-[10px] text-white/85 tracking-wider"
             style={{ display: "none" }}
           >
             {country.code}
           </span>
           <span className="font-mono font-bold text-[13px] text-white/85">{country.dial}</span>
-          <ChevronDown className="w-3.5 h-3.5 text-white/40" />
+          <ChevronDown className="w-3.5 h-3.5 text-white/65" />
         </button>
 
         {/* Phone field */}
@@ -2130,7 +2130,7 @@ function PhoneInput({
           >
             <div className="sticky top-0 z-10 p-2 bg-[rgba(10,8,24,0.98)] border-b border-white/[0.08]">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/40" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/65" />
                 <input
                   type="text"
                   value={search}
@@ -2157,11 +2157,11 @@ function PhoneInput({
                 >
                   <CountryFlag code={c.code} size={22} />
                   <span className="text-white text-[13px] flex-1 truncate">{c.name}</span>
-                  <span className="font-mono font-bold text-[12px] text-white/65">{c.dial}</span>
+                  <span className="font-mono font-bold text-[12px] text-white/85">{c.dial}</span>
                 </button>
               ))}
               {filtered.length === 0 && (
-                <div className="px-3 py-4 text-center text-white/45 text-[12px]">No countries found</div>
+                <div className="px-3 py-4 text-center text-white/70 text-[12px]">No countries found</div>
               )}
             </div>
           </div>,
@@ -2171,7 +2171,7 @@ function PhoneInput({
       {error ? (
         <p className="text-red-400 text-[11px] mt-1.5">{error}</p>
       ) : (
-        hint && <p className="text-white/40 text-[11px] mt-1.5 leading-snug">{hint}</p>
+        hint && <p className="text-white/65 text-[11px] mt-1.5 leading-snug">{hint}</p>
       )}
     </div>
   )
@@ -2206,7 +2206,7 @@ function LegalNote() {
       }}
     >
       <Lock className="w-4 h-4 text-[#FF2D6F] flex-shrink-0 mt-0.5" strokeWidth={2.2} />
-      <p className="text-white/55 text-[11px] leading-[1.55]">
+      <p className="text-white/80 text-[11px] leading-[1.55]">
         Your details are used only to prepare your quote and coordinate the booking — Prime Line AV will{" "}
         <b className="text-white/80">never sell or share your data with third parties</b>. Stored securely; you may
         request deletion any time.

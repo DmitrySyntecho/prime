@@ -20,7 +20,7 @@ export function NeedHelpBanner({ label }: { label?: string }) {
           <div className="text-white font-bold text-[16px] md:text-[18px]">
             Need Help Setting {label ? `Up ${label}` : "This Up"}? Hire Our AV Team.
           </div>
-          <div className="text-white/55 text-[13px] mt-0.5">
+          <div className="text-white/80 text-[13px] mt-0.5">
             Delivery, professional install and on-site technicians — we handle everything.
           </div>
         </div>

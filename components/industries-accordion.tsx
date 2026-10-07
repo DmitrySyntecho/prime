@@ -51,7 +51,7 @@ export function IndustriesAccordion({ heading = "Industries We Serve" }: { headi
               <AccordionTrigger className="text-left text-[16px] md:text-[18px] font-bold text-white hover:no-underline py-5">
                 {ind.name}
               </AccordionTrigger>
-              <AccordionContent className="text-white/55 text-[14px] leading-relaxed pb-5">
+              <AccordionContent className="text-white/80 text-[14px] leading-relaxed pb-5">
                 {ind.subheadline}
                 <Link
                   href={`/industries/${ind.slug}`}

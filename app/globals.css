@@ -964,6 +964,48 @@ html.sda-off :is(.reveal, .reveal-stagger > *, .reveal-left, .reveal-right, .rev
   .intro, .intro-fade { animation: none !important; }
 }
 
+/* ============ READABILITY ============ */
+/* Key sentence: warm gold, bold, with a brand-gradient underline that draws in
+   as it scrolls into view. Wraps cleanly across lines (box-decoration-break). */
+.hl {
+  color: #FFE29A;
+  font-weight: 700;
+  background-image: linear-gradient(90deg, #FF2D6F, #FF8A3D 55%, #FFD24A);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 2px;
+  padding-bottom: 1px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+@supports (animation-timeline: view()) {
+  .hl {
+    animation: hl-draw linear both;
+    animation-timeline: view();
+    animation-range: entry 60% cover 40%;
+  }
+}
+@keyframes hl-draw {
+  from { background-size: 0% 2px; }
+  to { background-size: 100% 2px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hl { animation: none !important; }
+}
+
+/* White "sheet" for product content: clean white with a faint pink → peach sheen,
+   dark ink. Pair with .keep-original so it stays white in the light theme too.
+   Layered so Tailwind utilities (hover shadows etc.) can still override it. */
+@layer components {
+  .sheet {
+    background: linear-gradient(160deg, #FFFFFF 0%, #FFF8FB 55%, #FFF2EA 100%);
+    color: #120B1A;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 22px 50px -22px rgba(0, 0, 0, 0.6);
+  }
+}
+.sheet .hl { color: #C8124F; }
+
 /* ============ TAB SWAP (content remounted on tab change) ============ */
 .tab-swap { animation: tab-swap 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards; }
 @keyframes tab-swap {

@@ -61,7 +61,7 @@ export function GeneralEquipmentShowcase({
                 {title.split(" ").slice(-1)}
               </span>
             </h2>
-            <p className="text-white/50 text-[15px] mt-3 max-w-xl">{subtitle}</p>
+            <p className="text-white/75 text-[15px] mt-3 max-w-xl">{subtitle}</p>
           </div>
 
           <Link

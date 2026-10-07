@@ -28,7 +28,7 @@ export function AboutUsSection() {
               The AV Partner <span className="ds-accent-text">Brands Trust</span>
             </h2>
 
-            <p className="text-white/60 leading-relaxed text-[16px] md:text-[17px]">
+            <p className="text-white/85 leading-relaxed text-[16px] md:text-[17px]">
               For over 15 years, we&apos;ve been the go-to AV production partner for the world&apos;s most demanding
               brands. From intimate corporate gatherings to large-scale festivals, we deliver flawless execution every
               time.
@@ -90,7 +90,7 @@ export function AboutUsSection() {
               <p className="text-3xl md:text-4xl font-extrabold text-[#FF2D6F] tracking-[-0.02em]">
                 <CountUp end={500} suffix="+" />
               </p>
-              <p className="text-white/55 text-[12px] tracking-[0.04em] uppercase font-semibold">Successful Events</p>
+              <p className="text-white/80 text-[12px] tracking-[0.04em] uppercase font-semibold">Successful Events</p>
             </div>
 
             {/* Bottom left image - rotated, overlaps top image */}

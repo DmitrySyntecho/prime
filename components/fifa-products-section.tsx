@@ -141,7 +141,7 @@ function ProductCard({ product }: { product: Product }) {
         </Link>
 
         {/* Short description */}
-        <p className="text-[13px] text-white/50 mb-4 line-clamp-2">
+        <p className="text-[13px] text-white/75 mb-4 line-clamp-2">
           {product.description.substring(0, 80)}...
         </p>
 
@@ -150,7 +150,7 @@ function ProductCard({ product }: { product: Product }) {
           {product.features.slice(0, 3).map((feature) => (
             <span
               key={feature}
-              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium text-white/70"
+              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium text-white/90"
               style={{ background: "rgba(255,255,255,0.06)" }}
             >
               <CheckCircle2 className="w-2.5 h-2.5 text-[#5BC25A]" />
@@ -166,11 +166,11 @@ function ProductCard({ product }: { product: Product }) {
               <span className="text-2xl font-black text-white">
                 ${product.price.toLocaleString()}
               </span>
-              <span className="text-[13px] text-white/40">/ 24h</span>
+              <span className="text-[13px] text-white/65">/ 24h</span>
             </div>
             {product.discount > 0 && (
               <div className="flex items-center gap-2 mt-0.5">
-                <span className="text-[13px] text-white/40 line-through">
+                <span className="text-[13px] text-white/65 line-through">
                   ${product.originalPrice.toLocaleString()}
                 </span>
                 <span className="text-[11px] font-bold text-[#5BC25A]">
@@ -189,12 +189,12 @@ function ProductCard({ product }: { product: Product }) {
             border: "1px solid rgba(91,194,90,0.15)",
           }}
         >
-          <div className="flex items-center gap-1.5 text-[11px] text-white/70">
+          <div className="flex items-center gap-1.5 text-[11px] text-white/90">
             <Truck className="w-3.5 h-3.5 text-[#5BC25A]" />
             <span>Delivery: ${product.deliveryFee}</span>
           </div>
           <div className="w-px h-3 bg-white/10" />
-          <div className="flex items-center gap-1.5 text-[11px] text-white/70">
+          <div className="flex items-center gap-1.5 text-[11px] text-white/90">
             <Wrench className="w-3.5 h-3.5 text-[#5BC25A]" />
             <span>Setup: ${product.installationFee}</span>
           </div>
@@ -241,7 +241,7 @@ function ProductCard({ product }: { product: Product }) {
               border: "1px solid rgba(255,255,255,0.10)",
             }}
           >
-            <ArrowRight className="w-4 h-4 text-white/70" />
+            <ArrowRight className="w-4 h-4 text-white/90" />
           </Link>
         </div>
       </div>
@@ -279,7 +279,7 @@ export function FifaProductsSection() {
               LED Screens
             </span>
           </h2>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto">
+          <p className="text-white/75 text-lg max-w-2xl mx-auto">
             Premium LED video walls available for rental. Perfect for FIFA World Cup watch parties,
             corporate events, and outdoor festivals.
           </p>
@@ -293,7 +293,7 @@ export function FifaProductsSection() {
             { icon: Shield, text: "Full Insurance Included" },
             { icon: Zap, text: "24/7 Technical Support" },
           ].map(({ icon: Icon, text }) => (
-            <div key={text} className="flex items-center gap-2 text-[13px] text-white/60">
+            <div key={text} className="flex items-center gap-2 text-[13px] text-white/85">
               <Icon className="w-4 h-4 text-[#5BC25A]" />
               <span>{text}</span>
             </div>

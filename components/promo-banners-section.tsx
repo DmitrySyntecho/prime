@@ -90,7 +90,7 @@ export function PromoBannersSection() {
                     <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-extrabold tracking-[-0.02em] mb-1.5 sm:mb-2 md:mb-3 leading-tight text-white">
                       {banner.headline}
                     </h3>
-                    <p className="text-xs sm:text-sm md:text-base lg:text-lg mb-3 sm:mb-4 md:mb-6 text-white/70 line-clamp-2 sm:line-clamp-none">{banner.subheadline}</p>
+                    <p className="text-xs sm:text-sm md:text-base lg:text-lg mb-3 sm:mb-4 md:mb-6 text-white/90 line-clamp-2 sm:line-clamp-none">{banner.subheadline}</p>
                     <button
                       type="button"
                       onClick={openQuote}
