@@ -58,7 +58,7 @@ export function SeoPageTemplate({ page, siblings }: { page: SeoPage; siblings: S
         <RatingsBar />
         <LandingWhyUs />
         <ServicesGridSection />
-        <HomeShopSection initialTab={getCategoryForPath(page.path)} />
+        <HomeShopSection category={getCategoryForPath(page.path)} />
         <EventTypesSection />
         <WhyChooseUsSection />
         <CaseStudiesSection />

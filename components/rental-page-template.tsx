@@ -219,7 +219,7 @@ export function RentalPageTemplate({
         </div>
       </section>
 
-      <HomeShopSection initialTab={getCategoryForPath(categoryName)} />
+      <HomeShopSection category={getCategoryForPath(categoryName)} />
 
       {/* Portfolio Section */}
       <section className="py-16 md:py-20 bg-white">

@@ -5,14 +5,26 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, ChevronLeft, ChevronRight, ShoppingCart, Truck } from "lucide-react"
 import { useCart, type Product, type ProductCategory } from "@/lib/cart-context"
-import { products, CATEGORIES } from "@/lib/products-data"
+import { products, CATEGORIES, CATEGORY_FILTERS } from "@/lib/products-data"
 import { CATEGORY_ICON_3D } from "@/lib/nav-icons"
 import { ProductCard, formatPrice } from "@/components/product-card"
 import { Icon3D, type Icon3DName } from "@/components/icon-3d"
 import { SectionHeader } from "@/components/section-header"
 
 type TabKey = "popular" | ProductCategory
-export type ShopTabKey = TabKey
+
+/** Heading for a category page, where the block shows only that category. */
+const CATEGORY_COPY: Record<ProductCategory, { title: string; accent: string }> = {
+  "led-screens": { title: "LED video walls ready to rent", accent: "LED video walls" },
+  "dj-setups": { title: "DJ setups ready to rent", accent: "DJ setups" },
+  "sound-systems": { title: "Sound systems ready to rent", accent: "Sound systems" },
+  lighting: { title: "Lighting packages ready to rent", accent: "Lighting packages" },
+  stage: { title: "Stages ready to rent", accent: "Stages" },
+  "pipe-drape": { title: "Pipe & drape ready to rent", accent: "Pipe & drape" },
+  tv: { title: "TVs & displays ready to rent", accent: "TVs & displays" },
+}
+
+const byShowcase = (a: Product, b: Product) => Number(!!b.featured) - Number(!!a.featured) || b.price - a.price
 
 type Tab = {
   key: TabKey
@@ -63,7 +75,7 @@ function buildTabs(): Tab[] {
         title: c.label,
         icon: CATEGORY_ICON_3D[c.slug] ?? "quote-cart",
         image: SPOTLIGHT_IMAGE[c.slug],
-        items: [...list].sort((a, b) => Number(!!b.featured) - Number(!!a.featured) || b.price - a.price).slice(0, PER_TAB),
+        items: [...list].sort(byShowcase).slice(0, PER_TAB),
         total: list.length,
         from: minPrice(list),
         href: `/shop?category=${c.slug}`,
@@ -142,12 +154,23 @@ function Spotlight({ tab }: { tab: Tab }) {
   )
 }
 
-/** Equipment rental block: category tabs → spotlight + product row, wired to the quote cart. */
-export function HomeShopSection({ initialTab = "popular" }: { initialTab?: ShopTabKey } = {}) {
-  // Service pages open on their own category; unknown keys fall back to best sellers.
-  const [active, setActive] = useState<TabKey>(TABS.some((t) => t.key === initialTab) ? initialTab : "popular")
+/**
+ * Equipment rental block: spotlight + product row, wired to the quote cart.
+ * Without `category` (homepage, general pages) it browses the catalog by category
+ * tabs. With `category` (a service page about one kind of gear) it shows only
+ * that category, filtered by the category's first catalog facet (pixel pitch,
+ * audience size…) instead of tabs.
+ */
+export function HomeShopSection({ category }: { category?: ProductCategory } = {}) {
+  const locked = category && TABS.some((t) => t.key === category) ? category : undefined
+  const [active, setActive] = useState<TabKey>(locked ?? "popular")
   const tab = TABS.find((t) => t.key === active) ?? TABS[0]
   const { itemCount, openCart } = useCart()
+
+  const facet = locked ? CATEGORY_FILTERS[locked]?.[0] : undefined
+  const [option, setOption] = useState<string | null>(null)
+  const inCategory = locked ? products.filter((p) => p.category === locked).sort(byShowcase) : []
+  const items = locked ? inCategory.filter((p) => !facet || !option || p.filters?.[facet.key] === option) : tab.items
 
   const rowRef = useRef<HTMLDivElement>(null)
   const [scroll, setScroll] = useState({ atStart: true, atEnd: false, progress: 0, visible: 1 })
@@ -164,12 +187,12 @@ export function HomeShopSection({ initialTab = "popular" }: { initialTab?: ShopT
     })
   }, [])
 
-  // The row is keyed by tab, so it remounts at scrollLeft 0 — re-measure it.
+  // The row is keyed by tab/filter, so it remounts at scrollLeft 0 — re-measure it.
   useEffect(() => {
     measure()
     window.addEventListener("resize", measure)
     return () => window.removeEventListener("resize", measure)
-  }, [measure, active])
+  }, [measure, active, option])
 
   const page = (dir: 1 | -1) => {
     const el = rowRef.current
@@ -188,11 +211,50 @@ export function HomeShopSection({ initialTab = "popular" }: { initialTab?: ShopT
   return (
     <section id="shop" className="relative scroll-mt-24 py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4">
-        <SectionHeader eyebrow="Rent the gear" title="Rent the same equipment we bring to our shows" accent="same equipment">
-          LED walls, sound, lighting, staging and more from our own inventory. Add what you need to your quote, and our team will confirm availability and <span className="hl">send you an itemized price.</span>
-        </SectionHeader>
+        {locked ? (
+          <SectionHeader eyebrow="Rent the gear" title={CATEGORY_COPY[locked].title} accent={CATEGORY_COPY[locked].accent}>
+            Every item comes from our own inventory and is delivered, set up and tested by our crew. Add what you need to your quote, and our team will confirm
+            availability and <span className="hl">send you an itemized price.</span>
+          </SectionHeader>
+        ) : (
+          <SectionHeader eyebrow="Rent the gear" title="Rent the same equipment we bring to our shows" accent="same equipment">
+            LED walls, sound, lighting, staging and more from our own inventory. Add what you need to your quote, and our team will confirm availability and <span className="hl">send you an itemized price.</span>
+          </SectionHeader>
+        )}
 
-        {/* Category tabs — scroll sideways on mobile, one centred row on desktop */}
+        {locked ? (
+          /* Category page: filter chips from the category's first catalog facet */
+          facet && (
+            <div
+              role="group"
+              aria-label={`Filter by ${facet.label.toLowerCase()}`}
+              className="reveal -mx-4 flex snap-x items-center gap-2 overflow-x-auto px-4 pb-2 lg:mx-0 lg:flex-wrap lg:justify-center lg:px-0"
+              style={{ scrollbarWidth: "none" }}
+            >
+              <span className="shrink-0 pr-1 text-[13px] font-bold uppercase tracking-[0.12em] text-white/80">{facet.label}</span>
+              {[{ value: null as string | null, label: "All" }, ...facet.options].map((o) => {
+                const on = option === o.value
+                const count = o.value ? inCategory.filter((p) => p.filters?.[facet.key] === o.value).length : inCategory.length
+                return (
+                  <button
+                    key={o.label}
+                    type="button"
+                    aria-pressed={on}
+                    onClick={() => setOption(o.value)}
+                    className={`inline-flex shrink-0 snap-start items-center gap-2 rounded-full border px-4 py-2.5 text-[15px] font-bold outline-none ring-[#FFD24A]/60 transition-[background-color,border-color,color] duration-200 focus-visible:ring-2 ${
+                      on ? "border-[#FF2D6F]/60 text-white" : "border-white/12 bg-white/[0.05] text-white/90 hover:border-white/30 hover:text-white"
+                    }`}
+                    style={on ? { background: "linear-gradient(135deg, rgba(255,45,111,0.28), rgba(255,94,58,0.14))" } : undefined}
+                  >
+                    {o.label}
+                    <span className={`rounded-full px-2 py-0.5 text-[12px] font-extrabold tabular-nums ${on ? "bg-white text-[#C8124F]" : "bg-white/10 text-white/85"}`}>{count}</span>
+                  </button>
+                )
+              })}
+            </div>
+          )
+        ) : (
+        /* Category tabs — scroll sideways on mobile, one centred row on desktop */
         <div
           role="tablist"
           aria-label="Equipment categories"
@@ -227,19 +289,25 @@ export function HomeShopSection({ initialTab = "popular" }: { initialTab?: ShopT
             )
           })}
         </div>
+        )}
 
-        <div id="shop-panel" role="tabpanel" aria-labelledby={`shop-tab-${tab.key}`} className="reveal mt-8 grid gap-5 lg:grid-cols-[300px_minmax(0,1fr)]">
+        <div
+          id="shop-panel"
+          role={locked ? undefined : "tabpanel"}
+          aria-labelledby={locked ? undefined : `shop-tab-${tab.key}`}
+          className="reveal mt-8 grid gap-5 lg:grid-cols-[300px_minmax(0,1fr)]"
+        >
           <Spotlight key={`spot-${tab.key}`} tab={tab} />
 
           <div className="min-w-0">
             <div
-              key={`row-${tab.key}`}
+              key={`row-${tab.key}-${option ?? "all"}`}
               ref={rowRef}
               onScroll={measure}
               className="tab-swap -my-3 flex snap-x snap-mandatory gap-5 overflow-x-auto py-3"
               style={{ scrollbarWidth: "none" }}
             >
-              {tab.items.map((p) => (
+              {items.map((p) => (
                 <div key={p.id} className="w-[80%] shrink-0 snap-start sm:w-[300px] lg:w-[calc((100%-2.5rem)/3)]">
                   <ProductCard product={p} />
                 </div>

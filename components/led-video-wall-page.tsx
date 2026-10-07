@@ -305,7 +305,7 @@ export function LedVideoWallPage({ h1, location }: { h1: string; location?: stri
       </section>
 
       {/* LED walls you can rent now (products are required on every service page) */}
-      <HomeShopSection initialTab="led-screens" />
+      <HomeShopSection category="led-screens" />
 
       {/* Block 05 — events + call strip */}
       <section id="led-events" className="relative scroll-mt-24 py-20 md:py-28">
