@@ -834,7 +834,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover {
    animated on transform/opacity only (compositor — no repaints). */
 /* position lives in a layer so Tailwind's absolute/fixed utilities still win. */
 @layer components {
-  .cta-yellow, .fx-spot { position: relative; }
+  .cta-yellow, .cta-pink, .fx-spot { position: relative; }
 }
 .cta-yellow {
   isolation: isolate;
@@ -860,6 +860,29 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover {
    the always-running animation never blocks the hover lift. */
 .cta-yellow:hover { animation-play-state: paused; translate: 0 -2px; }
 .cta-yellow:active { transform: scale(0.97); }
+
+/* Same pulse in the header's brand pink — for CTAs on white .sheet surfaces,
+   where yellow has no contrast against the light background. */
+.cta-pink {
+  isolation: isolate;
+  background: linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%);
+  color: #fff;
+  box-shadow: 0 10px 26px -8px rgba(255, 45, 111, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  animation: cta-breathe 2.8s ease-in-out infinite;
+}
+.cta-pink::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  border: 2px solid rgba(255, 45, 111, 0.7);
+  box-shadow: 0 0 16px 2px rgba(255, 45, 111, 0.35);
+  pointer-events: none;
+  animation: cta-ring 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+.cta-pink:hover { animation-play-state: paused; translate: 0 -2px; }
+.cta-pink:active { transform: scale(0.97); }
 @keyframes cta-ring {
   0% { transform: scale(1); opacity: 0.9; }
   75%, 100% { transform: scale(1.12, 1.35); opacity: 0; }
@@ -943,7 +966,7 @@ html.sda-off :is(.reveal, .reveal-stagger > *, .reveal-left, .reveal-right, .rev
 .fx-lift:hover { translate: 0 -6px; box-shadow: 0 30px 60px -24px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 45, 111, 0.25); }
 
 @media (prefers-reduced-motion: reduce) {
-  .cta-yellow, .cta-yellow::before { animation: none !important; }
+  .cta-yellow, .cta-yellow::before, .cta-pink, .cta-pink::before { animation: none !important; }
   .reveal, .reveal-stagger > *, .reveal-zoom, .reveal-left, .reveal-right { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; filter: none !important; clip-path: none !important; }
   .fx-lift:hover { translate: none; }
 }

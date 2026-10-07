@@ -290,7 +290,8 @@ export default function ShopProductDetailPage(props: { params: Promise<{ slug: s
               <button
                 type="button"
                 onClick={addToQuote}
-                className="cta-yellow flex flex-1 items-center justify-center gap-3 rounded-xl py-4 text-[17px] font-extrabold"
+                className="cta-pink flex flex-1 items-center justify-center gap-3 rounded-xl py-4 text-[17px] font-extrabold"
+                style={{ background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)" }}
               >
                 <ShoppingCart className="w-5 h-5" />
                 Add to Quote

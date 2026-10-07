@@ -152,7 +152,8 @@ export function ProductCard({ product }: { product: Product }) {
             <button
               type="button"
               onClick={addToQuote}
-              className="cta-yellow flex flex-1 items-center justify-center gap-2 rounded-xl py-3.5 text-[15px] font-extrabold"
+              className="cta-pink flex flex-1 items-center justify-center gap-2 rounded-xl py-3.5 text-[15px] font-extrabold"
+              style={{ background: "linear-gradient(135deg, #FF2D6F 0%, #FF5E3A 100%)" }}
             >
               <ShoppingCart className="w-4 h-4" />
               Add to Quote
