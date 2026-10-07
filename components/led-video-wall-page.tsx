@@ -11,6 +11,7 @@ import { CallStrip } from "@/components/blocks/call-strip"
 import { ReasonsSplit, type Reason } from "@/components/blocks/reasons-split"
 import { PhotoCarousel, type Photo } from "@/components/blocks/photo-carousel"
 import { HomePortfolioSection, type Study } from "@/components/home/home-portfolio-section"
+import { HomeShopSection } from "@/components/home/home-shop-section"
 import { TeamSection } from "@/components/team-section"
 import { TestimonialsCarousel } from "@/components/testimonials-carousel"
 import { BlogSection } from "@/components/blog-section"
@@ -302,6 +303,9 @@ export function LedVideoWallPage({ h1, location }: { h1: string; location?: stri
           <LinkCardGrid items={OPTIONS} />
         </div>
       </section>
+
+      {/* LED walls you can rent now (products are required on every service page) */}
+      <HomeShopSection initialTab="led-screens" />
 
       {/* Block 05 — events + call strip */}
       <section id="led-events" className="relative scroll-mt-24 py-20 md:py-28">

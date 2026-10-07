@@ -92,13 +92,14 @@ function HeroVideoBleed({ clips }: { clips: string[] }) {
   )
 }
 
-/* Floating proof cards over the full-bleed video (desktop). */
+/* Floating proof cards (desktop). They ride the video's dissolving left edge so
+   the middle of the footage stays clear. */
 function BleedCards() {
   return (
     <div className="pointer-events-none relative hidden h-full min-h-[420px] lg:block">
-      <div className="absolute right-0 top-2">{LIVE_TAG}</div>
+      <div className="absolute left-0 top-2">{LIVE_TAG}</div>
       <div
-        className="animate-float-y absolute right-0 top-[30%] z-20 flex items-center gap-3 rounded-[14px] border border-[#FFD24A]/25 px-4 py-3 backdrop-blur-2xl"
+        className="animate-float-y absolute -left-8 top-[34%] z-20 flex items-center gap-3 rounded-[14px] border border-[#FFD24A]/25 px-4 py-3 backdrop-blur-2xl"
         style={{ background: "rgba(8,18,26,0.78)", boxShadow: "0 18px 40px -12px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06)" }}
       >
         <Icon3D name="award" size={38} priority />
@@ -108,7 +109,7 @@ function BleedCards() {
         </div>
       </div>
       <div
-        className="animate-float-y absolute bottom-6 left-[12%] z-20 flex items-center gap-3 rounded-[14px] border border-[#FFD24A]/20 px-4 py-3 backdrop-blur-2xl"
+        className="animate-float-y absolute bottom-6 left-0 z-20 flex items-center gap-3 rounded-[14px] border border-[#FFD24A]/20 px-4 py-3 backdrop-blur-2xl"
         style={{ animationDelay: "-2.5s", background: "rgba(8,18,26,0.72)", boxShadow: "0 18px 40px -12px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06)" }}
       >
         <Icon3D name="stopwatch" size={38} priority />

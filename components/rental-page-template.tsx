@@ -8,6 +8,8 @@ import Link from "next/link"
 import { ArrowRight, CheckCircle2, Phone } from "lucide-react"
 import { TestimonialsCarousel } from "@/components/testimonials-carousel"
 import { TrustedBySection } from "@/components/trusted-by-section"
+import { HomeShopSection } from "@/components/home/home-shop-section"
+import { getCategoryForPath } from "@/lib/products-data"
 import { QuoteForm, type ServiceQuestion } from "@/components/quote-form"
 import { PHONE_TEL, PHONE_DISPLAY } from "@/lib/contact"
 
@@ -216,6 +218,8 @@ export function RentalPageTemplate({
           </div>
         </div>
       </section>
+
+      <HomeShopSection initialTab={getCategoryForPath(categoryName)} />
 
       {/* Portfolio Section */}
       <section className="py-16 md:py-20 bg-white">

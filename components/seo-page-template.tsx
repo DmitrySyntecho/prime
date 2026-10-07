@@ -8,6 +8,8 @@ import { LandingWhyUs } from "@/components/landing/landing-why-us"
 import { AV_PRODUCTION_COLLAGE } from "@/components/landing/landing-page"
 import { RatingsBar } from "@/components/ratings-bar"
 import { ServicesGridSection } from "@/components/services-grid-section"
+import { HomeShopSection } from "@/components/home/home-shop-section"
+import { getCategoryForPath } from "@/lib/products-data"
 import { EventTypesSection } from "@/components/event-types-section"
 import { WhyChooseUsSection } from "@/components/why-choose-us-section"
 import { CaseStudiesSection } from "@/components/case-studies-section"
@@ -56,6 +58,7 @@ export function SeoPageTemplate({ page, siblings }: { page: SeoPage; siblings: S
         <RatingsBar />
         <LandingWhyUs />
         <ServicesGridSection />
+        <HomeShopSection initialTab={getCategoryForPath(page.path)} />
         <EventTypesSection />
         <WhyChooseUsSection />
         <CaseStudiesSection />

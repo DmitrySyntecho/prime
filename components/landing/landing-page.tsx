@@ -2,6 +2,7 @@
 
 import { LandingHero, type HeroConfig } from "./landing-hero"
 import { LandingWhyUs } from "./landing-why-us"
+import { HomeShopSection } from "@/components/home/home-shop-section"
 import { TrustedBySection } from "@/components/trusted-by-section"
 import { TestimonialsCarousel } from "@/components/testimonials-carousel"
 import { AboutUsSection } from "@/components/about-us-section"
@@ -50,6 +51,7 @@ export function LandingPage({ hero }: { hero: HeroConfig }) {
         <TrustedBySection />
       </div>
       <LandingWhyUs />
+      <HomeShopSection />
       <TestimonialsCarousel />
       <WhyChooseUsSection />
       <CaseStudiesSection />

@@ -1,18 +1,20 @@
 "use client"
 
-import { useState } from "react"
+import { use, useState } from "react"
 import { notFound } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Phone, Package } from "lucide-react"
 import { TrustedBySection } from "@/components/trusted-by-section"
 import { TestimonialsCarousel } from "@/components/testimonials-carousel"
+import { HomeShopSection } from "@/components/home/home-shop-section"
 import { QuoteForm } from "@/components/quote-form"
 import { StickyCTA } from "@/components/sticky-cta"
 import { PACKAGES, NAV_SERVICES, NAV_INDUSTRIES, NAV_RESOURCES, EQUIPMENT_CATEGORIES } from "@/lib/sitemap-data"
 import { PHONE_TEL, PHONE_DISPLAY } from "@/lib/contact"
 
-export default function PackagePage({ params }: { params: { slug: string } }) {
+export default function PackagePage(props: { params: Promise<{ slug: string }> }) {
+  const params = use(props.params)
   const [showQuoteForm, setShowQuoteForm] = useState(false)
   const pkg = PACKAGES.find((p) => p.slug === params.slug)
 
@@ -102,6 +104,8 @@ export default function PackagePage({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </section>
+
+      <HomeShopSection />
 
       {/* Services in package */}
       <section className="py-16 md:py-20 bg-gray-50">

@@ -12,6 +12,7 @@ import { Icon3D, type Icon3DName } from "@/components/icon-3d"
 import { SectionHeader } from "@/components/section-header"
 
 type TabKey = "popular" | ProductCategory
+export type ShopTabKey = TabKey
 
 type Tab = {
   key: TabKey
@@ -142,8 +143,9 @@ function Spotlight({ tab }: { tab: Tab }) {
 }
 
 /** Equipment rental block: category tabs → spotlight + product row, wired to the quote cart. */
-export function HomeShopSection() {
-  const [active, setActive] = useState<TabKey>("popular")
+export function HomeShopSection({ initialTab = "popular" }: { initialTab?: ShopTabKey } = {}) {
+  // Service pages open on their own category; unknown keys fall back to best sellers.
+  const [active, setActive] = useState<TabKey>(TABS.some((t) => t.key === initialTab) ? initialTab : "popular")
   const tab = TABS.find((t) => t.key === active) ?? TABS[0]
   const { itemCount, openCart } = useCart()
 

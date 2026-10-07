@@ -86,6 +86,19 @@ export function getComplementaryProducts(category: ProductCategory, limit = 8): 
   return picked.slice(0, limit)
 }
 
+/** Best-guess product category for any service/SEO page path (undefined → best sellers). */
+export function getCategoryForPath(path: string): ProductCategory | undefined {
+  const p = path.toLowerCase()
+  if (/led|video-wall|billboard/.test(p)) return "led-screens"
+  if (/\bdj\b|dj-/.test(p)) return "dj-setups"
+  if (/sound|audio|speaker|microphone|pa-system/.test(p)) return "sound-systems"
+  if (/light/.test(p)) return "lighting"
+  if (/drape|backdrop|booth/.test(p)) return "pipe-drape"
+  if (/stage|staging|truss|riser/.test(p)) return "stage"
+  if (/\btv\b|tv-|display|monitor|projector/.test(p)) return "tv"
+  return undefined
+}
+
 /** Map a rental service page slug (incl. city-suffixed variants) to a product category. */
 export function getCategoryForServiceSlug(slug: string): ProductCategory | undefined {
   const match = CATEGORIES.find((c) => c.serviceSlug && slug.startsWith(c.serviceSlug))
