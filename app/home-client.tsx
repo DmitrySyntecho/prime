@@ -14,6 +14,7 @@ import { HomeServicesSection } from "@/components/home/home-services-section"
 import { HomePortfolioSection } from "@/components/home/home-portfolio-section"
 import { HomeIndustriesSection } from "@/components/home/home-industries-section"
 import { HomeWhySection } from "@/components/home/home-why-section"
+import { HomeShopSection } from "@/components/home/home-shop-section"
 import { HOME_CLIPS } from "@/lib/hero-clips"
 
 /**
@@ -79,6 +80,9 @@ export function HomeClient() {
 
       {/* Block 07 — why choose us */}
       <HomeWhySection />
+
+      {/* Equipment rental — the shop catalog, wired to the quote cart */}
+      <HomeShopSection />
 
       {/* Block 08 — video testimonials */}
       <TestimonialsCarousel

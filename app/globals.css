@@ -963,3 +963,12 @@ html.sda-off :is(.reveal, .reveal-stagger > *, .reveal-left, .reveal-right, .rev
 @media (prefers-reduced-motion: reduce) {
   .intro, .intro-fade { animation: none !important; }
 }
+
+/* ============ TAB SWAP (content remounted on tab change) ============ */
+.tab-swap { animation: tab-swap 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards; }
+@keyframes tab-swap {
+  from { opacity: 0; transform: translateY(14px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tab-swap { animation: none !important; }
+}

@@ -142,6 +142,11 @@ export function ShopCatalog() {
   const [mounted, setMounted] = useState(false)
   const [tabVisible, setTabVisible] = useState(false)
   useEffect(() => setMounted(true), [])
+  // Deep link from the homepage shop block: /shop?category=led-screens
+  useEffect(() => {
+    const c = new URLSearchParams(window.location.search).get("category")
+    if (c && CATEGORIES.some((x) => x.slug === c)) setSelectedCat(c as ProductCategory)
+  }, [])
   // Tell the mobile bottom nav to hide while the filters drawer is open
   useEffect(() => {
     document.dispatchEvent(new CustomEvent("shopFiltersToggle", { detail: { open: mobileFiltersOpen } }))
