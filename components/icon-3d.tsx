@@ -40,6 +40,12 @@ export type Icon3DName =
   | "setup-tools"
   | "savings"
   | "receipt"
+  // LED wall page
+  | "led-outdoor"
+  | "led-trailer"
+  | "pixel-pitch"
+  | "content-play"
+  | "rigging"
 
 export function Icon3D({
   name,

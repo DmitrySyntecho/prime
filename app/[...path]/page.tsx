@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { getSeoPage, getSiblingPages } from "@/lib/seo-pages"
 import { SeoPageTemplate } from "@/components/seo-page-template"
+import { LedVideoWallPage } from "@/components/led-video-wall-page"
+import { CityProvider } from "@/lib/city-context"
 
 // On-demand rendered (ISR) — 5k+ pages are not prebuilt at build time.
 export const revalidate = 3600
@@ -22,6 +24,15 @@ export default async function CatchAllPage(props: { params: Promise<{ path: stri
   const { path } = await props.params
   const page = getSeoPage(path || [])
   if (!page) notFound()
+
+  // LED video wall rental has its own copy-deck page (national + every city variant).
+  if (page.path.endsWith("/av-rental/led-video-wall")) {
+    return (
+      <CityProvider city={page.location}>
+        <LedVideoWallPage h1={page.h1} location={page.national ? undefined : page.location} />
+      </CityProvider>
+    )
+  }
 
   const siblings = getSiblingPages(page).map((s) => ({ path: s.path, pageName: s.pageName }))
   return <SeoPageTemplate page={page} siblings={siblings} />

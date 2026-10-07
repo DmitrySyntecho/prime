@@ -24,6 +24,7 @@ import { TeamSection } from "@/components/team-section"
 import { WrittenReviewsSection } from "@/components/written-reviews-section"
 import { BlogSection } from "@/components/blog-section"
 import { useCity } from "@/lib/city-context"
+import { LedVideoWallPage } from "@/components/led-video-wall-page"
 import { applyCity } from "@/lib/service-pages"
 import { getCategoryForServiceSlug } from "@/lib/products-data"
 import type { ServicePage } from "@/lib/service-pages"
@@ -35,6 +36,12 @@ interface ServicePageClientProps {
 
 export function ServicePageClient({ service, slug }: ServicePageClientProps) {
   const city = useCity()
+
+  // The nav's "LED Video Walls" lands here: same copy-deck page as /av-rental/led-video-wall.
+  if (slug.startsWith("led-screen-rental")) {
+    const local = slug.endsWith("-miami") ? "Miami" : slug.endsWith("-orlando") ? "Orlando" : undefined
+    return <LedVideoWallPage h1={`LED Video Wall Rental Company in ${local ?? "the USA"}`} location={local} />
+  }
   const s = city !== "Los Angeles"
     ? {
         ...service,

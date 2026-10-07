@@ -8,7 +8,7 @@ import { SectionHeader } from "@/components/section-header"
 
 const MuxPlayer = dynamic(() => import("@mux/mux-player-react"), { ssr: false })
 
-type Study = { title: string; location: string; category: string; mux: string; thumb: number }
+export type Study = { title: string; location: string; category: string; mux: string; thumb: number }
 
 // Behind-the-scenes films (same set as primelineav.com "Browse our event portfolio").
 const STUDIES: Study[] = [
@@ -68,7 +68,16 @@ function StudyCard({ s, onPlay }: { s: Study; onPlay: () => void }) {
 }
 
 /** Block 05 — behind-the-scenes portfolio grid with an in-page player. */
-export function HomePortfolioSection() {
+export function HomePortfolioSection({
+  id = "portfolio",
+  studies = STUDIES,
+  header,
+}: {
+  id?: string
+  studies?: Study[]
+  /** Replaces the default "Browse our event portfolio" heading. */
+  header?: React.ReactNode
+} = {}) {
   const [active, setActive] = useState<Study | null>(null)
 
   useEffect(() => {
@@ -83,15 +92,17 @@ export function HomePortfolioSection() {
   }, [active])
 
   return (
-    <section id="portfolio" className="relative scroll-mt-24 py-20 md:py-28">
+    <section id={id} className="relative scroll-mt-24 py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4">
-        <SectionHeader eyebrow="Our case studies" title="Browse our event portfolio" accent="event portfolio">
-          Any AV company can promise you a flawless show. Here at Prime Line AV, we show you exactly how we make it:{" "}
-          <span className="hl">watch our crews bring real events to life behind the scenes.</span>
-        </SectionHeader>
+        {header ?? (
+          <SectionHeader eyebrow="Our case studies" title="Browse our event portfolio" accent="event portfolio">
+            Any AV company can promise you a flawless show. Here at Prime Line AV, we show you exactly how we make it:{" "}
+            <span className="hl">watch our crews bring real events to life behind the scenes.</span>
+          </SectionHeader>
+        )}
 
         <div className="reveal-stagger grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-          {STUDIES.map((s) => (
+          {studies.map((s) => (
             <StudyCard key={s.mux} s={s} onPlay={() => setActive(s)} />
           ))}
         </div>

@@ -414,6 +414,11 @@ const ICONS_3D = [
   ['setup-tools', 'Setup'],
   ['savings', 'Savings'],
   ['receipt', 'Total'],
+  ['led-outdoor', 'Outdoor LED'],
+  ['led-trailer', 'Mobile LED'],
+  ['pixel-pitch', 'Pixel Pitch'],
+  ['content-play', 'Content'],
+  ['rigging', 'Rigging'],
 ]
 
 /**
@@ -467,7 +472,7 @@ function buildDocs() {
         '',
         'logo/        Lockup in 4 tones (dark, light, white, black) + PL monogram in 3,',
         '             SVG and PNG at 128 / 256 / 512 / 1024 / 2048 px. CLEARSPACE.txt.',
-        'icons-3d/    32 Higgsfield 3D icons (equipment, services, values), transparent PNG 1024 + 256.',
+        'icons-3d/    37 Higgsfield 3D icons (equipment, services, values), transparent PNG 1024 + 256.',
         'favicon/     favicon.svg, favicon.ico (16/32/48), PNG 16–96, apple-touch 180,',
         '             PWA 192/512 + maskable variants.',
         'tokens/      design-tokens.css + design-tokens.json, generated from app/globals.css.',

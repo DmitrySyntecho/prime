@@ -72,7 +72,7 @@ Abstract stage-lighting composition for [CAMPAIGN]: volumetric beams of hot pink
 
 ## 3D equipment icon
 
-**When:** Product categories, empty states, ad stickers — one consistent set (32 shipped in /brand/icons-3d; the site renders them via components/icon-3d.tsx).
+**When:** Product categories, empty states, ad stickers — one consistent set (37 shipped in /brand/icons-3d; the site renders them via components/icon-3d.tsx).
 
 **Ratios:** 1:1 · background: transparent
 

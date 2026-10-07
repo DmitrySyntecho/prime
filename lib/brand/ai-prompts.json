@@ -91,7 +91,7 @@
     {
       "id": "icon-3d",
       "name": "3D equipment icon",
-      "use": "Product categories, empty states, ad stickers — one consistent set (32 shipped in /brand/icons-3d; the site renders them via components/icon-3d.tsx).",
+      "use": "Product categories, empty states, ad stickers — one consistent set (37 shipped in /brand/icons-3d; the site renders them via components/icon-3d.tsx).",
       "aspectRatios": [
         "1:1 · background: transparent"
       ],

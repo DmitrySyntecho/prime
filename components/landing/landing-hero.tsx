@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { ArrowRight, Play, Gift, Images } from "lucide-react"
+import Link from "next/link"
+import { ArrowRight, Play, Gift, Images, LayoutGrid } from "lucide-react"
 import { VideoOverlay } from "./video-overlay"
 import { HeroVideo } from "@/components/hero-video"
 import { Icon3D, type Icon3DName } from "@/components/icon-3d"
@@ -35,6 +36,10 @@ export interface HeroConfig {
   stats?: HeroStat[]
   /** Show the gold "Includes…" plate (default true). */
   showIncludes?: boolean
+  /** Hero bullet list (defaults to the generic four). */
+  bullets?: { icon: Icon3DName; text: string }[]
+  /** Secondary button as a plain link — overrides `secondary`. */
+  secondaryLink?: { label: string; href: string }
 }
 
 interface LandingHeroProps {
@@ -190,13 +195,13 @@ function Heading({ hero, centered }: { hero: HeroConfig; centered?: boolean }) {
   )
 }
 
-function Bullets({ centered }: { centered?: boolean }) {
+function Bullets({ items, centered }: { items: { icon: Icon3DName; text: string }[]; centered?: boolean }) {
   return (
     <ul className={`space-y-2.5 ${centered ? "mx-auto max-w-[440px] text-left" : "max-w-[540px]"}`}>
-      {bullets.map(({ icon, text }) => (
+      {items.map(({ icon, text }) => (
         <li key={text} className="flex items-center gap-3">
           <Icon3D name={icon} size={30} className="shrink-0" priority />
-          <span className="text-pretty text-[14px] leading-snug text-white/80 md:text-[15px]">{text}</span>
+          <span className="text-pretty text-[15px] font-medium leading-snug text-white/90 md:text-[16px]">{text}</span>
         </li>
       ))}
     </ul>
@@ -221,7 +226,12 @@ function CtaButtons({ hero, onQuote, onWatch, centered }: { hero: HeroConfig; on
         <span className="text-[11px] font-semibold tracking-[0.01em] text-[#0a0612]/70">{hero.microcopy ?? DEFAULT_MICROCOPY}</span>
       </button>
 
-      {hero.secondary === "portfolio" ? (
+      {hero.secondaryLink ? (
+        <Link href={hero.secondaryLink.href} className={secondaryCls}>
+          <LayoutGrid className="h-4 w-4" />
+          {hero.secondaryLink.label}
+        </Link>
+      ) : hero.secondary === "portfolio" ? (
         <a href="#portfolio" className={secondaryCls}>
           <Images className="h-4 w-4" />
           View event portfolio
@@ -304,7 +314,7 @@ export function LandingHero({ hero, onQuote }: LandingHeroProps) {
                 </div>
               )}
             </div>
-            <Bullets centered />
+            <Bullets items={hero.bullets ?? bullets} centered />
           </div>
 
           {/* DESKTOP: text column; the video bleeds behind the right half */}
@@ -314,7 +324,7 @@ export function LandingHero({ hero, onQuote }: LandingHeroProps) {
                 <Heading hero={hero} />
               </div>
               <div className="intro intro-2 mt-6">
-                <Bullets />
+                <Bullets items={hero.bullets ?? bullets} />
               </div>
               <div className="intro intro-3 mt-6 w-fit">
                 <CtaButtons hero={hero} onQuote={onQuote} onWatch={openVideo} />

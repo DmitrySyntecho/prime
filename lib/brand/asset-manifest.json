@@ -514,6 +514,46 @@
       "png1024": "/brand/icons-3d/png/receipt-1024.png",
       "png256": "/brand/icons-3d/png/receipt-256.png",
       "bytes": 140262
+    },
+    {
+      "slug": "led-outdoor",
+      "label": "Outdoor LED",
+      "web": "/brand/icons-3d/web/led-outdoor.webp",
+      "png1024": "/brand/icons-3d/png/led-outdoor-1024.png",
+      "png256": "/brand/icons-3d/png/led-outdoor-256.png",
+      "bytes": 160358
+    },
+    {
+      "slug": "led-trailer",
+      "label": "Mobile LED",
+      "web": "/brand/icons-3d/web/led-trailer.webp",
+      "png1024": "/brand/icons-3d/png/led-trailer-1024.png",
+      "png256": "/brand/icons-3d/png/led-trailer-256.png",
+      "bytes": 179581
+    },
+    {
+      "slug": "pixel-pitch",
+      "label": "Pixel Pitch",
+      "web": "/brand/icons-3d/web/pixel-pitch.webp",
+      "png1024": "/brand/icons-3d/png/pixel-pitch-1024.png",
+      "png256": "/brand/icons-3d/png/pixel-pitch-256.png",
+      "bytes": 192320
+    },
+    {
+      "slug": "content-play",
+      "label": "Content",
+      "web": "/brand/icons-3d/web/content-play.webp",
+      "png1024": "/brand/icons-3d/png/content-play-1024.png",
+      "png256": "/brand/icons-3d/png/content-play-256.png",
+      "bytes": 176878
+    },
+    {
+      "slug": "rigging",
+      "label": "Rigging",
+      "web": "/brand/icons-3d/web/rigging.webp",
+      "png1024": "/brand/icons-3d/png/rigging-1024.png",
+      "png256": "/brand/icons-3d/png/rigging-256.png",
+      "bytes": 134610
     }
   ],
   "banners": [
@@ -744,8 +784,8 @@
   "packages": {
     "icons3d": {
       "src": "/brand/zip/prime-line-av-3d-icons.zip",
-      "bytes": 6126566,
-      "count": 64
+      "bytes": 7035410,
+      "count": 74
     },
     "logo": {
       "src": "/brand/zip/prime-line-av-logo-package.zip",
@@ -769,8 +809,8 @@
     },
     "kit": {
       "src": "/brand/zip/prime-line-av-brand-kit.zip",
-      "bytes": 12285184,
-      "count": 141
+      "bytes": 13194029,
+      "count": 151
     }
   },
   "docs": {
