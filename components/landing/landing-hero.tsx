@@ -183,15 +183,30 @@ function renderTitle(title: string, accentPhrase?: string) {
   )
 }
 
-function Heading({ hero, centered }: { hero: HeroConfig; centered?: boolean }) {
+function Title({ hero }: { hero: HeroConfig }) {
   return (
-    <div className={centered ? "text-center" : ""}>
-      <h1 className="mb-4 text-balance text-[30px] font-extrabold leading-[1.08] tracking-[-0.02em] text-white sm:text-[38px] lg:text-[42px]">
-        {renderTitle(hero.title, hero.accentPhrase)}
-      </h1>
-      <p className={`max-w-[560px] text-pretty text-[17px] font-medium leading-[1.65] text-white/90 md:text-[18px] ${centered ? "mx-auto" : ""}`}>
-        {hero.lede ?? DEFAULT_LEDE}
-      </p>
+    <h1 className="text-balance text-[30px] font-extrabold leading-[1.08] tracking-[-0.02em] text-white sm:text-[38px] lg:text-[42px]">
+      {renderTitle(hero.title, hero.accentPhrase)}
+    </h1>
+  )
+}
+
+function Lede({ hero, centered }: { hero: HeroConfig; centered?: boolean }) {
+  return (
+    <p className={`max-w-[560px] text-pretty text-[17px] font-medium leading-[1.65] text-white/90 md:text-[18px] ${centered ? "mx-auto" : ""}`}>
+      {hero.lede ?? DEFAULT_LEDE}
+    </p>
+  )
+}
+
+/* Desktop: H1 with its lede directly underneath. */
+function Heading({ hero }: { hero: HeroConfig }) {
+  return (
+    <div>
+      <div className="mb-4">
+        <Title hero={hero} />
+      </div>
+      <Lede hero={hero} />
     </div>
   )
 }
@@ -308,9 +323,10 @@ export function LandingHero({ hero, onQuote }: LandingHeroProps) {
       <section id="top" className="relative overflow-hidden pb-2 pt-6 md:pb-4 md:pt-10 lg:flex lg:flex-1 lg:items-center lg:overflow-visible lg:py-10">
         <HeroVideoBleed clips={clips} />
         <div className="relative mx-auto w-full max-w-7xl px-4">
-          {/* MOBILE (centered): heading → video → buttons → bullets */}
-          <div className="flex flex-col gap-7 text-center lg:hidden">
-            <Heading hero={hero} centered />
+          {/* MOBILE (centered) — site rule for every first screen on phones:
+              H1 → video → buttons → supporting text → bullets */}
+          <div className="flex flex-col gap-6 text-center lg:hidden">
+            <Title hero={hero} />
             <HeroMedia clips={clips} />
             <div className="flex flex-col gap-4">
               <CtaButtons hero={hero} onQuote={onQuote} onWatch={openVideo} centered />
@@ -320,6 +336,7 @@ export function LandingHero({ hero, onQuote }: LandingHeroProps) {
                 </div>
               )}
             </div>
+            <Lede hero={hero} centered />
             <Bullets items={hero.bullets ?? bullets} centered />
           </div>
 

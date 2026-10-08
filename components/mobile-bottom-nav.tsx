@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useCart } from "@/lib/cart-context"
+import { usePastFirstBlock } from "@/lib/use-past-first-block"
 import { CATEGORIES, getProductsByCategory } from "@/lib/products-data"
 import type { ProductCategory } from "@/lib/cart-context"
 import {
@@ -67,28 +68,12 @@ export function MobileBottomNav({ onStartQuote }: MobileBottomNavProps) {
   const isFifa = pathname?.startsWith("/fifa-2026-packages")
   const [shopOpen, setShopOpen] = useState(false)
   const [chooserOpen, setChooserOpen] = useState(false)
-  const [navVisible, setNavVisible] = useState(false)
   const [headerMenuOpen, setHeaderMenuOpen] = useState(false)
   const [filtersOpen, setFiltersOpen] = useState(false)
   const { isCartOpen } = useCart()
 
-  // Show nav only after scrolling past the first block
-  useEffect(() => {
-    let raf = 0
-    let pending = false
-    const handle = () => {
-      pending = false
-      const y = window.scrollY
-      const threshold = Math.max(window.innerHeight * 0.8, 480)
-      setNavVisible(y >= threshold)
-    }
-    const onScroll = () => {
-      if (!pending) { pending = true; raf = requestAnimationFrame(handle) }
-    }
-    handle()
-    window.addEventListener("scroll", onScroll, { passive: true })
-    return () => { window.removeEventListener("scroll", onScroll); if (raf) cancelAnimationFrame(raf) }
-  }, [])
+  // Show nav only once scrolled a little past the middle of the first block (hero)
+  const navVisible = usePastFirstBlock()
 
   // Lock body scroll when a sheet/panel is open
   useEffect(() => {

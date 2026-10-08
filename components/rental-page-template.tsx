@@ -113,16 +113,19 @@ export function RentalPageTemplate({
 
         <div className="relative max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* LEFT COLUMN - Text */}
-            <div className="order-2 lg:order-1">
-              <p className="text-[#FF2D6F] font-semibold uppercase tracking-wider text-sm mb-4">Equipment Rentals</p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight leading-[1.1] text-white">
-                {headline}
-              </h1>
+            {/* LEFT COLUMN - Text. Below lg it dissolves (`contents`) so the mobile
+                order is the site rule: H1 → video → buttons → supporting text. */}
+            <div className="contents lg:order-1 lg:block">
+              <div className="order-1">
+                <p className="text-[#FF2D6F] font-semibold uppercase tracking-wider text-sm mb-4">Equipment Rentals</p>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black lg:mb-6 tracking-tight leading-[1.1] text-white">
+                  {headline}
+                </h1>
+              </div>
 
-              <p className="text-gray-300 text-lg mb-8 max-w-lg">{subheadline}</p>
+              <p className="order-4 text-gray-200 text-lg max-w-lg lg:mb-8">{subheadline}</p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="order-3 flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={() => setShowQuoteForm(true)}
                   className="cta-yellow inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#FF2D6F] text-[#0B1217] font-semibold rounded-md hover:bg-[#22c55e] transition-colors"
@@ -142,7 +145,7 @@ export function RentalPageTemplate({
             </div>
 
             {/* RIGHT COLUMN - Video */}
-            <div className="order-1 lg:order-2">
+            <div className="order-2 lg:order-2">
               <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-black">
                 <div id="rental-vidalytics-container" />
               </div>
@@ -206,12 +209,11 @@ export function RentalPageTemplate({
                       </span>
                     ))}
                   </div>
-                  <button
-                    onClick={() => setShowQuoteForm(true)}
-                    className="w-full mt-2 py-2 px-4 bg-[#FF5E3A] text-white text-sm font-semibold rounded-lg hover:bg-[#7C2D5A] transition-colors"
-                  >
+                  {/* The whole card is the button; this is its visual label (a nested
+                      <button> is invalid HTML and broke hydration). */}
+                  <span className="block w-full mt-2 py-2 px-4 bg-[#FF5E3A] text-white text-sm font-semibold rounded-lg text-center group-hover:bg-[#7C2D5A] transition-colors">
                     Get Quote
-                  </button>
+                  </span>
                 </div>
               </button>
             ))}
