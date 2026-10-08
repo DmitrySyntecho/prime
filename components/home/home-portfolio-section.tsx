@@ -72,13 +72,23 @@ export function HomePortfolioSection({
   id = "portfolio",
   studies = STUDIES,
   header,
+  filters,
+  ctaLabel = "View all case studies",
+  ctaHref = "/portfolio",
 }: {
   id?: string
   studies?: Study[]
   /** Replaces the default "Browse our event portfolio" heading. */
   header?: React.ReactNode
+  /** Event-type chips; a chip shows only when some film matches its category. */
+  filters?: { label: string; match: string }[]
+  ctaLabel?: string
+  ctaHref?: string
 } = {}) {
   const [active, setActive] = useState<Study | null>(null)
+  const [filter, setFilter] = useState<string | null>(null)
+  const chips = filters?.filter((f) => studies.some((s) => s.category === f.match)) ?? []
+  const shown = filter ? studies.filter((s) => s.category === filter) : studies
 
   useEffect(() => {
     if (!active) return
@@ -101,17 +111,46 @@ export function HomePortfolioSection({
           </SectionHeader>
         )}
 
-        <div className="reveal-stagger grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-          {studies.map((s) => (
+        {chips.length > 0 && (
+          <div
+            role="group"
+            aria-label="Filter by event type"
+            className="reveal -mx-4 mb-8 flex snap-x gap-2 overflow-x-auto px-4 pb-1 sm:flex-wrap sm:justify-center"
+            style={{ scrollbarWidth: "none" }}
+          >
+            {[{ label: "All", match: null as string | null }, ...chips].map((f) => {
+              const on = filter === f.match
+              return (
+                <button
+                  key={f.label}
+                  type="button"
+                  aria-pressed={on}
+                  onClick={() => setFilter(f.match)}
+                  className={`shrink-0 snap-start rounded-full border px-4 py-2.5 text-[15px] font-bold outline-none ring-[#FFD24A]/60 transition-[background-color,border-color,color] focus-visible:ring-2 ${
+                    on ? "border-[#FF2D6F]/60 text-white" : "border-white/12 bg-white/[0.05] text-white/90 hover:border-white/30 hover:text-white"
+                  }`}
+                  style={on ? { background: "linear-gradient(135deg, rgba(255,45,111,0.28), rgba(255,94,58,0.14))" } : undefined}
+                >
+                  {f.label}
+                </button>
+              )
+            })}
+          </div>
+        )}
+
+        <div key={filter ?? "all"} className="reveal-stagger grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+          {shown.map((s) => (
             <StudyCard key={s.mux} s={s} onPlay={() => setActive(s)} />
           ))}
         </div>
 
-        <div className="mt-10 flex justify-center">
-          <Link href="/portfolio" className="shimmer-stroke inline-flex items-center gap-2.5 rounded-xl border border-white/[0.12] bg-white/[0.05] px-6 py-3.5 text-[14px] font-bold text-white backdrop-blur-md transition-[background-color,border-color] hover:border-white/[0.22] hover:bg-white/[0.10]">
-            View all case studies <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
+        {ctaLabel && (
+          <div className="mt-10 flex justify-center">
+            <Link href={ctaHref} className="shimmer-stroke inline-flex items-center gap-2.5 rounded-xl border border-white/[0.12] bg-white/[0.05] px-6 py-3.5 text-[14px] font-bold text-white backdrop-blur-md transition-[background-color,border-color] hover:border-white/[0.22] hover:bg-white/[0.10]">
+              {ctaLabel} <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          )}
       </div>
 
       {active && (

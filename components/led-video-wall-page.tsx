@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { rt, plain } from "@/components/blocks/rich-text"
 import { LandingHero } from "@/components/landing/landing-hero"
 import { TrustedBySection } from "@/components/trusted-by-section"
 import { RatingsBar } from "@/components/ratings-bar"
@@ -24,33 +24,6 @@ import type { Icon3DName } from "@/components/icon-3d"
    /av-rental/led-screen-rental/* and /cases/ links are mapped to the routes that
    exist on this site. */
 
-const LINK = "font-semibold text-white underline decoration-[#FF2D6F]/60 decoration-2 underline-offset-4 transition-colors hover:decoration-[#FF2D6F]"
-
-function rt(s: string): React.ReactNode {
-  const re = /\[([^\]]+)\]\(([^)]+)\)|==([^=]+)==/g
-  const out: React.ReactNode[] = []
-  let last = 0
-  let m: RegExpExecArray | null
-  while ((m = re.exec(s))) {
-    if (m.index > last) out.push(s.slice(last, m.index))
-    out.push(
-      m[1] ? (
-        <Link key={m.index} href={m[2]} className={LINK}>
-          {m[1]}
-        </Link>
-      ) : (
-        <span key={m.index} className="hl">
-          {m[3]}
-        </span>
-      ),
-    )
-    last = m.index + m[0].length
-  }
-  if (last < s.length) out.push(s.slice(last))
-  return out
-}
-
-const plain = (s: string) => s.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/==([^=]+)==/g, "$1")
 
 /* ── Block 01 · hero ─────────────────────────────────────────────────── */
 const HERO_LEDE =

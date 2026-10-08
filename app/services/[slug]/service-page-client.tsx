@@ -25,6 +25,7 @@ import { WrittenReviewsSection } from "@/components/written-reviews-section"
 import { BlogSection } from "@/components/blog-section"
 import { useCity } from "@/lib/city-context"
 import { LedVideoWallPage } from "@/components/led-video-wall-page"
+import { AvProductionPage } from "@/components/pages/av-production-page"
 import { applyCity } from "@/lib/service-pages"
 import { getCategoryForServiceSlug } from "@/lib/products-data"
 import type { ServicePage } from "@/lib/service-pages"
@@ -41,6 +42,12 @@ export function ServicePageClient({ service, slug }: ServicePageClientProps) {
   if (slug.startsWith("led-screen-rental")) {
     const local = slug.endsWith("-miami") ? "Miami" : slug.endsWith("-orlando") ? "Orlando" : undefined
     return <LedVideoWallPage h1={`LED Video Wall Rental Company in ${local ?? "the USA"}`} location={local} />
+  }
+
+  // The nav's "Full AV Production" lands here: same copy-deck page as /av-production.
+  if (slug.startsWith("full-av-production")) {
+    const local = slug.endsWith("-miami") ? "Miami" : slug.endsWith("-orlando") ? "Orlando" : undefined
+    return <AvProductionPage h1={local ? `AV Production Company for Events in ${local}` : undefined} location={local} />
   }
   const s = city !== "Los Angeles"
     ? {

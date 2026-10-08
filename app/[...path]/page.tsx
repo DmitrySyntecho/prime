@@ -3,6 +3,9 @@ import { notFound } from "next/navigation"
 import { getSeoPage, getSiblingPages } from "@/lib/seo-pages"
 import { SeoPageTemplate } from "@/components/seo-page-template"
 import { LedVideoWallPage } from "@/components/led-video-wall-page"
+import { AvRentalPage } from "@/components/pages/av-rental-page"
+import { AvInstallationPage } from "@/components/pages/av-installation-page"
+import { AvProductionPage } from "@/components/pages/av-production-page"
 import { CityProvider } from "@/lib/city-context"
 
 // On-demand rendered (ISR) — 5k+ pages are not prebuilt at build time.
@@ -30,6 +33,22 @@ export default async function CatchAllPage(props: { params: Promise<{ path: stri
     return (
       <CityProvider city={page.location}>
         <LedVideoWallPage h1={page.h1} location={page.national ? undefined : page.location} />
+      </CityProvider>
+    )
+  }
+
+  // Copy-deck hub pages (national + every city variant).
+  const Hub = /\/av-rental$/.test(page.path)
+    ? AvRentalPage
+    : /\/av-installations$/.test(page.path)
+      ? AvInstallationPage
+      : /\/av-production$/.test(page.path)
+        ? AvProductionPage
+        : null
+  if (Hub) {
+    return (
+      <CityProvider city={page.location}>
+        <Hub h1={page.national ? undefined : page.h1} location={page.national ? undefined : page.location} />
       </CityProvider>
     )
   }

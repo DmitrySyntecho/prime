@@ -6,21 +6,24 @@ export type BentoItem = { title: string; image: string; body: React.ReactNode }
 const LAYOUT: Record<number, number[]> = {
   5: [3, 3, 2, 2, 2],
   6: [4, 2, 2, 4, 3, 3],
+  10: [3, 3, 2, 2, 2, 2, 2, 2, 3, 3],
 }
 const SPAN: Record<number, string> = { 2: "md:col-span-2", 3: "md:col-span-3", 4: "md:col-span-4" }
 
 /** Photo tiles with the title + copy over a dark fade. */
 export function ImageBento({ items }: { items: BentoItem[] }) {
   const spans = LAYOUT[items.length] ?? items.map(() => 2)
-  const tall = items.length === 5 ? 2 : items.length // first row(s) get the taller tiles
+  const many = items.length > 6
+  // Small sets: every tile tall. Five: the first row tall. Long lists: compact tiles.
+  const tall = (i: number) => (items.length === 5 ? i < 2 : !many)
   return (
     <div className="reveal-stagger grid gap-4 md:grid-cols-6 lg:gap-5">
       {items.map((it, i) => (
         <article
           key={it.title}
-          className={`keep-original fx-spot group relative flex min-h-[340px] flex-col justify-end overflow-hidden rounded-[22px] border border-white/[0.08] transition-[border-color,transform] duration-500 hover:-translate-y-1 hover:border-[#FF2D6F]/30 ${SPAN[spans[i]]} ${
-            i < tall ? "md:min-h-[400px]" : ""
-          }`}
+          className={`keep-original fx-spot group relative flex flex-col justify-end overflow-hidden rounded-[22px] border border-white/[0.08] transition-[border-color,transform] duration-500 hover:-translate-y-1 hover:border-[#FF2D6F]/30 ${SPAN[spans[i]]} ${
+            many ? "min-h-[290px] md:min-h-[340px]" : "min-h-[340px]"
+          } ${tall(i) ? "md:min-h-[400px]" : ""}`}
         >
           <Image src={it.image} alt="" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.06]" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#03070a] via-[#03070a]/75 to-[#03070a]/10 transition-colors duration-500 group-hover:from-[#1a0614]" />

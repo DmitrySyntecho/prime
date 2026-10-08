@@ -15,7 +15,7 @@ export function ReasonsSplit({
   eyebrow: string
   /** H2 content (may contain a .ds-accent-text span). */
   heading: React.ReactNode
-  lede: React.ReactNode
+  lede?: React.ReactNode
   reasons: Reason[]
 }) {
   return (
@@ -27,7 +27,7 @@ export function ReasonsSplit({
             {eyebrow}
           </span>
           <h2 className="text-balance text-[30px] font-extrabold leading-[1.1] tracking-[-0.025em] text-white md:text-[42px]">{heading}</h2>
-          <p className="mt-5 max-w-[540px] text-pretty text-[17px] font-medium leading-[1.65] text-white/90 md:text-[18px]">{lede}</p>
+          {lede && <div className="mt-5 max-w-[540px] space-y-3 text-pretty text-[17px] font-medium leading-[1.65] text-white/90 md:text-[18px]">{lede}</div>}
           <div className="mt-8 hidden lg:block">
             <QuoteCTA className="!justify-start" />
           </div>

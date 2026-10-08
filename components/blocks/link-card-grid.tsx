@@ -12,9 +12,9 @@ export type LinkCard = {
 }
 
 /** Photo card + 3D icon tile + H3 link + copy + "Learn more", three across on desktop. */
-export function LinkCardGrid({ items }: { items: LinkCard[] }) {
+export function LinkCardGrid({ items, ctaLabel = "Learn more", cols = 3 }: { items: LinkCard[]; ctaLabel?: string; cols?: 3 | 4 }) {
   return (
-    <div className="reveal-stagger grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+    <div className={`reveal-stagger grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5 ${cols === 4 ? "xl:grid-cols-4" : ""}`}>
       {items.map((s) => (
         <article
           key={s.title}
@@ -39,7 +39,7 @@ export function LinkCardGrid({ items }: { items: LinkCard[] }) {
             </h3>
             <p className="mb-5 flex-1 text-pretty text-[15.5px] leading-[1.65] text-white/90">{s.body}</p>
             <Link href={s.href} className="mt-auto inline-flex items-center gap-2 self-start text-[15px] font-bold text-[#FF2D6F] transition-[gap] hover:gap-3">
-              Learn more <ArrowRight className="h-4 w-4" />
+              {ctaLabel} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </article>

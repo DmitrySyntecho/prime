@@ -51,6 +51,9 @@
 html, body {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* Pulse rings on full-width CTAs and slide-in reveals must never widen the page
+     on phones. `clip` (not `hidden`) creates no scroll container, so sticky works. */
+  overflow-x: clip;
 }
 
 
@@ -938,6 +941,12 @@ html.sda-off :is(.reveal, .reveal-stagger > *, .reveal-left, .reveal-right, .rev
 html.sda-off .reveal-left { transform: translateX(-60px); }
 html.sda-off .reveal-right { transform: translateX(60px); }
 html.sda-off :is(.reveal, .reveal-stagger > *, .reveal-left, .reveal-right, .reveal-zoom).in-view { opacity: 1; transform: none; }
+/* Phones/tablets: a side slide starts off-screen and widens the page (iOS lets you
+   pan into it), so left/right reveals rise into place like .reveal instead. */
+@media (max-width: 1023px) {
+  .reveal-left, .reveal-right { animation-name: reveal-up; }
+  html.sda-off .reveal-left, html.sda-off .reveal-right { transform: translateY(40px); }
+}
 @keyframes reveal-zoom {
   from { opacity: 0.3; transform: scale(0.92); clip-path: inset(8% 6% round 28px); }
   to { opacity: 1; transform: none; clip-path: inset(0 round 0); }

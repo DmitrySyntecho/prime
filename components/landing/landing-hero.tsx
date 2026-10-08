@@ -39,7 +39,7 @@ export interface HeroConfig {
   /** Hero bullet list (defaults to the generic four). */
   bullets?: { icon: Icon3DName; text: string }[]
   /** Secondary button as a plain link — overrides `secondary`. */
-  secondaryLink?: { label: string; href: string }
+  secondaryLink?: { label: string; href?: string; onClick?: () => void }
 }
 
 interface LandingHeroProps {
@@ -227,11 +227,16 @@ function CtaButtons({ hero, onQuote, onWatch, centered }: { hero: HeroConfig; on
         <span className="text-[11px] font-semibold tracking-[0.01em] text-[#0a0612]/70">{hero.microcopy ?? DEFAULT_MICROCOPY}</span>
       </button>
 
-      {hero.secondaryLink ? (
+      {hero.secondaryLink?.href ? (
         <Link href={hero.secondaryLink.href} className={secondaryCls}>
           <LayoutGrid className="h-4 w-4" />
           {hero.secondaryLink.label}
         </Link>
+      ) : hero.secondaryLink ? (
+        <button type="button" onClick={hero.secondaryLink.onClick} className={secondaryCls}>
+          <LayoutGrid className="h-4 w-4" />
+          {hero.secondaryLink.label}
+        </button>
       ) : hero.secondary === "portfolio" ? (
         <a href="#portfolio" className={secondaryCls}>
           <Images className="h-4 w-4" />
@@ -259,7 +264,7 @@ function GiftLine({ fullWidth }: { fullWidth?: boolean }) {
 /* Desktop: the four figures as a compact row under the CTAs. */
 function StatsInline({ stats }: { stats: HeroStat[] }) {
   return (
-    <dl className="mt-8 grid max-w-[600px] grid-cols-4 gap-5 border-t border-white/10 pt-6">
+    <dl className={`mt-8 grid max-w-[600px] gap-5 border-t border-white/10 pt-6 ${stats.length === 3 ? "grid-cols-3" : "grid-cols-4"}`}>
       {stats.map((s) => (
         <div key={s.label}>
           <dt className="sr-only">{s.label}</dt>
@@ -277,11 +282,11 @@ function StatsInline({ stats }: { stats: HeroStat[] }) {
 function StatsStrip({ stats }: { stats: HeroStat[] }) {
   return (
     <div
-      className="mt-8 grid grid-cols-2 overflow-hidden rounded-[20px] border border-white/10 lg:mt-8 lg:grid-cols-4"
+      className={`mt-8 grid grid-cols-2 overflow-hidden rounded-[20px] border border-white/10 lg:mt-8 ${stats.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}
       style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}
     >
       {stats.map((s, i) => (
-        <div key={s.label} className={`px-5 py-4 md:px-7 md:py-4 ${i % 2 === 1 ? "border-l border-white/[0.08]" : ""} ${i >= 2 ? "border-t border-white/[0.08] lg:border-t-0" : ""} ${i === 2 ? "lg:border-l" : ""}`}>
+        <div key={s.label} className={`px-5 py-4 md:px-7 md:py-4 ${i % 2 === 1 ? "border-l border-white/[0.08]" : ""} ${i >= 2 ? "border-t border-white/[0.08] lg:border-t-0" : ""} ${i === 2 ? "lg:border-l" : ""} ${stats.length === 3 && i === 2 ? "col-span-2 lg:col-span-1" : ""}`}>
           <p className="text-[26px] font-extrabold leading-none tracking-[-0.03em] tabular-nums md:text-[32px]">
             <span className="ds-accent-text">{s.value}</span>
           </p>

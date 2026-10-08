@@ -161,9 +161,19 @@ function Spotlight({ tab }: { tab: Tab }) {
  * that category, filtered by the category's first catalog facet (pixel pitch,
  * audience size…) instead of tabs.
  */
-export function HomeShopSection({ category }: { category?: ProductCategory } = {}) {
+export function HomeShopSection({
+  category,
+  categories,
+  header,
+}: {
+  category?: ProductCategory
+  /** A page about a few kinds of gear (e.g. installations) gets tabs for just those. */
+  categories?: ProductCategory[]
+  header?: React.ReactNode
+} = {}) {
   const locked = category && TABS.some((t) => t.key === category) ? category : undefined
-  const [active, setActive] = useState<TabKey>(locked ?? "popular")
+  const tabs = categories?.length ? TABS.filter((t) => categories.includes(t.key as ProductCategory)) : TABS
+  const [active, setActive] = useState<TabKey>(locked ?? tabs[0]?.key ?? "popular")
   const tab = TABS.find((t) => t.key === active) ?? TABS[0]
   const { itemCount, openCart } = useCart()
 
@@ -202,8 +212,8 @@ export function HomeShopSection({ category }: { category?: ProductCategory } = {
   const onTabKey = (e: React.KeyboardEvent) => {
     if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return
     e.preventDefault()
-    const i = TABS.findIndex((t) => t.key === active)
-    const next = TABS[(i + (e.key === "ArrowRight" ? 1 : -1) + TABS.length) % TABS.length]
+    const i = tabs.findIndex((t) => t.key === active)
+    const next = tabs[(i + (e.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length]
     setActive(next.key)
     document.getElementById(`shop-tab-${next.key}`)?.focus()
   }
@@ -211,7 +221,7 @@ export function HomeShopSection({ category }: { category?: ProductCategory } = {
   return (
     <section id="shop" className="relative scroll-mt-24 py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4">
-        {locked ? (
+        {header ?? (locked ? (
           <SectionHeader eyebrow="Rent the gear" title={CATEGORY_COPY[locked].title} accent={CATEGORY_COPY[locked].accent}>
             Every item comes from our own inventory and is delivered, set up and tested by our crew. Add what you need to your quote, and our team will confirm
             availability and <span className="hl">send you an itemized price.</span>
@@ -220,7 +230,7 @@ export function HomeShopSection({ category }: { category?: ProductCategory } = {
           <SectionHeader eyebrow="Rent the gear" title="Rent the same equipment we bring to our shows" accent="same equipment">
             LED walls, sound, lighting, staging and more from our own inventory. Add what you need to your quote, and our team will confirm availability and <span className="hl">send you an itemized price.</span>
           </SectionHeader>
-        )}
+        ))}
 
         {locked ? (
           /* Category page: filter chips from the category's first catalog facet */
@@ -262,7 +272,7 @@ export function HomeShopSection({ category }: { category?: ProductCategory } = {
           className="reveal -mx-4 flex snap-x gap-2 overflow-x-auto px-4 pb-2 lg:mx-0 lg:flex-wrap lg:justify-center lg:overflow-visible lg:px-0"
           style={{ scrollbarWidth: "none" }}
         >
-          {TABS.map((t) => {
+          {tabs.map((t) => {
             const on = t.key === active
             return (
               <button
