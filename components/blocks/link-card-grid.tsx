@@ -9,6 +9,8 @@ export type LinkCard = {
   image: string
   icon: Icon3DName
   body: React.ReactNode
+  /** Per-card button label (defaults to the grid's ctaLabel). */
+  cta?: string
 }
 
 /** Photo card + 3D icon tile + H3 link + copy + "Learn more", three across on desktop. */
@@ -39,7 +41,7 @@ export function LinkCardGrid({ items, ctaLabel = "Learn more", cols = 3 }: { ite
             </h3>
             <p className="mb-5 flex-1 text-pretty text-[15.5px] leading-[1.65] text-white/90">{s.body}</p>
             <Link href={s.href} className="mt-auto inline-flex items-center gap-2 self-start text-[15px] font-bold text-[#FF2D6F] transition-[gap] hover:gap-3">
-              {ctaLabel} <ArrowRight className="h-4 w-4" />
+              {s.cta ?? ctaLabel} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </article>

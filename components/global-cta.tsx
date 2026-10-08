@@ -1,12 +1,16 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { usePathname } from "next/navigation"
+import { isLandingPath } from "@/lib/landing-routes"
 import { Sparkles } from "lucide-react"
 import { QuoteForm } from "./quote-form"
 import { MobileBottomNav } from "./mobile-bottom-nav"
 import { QuoteChooser } from "./quote-chooser"
 
 export function GlobalCTA() {
+  // Landings (/lp/*) have their own call/quote bar; keep only the quote dialogs.
+  const landing = isLandingPath(usePathname())
   const [chooserOpen, setChooserOpen] = useState(false)
   const [formOpen, setFormOpen] = useState(false)
   const [serviceSlug, setServiceSlug] = useState<string | undefined>()
@@ -38,6 +42,7 @@ export function GlobalCTA() {
   return (
     <>
       {/* Desktop floating quote bubble — bottom right */}
+      {!landing && (
       <button
         onClick={openChooser}
         aria-label="Get a quote"
@@ -50,9 +55,10 @@ export function GlobalCTA() {
       >
         <Sparkles className="w-6 h-6" />
       </button>
+      )}
 
       {/* Mobile bottom navigation (<md) */}
-      <MobileBottomNav onStartQuote={openChooser} />
+      {!landing && <MobileBottomNav onStartQuote={openChooser} />}
 
       <QuoteChooser open={chooserOpen} onClose={() => setChooserOpen(false)} onForm={openForm} />
       <QuoteForm isOpen={formOpen} onClose={() => setFormOpen(false)} serviceSlug={serviceSlug} eventTypeId={eventTypeId} />

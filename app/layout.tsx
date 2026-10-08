@@ -17,6 +17,7 @@ import { MotionFX } from "@/components/motion-fx"
 import { CartPanel } from "@/components/cart-panel"
 import { CallNowPopup } from "@/components/call-now-popup"
 import { ScrollToTop } from "@/components/scroll-to-top"
+import { HideOnLanding } from "@/components/site-chrome"
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -117,9 +118,13 @@ export default function RootLayout({
         <div className="page-content">
           <LanguageProvider>
             <CartProvider>
-              <Header />
+              <HideOnLanding>
+                <Header />
+              </HideOnLanding>
               <main>{children}</main>
-              <Footer />
+              <HideOnLanding>
+                <Footer />
+              </HideOnLanding>
               <CartPanel />
               <GlobalCTA />
               <CTMScanner />
