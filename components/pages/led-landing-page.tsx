@@ -40,12 +40,13 @@ import {
    wall in the catalog, with a light header/footer and no links off the page.
    Copy links become plain text; "#quote" anchors open the quote form. */
 
+// Follows the page order: trust and work first, products after.
 const NAV = [
-  { label: "LED walls", href: "#led-walls" },
-  { label: "Options", href: "#options" },
-  { label: "Events", href: "#events" },
   { label: "Why us", href: "#why-us" },
   { label: "Our work", href: "#case-studies" },
+  { label: "Events", href: "#events" },
+  { label: "Options", href: "#options" },
+  { label: "LED walls", href: "#led-walls" },
   { label: "FAQ", href: "#faq" },
 ]
 
@@ -116,39 +117,7 @@ export function LedLandingPage() {
 
       <RatingsBar only={["Google", "G2"]} />
 
-      {/* Every LED wall in the catalog */}
-      <section id="led-walls" className="relative scroll-mt-24 py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4">
-          <SectionHeader eyebrow="Every LED wall we rent" title="Choose your LED video wall" accent="LED video wall">
-            {rt(
-              `All ${LED_WALLS.length} LED walls in our rental inventory, rated for indoor and outdoor use (IP65), in ${PITCHES} mm pixel pitch. Filter by pitch and size, add the walls you like to your quote, and ==we’ll send you an itemized price.==`,
-            )}
-          </SectionHeader>
-          <LedProductsGrid />
-        </div>
-      </section>
-
-      {/* Rental options */}
-      <section id="options" className="relative scroll-mt-24 py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4">
-          <SectionHeader eyebrow="LED wall rental options" title="Explore our LED video wall rental options" accent="LED video wall rental">
-            {t(LED_OPTIONS_LEDE)}
-          </SectionHeader>
-          <LinkCardGrid items={LED_OPTIONS.map((o) => ({ ...o, ...OPTION_TARGET[o.key], body: t(o.body) }))} />
-        </div>
-      </section>
-
-      {/* Events + call strip */}
-      <section id="events" className="relative scroll-mt-24 py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4">
-          <SectionHeader eyebrow="Events we power" title="We build LED walls for any kind of event" accent="any kind of event">
-            {t(LED_EVENTS_LEDE)}
-          </SectionHeader>
-          <ImageBento items={LED_EVENTS} />
-          <CallStrip className="mt-10" title="Ready to discuss your event?" subtitle="Talk to us today!" />
-        </div>
-      </section>
-
+      {/* 1. About us — why trust us */}
       <ReasonsSplit
         id="why-us"
         eyebrow="Why Prime Line AV"
@@ -161,6 +130,7 @@ export function LedLandingPage() {
         reasons={LED_REASONS.map((r) => ({ ...r, body: t(r.body) }))}
       />
 
+      {/* 2. Our work — case-study films */}
       <HomePortfolioSection
         id="case-studies"
         studies={LED_STUDIES}
@@ -172,10 +142,44 @@ export function LedLandingPage() {
         }
       />
 
+      {/* 3. Events we build for + call strip */}
+      <section id="events" className="relative scroll-mt-24 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4">
+          <SectionHeader eyebrow="Events we power" title="We build LED walls for any kind of event" accent="any kind of event">
+            {t(LED_EVENTS_LEDE)}
+          </SectionHeader>
+          <ImageBento items={LED_EVENTS} />
+          <CallStrip className="mt-10" title="Ready to discuss your event?" subtitle="Talk to us today!" />
+        </div>
+      </section>
+
+      {/* 4. Our work — load-in to showtime photos */}
       <section id="led-portfolio" className="relative scroll-mt-24 py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4">
           <SectionHeader eyebrow="Our portfolio" title="Our LED walls, from load-in to showtime" accent="from load-in to showtime" />
           <PhotoCarousel photos={LED_PHOTOS} />
+        </div>
+      </section>
+
+      {/* 5. Rental options — leads into the products */}
+      <section id="options" className="relative scroll-mt-24 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4">
+          <SectionHeader eyebrow="LED wall rental options" title="Explore our LED video wall rental options" accent="LED video wall rental">
+            {t(LED_OPTIONS_LEDE)}
+          </SectionHeader>
+          <LinkCardGrid items={LED_OPTIONS.map((o) => ({ ...o, ...OPTION_TARGET[o.key], body: t(o.body) }))} />
+        </div>
+      </section>
+
+      {/* 6. Products — every LED wall in the catalog, below the trust & work blocks */}
+      <section id="led-walls" className="relative scroll-mt-24 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4">
+          <SectionHeader eyebrow="Every LED wall we rent" title="Choose your LED video wall" accent="LED video wall">
+            {rt(
+              `All ${LED_WALLS.length} LED walls in our rental inventory, rated for indoor and outdoor use (IP65), in ${PITCHES} mm pixel pitch. Filter by pitch and size, add the walls you like to your quote, and ==we’ll send you an itemized price.==`,
+            )}
+          </SectionHeader>
+          <LedProductsGrid />
         </div>
       </section>
 
