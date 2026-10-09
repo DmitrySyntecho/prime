@@ -26,6 +26,7 @@ import { BlogSection } from "@/components/blog-section"
 import { useCity } from "@/lib/city-context"
 import { LedVideoWallPage } from "@/components/led-video-wall-page"
 import { AvProductionPage } from "@/components/pages/av-production-page"
+import { SoundRentalPage } from "@/components/pages/sound-rental-page"
 import { applyCity } from "@/lib/service-pages"
 import { getCategoryForServiceSlug } from "@/lib/products-data"
 import type { ServicePage } from "@/lib/service-pages"
@@ -48,6 +49,12 @@ export function ServicePageClient({ service, slug }: ServicePageClientProps) {
   if (slug.startsWith("full-av-production")) {
     const local = slug.endsWith("-miami") ? "Miami" : slug.endsWith("-orlando") ? "Orlando" : undefined
     return <AvProductionPage h1={local ? `AV Production Company for Events in ${local}` : undefined} location={local} />
+  }
+
+  // The nav's "Sound Systems" lands here: same copy-deck page as /av-rental/sound-system-rental.
+  if (slug.startsWith("sound-system-rental")) {
+    const local = slug.endsWith("-miami") ? "Miami" : slug.endsWith("-orlando") ? "Orlando" : undefined
+    return <SoundRentalPage h1={local ? `Sound System Rental Company in ${local}` : undefined} location={local} />
   }
   const s = city !== "Los Angeles"
     ? {

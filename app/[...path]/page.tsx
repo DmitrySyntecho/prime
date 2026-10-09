@@ -6,6 +6,7 @@ import { LedVideoWallPage } from "@/components/led-video-wall-page"
 import { AvRentalPage } from "@/components/pages/av-rental-page"
 import { AvInstallationPage } from "@/components/pages/av-installation-page"
 import { AvProductionPage } from "@/components/pages/av-production-page"
+import { SoundRentalPage } from "@/components/pages/sound-rental-page"
 import { CityProvider } from "@/lib/city-context"
 
 // On-demand rendered (ISR) — 5k+ pages are not prebuilt at build time.
@@ -44,7 +45,9 @@ export default async function CatchAllPage(props: { params: Promise<{ path: stri
       ? AvInstallationPage
       : /\/av-production$/.test(page.path)
         ? AvProductionPage
-        : null
+        : /\/av-rental\/sound-system-rental$/.test(page.path)
+          ? SoundRentalPage
+          : null
   if (Hub) {
     return (
       <CityProvider city={page.location}>

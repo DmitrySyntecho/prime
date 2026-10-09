@@ -172,7 +172,8 @@ export function HomeShopSection({
   header?: React.ReactNode
 } = {}) {
   const locked = category && TABS.some((t) => t.key === category) ? category : undefined
-  const tabs = categories?.length ? TABS.filter((t) => categories.includes(t.key as ProductCategory)) : TABS
+  // A page's own category list keeps its order (first = the page's main category).
+  const tabs = categories?.length ? categories.flatMap((c) => TABS.filter((t) => t.key === c)) : TABS
   const [active, setActive] = useState<TabKey>(locked ?? tabs[0]?.key ?? "popular")
   const tab = TABS.find((t) => t.key === active) ?? TABS[0]
   const { itemCount, openCart } = useCart()
