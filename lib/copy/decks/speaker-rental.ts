@@ -44,7 +44,7 @@ export const speakerRental: Deck = {
           title: "Portable and battery speakers",
           href: "#shop",
           cta: "Browse rentals",
-          image: "/images/services/sound02.webp",
+          image: "/images/generated/speaker-portable-battery.webp",
           icon: "speaker",
           body: "Compact battery-powered speakers for small gatherings and venues without easy access to power. ==We match the unit to your space so speech and music stay clear.==",
         },

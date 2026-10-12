@@ -67,7 +67,7 @@ export const billboardInstallation: Deck = {
         {
           title: "Digital LED billboards",
           href: "/store/led-walls/outdoor-led-walls",
-          image: "/images/services/led-04.webp",
+          image: "/images/generated/billboard-roadside.webp",
           icon: "led-billboard",
           body: "We supply outdoor LED panels, mount them on your billboard structure, wire the display, and commission it end to end. Every panel is aligned and weather-sealed, and ==the full display is tested before turnover.==",
         },
@@ -75,7 +75,7 @@ export const billboardInstallation: Deck = {
           title: "Static-to-LED billboard upgrades",
           href: "/quote",
           cta: "Get your custom quote",
-          image: "/images/services/led-screen.webp",
+          image: "/images/generated/billboard-upgrade.webp",
           icon: "setup-tools",
           body: "We remove the printed billboard face, fit LED panels to the existing frame, wire the new screen, and set up playback. ==Your billboard location stays the same; only the face changes.==",
         },
@@ -90,7 +90,7 @@ export const billboardInstallation: Deck = {
         {
           title: "Outdoor LED displays",
           href: "/av-installations/led-wall-installation",
-          image: "/images/events/festivals.webp",
+          image: "/images/generated/billboard-building.webp",
           icon: "led-outdoor",
           body: "Need a large LED display on a building facade or venue exterior? Our [video wall installation](/av-installations/led-wall-installation) service covers ==permanent outdoor displays in any shape and size.==",
         },
@@ -153,8 +153,8 @@ export const billboardInstallation: Deck = {
         "We've also partnered with local contractors who build the steel structure and framework that carry the display. Once the structure is in place, our team takes over and installs your digital LED billboard screen. Our team handles all the paperwork, and ==our project manager will be your one point of contact== from planning all the way to go-live.",
         "If you're interested in a digital billboard of your own, whether you're starting a billboard business or advertising your own brand, contact us at Prime Line AV. ==Our project manager will give you a free consultation== and go over the details of your project. You can also browse our [locations](/locations) to see where we are available.",
       ],
-      image: "/images/services/led-03.webp",
-      imageAlt: "Outdoor LED screen lit up at night",
+      image: "/images/generated/billboard-freeway-night.webp",
+      imageAlt: "Double-sided digital LED billboard above a freeway at night",
       secondary: { label: "Request a consultation" },
     },
     // Block 08

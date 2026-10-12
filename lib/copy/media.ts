@@ -60,4 +60,11 @@ export const PHOTO = {
   "stage-07": { src: "/images/services/stage07.webp", caption: "Crew building an outdoor stage and backdrop", event: "Prime Line AV build", stage: "Load-in" },
   "stage-night": { src: "/images/services/stage-rental.webp", caption: "Stage and truss lit for the show", event: "Prime Line AV build", stage: "Showtime" },
   "staging-rigging": { src: "/images/services/staging-rigging.webp", caption: "Ballroom stage with full rigging", event: "Prime Line AV build", stage: "Showtime" },
+  // Red carpet entrances (public/images/generated) — event names unknown, so the line reads "Prime Line AV build".
+  "red-carpet-load-in": { src: "/images/generated/red-carpet-load-in.webp", caption: "Crew rolling out the red carpet before doors", event: "Prime Line AV build", stage: "Load-in" },
+  "red-carpet-corporate": { src: "/images/generated/red-carpet-corporate-entrance.webp", caption: "Corporate launch entrance with a step-and-repeat", event: "Prime Line AV build", stage: "Showtime" },
+  "red-carpet-photo-call": { src: "/images/generated/red-carpet-photo-call.webp", caption: "Guests posing at the step-and-repeat", event: "Prime Line AV build", stage: "Showtime" },
+  "red-carpet-gala": { src: "/images/generated/red-carpet-gala-arrival.webp", caption: "Gala arrivals on a carpeted staircase", event: "Prime Line AV build", stage: "Showtime" },
+  "red-carpet-awards": { src: "/images/generated/red-carpet-awards.webp", caption: "Awards night carpet with an LED step-and-repeat", event: "Prime Line AV build", stage: "Showtime" },
+  "red-carpet-wedding": { src: "/images/generated/red-carpet-wedding.webp", caption: "Wedding reception entrance runner, ready for guests", event: "Prime Line AV build", stage: "Load-in" },
 } as const satisfies Record<string, { src: string; caption: string; event: string; stage: "Load-in" | "Showtime" }>

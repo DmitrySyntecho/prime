@@ -66,7 +66,7 @@ export const homeAudioVideoInstallation: Deck = {
         {
           title: "Multi-room audio systems",
           href: "/av-installations/audio-installation",
-          image: "/images/installations/audio.webp",
+          image: "/images/generated/home-multiroom-audio.webp",
           icon: "speaker",
           body: "We install in-wall and in-ceiling speakers throughout the house and group them into zones. Play music in the kitchen while someone watches a game in the den, and ==control every zone from one app on your phone.==",
         },
@@ -143,8 +143,8 @@ export const homeAudioVideoInstallation: Deck = {
         "During the installation, we can pre-run extra cabling to the patio, kitchen, garage, or guest room, so ==adding a zone later never means opening up finished walls.== In a home that's already built, we work through the attic, the basement, the crawl space, and the closets to keep cutting into your drywall to a minimum.",
         "We install top brands such as Samsung, Sony, LG, Bose, Sonos, Crestron, and more, and ==we are just as happy to work with the hardware you already own.== Bought a new TV for the big game? We will mount it and wire it into the rest of your AV system.",
       ],
-      image: "/images/installations/home-audio-video.webp",
-      imageAlt: "Living room with a wall-mounted TV, concealed wiring and in-wall audio",
+      image: "/images/generated/home-media-room.webp",
+      imageAlt: "Media room with a wall-mounted TV, concealed wiring and in-wall speakers",
       secondary: { label: "Request a consultation" },
     },
     // Block 08

@@ -88,7 +88,7 @@ export const smartHomeInstallation: Deck = {
         {
           title: "Networking and security",
           href: "/av-installations/video-installation",
-          image: "/images/installations/audio.webp",
+          image: "/images/generated/smart-home-network-security.webp",
           icon: "shield",
           body: "==A smart home is only as reliable as the network behind it.== We set up home networking, Wi-Fi coverage, security cameras, and smart locks, and we program them to work together with the rest of your system.",
         },
@@ -145,7 +145,7 @@ export const smartHomeInstallation: Deck = {
         "Our technicians can advise you on which devices fit your home best, help you trim down a collection that got out of hand, or source everything new if you're just switching to a smart home. ==Tell us how you want each room to work, and we set it up exactly that way.==",
         "Before we leave, all your smart devices are fully set up and ==ready to control from your smartphone==, so there's no juggling a different app for every device. We also train your family on the new system, and if you ever need technical support for your brand-new smart home system, we're just a call away.",
       ],
-      image: "/images/installations/smart-home.webp",
+      image: "/images/generated/smart-home-living-room.webp",
       imageAlt: "Living room with a smart home control tablet, automated lighting and shades",
       secondary: { label: "Request a consultation" },
     },
