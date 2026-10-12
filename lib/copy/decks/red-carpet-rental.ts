@@ -1,0 +1,150 @@
+import type { Deck } from "@/lib/copy/deck-types"
+
+/* ClickUp "Red Carpet Rental page - Prime Line AV" (8cr40gk-39237), verbatim.
+   Deck links → site routes: /av-rental/pipe-and-drape → /av-rental/pipe-and-drape,
+   /av-rental/lighting-rental → /av-rental/lighting, /event-production → /event-production,
+   /av-rental → /av-rental, /locations → /locations, /contacts → /quote.
+   Cards the deck doesn't link (carpet, stanchions) → /quote ("Get a quote").
+   The deck has no hero stats strip (stats: []) and no block 06. Block 09 "See more of our red carpet
+   work" (eyebrow "Prime Line AV gallery") is left out: there are no red carpet photos in lib/copy/media. */
+export const redCarpetRental: Deck = {
+  clickupId: "8cr40gk-39237",
+  path: "/red-carpet-rental",
+  h1: "Red Carpet Rental Company in the USA",
+  accent: "Red Carpet Rental",
+  pill: "Premieres · Galas · Corporate · Weddings",
+  lede: "Prime Line AV offers red carpet rental for events nationwide, complete with lighting and entrance accessories for ==a full VIP guest experience.==",
+  bullets: [
+    { icon: "pipe-drape", text: "Complete entrance package: red carpet, stanchions, pipe and drape, backdrop, and lighting" },
+    { icon: "delivery-truck", text: "Full delivery and setup, our crew installs and strikes everything" },
+    { icon: "award", text: "Custom red carpets for premieres, corporate events, galas, and weddings" },
+    { icon: "heart", text: "Trusted by 500+ brands, including TikTok, Netflix, BET TV, and CBS" },
+  ],
+  ctaLabel: "Get your custom quote",
+  microcopy: "Quote in 30 minutes · No obligation",
+  secondary: { label: "Browse rentals", href: "#shop" },
+  stats: [],
+  clips: ["pipe-drape-rental", "lighting-rental"],
+  blocks: [
+    { type: "ratings" },
+    {
+      type: "cards",
+      id: "package",
+      eyebrow: "More than a carpet roll",
+      title: "Everything included in your red carpet rental",
+      accent: "your red carpet rental",
+      lede: "A striking entrance takes more than the carpet itself. Here is ==everything we can deliver and set up as one package== for your red carpet event rentals.",
+      items: [
+        {
+          title: "Red Carpet & Runner",
+          href: "/quote",
+          cta: "Get a quote",
+          image: "/images/events/grand-opening.webp",
+          icon: "award",
+          body: "Red is the classic, but ==you can pick any color and size.== Tell us your theme or palette, and we cut the carpet to fit your entrance.",
+        },
+        {
+          title: "Stanchions & Velvet Ropes",
+          href: "/quote",
+          cta: "Get a quote",
+          image: "/images/services/drape-05.webp",
+          icon: "shield",
+          body: "Gold or chrome stanchions with velvet ropes line both sides of your carpet and ==keep guests on the walkway.== They arrive with the rest of your order.",
+        },
+        {
+          title: "Step-and-Repeat Backdrop",
+          href: "/av-rental/pipe-and-drape",
+          image: "/images/services/pipe-drape-card.webp",
+          icon: "pipe-drape",
+          body: "Send us your logos, and ==we design the backdrop for you.== Get it printed on a banner from 4 ft to 100 ft on our [pipe and drape rental](/av-rental/pipe-and-drape) hardware, or go with an LED wall step-and-repeat for a dynamic display.",
+        },
+        {
+          title: "Entrance Lighting",
+          href: "/av-rental/lighting",
+          image: "/images/services/lighting-rental-card.webp",
+          icon: "moving-head",
+          body: "LED uplighting and spot fixtures from our [lighting rental](/av-rental/lighting), focused on your carpet and backdrop so ==every arrival is evenly lit for photos and video==, even at night.",
+        },
+        {
+          title: "Full Entrance Package",
+          href: "/event-production",
+          image: "/images/services/event-production.webp",
+          icon: "flight-case",
+          body: "Rent the red carpet package on its own, or fold it into a [full event production](/event-production) ==when your event needs more than a VIP entrance.==",
+        },
+        {
+          title: "Event AV Rental",
+          href: "/av-rental",
+          image: "/images/services/av-01.webp",
+          icon: "speaker",
+          body: "Hire one team for your red carpet rental and the full AV production. Get your sound systems and screens for the program inside from our [AV rental](/av-rental) inventory, and ==let the same team handle the whole show.==",
+        },
+      ],
+    },
+    { type: "products", categories: ["pipe-drape", "lighting", "stage"] },
+    {
+      type: "bento",
+      id: "events",
+      eyebrow: "Events we work on",
+      title: "We roll out the red carpet where the arrival matters",
+      accent: "where the arrival matters",
+      lede: [
+        "Prime Line AV delivers red carpet setup rental for any event you're hosting, in any city, coast to coast. ==We coordinate the delivery window directly with your venue==, so the carpet is ready when doors open.",
+      ],
+      items: [
+        { title: "Premieres", image: "/images/events/film-production.webp", body: "Arrivals are the content, whether you are premiering a film, a series, an album, or a collection. We set up the full entrance so every guest photo is Instagram-worthy." },
+        { title: "Corporate Events", image: "/images/events/corporate.webp", body: "A branded entrance sets the tone before anyone reaches the general session. Guests take photos with your brand before the program even starts." },
+        { title: "Galas & Awards", image: "/images/case-studies/asian-flame-2.webp", body: "The entrance is part of the show at a gala. We match the carpet and the lighting to the formality of the night." },
+        { title: "Weddings", image: "/images/events/weddings.webp", body: "A runner for the ceremony aisle or the reception entrance. We install it before guests arrive and take it out after. Your only job is to walk it." },
+        { title: "Brand Activations", image: "/images/events/experiential-marketing.webp", body: "A carpet with a step-and-repeat gives attendees a reason to stop for photos, and every photo they post carries your branding." },
+        { title: "Grand Openings", image: "/images/events/grand-opening.webp", body: "A red carpet at the door turns a store or office opening into a photo moment for local press and first customers." },
+      ],
+      callStrip: { title: "Ready to discuss your event?", subtitle: "Talk to us today!" },
+    },
+    {
+      type: "reasons",
+      id: "why-us",
+      eyebrow: "Why Prime Line AV",
+      title: "Why rent your red carpet from Prime Line AV",
+      accent: "your red carpet",
+      lede: [
+        "At Prime Line AV, you get ==a turnkey red carpet service from an AV production team==, should you want one expert vendor for the entire event. Here's why big brands and organizations call us for their red carpet setup rental:",
+      ],
+      items: [
+        { title: "One team builds the whole entrance", icon: "setup-tools", body: "Many rental companies quote the carpet and leave the rest to you. We deliver the stanchions, ropes, backdrop, and lighting with it and ==set everything up as one build.==" },
+        { title: "Venue coordination done for you", icon: "calendar", body: "We schedule delivery around your load-in window and set up the entrance before guests arrive. ==You never tape a carpet down yourself==, and our insured crews carry certificates of insurance for your venue." },
+        { title: "Packages built around your event", icon: "clipboard", body: "==We customize your red carpet package== since no two events are the same. We size it around your venue and how much of the arrival you want on camera." },
+        { title: "Nationwide delivery and setup", icon: "location-pin", body: "==We run local warehouses in 9 cities across the US== and deliver beyond them for everything else. Find your city on our [locations](/locations) page or [contact us](/quote) today to confirm if we service your area." },
+        { title: "Fast, no-obligation estimate", icon: "stopwatch", body: "Send your event details and ==our project manager will reach out to you in as fast as 30 minutes.== We take last-minute requests too, depending on the availability of our team and inventory." },
+      ],
+    },
+    {
+      type: "videos",
+      id: "case-studies",
+      eyebrow: "Event portfolio",
+      title: "See big brands on our red carpet",
+      accent: "big brands",
+      studies: ["tiktok", "lca", "asianFlame", "nike", "idb", "amagi"],
+    },
+    // Block 09 gallery ("Prime Line AV gallery" / "See more of our red carpet work") — needs red carpet PhotoKeys.
+    { type: "team", title: "Meet the team", accent: "the team" },
+    { type: "testimonials", eyebrow: "Prime Line AV reviews", title: "What clients say after the event", accent: "after the event" },
+    { type: "blog" },
+    {
+      type: "faq",
+      eyebrow: "FAQ",
+      title: "Red carpet rental FAQs",
+      accent: "FAQs",
+      items: [
+        { q: "How much does red carpet rental cost?", a: ["Red carpet rental costs between $150 and $2,500 for most events. A carpet on its own sits at the low end, while a full setup with stanchions, ropes, a backdrop, and lighting costs more. If you want custom pricing for your event, send us the details, and we will give you a free estimate."] },
+        { q: "What sizes and colors are available?", a: ["Prime Line AV offers classic red carpets along with custom sizes and colors, so the carpet can match your theme or palette. We cut the length to your walkway and the width to the doorway or aisle. Send us the dimensions and the color you want, and we will spec the cut."] },
+        { q: "Do you deliver and set up the red carpet?", a: ["Yes, Prime Line AV delivers and sets up the red carpet for every rental. Our crew brings the full setup to your venue and installs it before guests arrive, including stairs secured with slip-proof adhesive. After the event ends, we return for the strike. We handle this in every city on our locations page."] },
+        { q: "Can I add a step-and-repeat backdrop and lighting?", a: ["Yes, you can add a step-and-repeat backdrop and lighting to your red carpet rental. For printed backdrops, we use our pipe and drape rental hardware and print your sponsor logos on the banner. We also offer uplighting from our lighting rental service to light the carpet and backdrop at night events."] },
+        { q: "Do you offer red carpet rental nationwide?", a: ["Yes, Prime Line AV provides red carpet rental nationwide across the United States. We have delivered AV for 2,500+ events over 15 years, and our red carpet setups follow the same coverage. Check your city on our locations page, or send the venue address and we will confirm availability for your date."] },
+        { q: "Do you offer same-day red carpet rental?", a: ["Yes, Prime Line AV offers same-day red carpet rental depending on the availability of our inventory and crew. The sooner you reach out, the better your chances of locking in the setup you want. Contact us to check your event date, and we will confirm availability and pricing right away."] },
+        { q: "Can the red carpet be used indoors and outdoors?", a: ["Yes, our red carpets can be used indoors and outdoors. Prime Line AV has outdoor-rated carpets built with bound edges, durable stitching, UV protection, and a rubber marine backing that grips on slippery surfaces."] },
+      ],
+      callStrip: { title: "Still have more questions?", subtitle: "Ask us today!" },
+    },
+  ],
+}

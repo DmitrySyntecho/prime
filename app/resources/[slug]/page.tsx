@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { use, useState } from "react"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { ArrowRight, Phone, BookOpen } from "lucide-react"
@@ -21,7 +21,8 @@ const categoryLabel: Record<string, string> = {
   inspiration: "Inspiration Guide",
 }
 
-export default function ResourcePage({ params }: { params: { slug: string } }) {
+export default function ResourcePage(props: { params: Promise<{ slug: string }> }) {
+  const params = use(props.params)
   const [showQuoteForm, setShowQuoteForm] = useState(false)
   const resource = RESOURCES.find((r) => r.slug === params.slug)
 

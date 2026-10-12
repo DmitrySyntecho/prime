@@ -6,6 +6,8 @@ export type BentoItem = { title: string; image: string; body: React.ReactNode }
 const LAYOUT: Record<number, number[]> = {
   5: [3, 3, 2, 2, 2],
   6: [4, 2, 2, 4, 3, 3],
+  7: [3, 3, 2, 2, 2, 3, 3],
+  8: [3, 3, 2, 2, 2, 2, 2, 2],
   10: [3, 3, 2, 2, 2, 2, 2, 2, 3, 3],
 }
 const SPAN: Record<number, string> = { 2: "md:col-span-2", 3: "md:col-span-3", 4: "md:col-span-4" }
@@ -29,7 +31,7 @@ export function ImageBento({ items }: { items: BentoItem[] }) {
           <div className="absolute inset-0 bg-gradient-to-t from-[#03070a] via-[#03070a]/75 to-[#03070a]/10 transition-colors duration-500 group-hover:from-[#1a0614]" />
           <div className="relative p-5 md:p-6">
             <h3 className="mb-2 text-balance text-[20px] font-bold leading-tight tracking-[-0.01em] text-white md:text-[22px]">{it.title}</h3>
-            <p className="text-pretty text-[15.5px] font-medium leading-[1.6] text-white/95">{it.body}</p>
+            {it.body ? <p className="text-pretty text-[15.5px] font-medium leading-[1.6] text-white/95">{it.body}</p> : null}
           </div>
         </article>
       ))}

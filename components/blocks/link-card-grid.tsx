@@ -11,6 +11,8 @@ export type LinkCard = {
   body: React.ReactNode
   /** Per-card button label (defaults to the grid's ctaLabel). */
   cta?: string
+  /** Small gold label above the title (e.g. "01 / Theater rooms"). */
+  kicker?: string
 }
 
 /** Photo card + 3D icon tile + H3 link + copy + "Learn more", three across on desktop. */
@@ -34,6 +36,7 @@ export function LinkCardGrid({ items, ctaLabel = "Learn more", cols = 3 }: { ite
             >
               <Icon3D name={s.icon} size={58} className="drop-shadow-[0_10px_16px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-105" />
             </div>
+            {s.kicker && <p className="mb-1.5 text-[12px] font-bold uppercase tracking-[0.14em] text-[#FFD24A]">{s.kicker}</p>}
             <h3 className="mb-2 text-[20px] font-bold leading-tight tracking-[-0.01em] text-white">
               <Link href={s.href} className="transition-colors hover:text-[#FF2D6F]">
                 {s.title}

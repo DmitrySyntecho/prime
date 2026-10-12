@@ -28,8 +28,10 @@ export type DeckBlock =
       lede?: Md
       cols?: 3 | 4
       ctaLabel?: string
-      items: { title: string; href: string; image: string; icon: Icon3DName; body: Md; cta?: string }[]
+      items: { title: string; href: string; image: string; icon: Icon3DName; body: Md; cta?: string; kicker?: string }[]
       callStrip?: CallStripSpec
+      /** Deck's "Get your custom quote" + second button under the section. */
+      ctaPair?: { label: string; href?: string } | "portfolio"
     })
   /** Event types / use cases as photo tiles (5, 6 or 10 items lay out as a bento). */
   | (Heading & {
@@ -38,6 +40,7 @@ export type DeckBlock =
       lede?: Md[]
       items: { title: string; image: string; body: Md }[]
       callStrip?: CallStripSpec
+      ctaPair?: { label: string; href?: string } | "portfolio"
     })
   /** "Why us": sticky heading column + reason rows with 3D icons. */
   | (Heading & { type: "reasons"; id?: string; lede?: Md[]; items: { title: string; icon: Icon3DName; body: Md }[] })

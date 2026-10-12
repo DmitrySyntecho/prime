@@ -54,7 +54,7 @@ export function ServicePageClient({ service, slug }: ServicePageClientProps) {
   }
 
   // Nav service pages that now have a copy-deck page (national version only).
-  const navDeck = ({ "stage-rental": "/av-rental/staging", "projector-screen-rental": "/av-rental/projector-rental" } as Record<string, string>)[slug]
+  const navDeck = ({ "stage-rental": "/av-rental/staging", "projector-screen-rental": "/av-rental/video" } as Record<string, string>)[slug]
   const deck = navDeck ? getDeck(navDeck) : undefined
   if (deck) return <DeckPage deck={deck} />
 

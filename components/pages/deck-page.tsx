@@ -44,6 +44,8 @@ function accented(h: Heading) {
 const phone = (s: string) => s.replace(/\[phone number\]/gi, PHONE_DISPLAY)
 const md = (s: string) => rt(phone(s))
 
+const pairSecondary = (p: { label: string; href?: string } | "portfolio") => (p === "portfolio" ? { label: "View event portfolio", href: "/portfolio" } : p)
+
 function Section({ id, children }: { id?: string; children: React.ReactNode }) {
   return (
     <section id={id} className="relative scroll-mt-24 py-20 md:py-28">
@@ -64,6 +66,7 @@ function Block({ b }: { b: DeckBlock }) {
             {b.lede && md(b.lede)}
           </SectionHeader>
           <LinkCardGrid items={b.items.map((it) => ({ ...it, body: md(it.body) }))} cols={b.cols} ctaLabel={b.ctaLabel} />
+          {b.ctaPair && <CtaPair className="mt-12" secondary={pairSecondary(b.ctaPair)} />}
           {b.callStrip && <CallStrip className="mt-10" title={b.callStrip.title} subtitle={b.callStrip.subtitle} />}
         </Section>
       )
@@ -78,7 +81,8 @@ function Block({ b }: { b: DeckBlock }) {
               </p>
             ))}
           </SectionHeader>
-          <ImageBento items={b.items.map((it) => ({ ...it, body: md(it.body) }))} />
+          <ImageBento items={b.items.map((it) => ({ ...it, body: it.body ? md(it.body) : null }))} />
+          {b.ctaPair && <CtaPair className="mt-12" secondary={pairSecondary(b.ctaPair)} />}
           {b.callStrip && <CallStrip className="mt-10" title={b.callStrip.title} subtitle={b.callStrip.subtitle} />}
         </Section>
       )
