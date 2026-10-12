@@ -7,6 +7,8 @@ import { AvRentalPage } from "@/components/pages/av-rental-page"
 import { AvInstallationPage } from "@/components/pages/av-installation-page"
 import { AvProductionPage } from "@/components/pages/av-production-page"
 import { SoundRentalPage } from "@/components/pages/sound-rental-page"
+import { DeckPage } from "@/components/pages/deck-page"
+import { getDeck } from "@/lib/copy/decks"
 import { CityProvider } from "@/lib/city-context"
 
 // On-demand rendered (ISR) — 5k+ pages are not prebuilt at build time.
@@ -37,6 +39,10 @@ export default async function CatchAllPage(props: { params: Promise<{ path: stri
       </CityProvider>
     )
   }
+
+  // Copy-deck pages rendered from data (lib/copy/decks) — national path only.
+  const deck = getDeck(page.path)
+  if (deck) return <DeckPage deck={deck} />
 
   // Copy-deck hub pages (national + every city variant).
   const Hub = /\/av-rental$/.test(page.path)

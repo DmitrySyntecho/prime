@@ -27,6 +27,8 @@ import { useCity } from "@/lib/city-context"
 import { LedVideoWallPage } from "@/components/led-video-wall-page"
 import { AvProductionPage } from "@/components/pages/av-production-page"
 import { SoundRentalPage } from "@/components/pages/sound-rental-page"
+import { DeckPage } from "@/components/pages/deck-page"
+import { getDeck } from "@/lib/copy/decks"
 import { applyCity } from "@/lib/service-pages"
 import { getCategoryForServiceSlug } from "@/lib/products-data"
 import type { ServicePage } from "@/lib/service-pages"
@@ -50,6 +52,11 @@ export function ServicePageClient({ service, slug }: ServicePageClientProps) {
     const local = slug.endsWith("-miami") ? "Miami" : slug.endsWith("-orlando") ? "Orlando" : undefined
     return <AvProductionPage h1={local ? `AV Production Company for Events in ${local}` : undefined} location={local} />
   }
+
+  // Nav service pages that now have a copy-deck page (national version only).
+  const navDeck = ({ "stage-rental": "/av-rental/staging", "projector-screen-rental": "/av-rental/projector-rental" } as Record<string, string>)[slug]
+  const deck = navDeck ? getDeck(navDeck) : undefined
+  if (deck) return <DeckPage deck={deck} />
 
   // The nav's "Sound Systems" lands here: same copy-deck page as /av-rental/sound-system-rental.
   if (slug.startsWith("sound-system-rental")) {
